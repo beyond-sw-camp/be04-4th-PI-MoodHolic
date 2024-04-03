@@ -19,7 +19,7 @@ public class ImageController {
         this.imageService = imageService;
     }
 
-    @PatchMapping("/profile")
+    @PostMapping("")
     public ResponseEntity<String> get(@RequestParam("file") MultipartFile file) throws IOException {
         System.out.println("profile upload request..");
         String imageUrl = imageService.uploadImage(file);

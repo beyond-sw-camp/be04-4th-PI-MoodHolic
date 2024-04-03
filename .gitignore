@@ -36,4 +36,5 @@ out/
 ### VS Code ###
 .vscode/
 *.yml
-src/main/resources/application.yml
+application.yml
+mood-holic-8e28efc835fe.json

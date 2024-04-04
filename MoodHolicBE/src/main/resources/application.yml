@@ -15,5 +15,3 @@ spring:
     generate-ddl: false
   profiles:
     active: private
-
-

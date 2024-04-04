@@ -1,6 +1,7 @@
 server:
   port: 8888
-
+  tomcat:
+    uri-encoding: UTF-8
 spring:
   application:
     name: MoodHolic
@@ -14,3 +15,5 @@ spring:
     generate-ddl: false
   profiles:
     active: private
+
+

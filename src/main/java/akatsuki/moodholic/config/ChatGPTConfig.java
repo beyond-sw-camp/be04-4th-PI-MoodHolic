@@ -7,13 +7,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * ChatGPT에서 사용하는 환경 구성
- *
- * @author : lee
- * @fileName : RestTemplate
- * @since : 12/29/23
- */
+
 @Configuration
 public class ChatGPTConfig {
 

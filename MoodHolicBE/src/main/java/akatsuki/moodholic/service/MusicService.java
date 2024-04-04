@@ -12,4 +12,6 @@ public interface MusicService {
     List<DiaryMusic> findLikedDiaryMusics();
 
     List<String> findLikedMusicNames();
+
+    List<Object[]> countMusicGenresWithLikes();
 }

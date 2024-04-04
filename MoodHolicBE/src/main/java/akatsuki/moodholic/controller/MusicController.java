@@ -40,4 +40,9 @@ public class MusicController {
     public List<String> getLikedMusicNames() {
         return musicService.findLikedMusicNames();
     }
+
+    @GetMapping("/genres/likes-count")
+    public List<Object[]> countMusicGenresWithLikes() {
+        return musicService.countMusicGenresWithLikes();
+    }
 }

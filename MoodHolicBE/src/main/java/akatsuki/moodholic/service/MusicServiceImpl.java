@@ -35,4 +35,9 @@ public class MusicServiceImpl implements MusicService{
     public List<String> findLikedMusicNames() {
         return diarymusicrepository.findLikedMusicNames();
     }
+
+    @Override
+    public List<Object[]> countMusicGenresWithLikes() {
+        return musicrepository.countMusicGenresWithLikes();
+    }
 }

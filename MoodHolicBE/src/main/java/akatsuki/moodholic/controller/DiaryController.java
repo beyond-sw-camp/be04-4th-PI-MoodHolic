@@ -1,7 +1,12 @@
 package akatsuki.moodholic.controller;
 
 import akatsuki.moodholic.domain.Diary;
+import akatsuki.moodholic.domain.DiaryMusic;
 import akatsuki.moodholic.dto.ResponseDiary;
+import akatsuki.moodholic.repository.DiaryEmotionDAO;
+import akatsuki.moodholic.repository.DiaryFoodDAO;
+import akatsuki.moodholic.repository.DiaryMovieDAO;
+import akatsuki.moodholic.repository.DiaryMusicDAO;
 import akatsuki.moodholic.service.DiaryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +18,7 @@ import java.util.List;
 @RequestMapping("/diary")
 public class DiaryController {
     DiaryService diaryService;
+
 
     @Autowired
     public DiaryController(DiaryService diaryService) {

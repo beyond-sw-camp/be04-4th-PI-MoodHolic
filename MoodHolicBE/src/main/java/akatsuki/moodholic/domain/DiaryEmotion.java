@@ -14,8 +14,11 @@ public class DiaryEmotion {
     @Id
     @Column(name = "diary_emotion_id")
     private int diaryEmotionId;
-    @Column(name = "diary_id")
-    private int diaryId;
-    @Column(name = "emotion_id")
-    private int EmotionId;
+
+    @JoinColumn(name = "diary_id")
+    @OneToOne
+    private Diary diaryId;
+    @JoinColumn(name = "emotion_id")
+    @OneToOne
+    private Emotion EmotionId;
 }

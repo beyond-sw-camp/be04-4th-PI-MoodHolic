@@ -20,5 +20,7 @@ public class DiaryMovie {
     @Column(name = "diary_id")
     private int diaryId;
     @Column(name = "movie_id")
-    private int MovieId;
+    private int movieId;
+    @Column(name = "movie_like")
+    private boolean movieLike;
 }

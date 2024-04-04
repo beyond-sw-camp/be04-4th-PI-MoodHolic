@@ -1,10 +1,7 @@
 server:
   port: 8888
-  servlet:
-    encoding:
-      charset: UTF-8
-      enabled: true
-      force: true
+  tomcat:
+    uri-encoding: UTF-8
 spring:
   application:
     name: MoodHolic
@@ -16,5 +13,7 @@ spring:
         format_sql: true
     database-platform: org.hibernate.dialect.MySQL8Dialect
     generate-ddl: false
+#    hibernate:
+#      ddl-auto: create
   profiles:
     active: private

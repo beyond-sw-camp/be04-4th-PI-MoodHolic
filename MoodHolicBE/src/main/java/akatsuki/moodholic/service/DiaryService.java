@@ -14,37 +14,39 @@ public class DiaryService {
     private FoodDAO foodDAO;
     private MovieDAO movieDAO;
     private MusicDAO musicDAO;
-
-    private DiaryMovieDAO diaryMovie;
-    private DiaryFoodDAO diaryFood;
-    private DiaryMusicDAO diaryMusic;
-    private DiaryEmotionDAO diaryEmotion;
-    private final DiaryEmotionDAO diaryEmotionDAO;
-    private final DiaryFoodDAO diaryFoodDAO;
-    private final DiaryMovieDAO diaryMovieDAO;
-
+    private DiaryEmotionDAO diaryEmotionDAO;
+    private DiaryFoodDAO diaryFoodDAO;
+    private DiaryMovieDAO diaryMovieDAO;
+    private DiaryMusicDAO diaryMusicDAO;
     @Autowired
-    public DiaryService(MemberDAO memberDAO, DiaryDAO diaryDAO, EmotionDAO emotionDAO, FoodDAO foodDAO, MovieDAO movieDAO, MusicDAO musicDAO, DiaryMovieDAO diaryMovie, DiaryFoodDAO diaryFood, DiaryMusicDAO diaryMusic, DiaryEmotionDAO diaryEmotion,
-                        DiaryEmotionDAO diaryEmotionDAO,
-                        DiaryFoodDAO diaryFoodDAO,
-                        DiaryMovieDAO diaryMovieDAO) {
+    public DiaryService(MemberDAO memberDAO, DiaryDAO diaryDAO, EmotionDAO emotionDAO, FoodDAO foodDAO, MovieDAO movieDAO, MusicDAO musicDAO, DiaryEmotionDAO diaryEmotionDAO, DiaryFoodDAO diaryFoodDAO, DiaryMovieDAO diaryMovieDAO, DiaryMusicDAO diaryMusicDAO) {
         this.memberDAO = memberDAO;
         this.diaryDAO = diaryDAO;
         this.emotionDAO = emotionDAO;
         this.foodDAO = foodDAO;
         this.movieDAO = movieDAO;
         this.musicDAO = musicDAO;
-        this.diaryEmotion = diaryEmotion;
-        this.diaryMovie = diaryMovie;
-        this.diaryFood = diaryFood;
-        this.diaryMusic = diaryMusic;
         this.diaryEmotionDAO = diaryEmotionDAO;
         this.diaryFoodDAO = diaryFoodDAO;
         this.diaryMovieDAO = diaryMovieDAO;
+        this.diaryMusicDAO = diaryMusicDAO;
     }
 
     public ResponseDiary getDiary(int diaryId) {
         Diary diary = diaryDAO.findById(diaryId).orElseThrow();
+        // emotion, food, movie, music,
+        DiaryFood food= diaryFoodDAO.findByDiaryIdDiaryId(diaryId);
+        DiaryEmotion emotion = diaryEmotionDAO.findByDiaryIdDiaryId(diaryId);
+        DiaryMovie movie = diaryMovieDAO.findByDiaryIdDiaryId(diaryId);
+        DiaryMusic music = diaryMusicDAO.findByDiaryIdDiaryId(diaryId);
+        System.out.println("diary = " + diary);
+        System.out.println("food = " + food.getFoodId());
+        System.out.println("emotion = " + emotion.getEmotionId());
+        System.out.println("music = " + music.getMusicId());
+        System.out.println("movie = " + movie.getMovieId());
+//        diaryMovieDAO.findByDiaryId(diaryId);
+//        diaryMusicDAO.findByDiaryId(diaryId);
+
 
         return null;
     }

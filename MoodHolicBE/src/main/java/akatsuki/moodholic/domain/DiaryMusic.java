@@ -20,5 +20,7 @@ public class DiaryMusic {
     @Column(name = "diary_id")
     private int diaryId;
     @Column(name = "music_id")
-    private int MusicId;
+    private int musicId;
+    @Column(name="music_like")
+    private boolean musicLike;
 }

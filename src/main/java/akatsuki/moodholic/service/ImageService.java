@@ -32,6 +32,32 @@ public class ImageService {
         return returnValue;
     }
 
+    public String profileUploadImage(long memberId,MultipartFile file) throws IOException {
+        ClassPathResource resource = new ClassPathResource(credentialsLocation);
+        GoogleCredentials credentials = GoogleCredentials.fromStream(resource.getInputStream());
+        Storage storage = getStorage(credentials);
+        String fileName = generateFileName(file.getOriginalFilename());
+        BlobId blobId = BlobId.of(bucketName, fileName);
+        BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
+        byte[] bytes = file.getBytes();
+        Blob blob = storage.create(blobInfo, bytes);
+        String returnValue = blob.getMediaLink();
+        return returnValue;
+    }
+
+    public String diaryUploadImage(int diaryId,MultipartFile file) throws IOException {
+        ClassPathResource resource = new ClassPathResource(credentialsLocation);
+        GoogleCredentials credentials = GoogleCredentials.fromStream(resource.getInputStream());
+        Storage storage = getStorage(credentials);
+        String fileName = generateFileName(file.getOriginalFilename());
+        BlobId blobId = BlobId.of(bucketName, fileName);
+        BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
+        byte[] bytes = file.getBytes();
+        Blob blob = storage.create(blobInfo, bytes);
+        String returnValue = blob.getMediaLink();
+        return returnValue;
+    }
+
     private Storage getStorage(GoogleCredentials credentials) {
         return StorageOptions.newBuilder()
                 .setCredentials(credentials)

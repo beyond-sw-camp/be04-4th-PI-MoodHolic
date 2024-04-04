@@ -1,6 +1,8 @@
 package akatsuki.moodholic.controller;
 
+import akatsuki.moodholic.domain.DiaryFood;
 import akatsuki.moodholic.domain.Food;
+import akatsuki.moodholic.dto.FoodView;
 import akatsuki.moodholic.repository.FoodDAO;
 import akatsuki.moodholic.service.FoodService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -30,4 +32,17 @@ public class FoodController {
     public List<Food> getAllFoods() {
         return foodService.getAllFoods();
     }
+
+    @GetMapping("/liked")
+    @Operation(summary = "좋아요 표시된 음식 조회", description = "사용자가 좋아요 표시한 음식 조회 기능")
+    public List<DiaryFood> getLikedDiaryFoods() {
+        return foodService.findLikedDiaryFoods();
+    }
+
+    @GetMapping("/liked/names")
+    public List<String> getLikedFoodNames() {
+        return foodService.findLikedFoodNames();
+    }
+
+
 }

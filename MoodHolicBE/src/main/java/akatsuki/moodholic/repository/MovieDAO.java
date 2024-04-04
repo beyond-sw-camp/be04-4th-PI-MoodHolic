@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MovieDAO extends JpaRepository<Movie, Integer> {
 
+    Movie findByMovieName(String movieName);
 }

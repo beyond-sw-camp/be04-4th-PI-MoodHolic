@@ -1,9 +1,6 @@
 package akatsuki.moodholic.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -12,6 +9,7 @@ import lombok.Data;
 public class Music {
     @Id
     @Column(name = "music_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int musicId;
     @Column(name = "music_name")
     private String musicName;

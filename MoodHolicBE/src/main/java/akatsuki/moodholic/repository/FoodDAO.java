@@ -7,4 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FoodDAO extends JpaRepository<Food,Integer> {
+    boolean existsByFoodName(String s);
+
+    Food findByFoodName(String foodName);
 }

@@ -14,37 +14,13 @@ public class ResponseDiary {
     private Movie movie;
     private Music music;
 
-    public ResponseDiary(Diary diary, Emotion emotion, Food food, Movie movie, Music music) {
+
+    public ResponseDiary(Diary diary, String emotion, Food food, Movie movie, Music music) {
         this.diary = diary;
-        insertEmotion(emotion);
-        insertFood(food);
-        insertMovie(movie);
-        insertMusic(music);
+        this.emotion = emotion;
+        this.food = food;
+        this.movie = movie;
+        this.music = music;
     }
 
-    private void insertMusic(Music music) {
-        if(music !=null){
-            this.music= music;
-        }
-    }
-
-    private void insertMovie(Movie movie) {
-        if(movie !=null){
-            this.movie = movie;
-        }
-    }
-
-    private void insertFood(Food food) {
-        if(food !=null){
-            this.food= food;
-        }
-    }
-
-    private void insertEmotion(Emotion emotion) {
-        if(emotion !=null) {
-            if (emotion.getEmotionScore() < 4) this.emotion = "나쁨";
-            else if(emotion.getEmotionScore()<7) this.emotion="보통";
-            else this.emotion="좋음";
-        }
-    }
 }

@@ -27,16 +27,16 @@ public class DiaryController {
 
     // 다이어리 상세 조회
     @GetMapping("/{diaryId}")
-    public ResponseEntity<Diary> getDiary(@PathVariable int diaryId){
+    public ResponseEntity<ResponseDiary> getDiary(@PathVariable int diaryId){
         ResponseDiary responseDiary = diaryService.getDiary(diaryId);
 
-        return null;
+        return ResponseEntity.ok().body(responseDiary);
     }
     // 다이어리 저장
     @PostMapping("")
-    public ResponseEntity postDiary(){
-
-        return null;
+    public ResponseEntity postDiary(@RequestBody Diary diary){
+        diaryService.postDiary(diary);
+        return ResponseEntity.ok().build();
     }
 
     // 다이어리 삭제

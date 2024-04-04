@@ -1,9 +1,7 @@
 package akatsuki.moodholic.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Entity
@@ -12,6 +10,7 @@ import lombok.Data;
 public class Movie {
     @Id
     @Column(name = "movie_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int movieId;
     @Column(name = "movie_name")
     private String movieName;

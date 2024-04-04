@@ -17,5 +17,3 @@ spring:
       ddl-auto: create
   profiles:
     active: private
-
-

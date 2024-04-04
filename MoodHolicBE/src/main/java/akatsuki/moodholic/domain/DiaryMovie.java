@@ -6,6 +6,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "diary_movie")
 @NoArgsConstructor
@@ -23,4 +25,5 @@ public class DiaryMovie {
     private int movieId;
     @Column(name = "movie_like")
     private boolean movieLike;
+
 }

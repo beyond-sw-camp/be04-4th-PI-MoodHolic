@@ -14,7 +14,7 @@ assignees: ''
 ### 🌝 Purpose
 > 기능의 목적을 작성해주세요.
 
-### 🌈 Function Implementation
+### 🌈 Function Implementation
 - [x] 회원테이블 생성
 - [x] 회원정보 입력 insert 
 - [x] 회원정보 수정 update

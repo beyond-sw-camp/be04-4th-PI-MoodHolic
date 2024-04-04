@@ -1,5 +1,6 @@
 package akatsuki.moodholic.controller;
 
+import akatsuki.moodholic.domain.DiaryMusic;
 import akatsuki.moodholic.domain.Music;
 import akatsuki.moodholic.service.MusicService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -24,8 +25,19 @@ public class MusicController {
     }
 
     @GetMapping("/all")
-    @Operation(summary = "음식 전체 조회", description = "단순 음식 조회 기능")
+    @Operation(summary = "노래 전체 조회", description = "단순 노래 조회 기능")
     public List<Music> getAllFoods() {
         return musicService.getAllMusics();
+    }
+
+    @GetMapping("/liked")
+    @Operation(summary = "좋아요 표시된 노래 조회", description = "사용자가 좋아요 표시한 노래 조회 기능")
+    public List<DiaryMusic> getLikedDiaryMusics() {
+        return musicService.findLikedDiaryMusics();
+    }
+
+    @GetMapping("/liked/names")
+    public List<String> getLikedMusicNames() {
+        return musicService.findLikedMusicNames();
     }
 }

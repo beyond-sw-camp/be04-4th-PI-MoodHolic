@@ -2,7 +2,6 @@ package akatsuki.moodholic.controller;
 
 import akatsuki.moodholic.domain.DiaryFood;
 import akatsuki.moodholic.domain.Food;
-import akatsuki.moodholic.dto.FoodView;
 import akatsuki.moodholic.repository.FoodDAO;
 import akatsuki.moodholic.service.FoodService;
 import io.swagger.v3.oas.annotations.Operation;

@@ -2,7 +2,7 @@ package akatsuki.moodholic.service;
 
 import akatsuki.moodholic.domain.DiaryFood;
 import akatsuki.moodholic.domain.Food;
-import akatsuki.moodholic.dto.FoodView;
+
 
 import java.util.List;
 

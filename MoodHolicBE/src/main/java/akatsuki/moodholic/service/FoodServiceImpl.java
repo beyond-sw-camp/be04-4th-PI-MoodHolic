@@ -2,7 +2,6 @@ package akatsuki.moodholic.service;
 
 import akatsuki.moodholic.domain.DiaryFood;
 import akatsuki.moodholic.domain.Food;
-import akatsuki.moodholic.dto.FoodView;
 import akatsuki.moodholic.repository.DiaryFoodDAO;
 import akatsuki.moodholic.repository.FoodDAO;
 import org.springframework.beans.factory.annotation.Autowired;

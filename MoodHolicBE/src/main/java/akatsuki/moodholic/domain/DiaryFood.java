@@ -1,9 +1,6 @@
 package akatsuki.moodholic.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -17,8 +14,10 @@ public class DiaryFood {
     @Id
     @Column(name = "diary_food_id")
     private int diaryFoodId;
-    @Column(name = "diary_id")
-    private int diaryId;
-    @Column(name = "food_id")
-    private int FoodId;
+    @JoinColumn(name = "diary_id")
+    @OneToOne
+    private Diary diaryId;
+    @JoinColumn(name = "food_id")
+    @OneToOne
+    private Food FoodId;
 }

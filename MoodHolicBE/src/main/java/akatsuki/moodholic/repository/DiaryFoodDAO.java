@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface DiaryFoodDAO extends JpaRepository<DiaryFood, Integer> {
 
+    DiaryFood findByDiaryIdDiaryId(int diaryId);
 }

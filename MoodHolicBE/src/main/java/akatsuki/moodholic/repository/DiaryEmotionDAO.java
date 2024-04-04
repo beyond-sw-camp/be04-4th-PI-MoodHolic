@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DiaryEmotionDAO extends JpaRepository<DiaryEmotion, Integer> {
+
+    DiaryEmotion findByDiaryIdDiaryId(int diaryId);
 }

@@ -8,6 +8,7 @@ import akatsuki.moodholic.repository.DiaryFoodDAO;
 import akatsuki.moodholic.repository.DiaryMovieDAO;
 import akatsuki.moodholic.repository.DiaryMusicDAO;
 import akatsuki.moodholic.service.DiaryService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/diary")
+@Tag(name = "다이어리 컨트롤러", description = "맴버의 다이어리 리스트, 상세 리스트")
 public class DiaryController {
     DiaryService diaryService;
 
@@ -34,20 +36,22 @@ public class DiaryController {
     }
     // 다이어리 저장
     @PostMapping("")
-    public ResponseEntity postDiary(@RequestBody Diary diary){
-        diaryService.postDiary(diary);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<String> postDiary(@RequestBody Diary diary){
+        String response = diaryService.postDiary(diary);
+        return ResponseEntity.ok().body(response);
     }
 
     // 다이어리 삭제
-    @DeleteMapping("")
-    public ResponseEntity deleteDiary(){
-        return null;
+    @DeleteMapping("{diaryId}")
+    public ResponseEntity<String> deleteDiary(@PathVariable int diaryId){
+        String response = diaryService.deleteDiary(diaryId);
+        return ResponseEntity.ok().body(response);
     }
 
     //맴버의 다이어리 리스트
     @GetMapping("/{memberid}/diaries")
-    public ResponseEntity<List<Diary> > getMemberDiaries(){
+    public ResponseEntity<List<Diary> > getMemberDiaries(@PathVariable long memberid){
+        List<Diary> response = diaryService.getMemberDiaries(memberid);
         return null;
     }
 

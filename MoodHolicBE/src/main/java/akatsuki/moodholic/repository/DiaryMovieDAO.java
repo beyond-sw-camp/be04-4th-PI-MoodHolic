@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface DiaryMovieDAO extends JpaRepository<DiaryMovie, Integer> {
 
     DiaryMovie findByDiaryIdDiaryId(int diaryId);
+
+    void deleteByDiaryIdDiaryId(int diaryId);
 }

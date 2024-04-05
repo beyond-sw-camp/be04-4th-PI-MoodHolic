@@ -7,6 +7,8 @@ import akatsuki.moodholic.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DiaryService {
     private MemberDAO memberDAO;
@@ -63,10 +65,23 @@ public class DiaryService {
     }
 
 
-    public void postDiary(Diary requestdiary) {
+    public String postDiary(Diary requestdiary) {
         requestdiary=diaryDAO.save(requestdiary);
         long memberId = requestdiary.getMember().getMemberId();
+        if(requestdiary.getStatus()==0){
+            return "임시 저장 완료";
+        }
         String content = requestdiary.getContent();
+        String prompt = getPrompt(requestdiary, content);
+
+        DataParse response = chatGPTService.Response(prompt);
+        System.out.println("response = " + response);
+
+        saveGPTResponse(memberId,response,requestdiary);
+        return "저장 완료";
+    }
+
+    private static String getPrompt(Diary requestdiary, String content) {
         String summary = requestdiary.getSummary();
 
         String prompt ="너는 심리학자야. \n" +
@@ -74,7 +89,7 @@ public class DiaryService {
                 "\n" +
                 "다이어리는 다음과 같아\n" +
                 "오늘 기분 한줄 요약: "+summary + "\n" +
-                "내용: "+content +
+                "내용: "+ content +
                 "\n\n" +
                 "응답 양식은 예시는 다음과 같아. (- : 두 특수기호는 문자열 파싱으로 구분짓기 위한 것이므로 참고할 것.)\n" +
                 "분석 점수(1~10): 5\n" +
@@ -82,12 +97,7 @@ public class DiaryService {
                 "추천 영화(영화이름,장르): 인사 이야기 - 로맨스\n" +
                 "추천 음악(음악이름,가수,장르): 봄날 - 방탄소년단 - 힙합\\n + \n" +
                 "추천 음식(음식이름,메뉴카테고리(한식,양식,중식,일식,아시안) 맵기(0~3)): 된장찌개 - 한식 - 1";
-
-        DataParse response = chatGPTService.Response(prompt);
-        System.out.println("response = " + response);
-
-        saveGPTResponse(memberId,response,requestdiary);
-
+        return prompt;
     }
 
     private int saveGPTResponse(long memberId, DataParse response, Diary diary) {
@@ -109,5 +119,23 @@ public class DiaryService {
         commentDAO.save(new Comment(diary,response.getComment().getCommentContent()));
 
         return 0;
+    }
+
+    public String deleteDiary(int diaryId) {
+        try {
+            diaryFoodDAO.deleteByDiaryIdDiaryId(diaryId);
+            diaryEmotionDAO.deleteByDiaryIdDiaryId(diaryId);
+            diaryMusicDAO.deleteByDiaryIdDiaryId(diaryId);
+            diaryMovieDAO.deleteByDiaryIdDiaryId(diaryId);
+            diaryDAO.deleteById(diaryId);
+        }catch (Exception e){
+            System.out.println("e = " + e);
+            throw new RuntimeException("error");
+        }
+        return "삭제 완료";
+    }
+
+    public List<Diary> getMemberDiaries(long memberId) {
+        return diaryDAO.findAllByMemberMemberId(memberId);
     }
 }

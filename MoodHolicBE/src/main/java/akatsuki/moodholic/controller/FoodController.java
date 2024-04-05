@@ -43,5 +43,10 @@ public class FoodController {
         return foodService.findLikedFoodNames();
     }
 
+    @GetMapping("/category/likes-count")
+    public List<Object[]> countFoodCategorysWithLikes() {
+        return foodService.countFoodCategorysWithLikes();
+    }
+
 
 }

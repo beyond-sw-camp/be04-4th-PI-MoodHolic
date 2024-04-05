@@ -36,6 +36,10 @@ public class FoodServiceImpl implements FoodService {
         return diaryfoodrepository.findLikedFoodNames();
     }
 
+    @Override
+    public List<Object[]> countFoodCategorysWithLikes() {
+        return foodrepositoy.countFoodCategorysWithLikes();
+    }
 
 
 }

@@ -15,18 +15,21 @@ public class DiaryMusic {
     @Column(name = "diary_music_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int diaryMusicId;
-    @JoinColumn(name = "diary_id")
-    @OneToOne
-    private Diary diaryId;
+
+    @Column(name = "diary_id")
+    private int diaryId;
+
     @JoinColumn(name = "music_id")
     @ManyToOne
     private Music musicId;
+
     @Column(name = "music_like")
-    private int musicLike;
+    private boolean musicLike;
 
     public DiaryMusic(Diary diary, Music music, int musicLike) {
         this.diaryId = diary;
         this.musicId = music;
         this.musicLike = musicLike;
     }
+
 }

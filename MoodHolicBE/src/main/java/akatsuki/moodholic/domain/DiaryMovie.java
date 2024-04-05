@@ -3,6 +3,8 @@ package akatsuki.moodholic.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "diary_movie")
 @NoArgsConstructor
@@ -15,15 +17,16 @@ public class DiaryMovie {
     @Column(name = "diary_movie_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int diaryMovieId;
-    @JoinColumn(name = "diary_id")
-    @OneToOne
-    private Diary diaryId;
+
+    @Column(name = "diary_id")
+    private int diaryId;
+
     @JoinColumn(name = "movie_id")
     @ManyToOne
     private Movie movieId;
-
+    
     @Column(name = "movie_like")
-    private int movieLike;
+    private boolean movieLike;
 
     public DiaryMovie(Diary diary, Movie movie, int movieLike) {
         this.diaryId = diary;

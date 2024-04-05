@@ -15,16 +15,17 @@ public class DiaryFood {
     @Column(name = "diary_food_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int diaryFoodId;
-    @JoinColumn(name = "diary_id")
-    @OneToOne
-    private Diary diaryId;
+
+    @Column(name = "diary_id")
+    private int diaryId;
+
     @JoinColumn(name = "food_id")
     @ManyToOne
     private Food foodId;
 
     @Column(name = "food_like")
-    private int foodLike;
-
+    private Boolean foodLike;
+    
     public DiaryFood(Diary diaryId, Food foodId, int foodLike) {
         this.diaryId = diaryId;
         this.foodLike = foodLike;

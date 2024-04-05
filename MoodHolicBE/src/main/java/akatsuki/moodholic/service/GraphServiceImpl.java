@@ -18,8 +18,8 @@ public class GraphServiceImpl implements GraphService{
 
     DiaryDAO diaryDAO;
     DiaryEmotionDAO diaryEmotionDAO;
-    double sum =0;
-    double cnt =0;
+    double sum;
+    double cnt;
     String past;
     List<DiaryEmotion> emotionList;
     List<Diary> diaryList;
@@ -42,6 +42,7 @@ public class GraphServiceImpl implements GraphService{
      @Override
      public HashMap<String,Double> GetEmotionMonth(long memberId){
          init(memberId);
+
          diaryList.forEach(diary->{
             String[] date = diary.getDate().split("-");
             String cmpDate = date[0]+"-"+date[1];
@@ -52,7 +53,8 @@ public class GraphServiceImpl implements GraphService{
                     sum += score.getEmotionId();
                     cnt++;
                 } else {
-                    returnValue.put(past, (sum / cnt));
+                    if(!past.equals(""))
+                        returnValue.put(past, (sum / cnt));
                     this.past = cmpDate;
                     sum = score.getEmotionId();
                     cnt = 1;
@@ -77,7 +79,8 @@ public class GraphServiceImpl implements GraphService{
                     sum += score.getEmotionId();
                     cnt++;
                 } else {
-                    returnValue.put(past, (sum / cnt));
+                    if(!past.equals(""))
+                        returnValue.put(past, (sum / cnt));
                     this.past = cmpDate;
                     sum = score.getEmotionId();
                     cnt = 1;

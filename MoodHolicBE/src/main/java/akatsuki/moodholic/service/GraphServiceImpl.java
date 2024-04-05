@@ -21,23 +21,28 @@ public class GraphServiceImpl implements GraphService{
     double sum =0;
     double cnt =0;
     String past;
+    List<DiaryEmotion> emotionList;
+    List<Diary> diaryList;
+    HashMap<String,Double> returnValue;
 
     @Autowired
     public GraphServiceImpl(DiaryEmotionDAO diaryEmotionDAO,DiaryDAO diaryDAO) {
         this.diaryEmotionDAO = diaryEmotionDAO;
         this.diaryDAO = diaryDAO;
     }
-
-     @Override
-     public HashMap<String,Double> GetEmotionMonth(long memberId){
-        HashMap<String,Double> returnValue = new HashMap<>();
+    private void init(long memberId) {
+        returnValue = new HashMap<>();
         past= new String();
         sum=0;
         cnt=0;
-        List<Diary> diaryList = diaryDAO.findAllByMemberMemberIdOrderByDateAsc(memberId);
-        List<DiaryEmotion> emotionList = new ArrayList<>();
+        diaryList = diaryDAO.findAllByMemberMemberIdOrderByDateAsc(memberId);
+        emotionList = new ArrayList<>();
+    }
 
-        diaryList.forEach(diary->{
+     @Override
+     public HashMap<String,Double> GetEmotionMonth(long memberId){
+         init(memberId);
+         diaryList.forEach(diary->{
             String[] date = diary.getDate().split("-");
             String cmpDate = date[0]+"-"+date[1];
             System.out.println("cmpDate = " + cmpDate);
@@ -57,14 +62,10 @@ public class GraphServiceImpl implements GraphService{
         return returnValue;
     }
 
+
     @Override
     public HashMap<String,Double> GetEmotionYear(long memberId){
-        HashMap<String,Double> returnValue = new HashMap<>();
-        past= new String();
-        sum=0;
-        cnt=0;
-        List<Diary> diaryList = diaryDAO.findAllByMemberMemberIdOrderByDateAsc(memberId);
-        List<DiaryEmotion> emotionList = new ArrayList<>();
+        init(memberId);
 
         diaryList.forEach(diary->{
             String[] date = diary.getDate().split("-");
@@ -85,4 +86,5 @@ public class GraphServiceImpl implements GraphService{
         });
         return returnValue;
     }
+
 }

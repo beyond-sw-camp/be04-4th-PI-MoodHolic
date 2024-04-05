@@ -32,4 +32,6 @@ public class GraphController {
         HashMap<String,Double> returnValue = graphService.GetEmotionYear(memberId);
         return ResponseEntity.ok().body(returnValue);
     }
+
+
 }

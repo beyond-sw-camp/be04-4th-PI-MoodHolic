@@ -20,4 +20,5 @@ public interface DiaryMovieDAO extends JpaRepository<DiaryMovie, Integer> {
     List<String> findLikedMovieNames();
 
 
+    void deleteByDiaryId(int diaryId);
 }

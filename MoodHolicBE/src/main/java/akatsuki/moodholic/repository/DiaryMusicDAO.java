@@ -17,4 +17,5 @@ public interface DiaryMusicDAO extends JpaRepository<DiaryMusic, Integer> {
     @Query(value = "SELECT m.music_name FROM music m INNER JOIN diary_music dm ON m.music_id = dm.music_id WHERE dm.music_like = true", nativeQuery = true)
     List<String> findLikedMusicNames();
 
+    void deleteByDiaryId(int diaryId);
 }

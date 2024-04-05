@@ -18,4 +18,5 @@ public interface DiaryFoodDAO extends JpaRepository<DiaryFood, Integer> {
     List<String> findLikedFoodNames();
 
 
+    void deleteByDiaryId(int diaryId);
 }

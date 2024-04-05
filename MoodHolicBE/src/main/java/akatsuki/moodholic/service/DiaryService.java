@@ -48,7 +48,7 @@ public class DiaryService {
         DiaryEmotion emotion = diaryEmotionDAO.findByDiaryIdDiaryId(diaryId);
         DiaryMovie movie = diaryMovieDAO.findByDiaryId(diaryId);
         DiaryMusic music = diaryMusicDAO.findByDiaryId(diaryId);
-
+        Comment comment = commentDAO.findByDiaryId(diaryId);
         System.out.println("diary = " + diary);
         System.out.println("food = " + food.getFoodId());
         System.out.println("emotion = " + emotion.getEmotionId());
@@ -122,10 +122,10 @@ public class DiaryService {
 
     public String deleteDiary(int diaryId) {
         try {
-            diaryFoodDAO.deleteByDiaryIdDiaryId(diaryId);
+            diaryFoodDAO.deleteByDiaryId(diaryId);
             diaryEmotionDAO.deleteByDiaryIdDiaryId(diaryId);
-            diaryMusicDAO.deleteByDiaryIdDiaryId(diaryId);
-            diaryMovieDAO.deleteByDiaryIdDiaryId(diaryId);
+            diaryMusicDAO.deleteByDiaryId(diaryId);
+            diaryMovieDAO.deleteByDiaryId(diaryId);
             diaryDAO.deleteById(diaryId);
         }catch (Exception e){
             System.out.println("e = " + e);

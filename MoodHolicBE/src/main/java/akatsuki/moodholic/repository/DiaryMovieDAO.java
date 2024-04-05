@@ -11,11 +11,14 @@ import java.util.List;
 public interface DiaryMovieDAO extends JpaRepository<DiaryMovie, Integer> {
 
 
-    DiaryMovie findByDiaryIdDiaryId(int diaryId);
+
+    DiaryMovie findByDiaryId(int diaryId);
 
     List<DiaryMovie> findByMovieLikeTrue();
 
     @Query(value = "SELECT m.movie_name FROM movie m INNER JOIN diary_movie dm ON m.movie_id = dm.movie_id WHERE dm.movie_like = true", nativeQuery = true)
     List<String> findLikedMovieNames();
 
+
+    void deleteByDiaryId(int diaryId);
 }

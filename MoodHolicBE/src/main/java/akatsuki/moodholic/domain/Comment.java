@@ -12,16 +12,15 @@ public class Comment {
     @Column(name = "comment_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int commentId;
-    @JoinColumn(name = "diary_id")
-    @ManyToOne
-    private Diary diaryId;
+    @Column(name = "diary_id")
+    private long diaryId;
     @Column(name = "comment_content")
     private String commentContent;
 
     public Comment() {}
 
     public Comment(Diary diary, String commentContent) {
-        this.diaryId = diary;
+        this.diaryId = diary.getDiaryId();
         this.commentContent = commentContent;
     }
 }

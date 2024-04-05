@@ -5,4 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CommentDAO extends JpaRepository<Comment,Integer> {
 
+    Comment findByDiaryId(int diaryId);
+
+    void deleteByDiaryId(int diaryId);
 }

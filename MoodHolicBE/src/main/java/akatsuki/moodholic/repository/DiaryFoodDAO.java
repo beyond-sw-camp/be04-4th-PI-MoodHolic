@@ -10,11 +10,13 @@ import java.util.List;
 @Repository
 public interface DiaryFoodDAO extends JpaRepository<DiaryFood, Integer> {
 
-    DiaryFood findByDiaryIdDiaryId(int diaryId);
+    DiaryFood findByDiaryId(int diaryId);
 
     List<DiaryFood> findByFoodLikeTrue();
 
     @Query(value = "SELECT f.food_name FROM food f INNER JOIN diary_food df ON f.food_id = df.food_id WHERE df.food_like = true", nativeQuery = true)
     List<String> findLikedFoodNames();
 
+
+    void deleteByDiaryId(int diaryId);
 }

@@ -20,7 +20,7 @@ public class Diary {
     private String content;
 
     @Column(name = "status")
-    private boolean status;
+    private int status;
 
     @Column(name = "img_path")
     private String imgPath;

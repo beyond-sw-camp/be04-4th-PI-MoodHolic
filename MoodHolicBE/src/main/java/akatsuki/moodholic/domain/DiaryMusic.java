@@ -26,8 +26,8 @@ public class DiaryMusic {
     @Column(name = "music_like")
     private boolean musicLike;
 
-    public DiaryMusic(Diary diary, Music music, int musicLike) {
-        this.diaryId = diary;
+    public DiaryMusic(Diary diary, Music music, boolean musicLike) {
+        this.diaryId = diary.getDiaryId();
         this.musicId = music;
         this.musicLike = musicLike;
     }

@@ -10,6 +10,6 @@ import java.util.List;
 public interface DiaryDAO extends JpaRepository<Diary, Integer> {
     
     List<Diary> findAllByMemberMemberId(long memberId);
-
-//    List<Diary> findAllByMemberMemberIdByDate(long memberId);
+    
+    List<Diary> findAllByMemberMemberIdOrderByDateAsc(long memberId);
 }

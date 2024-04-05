@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/graph")
+@RequestMapping("/calendar")
 public class CalendarController {
     CalendarService calendarService;
 
@@ -21,11 +21,10 @@ public class CalendarController {
         this.calendarService = calendarService;
     }
 
-    @GetMapping("/year/{memberId}")
+    @GetMapping("/{memberId}")
     public ResponseEntity<List<Calendar>> getYearEmotion(@PathVariable long memberId){
-//        List<Calendar> returnValue = calendarService.getCalendar(memberId);
-//        return ResponseEntity.ok().body(returnValue);
-        return null;
+        List<Calendar> returnValue = calendarService.getCalendar(memberId);
+        return ResponseEntity.ok().body(returnValue);
     }
 
 }

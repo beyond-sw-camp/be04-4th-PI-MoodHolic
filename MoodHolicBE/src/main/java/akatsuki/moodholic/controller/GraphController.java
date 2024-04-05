@@ -26,4 +26,10 @@ public class GraphController {
         HashMap<String,Double> returnValue = graphService.GetEmotionMonth(memberId);
         return ResponseEntity.ok().body(returnValue);
     }
+
+    @GetMapping("/year/{memberId}")
+    public ResponseEntity<HashMap<String,Double>> getYear(@PathVariable long memberId){
+        HashMap<String,Double> returnValue = graphService.GetEmotionYear(memberId);
+        return ResponseEntity.ok().body(returnValue);
+    }
 }

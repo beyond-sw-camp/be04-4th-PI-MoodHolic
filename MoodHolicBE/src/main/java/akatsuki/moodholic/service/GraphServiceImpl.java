@@ -37,11 +37,10 @@ public class GraphServiceImpl implements GraphService{
         List<Diary> diaryList = diaryDAO.findAllByMemberMemberIdOrderByDateAsc(memberId);
         List<DiaryEmotion> emotionList = new ArrayList<>();
 
-
         diaryList.forEach(diary->{
             String[] date = diary.getDate().split("-");
-            System.out.println("date = " + date);
             String cmpDate = date[0]+"-"+date[1];
+            System.out.println("cmpDate = " + cmpDate);
             DiaryEmotion score = diaryEmotionDAO.findByDiaryIdDiaryId(diary.getDiaryId());
             if(score!=null) {
                 if (past.equals(cmpDate)) {
@@ -55,7 +54,35 @@ public class GraphServiceImpl implements GraphService{
                 }
             }
         });
+        return returnValue;
+    }
 
+    @Override
+    public HashMap<String,Double> GetEmotionYear(long memberId){
+        HashMap<String,Double> returnValue = new HashMap<>();
+        past= new String();
+        sum=0;
+        cnt=0;
+        List<Diary> diaryList = diaryDAO.findAllByMemberMemberIdOrderByDateAsc(memberId);
+        List<DiaryEmotion> emotionList = new ArrayList<>();
+
+        diaryList.forEach(diary->{
+            String[] date = diary.getDate().split("-");
+            System.out.println("date = " + date[0]);
+            String cmpDate = date[0];
+            DiaryEmotion score = diaryEmotionDAO.findByDiaryIdDiaryId(diary.getDiaryId());
+            if(score!=null) {
+                if (past.equals(cmpDate)) {
+                    sum += score.getEmotionId();
+                    cnt++;
+                } else {
+                    returnValue.put(past, (sum / cnt));
+                    this.past = cmpDate;
+                    sum = score.getEmotionId();
+                    cnt = 1;
+                }
+            }
+        });
         return returnValue;
     }
 }

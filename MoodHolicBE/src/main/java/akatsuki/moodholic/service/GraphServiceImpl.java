@@ -42,52 +42,39 @@ public class GraphServiceImpl implements GraphService{
      @Override
      public HashMap<String,Double> GetEmotionMonth(long memberId){
          init(memberId);
-
          diaryList.forEach(diary->{
             String[] date = diary.getDate().split("-");
             String cmpDate = date[0]+"-"+date[1];
-            System.out.println("cmpDate = " + cmpDate);
-            DiaryEmotion score = diaryEmotionDAO.findByDiaryIdDiaryId(diary.getDiaryId());
-            if(score!=null) {
-                if (past.equals(cmpDate)) {
-                    sum += score.getEmotionId();
-                    cnt++;
-                } else {
-                    if(!past.equals(""))
-                        returnValue.put(past, (sum / cnt));
-                    this.past = cmpDate;
-                    sum = score.getEmotionId();
-                    cnt = 1;
-                }
-            }
+            compare(cmpDate, diary);
+        });
+        return returnValue;
+    }
+    @Override
+    public HashMap<String,Double> GetEmotionYear(long memberId){
+        init(memberId);
+        diaryList.forEach(diary->{
+            String[] date = diary.getDate().split("-");
+            String cmpDate = date[0];
+            compare(cmpDate,diary);
         });
         return returnValue;
     }
 
-
-    @Override
-    public HashMap<String,Double> GetEmotionYear(long memberId){
-        init(memberId);
-
-        diaryList.forEach(diary->{
-            String[] date = diary.getDate().split("-");
-            System.out.println("date = " + date[0]);
-            String cmpDate = date[0];
-            DiaryEmotion score = diaryEmotionDAO.findByDiaryIdDiaryId(diary.getDiaryId());
-            if(score!=null) {
-                if (past.equals(cmpDate)) {
-                    sum += score.getEmotionId();
-                    cnt++;
-                } else {
-                    if(!past.equals(""))
-                        returnValue.put(past, (sum / cnt));
-                    this.past = cmpDate;
-                    sum = score.getEmotionId();
-                    cnt = 1;
-                }
+    private void compare(String cmpDate, Diary diary) {
+        DiaryEmotion score = diaryEmotionDAO.findByDiaryIdDiaryId(diary.getDiaryId());
+        if(score!=null) {
+            if (past.equals(cmpDate)) {
+                sum += score.getEmotionId();
+                cnt++;
+                return;
             }
-        });
-        return returnValue;
+            if(!past.equals("")) {
+                returnValue.put(past, Math.round((sum/cnt)*100)/100.0d);
+            }
+            this.past = cmpDate;
+            sum = score.getEmotionId();
+            cnt = 1;
+        }
     }
 
 }

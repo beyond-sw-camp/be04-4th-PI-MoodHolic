@@ -28,11 +28,14 @@ public class JWTFilter extends OncePerRequestFilter {
 
         String authorization = null;
         Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
+        if (cookies != null) {
 
-            if (cookie.getName().equals("Authorization")) {
+            for (Cookie cookie : cookies) {
 
-                authorization = cookie.getValue();
+                if (cookie.getName().equals("Authorization")) {
+
+                    authorization = cookie.getValue();
+                }
             }
         }
 

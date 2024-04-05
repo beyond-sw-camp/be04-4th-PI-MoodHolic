@@ -25,7 +25,7 @@ public class DiaryFood {
 
     @Column(name = "food_like")
     private Boolean foodLike;
-    
+
     public DiaryFood(Diary diaryId, Food foodId, int foodLike) {
         this.diaryId = diaryId;
         this.foodLike = foodLike;

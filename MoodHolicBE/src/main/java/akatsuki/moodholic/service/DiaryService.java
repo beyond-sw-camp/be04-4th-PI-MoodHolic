@@ -6,6 +6,7 @@ import akatsuki.moodholic.etc.DataParse;
 import akatsuki.moodholic.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -49,11 +50,11 @@ public class DiaryService {
         DiaryMovie movie = diaryMovieDAO.findByDiaryId(diaryId);
         DiaryMusic music = diaryMusicDAO.findByDiaryId(diaryId);
         Comment comment = commentDAO.findByDiaryId(diaryId);
-        System.out.println("diary = " + diary);
-        System.out.println("food = " + food.getFoodId());
-        System.out.println("emotion = " + emotion.getEmotionId());
-        System.out.println("music = " + music.getMusicId());
-        System.out.println("movie = " + movie.getMovieId());
+//        System.out.println("diary = " + diary);
+//        System.out.println("food = " + food.getFoodId());
+//        System.out.println("emotion = " + emotion.getEmotionId());
+//        System.out.println("music = " + music.getMusicId());
+//        System.out.println("movie = " + movie.getMovieId());
         String emotionValue= new String();
 
         if(emotion !=null) {
@@ -64,6 +65,7 @@ public class DiaryService {
         return new ResponseDiary(diary,emotionValue,food.getFoodId(),movie.getMovieId(),music.getMusicId());
     }
 
+    @Transactional
     public String postDiary(Diary requestdiary) {
         requestdiary=diaryDAO.save(requestdiary);
         long memberId = requestdiary.getMember().getMemberId();
@@ -99,6 +101,7 @@ public class DiaryService {
         return prompt;
     }
 
+
     private int saveGPTResponse(long memberId, DataParse response, Diary diary) {
         Food food =foodDAO.findByFoodName(response.getFood().getFoodName());
         Movie movie = movieDAO.findByMovieName(response.getMovie().getMovieName());
@@ -120,17 +123,14 @@ public class DiaryService {
         return 0;
     }
 
+    @Transactional
     public String deleteDiary(int diaryId) {
-        try {
             diaryFoodDAO.deleteByDiaryId(diaryId);
             diaryEmotionDAO.deleteByDiaryIdDiaryId(diaryId);
             diaryMusicDAO.deleteByDiaryId(diaryId);
             diaryMovieDAO.deleteByDiaryId(diaryId);
+            commentDAO.deleteByDiaryId(diaryId);
             diaryDAO.deleteById(diaryId);
-        }catch (Exception e){
-            System.out.println("e = " + e);
-            throw new RuntimeException("error");
-        }
         return "삭제 완료";
     }
 

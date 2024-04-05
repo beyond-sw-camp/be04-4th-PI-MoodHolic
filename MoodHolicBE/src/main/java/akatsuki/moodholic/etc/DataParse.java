@@ -1,14 +1,21 @@
 package akatsuki.moodholic.etc;
 
+import akatsuki.moodholic.domain.Comment;
+import akatsuki.moodholic.domain.Food;
+import akatsuki.moodholic.domain.Movie;
+import akatsuki.moodholic.domain.Music;
+import lombok.Data;
+
 import java.util.ArrayList;
 
+@Data
 public class DataParse {
 
     int emotionScore;
-    String advice = "";
-    ArrayList<String> movies = new ArrayList<>();
-    ArrayList<String> musics = new ArrayList<>();
-    ArrayList<String> foods = new ArrayList<>();
+    Comment comment = new Comment();
+    Movie movie = new Movie();
+    Music music = new Music();
+    Food food = new Food();
 
     public DataParse(String text) {
         parsing(text);
@@ -26,10 +33,6 @@ public class DataParse {
                 findItem(itemName, itemValue);
             }
         }
-
-        // 결과 출력
-        System.out.println("점수: " + emotionScore+ " 조언: " + advice
-                         + " 추천 영화: " + movies + " 추천 음악: " + musics  +" 추천 음식: " + foods);
     }
 
     private void findItem(String itemName, String itemValue) {
@@ -38,18 +41,27 @@ public class DataParse {
                 emotionScore = Integer.parseInt(itemValue);
                 break;
             case "조언 및 인용구 한 줄":
-                advice = itemValue;
+                comment.setCommentContent(itemValue);
                 break;
-            case "추천 영화":
-                movies.add(itemValue);
+            case "추천 영화(영화이름,장르)":
+                String[] movieInfo = itemValue.split(" - ");
+                movie.setMovieName(movieInfo[0]);
+                movie.setMovieGenre(movieInfo[1]);
                 break;
-            case "추천 음악":
-                musics.add(itemValue);
+            case "추천 음악(음악이름,가수,장르)":
+                String[] musicInfo = itemValue.split(" - ");
+                music.setMusicName(musicInfo[0]);
+                music.setSinger(musicInfo[1]);
+                music.setMusicGenre(musicInfo[2]);
                 break;
-            case "추천 음식":
-                foods.add(itemValue);
+            case "추천 음식(음식이름,메뉴카테고리(한식,양식,중식,일식,아시안),맵기(0~3))":
+                String[] foodInfo = itemValue.split(" - ");
+                food.setFoodName(foodInfo[0]);
+                food.setFoodCategory(FOOD_CATEGORY.valueOf(foodInfo[1]));
+                food.setFoodSpicy(Integer.parseInt(foodInfo[2]));
                 break;
         }
     }
+
 
 }

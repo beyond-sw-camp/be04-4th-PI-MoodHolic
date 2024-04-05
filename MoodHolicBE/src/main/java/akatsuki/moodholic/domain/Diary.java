@@ -11,6 +11,7 @@ public class Diary {
 
     @Id
     @Column(name = "diary_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int diaryId;
 
     @Column(name = "date")
@@ -23,10 +24,14 @@ public class Diary {
 
     @Column(name = "img_path")
     private String imgPath;
+    @Column(name = "summary")
+    private String summary;
 
     @ManyToOne
     @JoinColumn(name= "member_id")
     private Member member;
+
+
 
 
 }

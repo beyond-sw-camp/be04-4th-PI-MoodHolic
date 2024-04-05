@@ -10,6 +10,7 @@ import lombok.Data;
 public class Food {
     @Id
     @Column(name = "food_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int foodId;
     @Column(name = "food_name")
     private String foodName;

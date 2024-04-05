@@ -64,7 +64,6 @@ public class DiaryService {
         return new ResponseDiary(diary,emotionValue,food.getFoodId(),movie.getMovieId(),music.getMusicId());
     }
 
-
     public String postDiary(Diary requestdiary) {
         requestdiary=diaryDAO.save(requestdiary);
         long memberId = requestdiary.getMember().getMemberId();
@@ -91,11 +90,11 @@ public class DiaryService {
                 "오늘 기분 한줄 요약: "+summary + "\n" +
                 "내용: "+ content +
                 "\n\n" +
-                "응답 양식은 예시는 다음과 같아. (- : 두 특수기호는 문자열 파싱으로 구분짓기 위한 것이므로 참고할 것.)\n" +
+                "응답 양식은 예시는 다음과 같아. (- : 두 특수기호는 문자열 파싱으로 구분짓기 위한 것이므로 참고할 것.장르, 카테고리는 하나만 보여준다.)\n" +
                 "분석 점수(1~10): 5\n" +
                 "조언 및 인용구 한 줄: 당신도 할 수 있습니다.\n" +
                 "추천 영화(영화이름,장르): 인사 이야기 - 로맨스\n" +
-                "추천 음악(음악이름,가수,장르): 봄날 - 방탄소년단 - 힙합\\n + \n" +
+                "추천 음악(음악이름,가수,장르): 봄날 - 방탄소년단 - 힙합 \n" +
                 "추천 음식(음식이름,메뉴카테고리(한식,양식,중식,일식,아시안) 맵기(0~3)): 된장찌개 - 한식 - 1";
         return prompt;
     }

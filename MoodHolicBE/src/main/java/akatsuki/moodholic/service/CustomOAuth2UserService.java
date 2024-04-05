@@ -19,11 +19,11 @@ import java.security.NoSuchAlgorithmException;
 @Transactional
 public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
-    private final MemberDAO memberDAO;
+    private final MemberDAO userRepository;
 
     @Autowired
-    public CustomOAuth2UserService(MemberDAO memberDAO) {
-        this.memberDAO = memberDAO;
+    public CustomOAuth2UserService(MemberDAO userRepository) {
+        this.userRepository = userRepository;
     }
 
 
@@ -39,91 +39,56 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         if (registrationId.equals("naver")) {
 
             oAuth2Response = new NaverResponse(oAuth2User.getAttributes());
-
-            MessageDigest md = null;
-            try {
-                md = MessageDigest.getInstance("SHA-512");
-            } catch (NoSuchAlgorithmException e) {
-                throw new RuntimeException(e);
-            }
-            byte[] digest = md.digest(oAuth2Response.getProviderId().getBytes());
-            long providerId = new BigInteger(digest).longValue();
-            System.out.println("sha256: " +providerId );
         }
         else if (registrationId.equals("google")) {
 
             oAuth2Response = new GoogleResponse(oAuth2User.getAttributes());
-
         }
-
         else {
 
             return null;
         }
 
-        MessageDigest md = null;
-        try {
-            md = MessageDigest.getInstance("SHA-512");
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        }
-        byte[] digest = md.digest(oAuth2Response.getProviderId().getBytes());
-        long providerId;
-        if(registrationId.equals("naver")||registrationId.equals("google")){
-
-            providerId = new BigInteger(digest).longValue();
-            if (providerId < 0) {
-                providerId = -providerId;
-            }
-        } else  {
-            providerId = Long.parseLong(oAuth2Response.getProviderId());
-
-        }
 
 
-        System.out.println("sha512: " + providerId );
-
-
-        String providerCode = oAuth2Response.getProvider() + " " + oAuth2Response.getProviderId();
-        System.out.println("providerCode = " + providerCode);
-        Member existData = memberDAO.findByProviderCode(providerCode);
+        String username = oAuth2Response.getProvider()+" "+oAuth2Response.getProviderId();
+        System.out.println("username = " + username);
+        Member existData = userRepository.findByUsername(username);
 
         if (existData == null) {
-            Member member = Member.builder()
-                    .memberId(providerId)
-                    .nickname(oAuth2Response.getName())
-                    .email(oAuth2Response.getEmail())
-                    .role(oAuth2Response.getProvider()) // 역할 설정 수정이 필요할 수 있습니다
-                    .imgPath(oAuth2Response.getThumbnail())
-                    .providerCode(providerCode)
-                    .build();
 
+            Member userEntity = new Member();
+            userEntity.setUsername(username);
+            userEntity.setEmail(oAuth2Response.getEmail());
+            userEntity.setNickname(oAuth2Response.getName());
+            userEntity.setImgPath(oAuth2Response.getThumbnail());
+            userEntity.setProvider(oAuth2Response.getProvider());
+            userEntity.setProviderCode(oAuth2Response.getProviderId());
+            userEntity.setRole("ROLE_USER");
 
+            userRepository.save(userEntity);
 
-            member = memberDAO.save(member);
-
-            UserDTO userDTO = UserDTO.builder()
-                    .role(oAuth2Response.getProvider()) // 역할 설정 수정이 필요할 수 있습니다
-                    .name(oAuth2Response.getName())
-                    .providerCode(providerCode)
-                    .build();
+            UserDTO userDTO = new UserDTO();
+            userDTO.setUsername(username);
+            userDTO.setName(oAuth2Response.getName());
+            userDTO.setRole("ROLE_USER");
 
             return new CustomOAuth2User(userDTO);
-        } else {
+        }
+        else {
+
             existData.setEmail(oAuth2Response.getEmail());
             existData.setNickname(oAuth2Response.getName());
             existData.setImgPath(oAuth2Response.getThumbnail());
 
-            memberDAO.save(existData);
+            userRepository.save(existData);
 
-            UserDTO userDTO = UserDTO.builder()
-                    .role(existData.getRole()) // 역할 설정 확인
-                    .name(oAuth2Response.getName())
-                    .providerCode(providerCode)
-                    .build();
+            UserDTO userDTO = new UserDTO();
+            userDTO.setUsername(existData.getUsername());
+            userDTO.setName(oAuth2Response.getName());
+            userDTO.setRole(existData.getRole());
 
             return new CustomOAuth2User(userDTO);
         }
-
     }
 }

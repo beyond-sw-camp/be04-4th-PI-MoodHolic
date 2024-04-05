@@ -1,6 +1,5 @@
 package akatsuki.moodholic.dto;
 
-
 import java.util.Map;
 
 public class NaverResponse implements OAuth2Response {
@@ -32,12 +31,13 @@ public class NaverResponse implements OAuth2Response {
 
     @Override
     public String getName() {
-
-        return attribute.get("name").toString();
+        Object name = attribute.get("name");
+        return name != null ? name.toString() : null;
     }
 
     @Override
     public String getThumbnail() {
-        return attribute.get("profile_image").toString();
+        Object thumbnail = attribute.get("profile_image");
+        return thumbnail != null ? thumbnail.toString() : null;
     }
 }

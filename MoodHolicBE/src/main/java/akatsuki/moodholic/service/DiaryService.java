@@ -42,10 +42,10 @@ public class DiaryService {
     public ResponseDiary getDiary(int diaryId) {
         Diary diary = diaryDAO.findById(diaryId).orElseThrow();
         // emotion, food, movie, music,
-        DiaryFood food= diaryFoodDAO.findByDiaryIdDiaryId(diaryId);
+        DiaryFood food= diaryFoodDAO.findByDiaryId(diaryId);
         DiaryEmotion emotion = diaryEmotionDAO.findByDiaryIdDiaryId(diaryId);
-        DiaryMovie movie = diaryMovieDAO.findByDiaryIdDiaryId(diaryId);
-        DiaryMusic music = diaryMusicDAO.findByDiaryIdDiaryId(diaryId);
+        DiaryMovie movie = diaryMovieDAO.findByDiaryId(diaryId);
+        DiaryMusic music = diaryMusicDAO.findByDiaryId(diaryId);
 
         System.out.println("diary = " + diary);
         System.out.println("food = " + food.getFoodId());
@@ -98,13 +98,13 @@ public class DiaryService {
 
         if(food ==null)
             food= foodDAO.save(response.getFood());
-        diaryFoodDAO.save(new DiaryFood(diary,food,0));
+        diaryFoodDAO.save(new DiaryFood(diary,food,true));
         if(movie==null)
             movie = movieDAO.save(response.getMovie());
-        diaryMovieDAO.save(new DiaryMovie(diary,movie,0));
+        diaryMovieDAO.save(new DiaryMovie(diary,movie,true));
         if(music==null)
             music= musicDAO.save(response.getMusic());
-        diaryMusicDAO.save(new DiaryMusic(diary,music,0));
+        diaryMusicDAO.save(new DiaryMusic(diary,music,true));
         diaryEmotionDAO.save(new DiaryEmotion(diary,response.getEmotionScore()));
         commentDAO.save(new Comment(diary,response.getComment().getCommentContent()));
 

@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface DiaryMusicDAO extends JpaRepository<DiaryMusic, Integer> {
 
-    DiaryMusic findByDiaryIdDiaryId(int diaryId);
+    DiaryMusic findByDiaryId(int diaryId);
 
     List<DiaryMusic> findByMusicLikeTrue();
 

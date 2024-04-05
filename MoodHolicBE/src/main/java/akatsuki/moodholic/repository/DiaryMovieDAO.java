@@ -11,7 +11,7 @@ import java.util.List;
 public interface DiaryMovieDAO extends JpaRepository<DiaryMovie, Integer> {
 
 
-    DiaryMovie findByDiaryIdDiaryId(int diaryId);
+    DiaryMovie findByDiaryId(int diaryId);
 
     List<DiaryMovie> findByMovieLikeTrue();
 

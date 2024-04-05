@@ -28,8 +28,8 @@ public class DiaryMovie {
     @Column(name = "movie_like")
     private boolean movieLike;
 
-    public DiaryMovie(Diary diary, Movie movie, int movieLike) {
-        this.diaryId = diary;
+    public DiaryMovie(Diary diary, Movie movie, boolean movieLike) {
+        this.diaryId = diary.getDiaryId();
         this.movieId = movie;
         this.movieLike = movieLike;
     }

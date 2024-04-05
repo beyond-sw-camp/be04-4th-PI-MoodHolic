@@ -21,43 +21,37 @@ import java.util.List;
 public class DiaryController {
     DiaryService diaryService;
 
-
     @Autowired
     public DiaryController(DiaryService diaryService) {
         this.diaryService = diaryService;
     }
 
-    // 다이어리 상세 조회
+    // 다이어리 상세 조회   -fin
     @GetMapping("/{diaryId}")
     public ResponseEntity<ResponseDiary> getDiary(@PathVariable int diaryId){
         ResponseDiary responseDiary = diaryService.getDiary(diaryId);
 
         return ResponseEntity.ok().body(responseDiary);
     }
-    // 다이어리 저장
+    // 다이어리 저장  -fin
     @PostMapping("")
     public ResponseEntity<String> postDiary(@RequestBody Diary diary){
         String response = diaryService.postDiary(diary);
         return ResponseEntity.ok().body(response);
     }
 
-    // 다이어리 삭제
+    // 다이어리 삭제  -fin
     @DeleteMapping("{diaryId}")
     public ResponseEntity<String> deleteDiary(@PathVariable int diaryId){
         String response = diaryService.deleteDiary(diaryId);
         return ResponseEntity.ok().body(response);
     }
 
-    //맴버의 다이어리 리스트
+    //맴버의 다이어리 리스트  -fin
     @GetMapping("/{memberid}/diaries")
     public ResponseEntity<List<Diary> > getMemberDiaries(@PathVariable long memberid){
         List<Diary> response = diaryService.getMemberDiaries(memberid);
-        return null;
+        return ResponseEntity.ok().body(response);
     }
-
-
-
-
-
 
 }

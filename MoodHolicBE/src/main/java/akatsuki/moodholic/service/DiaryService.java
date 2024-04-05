@@ -137,4 +137,10 @@ public class DiaryService {
     public List<Diary> getMemberDiaries(long memberId) {
         return diaryDAO.findAllByMemberMemberId(memberId);
     }
+
+    public List<String> getMonthCalendar(String date){
+        return null;
+    }
+
+
 }

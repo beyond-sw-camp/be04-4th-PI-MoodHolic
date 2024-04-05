@@ -35,4 +35,9 @@ public class MovieServiceImpl implements MovieService{
     public List<String> findLikedMovieNames() {
         return diarymovierepository.findLikedMovieNames();
     }
+
+    @Override
+    public List<Object[]> countMovieGenresWithLikes() {
+        return movierepository.countMovieGenresWithLikes();
+    }
 }

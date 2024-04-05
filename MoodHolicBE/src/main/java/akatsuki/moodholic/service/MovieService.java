@@ -12,4 +12,6 @@ public interface MovieService {
     List<DiaryMovie> findLikedDiaryMovies();
 
     List<String> findLikedMovieNames();
+
+    List<Object[]> countMovieGenresWithLikes();
 }

@@ -40,4 +40,9 @@ public class MovieController {
     public List<String> getLikedMovieNames() {
         return movieService.findLikedMovieNames();
     }
+
+    @GetMapping("/genres/likes-count")
+    public List<Object[]> countMovieGenresWithLikes() {
+        return movieService.countMovieGenresWithLikes();
+    }
 }

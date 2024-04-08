@@ -1,5 +1,6 @@
 package akatsuki.moodholic.repository;
 
+import akatsuki.moodholic.domain.DiaryMovie;
 import akatsuki.moodholic.domain.Movie;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -15,4 +16,5 @@ public interface MovieDAO extends JpaRepository<Movie, Integer> {
             "WHERE dm.movie_like = TRUE " +
             "GROUP BY m.movie_genre", nativeQuery = true)
     List<Object[]> countMovieGenresWithLikes();
+
 }

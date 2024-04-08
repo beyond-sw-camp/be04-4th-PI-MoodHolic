@@ -1,6 +1,7 @@
 package akatsuki.moodholic.repository;
 
 
+import akatsuki.moodholic.domain.DiaryFood;
 import akatsuki.moodholic.domain.Food;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

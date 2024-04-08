@@ -15,4 +15,6 @@ public interface FoodService {
     List<String> findLikedFoodNames();
 
     List<Object[]> countFoodCategorysWithLikes();
+
+    List<DiaryFood> getMemberLikeFood(long memberId);
 }

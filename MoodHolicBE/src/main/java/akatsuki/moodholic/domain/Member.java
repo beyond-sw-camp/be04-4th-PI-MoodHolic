@@ -3,6 +3,11 @@ package akatsuki.moodholic.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
+import java.util.Collection;
+import java.util.Collections;
 
 @Entity
 @Table(name="member")
@@ -30,8 +35,6 @@ public class Member {
     @Column(name = "provider_code")
     private String providerCode;
     // provider + providerCode
-    @Column(name = "username")
-    private String username;
 
 }
 

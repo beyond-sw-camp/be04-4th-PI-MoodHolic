@@ -38,5 +38,12 @@ public class GraphController {
         return ResponseEntity.ok().body(returnValue);
     }
 
+    @GetMapping("/week/{memberId}")
+    @Operation(summary = "주 단위 기분 통계", description = "멤버의 주 단위로 기분 평균을 수치화하여 반환합니다.")
+    public ResponseEntity<HashMap<String,Double>> getWeek(@PathVariable long memberId){
+        HashMap<String,Double> returnValue = graphService.GetEmotionWeek(memberId);
+        return ResponseEntity.ok().body(returnValue);
+    }
+
 
 }

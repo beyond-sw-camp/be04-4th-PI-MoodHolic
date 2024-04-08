@@ -60,6 +60,23 @@ public class GraphServiceImpl implements GraphService{
         return returnValue;
     }
 
+    @Override
+    public HashMap<String, Double> GetEmotionWeek(long memberId) {
+        init(memberId);
+        diaryList.forEach(diary -> {
+            String[] date = diary.getDate().split("-");
+            int dayOfMonth = Integer.parseInt(date[2]);
+            int weekOfMonth = (dayOfMonth - 1) / 7 + 1;
+            String cmpDate = date[0] + "-" + date[1] + "-W" + weekOfMonth;
+            compare(cmpDate, diary);
+        });
+        // 마지막 주 처리
+        if (!past.isEmpty()) {
+            returnValue.put(past, Math.round((sum / cnt) * 100) / 100.0d);
+        }
+        return returnValue;
+    }
+
     private void compare(String cmpDate, Diary diary) {
         DiaryEmotion score = diaryEmotionDAO.findByDiaryIdDiaryId(diary.getDiaryId());
         if(score!=null) {

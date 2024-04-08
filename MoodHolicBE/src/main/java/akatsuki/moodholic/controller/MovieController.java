@@ -6,7 +6,9 @@ import akatsuki.moodholic.service.MovieService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,23 +28,28 @@ public class MovieController {
 
     @GetMapping("/all")
     @Operation(summary = "영화 전체 조회", description = "단순 영화 조회 기능")
-    public List<Movie> getAllFoods() {
-        return movieService.getAllMovies();
+    public ResponseEntity<List<Movie>> getAllFoods() {
+        return ResponseEntity.ok().body(movieService.getAllMovies());
     }
 
     @GetMapping("/liked")
     @Operation(summary = "좋아요 표시된 영화 조회", description = "사용자가 좋아요 표시한 영화 조회 기능")
-    public List<DiaryMovie> getLikedDiaryMovies() {
-        return movieService.findLikedDiaryMovies();
+    public ResponseEntity<List<DiaryMovie>> getLikedDiaryMovies() {
+        return ResponseEntity.ok().body(movieService.findLikedDiaryMovies());
     }
 
     @GetMapping("/liked/names")
-    public List<String> getLikedMovieNames() {
-        return movieService.findLikedMovieNames();
+    public ResponseEntity<List<String>> getLikedMovieNames() {
+        return ResponseEntity.ok().body(movieService.findLikedMovieNames());
     }
 
     @GetMapping("/genres/likes-count")
-    public List<Object[]> countMovieGenresWithLikes() {
-        return movieService.countMovieGenresWithLikes();
+    public ResponseEntity<List<Object[]>> countMovieGenresWithLikes() {
+        return ResponseEntity.ok().body(movieService.countMovieGenresWithLikes());
+    }
+
+    @GetMapping("/liked/{memberId}")
+    public ResponseEntity<List<DiaryMovie>> getMemberLikedMovie(@PathVariable long memberId){
+        return ResponseEntity.ok().body(movieService.getMemberLikedMovie(memberId));
     }
 }

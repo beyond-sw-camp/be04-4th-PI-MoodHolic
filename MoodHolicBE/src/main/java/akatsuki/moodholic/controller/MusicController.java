@@ -28,24 +28,24 @@ public class MusicController {
 
     @GetMapping("/all")
     @Operation(summary = "노래 전체 조회", description = "단순 노래 조회 기능")
-    public List<Music> getAllFoods() {
-        return musicService.getAllMusics();
+    public ResponseEntity<List<Music>> getAllFoods() {
+        return ResponseEntity.ok().body(musicService.getAllMusics());
     }
 
     @GetMapping("/liked")
     @Operation(summary = "좋아요 표시된 노래 조회", description = "사용자가 좋아요 표시한 노래 조회 기능")
-    public List<DiaryMusic> getLikedDiaryMusics() {
-        return musicService.findLikedDiaryMusics();
+    public ResponseEntity<List<DiaryMusic>> getLikedDiaryMusics() {
+        return ResponseEntity.ok().body(musicService.findLikedDiaryMusics());
     }
 
     @GetMapping("/liked/names")
-    public List<String> getLikedMusicNames() {
-        return musicService.findLikedMusicNames();
+    public ResponseEntity<List<String>> getLikedMusicNames() {
+        return ResponseEntity.ok().body(musicService.findLikedMusicNames());
     }
 
     @GetMapping("/genres/likes-count")
-    public List<Object[]> countMusicGenresWithLikes() {
-        return musicService.countMusicGenresWithLikes();
+    public ResponseEntity<List<Object[]>> countMusicGenresWithLikes() {
+        return ResponseEntity.ok().body(musicService.countMusicGenresWithLikes());
     }
     @GetMapping("/liked/{memberId}")
     public ResponseEntity<List<DiaryMusic>> getMemberLikeMusic(@PathVariable long memberId){

@@ -28,24 +28,24 @@ public class MovieController {
 
     @GetMapping("/all")
     @Operation(summary = "영화 전체 조회", description = "단순 영화 조회 기능")
-    public List<Movie> getAllFoods() {
-        return movieService.getAllMovies();
+    public ResponseEntity<List<Movie>> getAllFoods() {
+        return ResponseEntity.ok().body(movieService.getAllMovies());
     }
 
     @GetMapping("/liked")
     @Operation(summary = "좋아요 표시된 영화 조회", description = "사용자가 좋아요 표시한 영화 조회 기능")
-    public List<DiaryMovie> getLikedDiaryMovies() {
-        return movieService.findLikedDiaryMovies();
+    public ResponseEntity<List<DiaryMovie>> getLikedDiaryMovies() {
+        return ResponseEntity.ok().body(movieService.findLikedDiaryMovies());
     }
 
     @GetMapping("/liked/names")
-    public List<String> getLikedMovieNames() {
-        return movieService.findLikedMovieNames();
+    public ResponseEntity<List<String>> getLikedMovieNames() {
+        return ResponseEntity.ok().body(movieService.findLikedMovieNames());
     }
 
     @GetMapping("/genres/likes-count")
-    public List<Object[]> countMovieGenresWithLikes() {
-        return movieService.countMovieGenresWithLikes();
+    public ResponseEntity<List<Object[]>> countMovieGenresWithLikes() {
+        return ResponseEntity.ok().body(movieService.countMovieGenresWithLikes());
     }
 
     @GetMapping("/liked/{memberId}")

@@ -30,24 +30,24 @@ public class FoodController {
     // 모든 음식 목록 조회
     @GetMapping("/all")
     @Operation(summary = "음식 전체 조회", description = "단순 음식 조회 기능")
-    public List<Food> getAllFoods() {
-        return foodService.getAllFoods();
+    public ResponseEntity<List<Food>> getAllFoods() {
+        return ResponseEntity.ok().body(foodService.getAllFoods());
     }
 
     @GetMapping("/liked")
     @Operation(summary = "좋아요 표시된 음식 조회", description = "사용자가 좋아요 표시한 음식 조회 기능")
-    public List<DiaryFood> getLikedDiaryFoods() {
-        return foodService.findLikedDiaryFoods();
+    public ResponseEntity<List<DiaryFood>> getLikedDiaryFoods() {
+        return ResponseEntity.ok().body(foodService.findLikedDiaryFoods());
     }
 
     @GetMapping("/liked/names")
-    public List<String> getLikedFoodNames() {
-        return foodService.findLikedFoodNames();
+    public ResponseEntity<List<String>> getLikedFoodNames() {
+        return ResponseEntity.ok().body(foodService.findLikedFoodNames());
     }
 
     @GetMapping("/category/likes-count")
-    public List<Object[]> countFoodCategorysWithLikes() {
-        return foodService.countFoodCategorysWithLikes();
+    public ResponseEntity<List<Object[]>> countFoodCategorysWithLikes() {
+        return ResponseEntity.ok().body(foodService.countFoodCategorysWithLikes());
     }
 
     @GetMapping("/liked/{memberId}")

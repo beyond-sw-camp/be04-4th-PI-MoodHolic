@@ -1,0 +1,321 @@
+.frame-child {
+  position: absolute;
+  top: 121.2px;
+  left: 0;
+  border-top: 1px solid #939393;
+  box-sizing: border-box;
+  width: 1837.9px;
+  height: 1px;
+}
+.moodholiclogo-2-icon {
+  position: absolute;
+  height: calc(100% - 1.2px);
+  bottom: 1.2px;
+  left: 50%;
+  max-height: 100%;
+  width: 167px;
+  object-fit: cover;
+  transform: translate(-50%, 0%);
+}
+.line-parent {
+  align-self: stretch;
+  height: 122px;
+  position: relative;
+}
+.frame-item {
+  width: 564px;
+  height: 682px;
+  position: relative;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-whitesmoke);
+  display: none;
+  max-width: 100%;
+}
+.h2,
+.p,
+.p1 {
+  margin: 0;
+}
+.h2 {
+  height: 60px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 500;
+  font-family: inherit;
+  display: inline-block;
+  z-index: 1;
+}
+.wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 0 0 3px;
+}
+.mood-holic {
+  margin: 0;
+  width: 166px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+.mood-holic-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 var(--padding-xl) 0 25px;
+}
+.frame-inner {
+  align-self: stretch;
+  height: 1px;
+  position: relative;
+  border-top: 1px solid var(--color-gray-100);
+  box-sizing: border-box;
+  z-index: 1;
+}
+.frame-parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 18px;
+  font-size: var(--font-size-11xl);
+}
+.b {
+  position: relative;
+  line-height: 18.4px;
+  display: inline-block;
+  min-width: 60px;
+  z-index: 1;
+}
+.signup-form {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 26px 0 var(--padding-xl);
+}
+.rectangle-div {
+  height: 59.2px;
+  width: 472px;
+  position: relative;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-white);
+  display: none;
+  max-width: 100%;
+}
+.group-icon,
+.sign-up-with {
+  position: relative;
+  z-index: 2;
+}
+.group-icon {
+  height: 20.1px;
+  width: 21.8px;
+  min-height: 20px;
+}
+.sign-up-with {
+  width: 169.7px;
+  font-size: var(--font-size-mini);
+  font-weight: 500;
+  font-family: var(--font-inter);
+  color: var(--color-darkgray);
+  text-align: center;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.frame-child1,
+.rectangle-group {
+  height: 59.2px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-white);
+  max-width: 100%;
+}
+.rectangle-group {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-xl) var(--padding-58xl) var(--padding-lgi-1);
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  gap: var(--gap-36xl-2);
+  white-space: nowrap;
+  z-index: 1;
+}
+.rectangle-container:hover,
+.rectangle-group:hover {
+  background-color: var(--color-gainsboro);
+}
+.frame-child1 {
+  width: 472px;
+  position: relative;
+  display: none;
+}
+.vector-icon {
+  height: 20.1px;
+  width: 21.8px;
+  position: relative;
+  min-height: 20px;
+  z-index: 2;
+}
+.sign-up-with1 {
+  width: 158.3px;
+  position: relative;
+  font-size: var(--font-size-mini);
+  font-weight: 500;
+  font-family: var(--font-inter);
+  color: var(--color-darkgray);
+  text-align: center;
+  display: inline-block;
+  flex-shrink: 0;
+  z-index: 2;
+}
+.rectangle-container {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-lgi-7) var(--padding-51xl) var(--padding-lgi-4);
+  background-color: var(--color-white);
+  align-self: stretch;
+  height: 59.2px;
+  border-radius: var(--br-11xl);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  gap: var(--gap-50xl-2);
+  white-space: nowrap;
+  max-width: 100%;
+  z-index: 1;
+}
+.frame-group,
+.signup-form-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.frame-group {
+  align-self: stretch;
+  justify-content: flex-start;
+  gap: var(--gap-12xl-8);
+  max-width: 100%;
+}
+.signup-form-parent {
+  flex: 1;
+  gap: 46px;
+}
+.frame-wrapper,
+.rectangle-parent,
+.signup-form-parent {
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.frame-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 19px 0 14px;
+  box-sizing: border-box;
+  font-size: var(--font-size-mini);
+  color: var(--color-darkslategray);
+}
+.rectangle-parent {
+  width: 564px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-whitesmoke);
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 85px var(--padding-8xl) 63px;
+  gap: 40px;
+  max-width: 100%;
+}
+.div,
+.inner,
+.rectangle-parent {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.inner {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 7px 0 0;
+  max-width: 100%;
+  text-align: center;
+  font-size: var(--font-size-6xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+.div {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0.2px 38.1px 198.8px 45px;
+  gap: 77px;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 975px) {
+  .div {
+    gap: 38px 77px;
+    padding-left: var(--padding-3xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 950px) {
+  .mood-holic {
+    font-size: var(--font-size-5xl);
+  }
+}
+@media screen and (max-width: 700px) {
+  .frame-group {
+    gap: 16px 31.8px;
+  }
+  .signup-form-parent {
+    gap: 23px 46px;
+  }
+  .rectangle-parent {
+    gap: 28px 56px;
+    padding-top: var(--padding-36xl);
+    padding-bottom: 101px;
+    box-sizing: border-box;
+  }
+  .div {
+    gap: 19px 77px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .h2 {
+    font-size: var(--font-size-xl);
+  }
+  .mood-holic {
+    font-size: var(--font-size-lg);
+  }
+  .rectangle-container,
+  .rectangle-group {
+    gap: 55.2px 28px;
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .rectangle-container {
+    gap: 69.2px 35px;
+  }
+}

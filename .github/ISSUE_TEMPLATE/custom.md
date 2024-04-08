@@ -1,12 +1,3 @@
----
-name: Custom issue template
-about: "\bIssue 템플릿 작성"
-title: ISSUE
-labels: ''
-assignees: ''
-
----
-
 <h1 align="center">🌅 Mood Holic 🌅</h1>
 
 ### ⚙️ Function Name: 기능의 이름을 작성해주세요.

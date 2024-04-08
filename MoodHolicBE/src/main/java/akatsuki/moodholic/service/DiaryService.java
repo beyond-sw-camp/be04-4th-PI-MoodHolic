@@ -67,6 +67,15 @@ public class DiaryService {
 
     @Transactional
     public String postDiary(Diary requestdiary) {
+        Diary findDiary = diaryDAO.findByMemberMemberIdAndDate(requestdiary.getMember().getMemberId(),requestdiary.getDate());
+
+        if(findDiary!=null){
+            requestdiary.setDiaryId(findDiary.getDiaryId());
+            if(findDiary.getStatus()==1){
+                return "이미 존재하여 생성하지 않습니다.";
+            }
+        }
+
         requestdiary=diaryDAO.save(requestdiary);
         long memberId = requestdiary.getMember().getMemberId();
         if(requestdiary.getStatus()==0){

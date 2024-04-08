@@ -25,4 +25,18 @@ public class CalendarServiceImpl implements CalendarService{
         });
         return calendar;
     }
+    public List<Calendar> getCalendarOfYear(long memberId, int year){
+        List<Diary> diaryList = diaryDAO.findAllByMemberMemberIdOrderByDateAsc(memberId);
+        List<Calendar> calendar = new ArrayList<>();
+        String YEAR = year+"";
+        diaryList.forEach(diary ->{
+            String[] cmpYear= diary.getDate().split("-");
+            if(YEAR.equals(cmpYear[0])){
+                calendar.add(new Calendar(diary.getStatus(),diary.getDate()));
+            }
+        });
+        System.out.println("calendar = " + calendar);
+        return calendar;
+    }
 }
+

@@ -6,10 +6,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,8 +24,14 @@ public class CalendarController {
     @GetMapping("/{memberId}")
     @Operation(summary = "달력 리스트 출력", description = "맴버가 작성한 기록이 있는 모든 다이어리 날짜와 저장상태들을 반환합니다." +
             "\n만약 임시저장되어 있는 다이어리도 있을 수 있기 때문에 상태값도 포함하여 반환합니다.")
-    public ResponseEntity<List<Calendar>> getYearEmotion(@PathVariable long memberId){
+    public ResponseEntity<List<Calendar>> getCalendar(@PathVariable long memberId){
         List<Calendar> returnValue = calendarService.getCalendar(memberId);
+        return ResponseEntity.ok().body(returnValue);
+    }
+
+    @GetMapping("/year/{memberId}")
+    public ResponseEntity<List<Calendar>> getCalendarOfYear(@PathVariable long memberId, @RequestParam(name = "year") int year){
+        List<Calendar> returnValue = calendarService.getCalendarOfYear(memberId,year);
         return ResponseEntity.ok().body(returnValue);
     }
 

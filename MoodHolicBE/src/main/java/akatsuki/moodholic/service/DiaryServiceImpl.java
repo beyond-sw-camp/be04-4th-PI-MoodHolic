@@ -80,6 +80,11 @@ public class  DiaryServiceImpl implements DiaryService{
         return prompt;
     }
 
+    @Override
+    public List<Diary> findAllByMemberOrderByDateAsc(long memberId){
+        return diaryDAO.findAllByMemberMemberIdOrderByDateAsc(memberId);
+    }
+
 
 
 }

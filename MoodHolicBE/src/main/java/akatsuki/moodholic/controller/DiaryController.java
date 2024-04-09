@@ -1,13 +1,12 @@
 package akatsuki.moodholic.controller;
 
-import akatsuki.moodholic.domain.Diary;
-import akatsuki.moodholic.domain.DiaryMusic;
+import akatsuki.moodholic.domain.*;
 import akatsuki.moodholic.dto.ResponseDiary;
 import akatsuki.moodholic.repository.DiaryEmotionDAO;
 import akatsuki.moodholic.repository.DiaryFoodDAO;
 import akatsuki.moodholic.repository.DiaryMovieDAO;
 import akatsuki.moodholic.repository.DiaryMusicDAO;
-import akatsuki.moodholic.service.DiaryService;
+import akatsuki.moodholic.service.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +21,19 @@ import java.util.List;
 public class DiaryController {
     DiaryService diaryService;
 
+
     @Autowired
-    public DiaryController(DiaryService diaryService) {
+    public DiaryController(DiaryService diaryService, DiaryFoodService diaryFoodService, DiaryEmotionService diaryEmotionService, DiaryMovieService diaryMovieService, DiaryMusicService diaryMusicService, CommentService commentService) {
         this.diaryService = diaryService;
+
     }
 
     @GetMapping("/{diaryId}")
     @Operation(summary = "다이어리 상세 조회", description = "한 다이어리의 정보와 GPT의 응답을 반환합니다.")
     public ResponseEntity<ResponseDiary> getDiary(@PathVariable int diaryId){
-        ResponseDiary responseDiary = diaryService.getDiary(diaryId);
+        ResponseDiary response = diaryService.getDiary(diaryId);
 
-        return ResponseEntity.ok().body(responseDiary);
+        return ResponseEntity.ok().body(response);
     }
     @PostMapping("")
     @Operation(summary = "다이어리 저장", description = "요청온 다이어리의 상태에 따라 임시저장 또는 저장을 수행합니다. " +

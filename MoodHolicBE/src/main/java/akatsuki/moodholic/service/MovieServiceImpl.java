@@ -57,5 +57,14 @@ public class MovieServiceImpl implements MovieService{
         });
         return returnValue;
     }
+    @Override
+    public Movie findByMovieName(String movieName){
+        return movierepository.findByMovieName(movieName);
+    }
+
+    @Override
+    public Movie saveMovie(Movie movie){
+        return movierepository.save(movie);
+    }
 
 }

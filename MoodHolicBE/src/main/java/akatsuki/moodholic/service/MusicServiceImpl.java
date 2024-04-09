@@ -60,4 +60,13 @@ public class MusicServiceImpl implements MusicService{
         return returnValue;
     }
 
+    @Override
+    public Music findByMusicName(String musicName){
+        return musicrepository.findByMusicName(musicName);
+    }
+    @Override
+    public Music saveMusic(Music music){
+        return musicrepository.save(music);
+    }
+
 }

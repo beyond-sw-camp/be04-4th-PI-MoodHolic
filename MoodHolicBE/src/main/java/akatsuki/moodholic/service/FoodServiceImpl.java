@@ -56,8 +56,17 @@ public class FoodServiceImpl implements FoodService {
                 returnValue.add(diaryFood);
             }
         });
-
         return returnValue;
+    }
+
+    @Override
+    public Food findFoodByFoodName(String foodName){
+        return foodrepositoy.findByFoodName(foodName);
+    }
+
+    @Override
+    public Food saveFood(Food food){
+        return foodrepositoy.save(food);
     }
 
 }

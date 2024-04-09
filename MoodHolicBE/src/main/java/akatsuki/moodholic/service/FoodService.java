@@ -17,4 +17,8 @@ public interface FoodService {
     List<Object[]> countFoodCategorysWithLikes();
 
     List<DiaryFood> getMemberLikeFood(long memberId);
+
+    Food findFoodByFoodName(String foodName);
+
+    Food saveFood(Food food);
 }

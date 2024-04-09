@@ -16,4 +16,8 @@ public interface MovieService {
     List<Object[]> countMovieGenresWithLikes();
 
     List<DiaryMovie> getMemberLikedMovie(long memberId);
+
+    Movie findByMovieName(String movieName);
+
+    Movie saveMovie(Movie movie);
 }

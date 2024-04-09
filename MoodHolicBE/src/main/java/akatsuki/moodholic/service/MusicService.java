@@ -17,4 +17,8 @@ public interface MusicService {
     List<Object[]> countMusicGenresWithLikes();
 
     List<DiaryMusic> getMemberLikeMusic(long memberId);
+
+    Music findByMusicName(String musicName);
+
+    Music saveMusic(Music music);
 }

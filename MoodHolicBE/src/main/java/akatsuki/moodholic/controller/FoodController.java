@@ -2,9 +2,7 @@ package akatsuki.moodholic.controller;
 
 import akatsuki.moodholic.domain.DiaryFood;
 import akatsuki.moodholic.domain.Food;
-import akatsuki.moodholic.repository.FoodDAO;
-import akatsuki.moodholic.service.FoodFacadeService;
-import akatsuki.moodholic.service.FoodService;
+import akatsuki.moodholic.service.facade.FoodFacadeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;

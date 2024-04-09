@@ -1,9 +1,12 @@
-package akatsuki.moodholic.service;
+package akatsuki.moodholic.service.facade;
 
 import akatsuki.moodholic.domain.Diary;
 import akatsuki.moodholic.domain.DiaryFood;
 import akatsuki.moodholic.domain.Food;
 import akatsuki.moodholic.repository.DiaryFoodDAO;
+import akatsuki.moodholic.service.DiaryFoodService;
+import akatsuki.moodholic.service.DiaryService;
+import akatsuki.moodholic.service.FoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

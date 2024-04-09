@@ -2,7 +2,7 @@ package akatsuki.moodholic.controller;
 
 import akatsuki.moodholic.domain.*;
 import akatsuki.moodholic.dto.ResponseDiary;
-import akatsuki.moodholic.service.*;
+import akatsuki.moodholic.service.facade.DiaryFacadeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -7,8 +7,6 @@ import java.util.List;
 
 public interface DiaryService {
 
-    ResponseDiary getDiary(int diaryId);
-
     String postDiary(Diary diary);
 
     String deleteDiary(int diaryId);

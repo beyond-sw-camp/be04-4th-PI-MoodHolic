@@ -8,6 +8,5 @@ import java.util.List;
 
 public interface CalendarService {
     List<Calendar> getCalendar(List<Diary> diaryList);
-
     List<Calendar> getCalendarOfYear(List<Diary> diaryList, int year);
 }

@@ -25,7 +25,7 @@ import java.util.List;
  * */
 
 @Service
-public class DiaryPasadeService {
+public class DiaryFacadeService {
     private final DiaryService diaryService;
     private final ChatGPTService chatGPTService;
     private final DiaryFoodService diaryFoodService;
@@ -37,7 +37,7 @@ public class DiaryPasadeService {
     private final MovieService movieService;
     private final MusicService musicService;
     @Autowired
-    public DiaryPasadeService(DiaryService diaryService, ChatGPTService chatGPTService, DiaryFoodService diaryFoodService, DiaryEmotionService diaryEmotionService, DiaryMovieService diaryMovieService, DiaryMusicService diaryMusicService, CommentService commentService, FoodService foodService, MovieService movieService, MusicService musicService) {
+    public DiaryFacadeService(DiaryService diaryService, ChatGPTService chatGPTService, DiaryFoodService diaryFoodService, DiaryEmotionService diaryEmotionService, DiaryMovieService diaryMovieService, DiaryMusicService diaryMusicService, CommentService commentService, FoodService foodService, MovieService movieService, MusicService musicService) {
         this.diaryService = diaryService;
         this.chatGPTService = chatGPTService;
         this.diaryFoodService = diaryFoodService;

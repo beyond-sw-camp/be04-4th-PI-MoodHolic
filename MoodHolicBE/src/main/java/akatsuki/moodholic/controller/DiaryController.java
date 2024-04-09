@@ -15,10 +15,10 @@ import java.util.List;
 @RequestMapping("/diary")
 @Tag(name = "다이어리 컨트롤러", description = "맴버의 다이어리 리스트, 상세 리스트")
 public class DiaryController {
-    DiaryPasadeService pacadeService;
+    DiaryFacadeService pacadeService;
 
     @Autowired
-    public DiaryController(DiaryPasadeService pacadeService) {
+    public DiaryController(DiaryFacadeService pacadeService) {
         this.pacadeService = pacadeService;
     }
 

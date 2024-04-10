@@ -19,4 +19,5 @@ public interface DiaryFoodDAO extends JpaRepository<DiaryFood, Integer> {
 
 
     void deleteByDiaryId(int diaryId);
+
 }

@@ -50,11 +50,6 @@ public class DiaryService {
         DiaryMovie movie = diaryMovieDAO.findByDiaryId(diaryId);
         DiaryMusic music = diaryMusicDAO.findByDiaryId(diaryId);
         Comment comment = commentDAO.findByDiaryId(diaryId);
-//        System.out.println("diary = " + diary);
-//        System.out.println("food = " + food.getFoodId());
-//        System.out.println("emotion = " + emotion.getEmotionId());
-//        System.out.println("music = " + music.getMusicId());
-//        System.out.println("movie = " + movie.getMovieId());
         String emotionValue= new String();
 
         if(emotion !=null) {
@@ -62,11 +57,20 @@ public class DiaryService {
             else if(emotion.getEmotionId()<7) emotionValue="보통";
             else emotionValue="좋음";
         }
-        return new ResponseDiary(diary,emotionValue,food.getFoodId(),movie.getMovieId(),music.getMusicId());
+        return new ResponseDiary(diary,emotionValue,food.getFoodId(),movie.getMovieId(),music.getMusicId(),comment);
     }
 
     @Transactional
     public String postDiary(Diary requestdiary) {
+        Diary findDiary = diaryDAO.findByMemberMemberIdAndDate(requestdiary.getMember().getMemberId(),requestdiary.getDate());
+
+        if(findDiary!=null){
+            requestdiary.setDiaryId(findDiary.getDiaryId());
+            if(findDiary.getStatus()==1){
+                return "이미 존재하여 생성하지 않습니다.";
+            }
+        }
+
         requestdiary=diaryDAO.save(requestdiary);
         long memberId = requestdiary.getMember().getMemberId();
         if(requestdiary.getStatus()==0){

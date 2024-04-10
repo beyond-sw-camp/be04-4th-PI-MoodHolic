@@ -1,9 +1,13 @@
 package akatsuki.moodholic.service;
 
+import akatsuki.moodholic.domain.Diary;
 import akatsuki.moodholic.domain.DiaryMusic;
 import akatsuki.moodholic.repository.DiaryMusicDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class DiaryMusicServiceImpl implements DiaryMusicService{
@@ -28,5 +32,17 @@ public class DiaryMusicServiceImpl implements DiaryMusicService{
     @Override
     public void delete(int diaryId){
         diaryMusicDAO.deleteByDiaryId(diaryId);
+    }
+
+    @Override
+    public List<DiaryMusic> getMemberLikeMusic(List<Diary> diaries){
+        List<DiaryMusic> returnValue =new ArrayList<>();
+        diaries.forEach(diary -> {
+            DiaryMusic diaryMusic = diaryMusicDAO.findByDiaryId(diary.getDiaryId());
+            if(diaryMusic!=null && diaryMusic.isMusicLike()){
+                returnValue.add(diaryMusic);
+            }
+        });
+        return returnValue;
     }
 }

@@ -47,18 +47,7 @@ public class MusicServiceImpl implements MusicService{
         return musicrepository.countMusicGenresWithLikes();
     }
 
-    @Override
-    public List<DiaryMusic> getMemberLikeMusic(long memberId){
-        List<Diary> diaries = diaryDAO.findAllByMemberMemberId(memberId);
-        List<DiaryMusic> returnValue =new ArrayList<>();
-        diaries.forEach(diary -> {
-            DiaryMusic diaryMusic = diarymusicrepository.findByDiaryId(diary.getDiaryId());
-            if(diaryMusic!=null && diaryMusic.isMusicLike()){
-                returnValue.add(diaryMusic);
-            }
-        });
-        return returnValue;
-    }
+
 
     @Override
     public Music findByMusicName(String musicName){

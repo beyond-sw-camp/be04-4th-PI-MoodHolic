@@ -10,12 +10,7 @@ public interface MusicService {
 
     List<Music> getAllMusics();
 
-    List<DiaryMusic> findLikedDiaryMusics();
-
-    List<String> findLikedMusicNames();
-
     List<Object[]> countMusicGenresWithLikes();
-
 
     Music findByMusicName(String musicName);
 

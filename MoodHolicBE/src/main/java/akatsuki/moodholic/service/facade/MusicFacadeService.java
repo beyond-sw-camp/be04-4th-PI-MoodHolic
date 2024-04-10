@@ -15,7 +15,6 @@ public class MusicFacadeService {
     DiaryMusicService diaryMusicService;
     DiaryService diaryService;
 
-
     @Autowired
     public MusicFacadeService(MusicService musicService, DiaryMusicService diaryMusicService, DiaryService diaryService) {
         this.musicService = musicService;
@@ -28,11 +27,11 @@ public class MusicFacadeService {
     }
 
     public List<DiaryMusic> findLikedDiaryMusics() {
-        return musicService.findLikedDiaryMusics();
+        return diaryMusicService.findLikedDiaryMusics();
     }
 
     public List<String> findLikedMusicNames(){
-        return musicService.findLikedMusicNames();
+        return diaryMusicService.findLikedMusicNames();
     }
 
     public List<DiaryMusic> getMemberLikeMusic(long memberId){

@@ -1,61 +1,41 @@
 package akatsuki.moodholic.service;
 
-import akatsuki.moodholic.domain.Diary;
-import akatsuki.moodholic.domain.DiaryMusic;
 import akatsuki.moodholic.domain.Music;
-import akatsuki.moodholic.repository.DiaryDAO;
 import akatsuki.moodholic.repository.DiaryMusicDAO;
 import akatsuki.moodholic.repository.MusicDAO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class MusicServiceImpl implements MusicService{
 
-    private final MusicDAO musicrepository;
-    private final DiaryMusicDAO diarymusicrepository;
-    private final DiaryDAO diaryDAO;
+    private final MusicDAO musicDAO;
 
     @Autowired
-    public MusicServiceImpl(MusicDAO musicrepository, DiaryMusicDAO diarymusicrepository, DiaryDAO diaryDAO) {
-        this.musicrepository = musicrepository;
-        this.diarymusicrepository = diarymusicrepository;
-        this.diaryDAO = diaryDAO;
+    public MusicServiceImpl(MusicDAO musicDAO) {
+        this.musicDAO = musicDAO;
     }
 
     @Override
     public List<Music> getAllMusics() {
-        return musicrepository.findAll();
-    }
-
-    @Override
-    public List<DiaryMusic> findLikedDiaryMusics() {
-        return diarymusicrepository.findByMusicLikeTrue();
-    }
-
-    @Override
-    public List<String> findLikedMusicNames() {
-        return diarymusicrepository.findLikedMusicNames();
+        return musicDAO.findAll();
     }
 
     @Override
     public List<Object[]> countMusicGenresWithLikes() {
-        return musicrepository.countMusicGenresWithLikes();
+        return musicDAO.countMusicGenresWithLikes();
     }
-
-
 
     @Override
     public Music findByMusicName(String musicName){
-        return musicrepository.findByMusicName(musicName);
+        return musicDAO.findByMusicName(musicName);
     }
+
     @Override
     public Music saveMusic(Music music){
-        return musicrepository.save(music);
+        return musicDAO.save(music);
     }
 
 }

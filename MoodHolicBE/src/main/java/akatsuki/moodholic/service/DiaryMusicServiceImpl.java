@@ -45,4 +45,15 @@ public class DiaryMusicServiceImpl implements DiaryMusicService{
         });
         return returnValue;
     }
+
+
+    @Override
+    public List<DiaryMusic> findLikedDiaryMusics() {
+        return diaryMusicDAO.findByMusicLikeTrue();
+    }
+
+    @Override
+    public List<String> findLikedMusicNames() {
+        return diaryMusicDAO.findLikedMusicNames();
+    }
 }

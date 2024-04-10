@@ -16,4 +16,6 @@ public interface DiaryDAO extends JpaRepository<Diary, Integer> {
 
 
     Diary findByMemberMemberIdAndDate(long memberId, String date);
+
+    Long countByMemberMemberId(long memberId);
 }

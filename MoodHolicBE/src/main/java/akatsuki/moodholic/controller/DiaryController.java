@@ -51,4 +51,11 @@ public class DiaryController {
         return ResponseEntity.ok().body(response);
     }
 
+    @GetMapping("/{memberId}/diaries-cnt")
+    @Operation(summary = "맴버의 다이어리 리스트 갯수 조회", description = "멤버가 작성한 모든 다이어리 갯수를 반환합니다.")
+    public ResponseEntity<Long > getMemberDiaryCnt(@PathVariable long memberId){
+        Long response = pacadeService.getMemberDiaryCnt(memberId);
+        return ResponseEntity.ok().body(response);
+    }
+
 }

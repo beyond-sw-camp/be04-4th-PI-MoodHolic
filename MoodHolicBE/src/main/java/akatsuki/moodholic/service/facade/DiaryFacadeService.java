@@ -77,6 +77,10 @@ public class DiaryFacadeService {
         return diaryService.getMemberDiaries(memberId);
     }
 
+    public Long getMemberDiaryCnt(long memberId){
+        return diaryService.getMemberDiaryCnt(memberId);
+    }
+
     @Transactional
     public String deleteDiary(int diaryId) {
         diaryFoodService.delete(diaryId);
@@ -99,6 +103,7 @@ public class DiaryFacadeService {
         saveGPTResponse(requestdiary.getMember().getMemberId(),response,requestdiary);
         return "저장";
     }
+
     private int saveGPTResponse(long memberId, DataParse response, Diary diary) {
         Food food = foodService.findFoodByFoodName(response.getFood().getFoodName());
         Movie movie = movieService.findByMovieName(response.getMovie().getMovieName());
@@ -120,6 +125,8 @@ public class DiaryFacadeService {
         diaryEmotionService.saveDiaryEmotion(new DiaryEmotion(diary, response.getEmotionScore()));
         commentService.saveComment(new Comment(diary, response.getComment().getCommentContent()));
     }
+
+
 
 
 

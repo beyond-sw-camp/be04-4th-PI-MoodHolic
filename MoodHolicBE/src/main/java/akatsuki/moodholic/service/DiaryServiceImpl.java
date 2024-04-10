@@ -43,7 +43,7 @@ public class  DiaryServiceImpl implements DiaryService{
     }
     @Override
     public Diary findDiary(int diaryId){
-        return diaryDAO.findById(diaryId).orElseThrow();
+        return diaryDAO.findById(diaryId).orElseThrow(() -> new IllegalArgumentException("해당 게시물 없음!!!"));
     }
 
     @Override
@@ -83,6 +83,11 @@ public class  DiaryServiceImpl implements DiaryService{
     @Override
     public List<Diary> findAllByMemberOrderByDateAsc(long memberId){
         return diaryDAO.findAllByMemberMemberIdOrderByDateAsc(memberId);
+    }
+
+    @Override
+    public Long getMemberDiaryCnt(long memberId){
+        return diaryDAO.countByMemberMemberId(memberId);
     }
 
 

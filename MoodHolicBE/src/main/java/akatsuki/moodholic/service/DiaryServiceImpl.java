@@ -90,6 +90,10 @@ public class  DiaryServiceImpl implements DiaryService{
         return diaryDAO.countByMemberMemberId(memberId);
     }
 
+    @Override
+    public Diary getDiaryByDiaryId(int diaryId) {
+        return diaryDAO.findById(diaryId).orElseThrow();
+    }
 
 
 }

@@ -20,5 +20,7 @@ public interface DiaryFoodService {
     List<DiaryFood> getMemberLikeFood(List<Diary> diaries);
 
     HashMap<String, Integer> countMembersFoodLike(List<Diary> Diaries);
+
+    void likeFood(int diaryId, boolean food);
 }
 

@@ -5,6 +5,7 @@ import akatsuki.moodholic.domain.DiaryFood;
 import akatsuki.moodholic.repository.DiaryFoodDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -77,6 +78,13 @@ public class DiaryFoodServiceImpl implements DiaryFoodService{
             }
         });
         return  returnValue;
+    }
+
+    @Override
+    @Transactional
+    public void likeFood(int diaryId, boolean food) {
+        DiaryFood diaryFood = diaryFoodDAO.findByDiaryId(diaryId);
+        diaryFood.setFoodLike(food);
     }
 
 }

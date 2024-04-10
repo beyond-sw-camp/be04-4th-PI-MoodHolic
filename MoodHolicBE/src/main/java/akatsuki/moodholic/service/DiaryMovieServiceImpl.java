@@ -5,6 +5,7 @@ import akatsuki.moodholic.domain.DiaryMovie;
 import akatsuki.moodholic.repository.DiaryMovieDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,5 +53,13 @@ public class DiaryMovieServiceImpl implements DiaryMovieService{
                 returnValue.add(diaryMovie);
         });
         return returnValue;
+    }
+
+    @Override
+    @Transactional
+    public void likeMovie(int diaryId, boolean movie){
+        DiaryMovie diaryMovie = diaryMovieDAO.findByDiaryId(diaryId);
+        diaryMovie.setMovieLike(movie);
+
     }
 }

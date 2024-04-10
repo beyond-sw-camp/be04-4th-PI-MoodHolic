@@ -56,4 +56,10 @@ public class DiaryMusicServiceImpl implements DiaryMusicService{
     public List<String> findLikedMusicNames() {
         return diaryMusicDAO.findLikedMusicNames();
     }
+
+    @Override
+    public void likeMusic(int diaryId, boolean music) {
+        DiaryMusic diaryMusic = diaryMusicDAO.findByDiaryId(diaryId);
+        diaryMusic.setMusicLike(music);
+    }
 }

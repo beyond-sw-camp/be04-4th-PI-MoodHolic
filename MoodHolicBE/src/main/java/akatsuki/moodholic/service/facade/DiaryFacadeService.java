@@ -119,15 +119,19 @@ public class DiaryFacadeService {
     }
 
     private void save(DataParse response, Diary diary, Food food, Movie movie, Music music) {
-        diaryFoodService.saveDiaryFood(new DiaryFood(diary, food,true));
-        diaryMovieService.saveDiaryMovie(new DiaryMovie(diary, movie,true));
-        diaryMusicService.saveDiaryMusic(new DiaryMusic(diary, music,true));
+        diaryFoodService.saveDiaryFood(new DiaryFood(diary, food,false));
+        diaryMovieService.saveDiaryMovie(new DiaryMovie(diary, movie,false));
+        diaryMusicService.saveDiaryMusic(new DiaryMusic(diary, music,false));
         diaryEmotionService.saveDiaryEmotion(new DiaryEmotion(diary, response.getEmotionScore()));
         commentService.saveComment(new Comment(diary, response.getComment().getCommentContent()));
     }
 
 
+    public String putMemberLike(int diaryId, boolean food, boolean music, boolean movie) {
+        diaryMovieService.likeMovie(diaryId,movie);
+        diaryFoodService.likeFood(diaryId,food);
+        diaryMusicService.likeMusic(diaryId,music);
 
-
-
+        return "좋아요 입력 완료";
+    }
 }

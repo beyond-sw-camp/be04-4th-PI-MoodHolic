@@ -17,4 +17,6 @@ public interface DiaryMusicService {
     List<DiaryMusic> findLikedDiaryMusics();
 
     List<String> findLikedMusicNames();
+
+    void likeMusic(int diaryId, boolean music);
 }

@@ -18,4 +18,6 @@ public interface DiaryService {
     List<Diary> findAllByMemberOrderByDateAsc(long memberId);
 
     Long getMemberDiaryCnt(long memberId);
+
+    Diary getDiaryByDiaryId(int diaryId);
 }

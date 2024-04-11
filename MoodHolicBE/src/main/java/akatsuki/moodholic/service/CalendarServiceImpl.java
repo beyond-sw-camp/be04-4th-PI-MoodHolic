@@ -15,7 +15,8 @@ public class CalendarServiceImpl implements CalendarService{
     public List<Calendar> getCalendar(List<Diary> diaryList) {
         List<Calendar> calendar = new ArrayList<>();
         diaryList.forEach(diary ->{
-            calendar.add(new Calendar(diary.getStatus(),diary.getDate()));
+            String[] DATE = diary.getDate().split("-");
+            calendar.add(new Calendar(diary.getStatus(),DATE[0],DATE[1],DATE[2]));
         });
         return calendar;
     }
@@ -26,7 +27,8 @@ public class CalendarServiceImpl implements CalendarService{
         diaryList.forEach(diary ->{
             String[] cmpYear= diary.getDate().split("-");
             if(YEAR.equals(cmpYear[0])){
-                calendar.add(new Calendar(diary.getStatus(),diary.getDate()));
+                String[] DATE = diary.getDate().split("-");
+                calendar.add(new Calendar(diary.getStatus(),DATE[0],DATE[1],DATE[2]));
             }
         });
 

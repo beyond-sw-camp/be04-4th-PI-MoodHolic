@@ -45,18 +45,20 @@
         <section class="inner">
         <div class="frame-parent">
             <div class="frame-group">
-            <div class="image-3-parent">
-                <img
-                class="image-3-icon"
-                loading="lazy"
-                alt=""
-                src="./public/image-3@2x.png"/>
+                <div class="image-3-parent">
+                    <img
+                    class="image-3-icon"
+                    loading="lazy"
+                    alt=""
+                    src="./public/image-3@2x.png"/>
 
-                <div class="div3">
-                <b>인공지능 심리전문가</b>
-                <span class="span">가 다이어리에 적은 오늘의 기분을 분석해</span>
+                    <div class="div3">
+                    <b>인공지능 심리전문가</b>
+                    <span class="span">가 다이어리에 적은 오늘의 기분을 분석해</span>
+                    </div>
                 </div>
             </div>
+        </div>        
             <div class="wrapper">
                 <h3 class="h3">
                 <span> </span>

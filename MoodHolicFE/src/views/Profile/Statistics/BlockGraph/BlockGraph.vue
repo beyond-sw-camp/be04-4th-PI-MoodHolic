@@ -124,17 +124,8 @@
                     </div>
                   </div>
                   <b class="konan-container">
-                    <span>
-                      <span>Konan님은 </span>
-                      <span class="span">‘</span>
-                    </span>
-                    <span class="span1">
-                      <span>스릴러</span>
-                    </span>
-                    <span>
-                      <span class="span2">’</span>
+                    <span class="span1">‘스릴러’</span>
                       <span> 장르를 가장 선호하시는군요!</span>
-                    </span>
                   </b>
                 </div>
               </div>

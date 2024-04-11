@@ -11,6 +11,12 @@ public interface MemberDAO extends JpaRepository<Member, Long> {
     Optional<Member> findByEmail(String email);
 
 
-    @Query("SELECT m FROM Member m WHERE m.email = :email AND m.providerCode = :providerId")
-    Optional<Member> findByEmailAndProviderId(@Param("email") String email, @Param("providerId") String providerId);
+//    @Query("SELECT m FROM Member m WHERE m.email = :email AND m.providerCode = :providerId")
+//    Optional<Member> findByEmailAndProviderId(@Param("email") String email, @Param("providerId") String providerId);
+
+//    Optional<Member> findAllByEmail
+
+    Optional<Member> findByProviderCode(String providerCode);
+
+    Optional<Member> findByEmailAndProvider(String userId, String providerCode);
 }

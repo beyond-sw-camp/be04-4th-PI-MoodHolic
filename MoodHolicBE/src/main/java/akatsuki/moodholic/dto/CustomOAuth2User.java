@@ -39,6 +39,10 @@ public class CustomOAuth2User implements OAuth2User {
     }
 
     public String getEmail() {
-        return this.member.getEmail();
+        return this.member != null ? this.member.getEmail() : null;
+    }
+
+    public String getProvider() {
+        return this.member.getProvider();
     }
 }

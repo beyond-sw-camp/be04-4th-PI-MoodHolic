@@ -1,0 +1,301 @@
+.moodholiclogo-2-icon {
+  height: 121px;
+  width: 167px;
+  position: relative;
+  object-fit: cover;
+}
+.moodholiclogo-2-wrapper {
+  width: 1824px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 var(--padding-xl);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.frame-child {
+  align-self: stretch;
+  height: 1px;
+  position: relative;
+  border-top: 1px solid var(--color-gray-200);
+  box-sizing: border-box;
+}
+.frame-parent {
+  align-self: stretch;
+  height: 128.6px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 6.6px;
+  max-width: 100%;
+}
+.frame-item,
+.icon {
+  position: relative;
+  max-width: 100%;
+}
+.frame-item {
+  width: 542.4px;
+  height: 683px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-oldlace);
+  display: none;
+}
+.icon {
+  height: 225.9px;
+  flex: 1;
+  overflow: hidden;
+  object-fit: cover;
+  flex-shrink: 0;
+  debug_commit: f6aba90;
+  z-index: 1;
+}
+.message-box {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 0 var(--padding-12xs);
+}
+.konan {
+  margin: 0;
+  width: 139px;
+  position: relative;
+  font-size: inherit;
+  line-height: 39.2px;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  z-index: 1;
+}
+.konan-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-37xl) 0 61px;
+}
+.div1 {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  z-index: 1;
+}
+.frame-container,
+.message-box-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.frame-container {
+  align-items: flex-end;
+  gap: 17.8px;
+  flex-shrink: 0;
+  debug_commit: f6aba90;
+}
+.message-box-parent {
+  width: 257.5px;
+  align-items: flex-start;
+  gap: 13.1px;
+}
+.frame-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 var(--padding-2xl) 0 var(--padding-xl);
+}
+.frame-inner,
+.line-wrapper {
+  align-self: stretch;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.frame-inner {
+  flex: 1;
+  position: relative;
+  border-top: 1px solid var(--color-darkgray-300);
+  z-index: 1;
+}
+.line-wrapper {
+  height: 12.4px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-xs-4);
+}
+.div2,
+.div3 {
+  position: relative;
+  font-weight: 500;
+  z-index: 1;
+}
+.div3 {
+  white-space: nowrap;
+}
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-xl) 0 var(--padding-2xl);
+}
+.parent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-3xl-6);
+}
+.frame-div,
+.frame-group {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+}
+.frame-div {
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 var(--padding-3xl) 0 var(--padding-xl);
+  font-size: var(--font-size-xl);
+}
+.frame-group {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 29.8px;
+  max-width: 100%;
+}
+.rectangle-div {
+  height: 48.8px;
+  width: 121.5px;
+  position: relative;
+  border-radius: var(--br-xl);
+  background-color: var(--color-lavender-100);
+  display: none;
+}
+.b {
+  height: 30.3px;
+  position: relative;
+  font-size: var(--font-size-xl);
+  display: flex;
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-width: 79px;
+  z-index: 2;
+}
+.frame-wrapper1,
+.rectangle-group {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.rectangle-group {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-3xs-9) 20.9px var(--padding-4xs-6) var(--padding-2xl-6);
+  background-color: var(--color-lavender-100);
+  border-radius: var(--br-xl);
+  justify-content: flex-start;
+  white-space: nowrap;
+  z-index: 1;
+}
+.rectangle-group:hover {
+  background-color: #bfc4e6;
+}
+.frame-wrapper1 {
+  align-self: stretch;
+  justify-content: center;
+  padding: 0 var(--padding-10xs) 0 0;
+}
+.rectangle-parent {
+  width: 542.4px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-oldlace);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-base-7) var(--padding-9xl-1) 90.6px var(--padding-11xl);
+  gap: 64.5px;
+  max-width: 100%;
+}
+.div,
+.inner,
+.rectangle-parent {
+  display: flex;
+  box-sizing: border-box;
+}
+.inner {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 0 0 var(--padding-10xs);
+  max-width: 100%;
+  text-align: center;
+  font-size: var(--font-size-13xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+.div {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padding-4xs) var(--padding-24xl) var(--padding-141xl-7)
+    var(--padding-21xl);
+  gap: 98.7px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 975px) {
+  .div {
+    gap: 49px;
+    padding-right: var(--padding-2xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 950px) {
+  .konan {
+    font-size: var(--font-size-7xl);
+  }
+}
+@media screen and (max-width: 700px) {
+  .rectangle-parent {
+    gap: var(--gap-13xl);
+    padding-top: var(--padding-xl);
+    padding-bottom: var(--padding-40xl);
+    box-sizing: border-box;
+  }
+  .div {
+    gap: var(--gap-6xl);
+  }
+}
+@media screen and (max-width: 450px) {
+  .konan {
+    font-size: var(--font-size-lgi);
+  }
+  .konan-wrapper {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .div1,
+  .div2,
+  .div3 {
+    font-size: var(--font-size-base);
+  }
+  .rectangle-parent {
+    gap: var(--gap-base);
+  }
+}

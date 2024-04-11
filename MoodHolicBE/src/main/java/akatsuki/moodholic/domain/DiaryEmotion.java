@@ -3,6 +3,9 @@ package akatsuki.moodholic.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashMap;
+import java.util.List;
+
 @Entity
 @Table(name = "diary_emotion")
 @NoArgsConstructor
@@ -28,4 +31,6 @@ public class DiaryEmotion {
         this.diaryId=diary;
         this.EmotionId = emotionScore;
     }
+
+
 }

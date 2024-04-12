@@ -1,4 +1,5 @@
 <template>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -89,13 +90,7 @@
                   </div>
                 </div>
               </div>
-              <textarea
-                class="cancel-button"
-                placeholder="하루 동안 이야기를 들려주세요!"
-                rows="{17}"
-                cols="{32}"
-              >
-              </textarea>
+              <textarea class="cancel-button" placeholder="하루 동안 이야기를 들려주세요!" rows="{17}" cols="{32}"></textarea>
             </div>
             <div class="vector-parent">
               <img

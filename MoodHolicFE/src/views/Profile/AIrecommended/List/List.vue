@@ -44,7 +44,7 @@
 
         <img class="uimgraph-bar-icon" alt="" src="./public/uimgraphbar.svg" />
       </header>
-      <section class="ai-inner">
+      <section class="stack-data">
         <div class="frame-parent">
           <div class="frame-wrapper">
             <div class="frame-group">
@@ -61,21 +61,33 @@
               <div class="frame-div">
                 <button class="rectangle-group">
                   <div class="frame-item"></div>
-                  <img class="vector-icon" alt="" src="./public/vector-1.svg" />
+                  <img
+                    class="vector-icon"
+                    alt=""
+                    src="./public/vector-117.svg"
+                  />
                 </button>
               </div>
               <button class="rectangle-container">
                 <div class="frame-inner"></div>
-                <img class="vector-icon1" alt="" src="./public/vector-2.svg" />
+                <img
+                  class="vector-icon1"
+                  alt=""
+                  src="./public/vector-216.svg"
+                />
               </button>
               <button class="group-button">
                 <div class="rectangle-div"></div>
-                <img class="vector-icon2" alt="" src="./public/vector-3.svg" />
+                <img
+                  class="vector-icon2"
+                  alt=""
+                  src="./public/vector-315.svg"
+                />
               </button>
             </div>
           </div>
-          <div class="frame-parent1">
-            <div class="vector-wrapper">
+          <div class="relationship-detector">
+            <div class="relationship-detector-inner">
               <img
                 class="line-icon"
                 loading="lazy"
@@ -83,26 +95,26 @@
                 src="./public/line-11.svg"
               />
             </div>
-            <div class="frame-wrapper1">
-              <div class="frame-parent2">
-                <div class="frame-wrapper2">
-                  <div class="frame-parent3">
-                    <div class="frame-wrapper3">
-                      <div class="frame-parent4">
+            <div class="relationship-detector-child">
+              <div class="frame-parent1">
+                <div class="frame-wrapper1">
+                  <div class="frame-parent2">
+                    <div class="frame-wrapper2">
+                      <div class="frame-parent3">
                         <div class="group-div">
                           <div class="frame-child1"></div>
                           <div class="progress-indicator">
                             <img
                               class="icon"
                               alt=""
-                              src="./public/-20240405--318@2x.png"
+                              src="./public/-20240405--31812@2x.png"
                             />
 
                             <img
                               class="icon1"
                               loading="lazy"
                               alt=""
-                              src="./public/-20240405--405@2x.png"
+                              src="./public/-20240405--4055@2x.png"
                             />
                           </div>
                         </div>
@@ -112,12 +124,12 @@
                               >오늘 내 기분은 말하자면 마이쮸같았지</b
                             >
                             <div class="list-item-inner">
-                              <div class="frame-parent5">
+                              <div class="frame-parent4">
                                 <div class="vector-parent">
                                   <img
                                     class="vector-icon3"
                                     alt=""
-                                    src="./public/vector-4.svg"
+                                    src="./public/vector-413.svg"
                                   />
 
                                   <div class="wrapper">
@@ -128,7 +140,7 @@
                                   <img
                                     class="vector-icon4"
                                     alt=""
-                                    src="./public/vector-5.svg"
+                                    src="./public/vector-513.svg"
                                   />
 
                                   <div class="container">
@@ -139,7 +151,7 @@
                                   <img
                                     class="box-shadow-icon"
                                     alt=""
-                                    src="./public/vector-6.svg"
+                                    src="./public/vector-615.svg"
                                   />
 
                                   <div class="frame">
@@ -159,7 +171,7 @@
                       <img
                         class="input-collector-icon"
                         alt=""
-                        src="./public/vector-7.svg"
+                        src="./public/vector-713.svg"
                       />
                     </div>
                   </div>
@@ -167,40 +179,40 @@
                 <img class="frame-child2" alt="" src="./public/line-12.svg" />
               </div>
             </div>
-            <div class="frame-wrapper4">
-              <div class="frame-parent6">
-                <div class="frame-wrapper5">
-                  <div class="frame-parent7">
-                    <div class="frame-wrapper6">
-                      <div class="frame-parent8">
+            <div class="relationship-detector-inner1">
+              <div class="frame-parent5">
+                <div class="frame-wrapper3">
+                  <div class="frame-parent6">
+                    <div class="frame-wrapper4">
+                      <div class="frame-parent7">
                         <div class="rectangle-parent1">
                           <div class="frame-child3"></div>
                           <div class="progress-indicator1">
                             <img
                               class="icon2"
                               alt=""
-                              src="./public/-20240405--318@2x.png"
+                              src="./public/-20240405--31813@2x.png"
                             />
 
                             <img
                               class="icon3"
                               alt=""
-                              src="./public/-20240405--405-1@2x.png"
+                              src="./public/-20240405--405-13@2x.png"
                             />
                           </div>
                         </div>
-                        <div class="frame-wrapper7">
+                        <div class="frame-wrapper5">
                           <div class="parent">
                             <b class="b1"
                               >오늘 내 기분은 말하자면 마이쮸같았지</b
                             >
-                            <div class="frame-wrapper8">
-                              <div class="frame-parent9">
+                            <div class="frame-wrapper6">
+                              <div class="frame-parent8">
                                 <div class="vector-container">
                                   <img
                                     class="vector-icon5"
                                     alt=""
-                                    src="./public/vector-8.svg"
+                                    src="./public/vector-83.svg"
                                   />
 
                                   <div class="wrapper1">
@@ -211,7 +223,7 @@
                                   <img
                                     class="vector-icon6"
                                     alt=""
-                                    src="./public/vector-9.svg"
+                                    src="./public/vector-92.svg"
                                   />
 
                                   <div class="wrapper2">
@@ -222,7 +234,7 @@
                                   <img
                                     class="vector-icon7"
                                     alt=""
-                                    src="./public/vector-10.svg"
+                                    src="./public/vector-103.svg"
                                   />
 
                                   <div class="wrapper3">
@@ -235,14 +247,14 @@
                         </div>
                       </div>
                     </div>
-                    <div class="frame-parent10">
+                    <div class="frame-parent9">
                       <div class="wrapper4">
                         <div class="div8">2024.04.09</div>
                       </div>
                       <img
                         class="vector-icon8"
                         alt=""
-                        src="./public/vector-11.svg"
+                        src="./public/vector-118.svg"
                       />
                     </div>
                   </div>
@@ -250,40 +262,40 @@
                 <img class="frame-child4" alt="" src="./public/line-13.svg" />
               </div>
             </div>
-            <div class="frame-wrapper9">
-              <div class="frame-parent11">
-                <div class="frame-wrapper10">
-                  <div class="frame-parent12">
-                    <div class="frame-wrapper11">
-                      <div class="frame-parent13">
+            <div class="relationship-detector-inner2">
+              <div class="frame-parent10">
+                <div class="frame-wrapper7">
+                  <div class="frame-parent11">
+                    <div class="frame-wrapper8">
+                      <div class="frame-parent12">
                         <div class="rectangle-parent2">
                           <div class="frame-child5"></div>
                           <button class="group">
                             <img
                               class="icon4"
                               alt=""
-                              src="./public/-20240405--317@2x.png"
+                              src="./public/-20240405--3174@2x.png"
                             />
 
                             <img
                               class="icon5"
                               alt=""
-                              src="./public/-20240405--405-2@2x.png"
+                              src="./public/-20240405--405-22@2x.png"
                             />
                           </button>
                         </div>
-                        <div class="frame-wrapper12">
+                        <div class="frame-wrapper9">
                           <div class="parent1">
                             <b class="b2"
                               >오늘 내 기분은 말하자면 마이쮸같았지</b
                             >
-                            <div class="frame-wrapper13">
-                              <div class="frame-parent14">
+                            <div class="frame-wrapper10">
+                              <div class="frame-parent13">
                                 <div class="vector-parent3">
                                   <img
                                     class="vector-icon9"
                                     alt=""
-                                    src="./public/vector-12.svg"
+                                    src="./public/vector-122.svg"
                                   />
 
                                   <div class="wrapper5">
@@ -294,7 +306,7 @@
                                   <img
                                     class="sound-decoder-icon"
                                     alt=""
-                                    src="./public/vector-13.svg"
+                                    src="./public/vector-132.svg"
                                   />
 
                                   <div class="data-merger">
@@ -305,7 +317,7 @@
                                   <img
                                     class="vector-icon10"
                                     alt=""
-                                    src="./public/vector-14.svg"
+                                    src="./public/vector-142.svg"
                                   />
 
                                   <div class="wrapper6">
@@ -325,7 +337,7 @@
                       <img
                         class="size-modifier-icon"
                         alt=""
-                        src="./public/vector-15.svg"
+                        src="./public/vector-152.svg"
                       />
                     </div>
                   </div>
@@ -333,241 +345,250 @@
                 <img class="frame-child6" alt="" src="./public/line-14.svg" />
               </div>
             </div>
-            <div class="logic-branch1">
-              <div class="image-container-parent">
-                <div class="image-container">
-                  <div class="button-collection">
-                    <div class="rectangle-parent3">
-                      <div class="frame-child7"></div>
-                      <div class="progress-indicator2">
-                        <img
-                          class="icon6"
-                          alt=""
-                          src="./public/-20240405--318@2x.png"
-                        />
+            <div class="value-extractor">
+              <div class="frame-parent14">
+                <div class="frame-wrapper11">
+                  <div class="image-container-parent">
+                    <div class="image-container">
+                      <div class="button-collection">
+                        <div class="rectangle-parent3">
+                          <div class="frame-child7"></div>
+                          <div class="progress-indicator2">
+                            <img
+                              class="icon6"
+                              alt=""
+                              src="./public/-20240405--31814@2x.png"
+                            />
 
-                        <img
-                          class="icon7"
-                          alt=""
-                          src="./public/-20240405--405-1@2x.png"
-                        />
-                      </div>
-                    </div>
-                    <div class="button-collection-inner">
-                      <div class="parent2">
-                        <b class="b3">오늘 내 기분은 말하자면 마이쮸같았지</b>
-                        <div class="frame-wrapper14">
-                          <div class="frame-parent15">
-                            <div class="vector-parent5">
-                              <img
-                                class="vector-icon11"
-                                alt=""
-                                src="./public/vector-16.svg"
-                              />
+                            <img
+                              class="icon7"
+                              alt=""
+                              src="./public/-20240405--405-13@2x.png"
+                            />
+                          </div>
+                        </div>
+                        <div class="button-collection-inner">
+                          <div class="parent2">
+                            <b class="b3"
+                              >오늘 내 기분은 말하자면 마이쮸같았지</b
+                            >
+                            <div class="frame-wrapper12">
+                              <div class="frame-parent15">
+                                <div class="vector-parent5">
+                                  <img
+                                    class="vector-icon11"
+                                    alt=""
+                                    src="./public/vector-162.svg"
+                                  />
 
-                              <div class="wrapper7">
-                                <div class="div12">미역국</div>
-                              </div>
-                            </div>
-                            <div class="vector-parent6">
-                              <img
-                                class="vector-icon12"
-                                alt=""
-                                src="./public/vector-17.svg"
-                              />
+                                  <div class="wrapper7">
+                                    <div class="div12">미역국</div>
+                                  </div>
+                                </div>
+                                <div class="vector-parent6">
+                                  <img
+                                    class="vector-icon12"
+                                    alt=""
+                                    src="./public/vector-172.svg"
+                                  />
 
-                              <div class="wrapper8">
-                                <div class="div13">밤양갱</div>
-                              </div>
-                            </div>
-                            <div class="vector-parent7">
-                              <img
-                                class="vector-icon13"
-                                alt=""
-                                src="./public/vector-18.svg"
-                              />
+                                  <div class="wrapper8">
+                                    <div class="div13">밤양갱</div>
+                                  </div>
+                                </div>
+                                <div class="vector-parent7">
+                                  <img
+                                    class="vector-icon13"
+                                    alt=""
+                                    src="./public/vector-182.svg"
+                                  />
 
-                              <div class="wrapper9">
-                                <div class="div14">토이스토리</div>
+                                  <div class="wrapper9">
+                                    <div class="div14">토이스토리</div>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
+                    <div class="frame-parent16">
+                      <div class="wrapper10">
+                        <div class="div15">2024.04.09</div>
+                      </div>
+                      <img
+                        class="vector-icon14"
+                        alt=""
+                        src="./public/vector-192.svg"
+                      />
+                    </div>
                   </div>
                 </div>
-                <div class="frame-parent16">
-                  <div class="wrapper10">
-                    <div class="div15">2024.04.09</div>
-                  </div>
-                  <img
-                    class="vector-icon14"
-                    alt=""
-                    src="./public/vector-19.svg"
-                  />
-                </div>
+                <img class="frame-child8" alt="" src="./public/line-15.svg" />
               </div>
             </div>
-            <div class="carousel">
-              <img class="carousel-child" alt="" src="./public/line-15.svg" />
-            </div>
-          </div>
-          <div class="graph-wrapper">
-            <div class="graph">
-              <div class="maps">
-                <div class="forms">
-                  <div class="survey">
-                    <div class="chat-bubble">
-                      <button class="rectangle-parent4">
-                        <div class="frame-child8"></div>
-                        <div class="data-merger1">
-                          <img
-                            class="icon8"
-                            alt=""
-                            src="./public/-20240405--317@2x.png"
-                          />
-
-                          <img
-                            class="icon9"
-                            alt=""
-                            src="./public/-20240405--402@2x.png"
-                          />
-                        </div>
-                      </button>
-                      <div class="icons">
-                        <div class="iterative-loop">
-                          <b class="b4">오늘 내 기분은 말하자면 마이쮸같았지</b>
-                          <div class="iterative-loop-inner">
-                            <div class="frame-parent17">
-                              <div class="vector-parent8">
-                                <img
-                                  class="vector-icon15"
-                                  alt=""
-                                  src="./public/vector-20.svg"
-                                />
-
-                                <div class="wrapper11">
-                                  <div class="div16">미역국</div>
-                                </div>
-                              </div>
-                              <div class="vector-parent9">
-                                <img
-                                  class="vector-icon16"
-                                  alt=""
-                                  src="./public/vector-21.svg"
-                                />
-
-                                <div class="wrapper12">
-                                  <div class="div17">밤양갱</div>
-                                </div>
-                              </div>
-                              <div class="vector-parent10">
-                                <img
-                                  class="vector-icon17"
-                                  alt=""
-                                  src="./public/vector-22.svg"
-                                />
-
-                                <div class="wrapper13">
-                                  <div class="div18">토이스토리</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+            <div class="value-extractor1">
+              <div class="frame-parent17">
+                <div class="frame-wrapper13">
                   <div class="frame-parent18">
-                    <div class="wrapper14">
-                      <div class="div19">2024.04.09</div>
+                    <div class="frame-wrapper14">
+                      <div class="frame-parent19">
+                        <button class="rectangle-parent4">
+                          <div class="frame-child9"></div>
+                          <div class="parent3">
+                            <img
+                              class="icon8"
+                              alt=""
+                              src="./public/-20240405--317@2x.png"
+                            />
+
+                            <img
+                              class="icon9"
+                              alt=""
+                              src="./public/-20240405--402@2x.png"
+                            />
+                          </div>
+                        </button>
+                        <div class="frame-wrapper15">
+                          <div class="parent4">
+                            <b class="b4"
+                              >오늘 내 기분은 말하자면 마이쮸같았지</b
+                            >
+                            <div class="function-call-wrapper">
+                              <div class="function-call">
+                                <div class="vector-parent8">
+                                  <img
+                                    class="vector-icon15"
+                                    alt=""
+                                    src="./public/vector-162.svg"
+                                  />
+
+                                  <div class="wrapper11">
+                                    <div class="div16">미역국</div>
+                                  </div>
+                                </div>
+                                <div class="vector-parent9">
+                                  <img
+                                    class="vector-icon16"
+                                    alt=""
+                                    src="./public/vector-172.svg"
+                                  />
+
+                                  <div class="wrapper12">
+                                    <div class="div17">밤양갱</div>
+                                  </div>
+                                </div>
+                                <div class="vector-parent10">
+                                  <img
+                                    class="vector-icon17"
+                                    alt=""
+                                    src="./public/vector-182.svg"
+                                  />
+
+                                  <div class="wrapper13">
+                                    <div class="div18">토이스토리</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <img
-                      class="vector-icon18"
-                      alt=""
-                      src="./public/vector-23.svg"
-                    />
+                    <div class="frame-parent20">
+                      <div class="wrapper14">
+                        <div class="div19">2024.04.09</div>
+                      </div>
+                      <img
+                        class="vector-icon18"
+                        alt=""
+                        src="./public/vector-192.svg"
+                      />
+                    </div>
                   </div>
                 </div>
+                <img class="frame-child10" alt="" src="./public/line-15.svg" />
               </div>
-              <img class="graph-child" alt="" src="./public/line-16.svg" />
             </div>
-          </div>
-          <div class="error-handler">
-            <div class="function-caller">
-              <div class="boolean-logic">
-                <div class="pattern-recognizer">
-                  <div class="pattern-recognizer-child"></div>
-                  <button class="data-merger2">
-                    <img
-                      class="icon10"
-                      alt=""
-                      src="./public/-20240405--317@2x.png"
-                    />
+            <div class="logic-gateway">
+              <div class="input-processor">
+                <div class="output-generator">
+                  <div class="filter-tree">
+                    <button class="rectangle-parent5">
+                      <div class="frame-child11"></div>
+                      <div class="parent5">
+                        <img
+                          class="icon10"
+                          alt=""
+                          src="./public/-20240405--317@2x.png"
+                        />
 
-                    <img
-                      class="icon11"
-                      alt=""
-                      src="./public/-20240405--402-1@2x.png"
-                    />
-                  </button>
-                </div>
-                <div class="data-sorter">
-                  <div class="parent3">
-                    <b class="b5">오늘 내 기분은 말하자면 마이쮸같았지</b>
-                    <div class="frame-wrapper15">
-                      <div class="frame-parent19">
-                        <div class="vector-parent11">
-                          <img
-                            class="vector-icon19"
-                            alt=""
-                            src="./public/vector-24.svg"
-                          />
+                        <img
+                          class="icon11"
+                          alt=""
+                          src="./public/-20240405--402-1@2x.png"
+                        />
+                      </div>
+                    </button>
+                    <div class="sequential-flow">
+                      <div class="parent6">
+                        <b class="b5">오늘 내 기분은 말하자면 마이쮸같았지</b>
+                        <div class="function-call-container">
+                          <div class="function-call1">
+                            <div class="vector-parent11">
+                              <img
+                                class="vector-icon19"
+                                alt=""
+                                src="./public/vector-162.svg"
+                              />
 
-                          <div class="wrapper15">
-                            <div class="div20">미역국</div>
-                          </div>
-                        </div>
-                        <div class="vector-parent12">
-                          <img
-                            class="vector-icon20"
-                            alt=""
-                            src="./public/vector-25.svg"
-                          />
+                              <div class="wrapper15">
+                                <div class="div20">미역국</div>
+                              </div>
+                            </div>
+                            <div class="vector-parent12">
+                              <img
+                                class="vector-icon20"
+                                alt=""
+                                src="./public/vector-172.svg"
+                              />
 
-                          <div class="wrapper16">
-                            <div class="div21">밤양갱</div>
-                          </div>
-                        </div>
-                        <div class="vector-parent13">
-                          <img
-                            class="vector-icon21"
-                            alt=""
-                            src="./public/vector-26.svg"
-                          />
+                              <div class="wrapper16">
+                                <div class="div21">밤양갱</div>
+                              </div>
+                            </div>
+                            <div class="vector-parent13">
+                              <img
+                                class="vector-icon21"
+                                alt=""
+                                src="./public/vector-182.svg"
+                              />
 
-                          <div class="wrapper17">
-                            <div class="div22">토이스토리</div>
+                              <div class="wrapper17">
+                                <div class="div22">토이스토리</div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="data-sorter1">
-                <div class="data-aggregator-parent">
-                  <div class="data-aggregator1">
-                    <div class="input-selector">2024.04.09</div>
+                <div class="frame-parent21">
+                  <div class="wrapper18">
+                    <div class="div23">2024.04.09</div>
                   </div>
                   <img
-                    class="output-processor-icon"
+                    class="vector-icon22"
                     alt=""
-                    src="./public/vector-27.svg"
+                    src="./public/vector-192.svg"
                   />
                 </div>
               </div>
+            </div>
+            <div class="relationship-detector-inner3">
+              <img class="frame-child12" alt="" src="./public/line-15.svg" />
             </div>
           </div>
         </div>

@@ -10,8 +10,8 @@
 
     <!-- 맨 오른쪽 아이콘들 -->
     <div class="right-icons">
-      <img class="header-icon" alt="Profile Shortcut" src="@/assets/icon/header/profile.svg" />
-      <img class="header-icon" alt="Statistics Page Shortcut" src="@/assets/icon/header/statistics.svg" />
+      <img class="header-icon" alt="Profile Shortcut" src="@/assets/icon/header/profile.png" />
+      <img class="header-icon" alt="Statistics Page Shortcut" src="@/assets/icon/header/statistics.png" />
       <img class="header-icon" alt="Logout Button" src="@/assets/icon/header/logout.png" />
     </div>
   </header>

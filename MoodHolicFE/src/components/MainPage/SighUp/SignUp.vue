@@ -1,27 +1,9 @@
 <template>
 <html>
-    <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./SignUp.css" />
-    <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
-    </head>
     <body>
     <div class="div">
         <header class="line-parent">
-        <div class="frame-child">
-        <img
-            class="moodholiclogo-2-icon"
-            loading="lazy"
-            alt=""
-            src="./public/moodholiclogo-25@2x.png"/>
-            </div>
-            <div class="frame-kid" ></div>
+
         </header>
         <section class="logo">
         <div class="rectangle-parent">
@@ -45,19 +27,19 @@
             </div>
             <div class="frame-wrapper">
             <div class="frame-group">
-                <button class="rectangle-group">
+              <button @click="onGoogleLogin" class="rectangle-group">
                 <div class="rectangle-div"></div>
-                <img class="group-icon" alt="" src="./public/group-16.svg" />
-
+                <img class="group-icon" alt="Google Logo" src="@/assets/icon/MainPage/SighUp/google.png" />
                 <div class="parent-login-methods">
-                    <b class="b1">구글 계정으로 간편 회원가입</b>
+                  <b class="b1">구글 계정으로 간편 회원가입</b>
                 </div>
-                </button>
+              </button>
+
                 <button class="rectangle-container">
                 <div class="frame-child1"></div>
                 <div class="group-div">
                     <div class="frame-child2"></div>
-                    <img class="vector-icon" alt="" src="./public/vector2.svg" />
+                    <img class="vector-icon" alt="" src="@/assets/icon/MainPage/SighUp/kakao.png" />
                 </div>
                 <div class="frame">
                     <b class="b2">카카오 계정으로 간편 회원가입</b>
@@ -73,9 +55,12 @@
 </template>
 
 <script setup>
-
+function onGoogleLogin() {
+  window.location.href = 'https://accounts.google.com/signin';
+}
 </script>
 
 <style>
-
+@import '@/assets/css/MainPage/SighUp/global.css';
+@import '@/assets/css/MainPage/SighUp/SignUp.css';
 </style>

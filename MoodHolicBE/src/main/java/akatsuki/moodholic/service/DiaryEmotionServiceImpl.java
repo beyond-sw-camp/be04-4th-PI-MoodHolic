@@ -42,6 +42,7 @@ public class DiaryEmotionServiceImpl implements DiaryEmotionService{
                 returnValue.put(diaryEmotion.getDiaryId().getDiaryId(),diaryEmotion.getEmotionId());
             }
         });
+        System.out.println("returnValue = " + returnValue);
         return returnValue;
     }
 }

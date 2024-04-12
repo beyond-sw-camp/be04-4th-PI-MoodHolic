@@ -33,6 +33,9 @@ public class GraphServiceImpl implements GraphService{
             String cmpDate = date[0]+"-"+date[1];
             compare(cmpDate, diary,memberEmotion);
         });
+         if (!past.isEmpty()) {
+             returnValue.put(past, Math.round((sum / cnt) * 100) / 100.0d);
+         }
         return returnValue;
     }
     @Override
@@ -41,8 +44,12 @@ public class GraphServiceImpl implements GraphService{
         diaryList.forEach(diary->{
             String[] date = diary.getDate().split("-");
             String cmpDate = date[0];
+            System.out.println("cmpDate = " + cmpDate);
             compare(cmpDate,diary,memberEmotion);
         });
+        if (!past.isEmpty()) {
+            returnValue.put(past, Math.round((sum / cnt) * 100) / 100.0d);
+        }
         return returnValue;
     }
 
@@ -56,7 +63,6 @@ public class GraphServiceImpl implements GraphService{
             String cmpDate = date[0] + "-" + date[1] + "-W" + weekOfMonth;
             compare(cmpDate, diary,memberEmotion);
         });
-        // 마지막 주 처리
         if (!past.isEmpty()) {
             returnValue.put(past, Math.round((sum / cnt) * 100) / 100.0d);
         }

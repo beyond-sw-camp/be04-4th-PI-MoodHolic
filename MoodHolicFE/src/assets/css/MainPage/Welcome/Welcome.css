@@ -23,7 +23,7 @@
 }
 .frame-parent {
   align-self: stretch;
-  height: 128.6px;
+  height: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -67,7 +67,7 @@
   font-size: inherit;
   line-height: 39.2px;
   font-weight: 700;
-  font-family: inherit;
+  font-family: 'Inter', sans-serif;
   display: inline-block;
   z-index: 1;
 }
@@ -81,6 +81,7 @@
 .div1 {
   position: relative;
   font-size: var(--font-size-xl);
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   z-index: 1;
 }
@@ -163,6 +164,7 @@
   justify-content: center;
   padding: 0 var(--padding-3xl) 0 var(--padding-xl);
   font-size: var(--font-size-xl);
+  font-family: 'Inter', sans-serif;
 }
 .frame-group {
   flex-direction: column;
@@ -182,8 +184,9 @@
   height: 30.3px;
   position: relative;
   font-size: var(--font-size-xl);
+  font-family: 'Inter', sans-serif;
   display: flex;
-  font-family: var(--font-inter);
+  /*font-family: var(--font-inter);*/
   color: var(--color-black);
   text-align: center;
   align-items: center;
@@ -242,7 +245,8 @@
   text-align: center;
   font-size: var(--font-size-13xl);
   color: var(--color-black);
-  font-family: var(--font-inter);
+  /*font-family: var(--font-inter);*/
+  font-family: 'Inter', sans-serif;
 }
 .div {
   width: 100%;
@@ -299,3 +303,4 @@
     gap: var(--gap-base);
   }
 }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');

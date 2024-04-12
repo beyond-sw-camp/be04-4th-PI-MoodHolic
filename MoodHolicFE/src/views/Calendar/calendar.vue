@@ -20,35 +20,48 @@
     </div>
   </template>
   </VCalendar>
-
+  
   <div class="popup-overlay" v-if="showPopup">
     <div class="popup-content">
       <span class="close" @click="closePopup">&times;</span>
-        <h2>상세 보.기.</h2>
-          기분 한줄: {{diary.diary.summary}}<br>
-          내용: {{diary.diary.content}}<br>
-          날짜: {{diary.diary.date}}<br>
-          기분: {{diary.emotion}}<br>
-          <div style="display: flex;">
-            <div style="margin-right: 50px;">
-              <h3>추천 음식</h3>
-              이름: {{diary.food.foodName}}<br>
-              종류: {{diary.food.foodCategory}}<br>
-              맵기: {{diary.food.foodSpicy}}<br>
-            </div>
-            <div>
-              <h3 style="margin-right: 50px;" >추천 영화</h3>
-              이름: {{diary.movie.movieName}}<br>
-              장르: {{diary.movie.movieGenre}}<br>
-            </div>
-            <div>
-              <h3 style="margin-right: 50px;">추천 음악</h3>
-              이름: {{diary.music.musicName}}<br>
-              가수: {{diary.music.singer}}<br>
-              장르: {{diary.music.musicGenre}}<br>
-            </div>
+        
+        <div style="display:flex;" align="center">
+          <div style="border-radius: 30px; background-color: white; padding: 30px;   margin: 10px; ">
+            <img :src="`${clickedEmotionImg}`"  style=" max-width: 200px;" alt="">
           </div>
-    </div>
+
+          <div style="border-radius: 30px; background-color: white; padding: 15px; margin: 10px; text-align: left; font-size: 30px; width:50%; padding-left:10%; padding-top:8%">
+            <div>🗓️ {{diary.diary.date}}</div><br>
+            <div>❤️ {{diary.emotion}}<br></div>
+          </div>  
+        </div>
+
+        <div style="border-radius: 30px; background-color: white; padding: 15px; padding-top: 1px;   margin: 10px;  ">
+          <h3>오늘의 기분</h3> {{diary.diary.summary}}<br>
+          <h3>하루 이야기</h3> {{diary.diary.content}}<br>{{diary.diary.content}}<br>
+        </div>
+        <div align="center" style="font-size:30px">AI's PICK</div>
+          
+        <div style="display: flex; width:100%; " align="center" >
+          <div style="border-radius: 30px; background-color: white;  padding-bottom: 7%;   margin: 0 auto; text-align: left; width:30% ">
+            <h3 align="center" > 음식</h3>
+            <div style="padding-left: 30%;">🎬 {{diary.food.foodName}}<br></div>
+            <div style="padding-left: 30%;">❖ {{diary.food.foodCategory}}<br></div>
+            <div style="padding-left: 30%;">🌶️ {{diary.food.foodSpicy}}<br></div>
+          </div>
+          <div style="border-radius: 30px; background-color: white;  padding-bottom: 7%;   margin: 0 auto; text-align: left; width:30%">
+            <h3 align="center"> 영화</h3>
+            <div style="padding-left: 30%;">🎬: {{diary.movie.movieName}}<br></div>
+            <div style="padding-left: 30%;">❖: {{diary.movie.movieGenre}}<br></div>
+          </div>
+          <div style="border-radius: 30px; background-color: white;  padding-bottom: 7%;   margin: 0 auto; text-align: left; width:30%">
+            <h3 align="center"> 음악</h3>
+            <div style="padding-left: 30%;">🎵: {{diary.music.musicName}}<br></div>
+            <div style="padding-left: 30%;">🎤: {{diary.music.singer}}<br></div>
+            <div style="padding-left: 30%;">❖: {{diary.music.musicGenre}}<br></div>
+          </div>
+        </div>
+     </div>
   </div>
 
 
@@ -67,7 +80,7 @@ const calendar = ref(null);
 const date = ref([]);
 const attributes = ref([]);
 const diary = ref(null);
-
+let clickedEmotionImg = ref('');
 
 const showPopup = ref(false);
 
@@ -80,10 +93,6 @@ const openPopup = (index) => {
 const closePopup = () => {
   showPopup.value = false;
 };
-
-function moveToday() {
-  calendar.value.move(new Date());
-}
 
 
 const getMemberDate = async()=> {
@@ -171,6 +180,8 @@ const getDiary = async(index)=> {
     console.log(data);
     diary.value = data;
     console.log(diary.value);
+    clickedEmotionImg = getEmotion(diary.value.emotion);
+    console.log(clickedEmotionImg);
   })
   };
   
@@ -276,12 +287,14 @@ const getDiary = async(index)=> {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: white;
+        background-color: #b1beff;
         padding: 20px;
-        border-radius: 5px;
+        border-radius: 30px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        width: 800px;
-        height: 800px;
+        width: 75%;
+        height: 80%;
+        overflow-y: auto; /* 수직 스크롤 활성화 */
+        max-height: 80vh; /* 팝업 창의 최대 높이 지정 */
     
     }
 

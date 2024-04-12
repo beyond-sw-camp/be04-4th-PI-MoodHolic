@@ -1,28 +1,9 @@
 <template>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./index.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
-  </head>
   <body>
     <div class="div">
       <header class="line-parent">
-        <div class="frame-child">
-        <img
-          class="moodholiclogo-2-icon"
-          loading="lazy"
-          alt=""
-          src="./public/moodholiclogo-25@2x.png"
-        />
-      </div>
-      <div class="frame-kid" ></div>
+
       </header>
       <section class="inner">
         <div class="rectangle-parent">
@@ -49,7 +30,7 @@
                 <img
                   class="create-account-button-item"
                   alt=""
-                  src="./public/group-161.svg"
+                  src="@/assets/icon/MainPage/LogIn&SignUp/google.png"
                 />
 
                 <b class="b1">구글로 간편 로그인</b>
@@ -61,7 +42,7 @@
               <div class="frame-inner"></div>
               <div class="rectangle-container">
                 <div class="rectangle-div"></div>
-                <img class="vector-icon" alt="" src="./public/vector2.svg" />
+                <img class="vector-icon" alt="" src="@/assets/icon/MainPage/LogIn&SignUp/kakao.png" />
               </div>
               <b class="b2">카카오톡으로 간편 로그인</b>
             </button>
@@ -87,5 +68,6 @@
 </script>
 
 <style>
-
+@import '@/assets/css/MainPage/LogIn&SignUp/global.css';
+@import '@/assets/css/MainPage/LogIn&SignUp/LogIn&SignUp.css';
 </style>

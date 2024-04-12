@@ -48,11 +48,43 @@
               장르: {{diary.music.musicGenre}}<br>
             </div>
           </div>
-    </div>
+
+          <div style="border-radius: 30px; background-color: white; padding: 15px; margin: 10px; text-align: left; font-size: 30px; width:50%; padding-left:10%; padding-top:8%">
+            <div>🗓️ {{diary.diary.date}}</div><br>
+            <div>❤️ {{diary.emotion}}<br></div>
+          </div>  
+        </div>
+
+        <div style="border-radius: 30px; background-color: white; padding: 15px; padding-top: 1px;   margin: 10px;  ">
+          <h3>오늘의 기분</h3> {{diary.diary.summary}}<br>
+          <h3>하루 이야기</h3> {{diary.diary.content}}<br>{{diary.diary.content}}<br>
+        </div>
+        <br>
+        <div align="center" style="font-size:30px">AI's PICK</div>
+        <br>
+          
+        <div style="display: flex; width:100%; " align="center" >
+          <div style="border-radius: 30px; background-color: white;  padding-bottom: 7%;   margin: 0 auto; text-align: left; width:30% ">
+            <h3 align="center" > 음식</h3>
+            <br>
+            <div style="padding-left: 30%;">🎬 {{diary.food.foodName}}<br></div>
+            <div style="padding-left: 30%;">❖ {{diary.food.foodCategory}}<br></div>
+            <div style="padding-left: 30%;">🌶️ {{diary.food.foodSpicy}}<br></div>
+          </div>
+          <div style="border-radius: 30px; background-color: white;  padding-bottom: 7%;   margin: 0 auto; text-align: left; width:30%">
+            <h3 align="center"> 영화</h3>
+            <div style="padding-left: 30%;">🎬: {{diary.movie.movieName}}<br></div>
+            <div style="padding-left: 30%;">❖: {{diary.movie.movieGenre}}<br></div>
+          </div>
+          <div style="border-radius: 30px; background-color: white;  padding-bottom: 7%;   margin: 0 auto; text-align: left; width:30%">
+            <h3 align="center"> 음악</h3>
+            <div style="padding-left: 30%;">🎵: {{diary.music.musicName}}<br></div>
+            <div style="padding-left: 30%;">🎤: {{diary.music.singer}}<br></div>
+            <div style="padding-left: 30%;">❖: {{diary.music.musicGenre}}<br></div>
+          </div>
+        </div>
+     </div>
   </div>
-
-
-
 </template>
 
 <script setup>
@@ -67,7 +99,13 @@ const calendar = ref(null);
 const date = ref([]);
 const attributes = ref([]);
 const diary = ref(null);
+let clickedEmotionImg = ref('');
+// const memberId = ref([]);
+// try{
+//   memberId = 
+// }catch(e){
 
+// }
 
 const showPopup = ref(false);
 

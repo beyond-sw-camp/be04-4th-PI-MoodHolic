@@ -1,11 +1,11 @@
 @Copyright By Hyun Woo
 
-1. install v-calendar
-
+1. v-calendar
+1-1. install v-calendar
 npm install v-calendar@next @popperjs/core
-
-
-2. copy to main.js
+1-2. copy to main.js
 import 'v-calendar/style.css';
 
-
+2. Chart.js, vuechart
+2-1. Chart 설치
+npm i vue-chartjs chart.js

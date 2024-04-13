@@ -1,8 +1,11 @@
 <template>
+  
   <div align="center">
     <button class="but" :class="{ 'active': isYearClicked }" @click="getYear">연간</button>
     <button class="but" :class="{ 'active': isMonthClicked }" @click="getMonth">월간</button>
     <button class="but" :class="{ 'active': isWeekClicked }" @click="getWeek">주간</button>
+    <button class="but" :class="{ 'active': isDayClicked }" @click="getDay">일간</button>
+    
   </div>
   <canvas ref="myChartCanvasa"></canvas>
 </template>
@@ -19,7 +22,7 @@ const type = 'line';
 const data = ref({
   labels: [],
   datasets: [{
-    label: 'ㅎㅇㅇ',
+
     data: [],
     borderWidth: 1,
   }]
@@ -28,7 +31,7 @@ const data = ref({
 const options = {
   scales: {
     y: {
-      beginAtZero: true,
+      beginAtZero: false,
       max: 10,
       grid: {
         display: false
@@ -36,6 +39,7 @@ const options = {
     },
     x: {
       grid: {
+        beginAtZero: false,
         display: false
       }
     }
@@ -52,10 +56,12 @@ onMounted(() => {
 let isYearClicked = ref(false);
 let isMonthClicked = ref(false);
 let isWeekClicked = ref(false);
+let isDayClicked = ref(false);
 
 let yearData = null;
 let monthData = null;
 let weekData = null;
+let dayData = null;
 
 async function fetchData(url) {
   try {
@@ -95,6 +101,13 @@ async function getWeekData() {
   return weekData;
 }
 
+async function getDayData() {
+  if (!dayData) {
+    dayData = await fetchData('http://localhost:8888/graph/day/1');
+  }
+  return dayData;
+}
+
 async function updateChartWithNewData(newData) {
   data.value.labels = Object.keys(newData);
   data.value.datasets[0].data = Object.values(newData);
@@ -108,9 +121,11 @@ const getYear = async () => {
     isYearClicked.value = true;
     isMonthClicked.value = false;
     isWeekClicked.value = false;
+    isDayClicked.value = false;
     updateChartWithNewData(newData);
   }
 };
+getYear();
 
 const getMonth = async () => {
   const newData = await getMonthData();
@@ -118,6 +133,7 @@ const getMonth = async () => {
     isYearClicked.value = false;
     isMonthClicked.value = true;
     isWeekClicked.value = false;
+    isDayClicked.value = false;
     updateChartWithNewData(newData);
   }
 };
@@ -128,6 +144,17 @@ const getWeek = async () => {
     isYearClicked.value = false;
     isMonthClicked.value = false;
     isWeekClicked.value = true;
+    isDayClicked.value = false;
+    updateChartWithNewData(newData);
+  }
+};
+const getDay = async () => {
+  const newData = await getDayData();
+  if (newData) {
+    isYearClicked.value = false;
+    isMonthClicked.value = false;
+    isWeekClicked.value = false;
+    isDayClicked.value = true;
     updateChartWithNewData(newData);
   }
 };
@@ -145,6 +172,7 @@ function destroyChart() {
   if (myChart) {
     myChart.destroy();
   }
+  
 }
 
 </script>
@@ -155,8 +183,8 @@ function destroyChart() {
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid #000000;
-  background-color: #7c7c7c;
+  border: 1px solid #D9D9D9;
+  background-color: #D9D9D9;
   color: #000000;
   font-size: 15px;
   font-weight: 600;
@@ -168,6 +196,8 @@ function destroyChart() {
 }
 
 .but.active {
-  background-color: yellow;
+  background-color: #FEDB56;
+  border-color: #FEDB56;
+  
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
+  <button class="but" @click="getData('year')">연간 데이터 불러오기</button>
+  <button class="but" @click="getData('month')">월간 데이터 불러오기</button>
+  <button class="but" @click="getData('week')">주간 데이터 불러오기</button>
+  <button class="but" @click="getData('day')">일간 데이터 불러오기</button>
   <div>
     <canvas ref="myChartCanvas"></canvas>
   </div>
-  <button @click="getData('year')">연간 데이터 불러오기</button>
-  <button @click="getData('month')">월간 데이터 불러오기</button>
-  <button @click="getData('week')">주간 데이터 불러오기</button>
-  <button @click="getData('day')">일간 데이터 불러오기</button>
 </template>
 
 <script setup>
@@ -137,5 +137,25 @@ function updateChart() {
 </script>
 
 <style>
-/* Add your styles here */
+.but {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #D9D9D9;
+  background-color: #D9D9D9;
+  color: #000000;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif; 
+}
+
+.but:hover {
+  background-color: #333333; /* 마우스를 올렸을 때 배경색 변경 */
+}
+
+.but.active {
+  background-color: #FEDB56;
+  border-color: #FEDB56;
+  
+}
 </style>

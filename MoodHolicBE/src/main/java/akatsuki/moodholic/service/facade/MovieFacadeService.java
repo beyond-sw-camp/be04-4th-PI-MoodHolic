@@ -26,6 +26,10 @@ public class MovieFacadeService {
         this.diaryMovieService = diaryMovieService;
         this.diaryService = diaryService;
     }
+    private void init() {
+        maximum=0;
+        name="";
+    }
 
     public List<Movie> getAllMovies() {
         return movieService.getAllMovies();
@@ -51,9 +55,7 @@ public class MovieFacadeService {
         init();
         List<Diary> diaries = diaryService.getMemberDiaries(memberId);
         List<DiaryMovie> diaryMovies= diaryMovieService.getMemberLikedMovie(diaries);
-        MemberMovieGenreRanking returnValue = new MemberMovieGenreRanking();
         HashMap<String, Integer> lists = new HashMap<>();
-
 
         diaryMovies.forEach(diaryMovie -> {
             if(lists.get(diaryMovie.getMovieId().getMovieGenre())==null) {
@@ -68,17 +70,8 @@ public class MovieFacadeService {
             }
         });
 
-        returnValue = new MemberMovieGenreRanking(lists,maximum,name);
+        return new MemberMovieGenreRanking(lists,maximum,name);
 
-
-
-        System.out.println("returnValue = " + returnValue);
-
-        return returnValue;
     }
 
-    private void init() {
-        maximum=0;
-        name="";
-    }
 }

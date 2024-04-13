@@ -1,16 +1,18 @@
 <template>
-  <button class="but" @click="getData('year')">연간 데이터 불러오기</button>
-  <button class="but" @click="getData('month')">월간 데이터 불러오기</button>
-  <button class="but" @click="getData('week')">주간 데이터 불러오기</button>
-  <button class="but" @click="getData('day')">일간 데이터 불러오기</button>
-  <div>
-    <canvas ref="myChartCanvas"></canvas>
+  <div align="center">
+    <button class="but" :class="{ 'active': isYearClicked }" @click="toggleActive('year')">연간</button>
+    <button class="but" :class="{ 'active': isMonthClicked }" @click="toggleActive('month')">월간</button>
+    <button class="but" :class="{ 'active': isWeekClicked }" @click="toggleActive('week')">주간</button>
+    <button class="but" :class="{ 'active': isDayClicked }" @click="toggleActive('day')">일간</button>
   </div>
+  <canvas ref="myChartCanvasa"></canvas>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import { Chart, registerables } from 'chart.js';
+import { Line } from 'vue-chartjs'
+
 Chart.register(...registerables);
 
 const type = 'bar';
@@ -18,22 +20,36 @@ const type = 'bar';
 const data = ref({
   labels: [],
   datasets: [{
-    label: '# of Votes',
     data: [],
-    borderWidth: 1
+    borderWidth: 1,
   }]
 });
 
 const options = {
   scales: {
     y: {
-      beginAtZero: true
+      beginAtZero: false,
+      max: 10,
+      grid: {
+        display: false
+      }
+    },
+    x: {
+      grid: {
+        beginAtZero: false,
+        display: false
+      }
     }
   }
 };
 
-const myChartCanvas = ref(null);
+const myChartCanvasa = ref(null);
 let myChart = null;
+
+let isYearClicked = ref(false);
+let isMonthClicked = ref(false);
+let isWeekClicked = ref(false);
+let isDayClicked = ref(false);
 
 let yearData = null;
 let monthData = null;
@@ -44,81 +60,104 @@ onMounted(() => {
   createChart();
 });
 
-async function getData(period) {
-  let targetData = null;
-  switch(period) {
-    case 'year':
-      targetData = yearData;
-      break;
-    case 'month':
-      targetData = monthData;
-      break;
-    case 'week':
-      targetData = weekData;
-      break;
-    case 'day':
-      targetData = dayData;
-      break;
-    default:
-      return;
-  }
-
-  if (!targetData) {
-    targetData = await fetchData(period);
-  }
-
-  if (targetData) {
-    data.value.labels = Object.keys(targetData);
-    data.value.datasets[0].data = Object.values(targetData);
-    updateChart();
-  }
-}
-
-async function fetchData(period) {
-  let url = '';
-  switch(period) {
-    case 'year':
-      url = 'http://localhost:8888/graph/year/1';
-      break;
-    case 'month':
-      url = 'http://localhost:8888/graph/month/1';
-      break;
-    case 'week':
-      url = 'http://localhost:8888/graph/week/1';
-      break;
-    case 'day':
-      url = 'http://localhost:8888/graph/day/1';
-      break;
-    default:
-      return null;
-  }
-
+async function fetchData(url) {
   try {
     const response = await fetch(url);
-    const responseData = await response.json();
-    switch(period) {
-      case 'year':
-        yearData = responseData;
-        break;
-      case 'month':
-        monthData = responseData;
-        break;
-      case 'week':
-        weekData = responseData;
-        break;
-      case 'day':
-        dayData = responseData;
-        break;
-    }
-    return responseData;
+    return await response.json();
   } catch (error) {
     console.error('Error fetching data:', error);
     return null;
   }
 }
 
+async function fetchDataAndSetData(url, dataRef) {
+  const fetchedData = await fetchData(url);
+  if (fetchedData) {
+    dataRef.value = fetchedData;
+  }
+}
+
+async function getYearData() {
+  if (!yearData) {
+    yearData = await fetchData('http://localhost:8888/graph/year/1');
+  }
+  return yearData;
+}
+
+async function getMonthData() {
+  if (!monthData) {
+    monthData = await fetchData('http://localhost:8888/graph/month/1');
+  }
+  return monthData;
+}
+
+async function getWeekData() {
+  if (!weekData) {
+    weekData = await fetchData('http://localhost:8888/graph/week/1');
+  }
+  return weekData;
+}
+
+async function getDayData() {
+  if (!dayData) {
+    dayData = await fetchData('http://localhost:8888/graph/day/1');
+  }
+  return dayData;
+}
+
+async function updateChartWithNewData(newData) {
+  data.value.labels = Object.keys(newData);
+  data.value.datasets[0].data = Object.values(newData);
+  destroyChart();
+  createChart();
+}
+
+const getYear = async () => {
+  const newData = await getYearData();
+  if (newData) {
+    isYearClicked.value = true;
+    isMonthClicked.value = false;
+    isWeekClicked.value = false;
+    isDayClicked.value = false;
+    updateChartWithNewData(newData);
+  }
+};
+getYear();
+
+const getMonth = async () => {
+  const newData = await getMonthData();
+  if (newData) {
+    isYearClicked.value = false;
+    isMonthClicked.value = true;
+    isWeekClicked.value = false;
+    isDayClicked.value = false;
+    updateChartWithNewData(newData);
+  }
+};
+
+const getWeek = async () => {
+  const newData = await getWeekData();
+  if (newData) {
+    isYearClicked.value = false;
+    isMonthClicked.value = false;
+    isWeekClicked.value = true;
+    isDayClicked.value = false;
+    updateChartWithNewData(newData);
+  }
+};
+const getDay = async () => {
+  const newData = await getDayData();
+  if (newData) {
+    isYearClicked.value = false;
+    isMonthClicked.value = false;
+    isWeekClicked.value = false;
+    isDayClicked.value = true;
+    updateChartWithNewData(newData);
+  }
+};
+
 function createChart() {
-  const ctx = myChartCanvas.value.getContext('2d');
+  const ctx = myChartCanvasa.value.getContext('2d');
   myChart = new Chart(ctx, {
     type: type,
     data: data.value,
@@ -126,17 +165,36 @@ function createChart() {
   });
 }
 
-function updateChart() {
+function destroyChart() {
   if (myChart) {
-    myChart.data = data.value;
-    myChart.update();
-  } else {
-    createChart();
+    myChart.destroy();
+  }
+}
+
+function toggleActive(period) {
+  isYearClicked.value = period === 'year';
+  isMonthClicked.value = period === 'month';
+  isWeekClicked.value = period === 'week';
+  isDayClicked.value = period === 'day';
+  switch (period) {
+    case 'year':
+      getYear();
+      break;
+    case 'month':
+      getMonth();
+      break;
+    case 'week':
+      getWeek();
+      break;
+    case 'day':
+      getDay();
+      break;
   }
 }
 </script>
 
 <style>
+/* Add your styles here */
 .but {
   margin: 10px;
   padding: 10px;

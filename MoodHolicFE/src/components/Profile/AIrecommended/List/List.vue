@@ -3,47 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./index.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
   </head>
   <body>
     <div class="ai">
-      <header class="input-field">
-        <div class="input-field-child"></div>
-        <img
-          class="moodholiclogo-2-icon"
-          loading="lazy"
-          alt=""
-          src="./public/moodholiclogo-25@2x.png"
-        />
-
-        <div class="div">오늘 날씨</div>
-        <div class="image-1-parent">
-          <img
-            class="image-1-icon"
-            loading="lazy"
-            alt=""
-            src="./public/image-16@2x.png"
-          />
-
-          <div class="div1">14 ℃</div>
-        </div>
-        <img
-          class="group-icon"
-          loading="lazy"
-          alt=""
-          src="./public/group7@2x.png"
-        />
-
-        <img class="group-icon1" alt="" src="./public/group3.svg" />
-
-        <img class="uimgraph-bar-icon" alt="" src="./public/uimgraphbar.svg" />
-      </header>
       <section class="stack-data">
         <div class="frame-parent">
           <div class="frame-wrapper">
@@ -54,7 +16,7 @@
                   <img
                     class="star-shape-icon"
                     alt=""
-                    src="./public/star-shape.svg"
+                    src="@/assets/icon/Profile/AIrecommended/List/whole.png"
                   />
                 </button>
               </div>
@@ -64,7 +26,7 @@
                   <img
                     class="vector-icon"
                     alt=""
-                    src="./public/vector-117.svg"
+                    src="@/assets/icon/Profile/AIrecommended/List/food.png"
                   />
                 </button>
               </div>
@@ -73,7 +35,7 @@
                 <img
                   class="vector-icon1"
                   alt=""
-                  src="./public/vector-216.svg"
+                  src="@/assets/icon/Profile/AIrecommended/List/music.png"
                 />
               </button>
               <button class="group-button">
@@ -81,7 +43,7 @@
                 <img
                   class="vector-icon2"
                   alt=""
-                  src="./public/vector-315.svg"
+                  src="@/assets/icon/Profile/AIrecommended/List/movie.png"
                 />
               </button>
             </div>
@@ -92,7 +54,7 @@
                 class="line-icon"
                 loading="lazy"
                 alt=""
-                src="./public/line-11.svg"
+                src="@/assets/icon/Profile/AIrecommended/List/thickLine.png"
               />
             </div>
             <div class="relationship-detector-child">
@@ -107,14 +69,14 @@
                             <img
                               class="icon"
                               alt=""
-                              src="./public/-20240405--31812@2x.png"
+                              src="@/assets/icon/Profile/AIrecommended/List/cloudy.png"
                             />
 
                             <img
                               class="icon1"
                               loading="lazy"
                               alt=""
-                              src="./public/-20240405--4055@2x.png"
+                              src="@/assets/icon/Profile/AIrecommended/List/-20240405--4055@2x.png"
                             />
                           </div>
                         </div>
@@ -129,7 +91,7 @@
                                   <img
                                     class="vector-icon3"
                                     alt=""
-                                    src="./public/vector-413.svg"
+                                    src="@/assets/icon/Profile/AIrecommended/List/food.png"
                                   />
 
                                   <div class="wrapper">
@@ -140,7 +102,7 @@
                                   <img
                                     class="vector-icon4"
                                     alt=""
-                                    src="./public/vector-513.svg"
+                                    src="@/assets/icon/Profile/AIrecommended/List/music.png"
                                   />
 
                                   <div class="container">
@@ -151,7 +113,7 @@
                                   <img
                                     class="box-shadow-icon"
                                     alt=""
-                                    src="./public/vector-615.svg"
+                                    src="@/assets/icon/Profile/AIrecommended/List/music.png"
                                   />
 
                                   <div class="frame">
@@ -171,12 +133,12 @@
                       <img
                         class="input-collector-icon"
                         alt=""
-                        src="./public/vector-713.svg"
+                        src="@/assets/icon/Profile/AIrecommended/List/heart.png"
                       />
                     </div>
                   </div>
                 </div>
-                <img class="frame-child2" alt="" src="./public/line-12.svg" />
+                <img class="frame-child2" alt="" src="@/assets/icon/Profile/AIrecommended/List/line.png" />
               </div>
             </div>
             <div class="relationship-detector-inner1">
@@ -191,13 +153,13 @@
                             <img
                               class="icon2"
                               alt=""
-                              src="./public/-20240405--31813@2x.png"
+                              src="@/assets/icon/Profile/AIrecommended/List/cloudy.png"
                             />
 
                             <img
                               class="icon3"
                               alt=""
-                              src="./public/-20240405--405-13@2x.png"
+                              src="@/assets/icon/Profile/AIrecommended/List/-20240405--405-13@2x.png"
                             />
                           </div>
                         </div>
@@ -212,7 +174,7 @@
                                   <img
                                     class="vector-icon5"
                                     alt=""
-                                    src="./public/vector-83.svg"
+                                    src="@/assets/icon/Profile/AIrecommended/List/food.png"
                                   />
 
                                   <div class="wrapper1">
@@ -223,7 +185,7 @@
                                   <img
                                     class="vector-icon6"
                                     alt=""
-                                    src="./public/vector-92.svg"
+                                    src="@/assets/icon/Profile/AIrecommended/List/music.png"
                                   />
 
                                   <div class="wrapper2">
@@ -234,7 +196,7 @@
                                   <img
                                     class="vector-icon7"
                                     alt=""
-                                    src="./public/vector-103.svg"
+                                    src="@/assets/icon/Profile/AIrecommended/List/movie.png"
                                   />
 
                                   <div class="wrapper3">
@@ -254,12 +216,12 @@
                       <img
                         class="vector-icon8"
                         alt=""
-                        src="./public/vector-118.svg"
+                        src="@/assets/icon/Profile/AIrecommended/List/heart.png"
                       />
                     </div>
                   </div>
                 </div>
-                <img class="frame-child4" alt="" src="./public/line-13.svg" />
+                <img class="frame-child4" alt="" src="@/assets/icon/Profile/AIrecommended/List/line.png" />
               </div>
             </div>
             <div class="relationship-detector-inner2">
@@ -274,13 +236,13 @@
                             <img
                               class="icon4"
                               alt=""
-                              src="./public/-20240405--3174@2x.png"
+                              src="@/assets/icon/Profile/AIrecommended/List/thunder.png"
                             />
 
                             <img
                               class="icon5"
                               alt=""
-                              src="./public/-20240405--405-22@2x.png"
+                              src="@/assets/icon/Profile/AIrecommended/List/-20240405--405-22@2x.png"
                             />
                           </button>
                         </div>
@@ -295,7 +257,7 @@
                                   <img
                                     class="vector-icon9"
                                     alt=""
-                                    src="./public/vector-122.svg"
+                                    src="@/assets/icon/Profile/AIrecommended/List/food.png"
                                   />
 
                                   <div class="wrapper5">
@@ -306,7 +268,7 @@
                                   <img
                                     class="sound-decoder-icon"
                                     alt=""
-                                    src="./public/vector-132.svg"
+                                    src="@/assets/icon/Profile/AIrecommended/List/music.png"
                                   />
 
                                   <div class="data-merger">
@@ -317,7 +279,7 @@
                                   <img
                                     class="vector-icon10"
                                     alt=""
-                                    src="./public/vector-142.svg"
+                                    src="@/assets/icon/Profile/AIrecommended/List/movie.png"
                                   />
 
                                   <div class="wrapper6">
@@ -337,12 +299,12 @@
                       <img
                         class="size-modifier-icon"
                         alt=""
-                        src="./public/vector-152.svg"
+                        src="@/assets/icon/Profile/AIrecommended/List/emptyHeart.png"
                       />
                     </div>
                   </div>
                 </div>
-                <img class="frame-child6" alt="" src="./public/line-14.svg" />
+                <img class="frame-child6" alt="" src="@/assets/icon/Profile/AIrecommended/List/line.png" />
               </div>
             </div>
             <div class="value-extractor">
@@ -357,13 +319,13 @@
                             <img
                               class="icon6"
                               alt=""
-                              src="./public/-20240405--31814@2x.png"
+                              src="@/assets/icon/Profile/AIrecommended/List/cloudy.png"
                             />
 
                             <img
                               class="icon7"
                               alt=""
-                              src="./public/-20240405--405-13@2x.png"
+                              src="@/assets/icon/Profile/AIrecommended/List/-20240405--405-13@2x.png"
                             />
                           </div>
                         </div>
@@ -378,7 +340,7 @@
                                   <img
                                     class="vector-icon11"
                                     alt=""
-                                    src="./public/vector-162.svg"
+                                    src="@/assets/icon/Profile/AIrecommended/List/food.png"
                                   />
 
                                   <div class="wrapper7">
@@ -389,7 +351,7 @@
                                   <img
                                     class="vector-icon12"
                                     alt=""
-                                    src="./public/vector-172.svg"
+                                    src="@/assets/icon/Profile/AIrecommended/List/music.png"
                                   />
 
                                   <div class="wrapper8">
@@ -400,7 +362,7 @@
                                   <img
                                     class="vector-icon13"
                                     alt=""
-                                    src="./public/vector-182.svg"
+                                    src="@/assets/icon/Profile/AIrecommended/List/movie.png"
                                   />
 
                                   <div class="wrapper9">
@@ -420,12 +382,12 @@
                       <img
                         class="vector-icon14"
                         alt=""
-                        src="./public/vector-192.svg"
+                        src="@/assets/icon/Profile/AIrecommended/List/emptyHeart.png"
                       />
                     </div>
                   </div>
                 </div>
-                <img class="frame-child8" alt="" src="./public/line-15.svg" />
+                <img class="frame-child8" alt="" src="@/assets/icon/Profile/AIrecommended/List/line.png" />
               </div>
             </div>
             <div class="value-extractor1">
@@ -440,13 +402,13 @@
                             <img
                               class="icon8"
                               alt=""
-                              src="./public/-20240405--317@2x.png"
+                              src="@/assets/icon/Profile/AIrecommended/List/sun.png"
                             />
 
                             <img
                               class="icon9"
                               alt=""
-                              src="./public/-20240405--402@2x.png"
+                              src="@/assets/icon/Profile/AIrecommended/List/-20240405--402@2x.png"
                             />
                           </div>
                         </button>
@@ -461,7 +423,7 @@
                                   <img
                                     class="vector-icon15"
                                     alt=""
-                                    src="./public/vector-162.svg"
+                                    src="@/assets/icon/Profile/AIrecommended/List/food.png"
                                   />
 
                                   <div class="wrapper11">
@@ -472,7 +434,7 @@
                                   <img
                                     class="vector-icon16"
                                     alt=""
-                                    src="./public/vector-172.svg"
+                                    src="@/assets/icon/Profile/AIrecommended/List/music.png"
                                   />
 
                                   <div class="wrapper12">
@@ -483,7 +445,7 @@
                                   <img
                                     class="vector-icon17"
                                     alt=""
-                                    src="./public/vector-182.svg"
+                                    src="@/assets/icon/Profile/AIrecommended/List/movie.png"
                                   />
 
                                   <div class="wrapper13">
@@ -503,12 +465,12 @@
                       <img
                         class="vector-icon18"
                         alt=""
-                        src="./public/vector-192.svg"
+                        src="@/assets/icon/Profile/AIrecommended/List/emptyHeart.png"
                       />
                     </div>
                   </div>
                 </div>
-                <img class="frame-child10" alt="" src="./public/line-15.svg" />
+                <img class="frame-child10" alt="" src="@/assets/icon/Profile/AIrecommended/List/line.png" />
               </div>
             </div>
             <div class="logic-gateway">
@@ -521,13 +483,13 @@
                         <img
                           class="icon10"
                           alt=""
-                          src="./public/-20240405--317@2x.png"
+                          src="@/assets/icon/Profile/AIrecommended/List/sun.png"
                         />
 
                         <img
                           class="icon11"
                           alt=""
-                          src="./public/-20240405--402-1@2x.png"
+                          src="@/assets/icon/Profile/AIrecommended/List/-20240405--402-1@2x.png"
                         />
                       </div>
                     </button>
@@ -540,7 +502,7 @@
                               <img
                                 class="vector-icon19"
                                 alt=""
-                                src="./public/vector-162.svg"
+                                src="@/assets/icon/Profile/AIrecommended/List/food.png"
                               />
 
                               <div class="wrapper15">
@@ -551,7 +513,7 @@
                               <img
                                 class="vector-icon20"
                                 alt=""
-                                src="./public/vector-172.svg"
+                                src="@/assets/icon/Profile/AIrecommended/List/music.png"
                               />
 
                               <div class="wrapper16">
@@ -562,7 +524,7 @@
                               <img
                                 class="vector-icon21"
                                 alt=""
-                                src="./public/vector-182.svg"
+                                src="@/assets/icon/Profile/AIrecommended/List/movie.png"
                               />
 
                               <div class="wrapper17">
@@ -582,13 +544,13 @@
                   <img
                     class="vector-icon22"
                     alt=""
-                    src="./public/vector-192.svg"
+                    src="@/assets/icon/Profile/AIrecommended/List/emptyHeart.png"
                   />
                 </div>
               </div>
             </div>
             <div class="relationship-detector-inner3">
-              <img class="frame-child12" alt="" src="./public/line-15.svg" />
+              <img class="frame-child12" alt="" src="@/assets/icon/Profile/AIrecommended/List/line.png" />
             </div>
           </div>
         </div>
@@ -604,5 +566,7 @@
 </script>
 
 <style scoped>
-
+@import "@/assets/css/Profile/AIrecommended/List/global.css";
+@import "@/assets/css/Profile/AIrecommended/List/List.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 </style>

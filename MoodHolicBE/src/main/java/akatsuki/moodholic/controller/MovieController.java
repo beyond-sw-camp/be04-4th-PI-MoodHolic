@@ -2,6 +2,7 @@ package akatsuki.moodholic.controller;
 
 import akatsuki.moodholic.domain.DiaryMovie;
 import akatsuki.moodholic.domain.Movie;
+import akatsuki.moodholic.dto.MemberMovieGenreRanking;
 import akatsuki.moodholic.service.MovieService;
 import akatsuki.moodholic.service.facade.MovieFacadeService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -52,5 +53,13 @@ public class MovieController {
     @GetMapping("/liked/{memberId}")
     public ResponseEntity<List<DiaryMovie>> getMemberLikedMovie(@PathVariable long memberId){
         return ResponseEntity.ok().body(movieFacadeService.getMemberLikedMovie(memberId));
+    }
+
+    @GetMapping("/genres/{memberId}")
+    public ResponseEntity<MemberMovieGenreRanking> getMemberMovieGenreRanking(@PathVariable long memberId){
+        MemberMovieGenreRanking returnValue= movieFacadeService.getMemberMovieGenreRanking(memberId);
+
+        return ResponseEntity.ok().body(returnValue);
+
     }
 }

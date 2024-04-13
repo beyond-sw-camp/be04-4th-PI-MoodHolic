@@ -2,9 +2,10 @@
   <div>
     <canvas ref="myChartCanvas"></canvas>
   </div>
-  <button @click="getYear">연간 데이터 불러오기</button>
-  <button @click="getMonth">월간 데이터 불러오기</button>
-  <button @click="getWeek">주간 데이터 불러오기</button>
+  <button @click="getData('year')">연간 데이터 불러오기</button>
+  <button @click="getData('month')">월간 데이터 불러오기</button>
+  <button @click="getData('week')">주간 데이터 불러오기</button>
+  <button @click="getData('day')">일간 데이터 불러오기</button>
 </template>
 
 <script setup>
@@ -34,9 +35,87 @@ const options = {
 const myChartCanvas = ref(null);
 let myChart = null;
 
+let yearData = null;
+let monthData = null;
+let weekData = null;
+let dayData = null;
+
 onMounted(() => {
   createChart();
 });
+
+async function getData(period) {
+  let targetData = null;
+  switch(period) {
+    case 'year':
+      targetData = yearData;
+      break;
+    case 'month':
+      targetData = monthData;
+      break;
+    case 'week':
+      targetData = weekData;
+      break;
+    case 'day':
+      targetData = dayData;
+      break;
+    default:
+      return;
+  }
+
+  if (!targetData) {
+    targetData = await fetchData(period);
+  }
+
+  if (targetData) {
+    data.value.labels = Object.keys(targetData);
+    data.value.datasets[0].data = Object.values(targetData);
+    updateChart();
+  }
+}
+
+async function fetchData(period) {
+  let url = '';
+  switch(period) {
+    case 'year':
+      url = 'http://localhost:8888/graph/year/1';
+      break;
+    case 'month':
+      url = 'http://localhost:8888/graph/month/1';
+      break;
+    case 'week':
+      url = 'http://localhost:8888/graph/week/1';
+      break;
+    case 'day':
+      url = 'http://localhost:8888/graph/day/1';
+      break;
+    default:
+      return null;
+  }
+
+  try {
+    const response = await fetch(url);
+    const responseData = await response.json();
+    switch(period) {
+      case 'year':
+        yearData = responseData;
+        break;
+      case 'month':
+        monthData = responseData;
+        break;
+      case 'week':
+        weekData = responseData;
+        break;
+      case 'day':
+        dayData = responseData;
+        break;
+    }
+    return responseData;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+}
 
 function createChart() {
   const ctx = myChartCanvas.value.getContext('2d');
@@ -47,53 +126,12 @@ function createChart() {
   });
 }
 
-const getYear = async () => {
-  try {
-    const response = await fetch('http://localhost:8888/graph/year/1');
-    const responseData = await response.json();
-    data.value.labels = Object.keys(responseData);
-    data.value.datasets[0].data = Object.values(responseData);
-    
-    // Destroy previous chart before rendering new data
-    destroyChart();
-    createChart();
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-}
-
-const getMonth = async () => {
-  try {
-    const response = await fetch('http://localhost:8888/graph/month/1');
-    const responseData = await response.json();
-    data.value.labels = Object.keys(responseData);
-    data.value.datasets[0].data = Object.values(responseData);
-    // Destroy previous chart before rendering new data
-    destroyChart();
-    createChart();
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-}
-
-const getWeek = async () => {
-  try {
-    const response = await fetch('http://localhost:8888/graph/week/1');
-    const responseData = await response.json();
-    data.value.labels = Object.keys(responseData);
-    data.value.datasets[0].data = Object.values(responseData);
-    // Destroy previous chart before rendering new data
-    destroyChart();
-    createChart();
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-}
-
-function destroyChart() {
-  // Check if the chart instance exists and destroy it
+function updateChart() {
   if (myChart) {
-    myChart.destroy();
+    myChart.data = data.value;
+    myChart.update();
+  } else {
+    createChart();
   }
 }
 </script>

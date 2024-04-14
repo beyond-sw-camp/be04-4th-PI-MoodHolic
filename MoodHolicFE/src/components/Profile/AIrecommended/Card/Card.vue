@@ -3,47 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./index.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
   </head>
   <body>
     <div class="ai">
-      <header class="output-handler-parent">
-        <div class="output-handler"></div>
-        <img
-          class="moodholiclogo-2-icon"
-          loading="lazy"
-          alt=""
-          src="./public/moodholiclogo-25@2x.png"
-        />
-
-        <h1 class="h1">오늘 날씨</h1>
-        <div class="image-1-parent">
-          <img
-            class="image-1-icon"
-            loading="lazy"
-            alt=""
-            src="./public/image-16@2x.png"
-          />
-
-          <div class="div">14 ℃</div>
-        </div>
-        <img
-          class="group-icon"
-          loading="lazy"
-          alt=""
-          src="./public/group7@2x.png"
-        />
-
-        <img class="group-icon1" alt="" src="./public/group3.svg" />
-
-        <img class="uimgraph-bar-icon" alt="" src="./public/uimgraphbar.svg" />
-      </header>
       <main class="ai-inner">
         <section class="frame-parent">
           <div class="frame-group">
@@ -74,45 +36,34 @@
                     <img
                       class="rectangle-icon"
                       alt=""
-                      src="./public/rectangle-538.svg"
-                    />
-
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-538.png"/>
                     <div class="parent">
                       <img
                         class="icon"
                         alt=""
-                        src="./public/-20240405--318@2x.png"
-                      />
-
+                        src="@/assets/icon/Profile/AIrecommended/Card/cloudy.png"/>
                       <img
                         class="icon1"
                         alt=""
-                        src="./public/-20240405--40521@2x.png"
-                      />
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--40521@2x.png"/>
                     </div>
                     <img
                       class="expander-icon"
                       alt=""
-                      src="./public/expander.svg"
-                    />
-
+                      src="@/assets/icon/Profile/AIrecommended/Card/expander.png"/>
                     <div class="div1">5점</div>
                   </button>
                   <div class="vector-group">
                     <img
                       class="frame-child1"
                       alt=""
-                      src="./public/rectangle-571.svg"
-                    />
-
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-571.png"/>
                     <div class="group">
                       <img
                         class="icon2"
                         loading="lazy"
                         alt=""
-                        src="./public/-20240405--218-1@2x.png"
-                      />
-
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--218-1@2x.png"/>
                       <div class="container">
                         <div class="div2">오늘의 기분</div>
                       </div>
@@ -129,20 +80,16 @@
                           <img
                             class="p-c-a"
                             alt=""
-                            src="./public/vector-1.svg"
-                          />
-
+                            src="@/assets/icon/Profile/AIrecommended/Card/food.png"/>
                           <img
                             class="s-v-d"
                             alt=""
-                            src="./public/vector-2.svg"
-                          />
+                            src="../../../../assets/icon/Profile/AIrecommended/Card/spicy.png"/>
                         </div>
                         <img
                           class="filter-tree-icon"
                           alt=""
-                          src="./public/vector-3.svg"
-                        />
+                          src="@/assets/icon/Profile/AIrecommended/Card/category.png"/>
                       </div>
                       <div class="frame-parent4">
                         <div class="frame-wrapper1">
@@ -164,9 +111,7 @@
                             <img
                               class="palette-picker-icon"
                               alt=""
-                              src="./public/vector-4.svg"
-                            />
-
+                              src="@/assets/icon/Profile/AIrecommended/Card/music.png"/>
                             <div class="search-index-wrapper">
                               <div class="search-index">21</div>
                             </div>
@@ -175,9 +120,7 @@
                             <img
                               class="group-icon2"
                               alt=""
-                              src="./public/group-2.svg"
-                            />
-
+                              src="@/assets/icon/Profile/AIrecommended/Card/singer.png"/>
                             <div class="dean-wrapper">
                               <div class="dean">DEAN</div>
                             </div>
@@ -186,9 +129,7 @@
                             <img
                               class="transition-effect-icon"
                               alt=""
-                              src="./public/vector-3.svg"
-                            />
-
+                              src="@/assets/icon/Profile/AIrecommended/Card/category.png"/>
                             <div class="rb-wrapper">
                               <div class="rb">R&B</div>
                             </div>
@@ -202,9 +143,7 @@
                             <img
                               class="visualizer-icon"
                               alt=""
-                              src="./public/vector-6.svg"
-                            />
-
+                              src="@/assets/icon/Profile/AIrecommended/Card/movie.png"/>
                             <div class="wrapper2">
                               <div class="div6">기생충</div>
                             </div>
@@ -213,9 +152,7 @@
                             <img
                               class="vector-icon"
                               alt=""
-                              src="./public/vector-7.svg"
-                            />
-
+                              src="@/assets/icon/Profile/AIrecommended/Card/director.png"/>
                             <div class="wrapper3">
                               <div class="div7">봉준호</div>
                             </div>
@@ -224,9 +161,7 @@
                             <img
                               class="font-picker-icon"
                               alt=""
-                              src="./public/vector-3.svg"
-                            />
-
+                              src="@/assets/icon/Profile/AIrecommended/Card/category.png"/>
                             <div class="wrapper4">
                               <div class="div8">드라마</div>
                             </div>
@@ -245,31 +180,24 @@
                     <img
                       class="frame-child3"
                       alt=""
-                      src="./public/rectangle-538.svg"
-                    />
-
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-538.png"/>
                     <div class="frame-wrapper2">
                       <div class="parent2">
                         <img
                           class="icon3"
                           alt=""
-                          src="./public/-20240405--317@2x.png"
-                        />
-
+                          src="@/assets/icon/Profile/AIrecommended/Card/sun.png"/>
                         <img
                           class="icon4"
                           alt=""
-                          src="./public/-20240405--405-1@2x.png"
-                        />
+                          src="@/assets/icon/Profile/AIrecommended/Card/-20240405--405-1@2x.png"/>
                       </div>
                     </div>
                     <div class="vector-parent1">
                       <img
                         class="vector-icon1"
                         alt=""
-                        src="./public/expander.svg"
-                      />
-
+                        src="@/assets/icon/Profile/AIrecommended/Card/expander.png"/>
                       <div class="div9">5점</div>
                     </div>
                   </button>
@@ -277,16 +205,12 @@
                     <img
                       class="frame-child4"
                       alt=""
-                      src="./public/rectangle-571.svg"
-                    />
-
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-571.png"/>
                     <div class="parent3">
                       <img
                         class="icon5"
                         alt=""
-                        src="./public/-20240405--218-1@2x.png"
-                      />
-
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--218-1@2x.png"/>
                       <div class="wrapper6">
                         <div class="div10">오늘의 기분</div>
                       </div>
@@ -304,20 +228,16 @@
                             <img
                               class="vector-icon2"
                               alt=""
-                              src="./public/vector-1.svg"
-                            />
-
+                              src="@/assets/icon/Profile/AIrecommended/Card/food.png"/>
                             <img
                               class="vector-icon3"
                               alt=""
-                              src="./public/vector-2.svg"
-                            />
+                              src="@/assets/icon/Profile/AIrecommended/Card/spicy.png"/>
                           </div>
                           <img
                             class="vector-icon4"
                             alt=""
-                            src="./public/vector-3.svg"
-                          />
+                            src="@/assets/icon/Profile/AIrecommended/Card/category.png"/>
                         </div>
                         <div class="parent4">
                           <div class="div12">미역국</div>
@@ -337,9 +257,7 @@
                           <img
                             class="vector-icon5"
                             alt=""
-                            src="./public/vector-4.svg"
-                          />
-
+                            src="@/assets/icon/Profile/AIrecommended/Card/music.png"/>
                           <div class="wrapper8">
                             <div class="div15">21</div>
                           </div>
@@ -348,9 +266,7 @@
                           <img
                             class="group-icon3"
                             alt=""
-                            src="./public/group-2.svg"
-                          />
-
+                            src="@/assets/icon/Profile/AIrecommended/Card/singer.png"/>
                           <div class="date-formatter">
                             <div class="dean1">DEAN</div>
                           </div>
@@ -359,9 +275,7 @@
                           <img
                             class="vector-icon6"
                             alt=""
-                            src="./public/vector-3.svg"
-                          />
-
+                            src="@/assets/icon/Profile/AIrecommended/Card/category.png"/>
                           <div class="rb-container">
                             <div class="rb1">R&B</div>
                           </div>
@@ -375,9 +289,7 @@
                           <img
                             class="vector-icon7"
                             alt=""
-                            src="./public/vector-6.svg"
-                          />
-
+                            src="@/assets/icon/Profile/AIrecommended/Card/movie.png"/>
                           <div class="wrapper9">
                             <div class="div16">기생충</div>
                           </div>
@@ -386,9 +298,7 @@
                           <img
                             class="vector-icon8"
                             alt=""
-                            src="./public/vector-7.svg"
-                          />
-
+                            src="@/assets/icon/Profile/AIrecommended/Card/director.png"/>
                           <div class="wrapper10">
                             <div class="div17">봉준호</div>
                           </div>
@@ -397,9 +307,7 @@
                           <img
                             class="vector-icon9"
                             alt=""
-                            src="./public/vector-3.svg"
-                          />
-
+                            src="@/assets/icon/Profile/AIrecommended/Card/category.png"/>
                           <div class="wrapper11">
                             <div class="div18">드라마</div>
                           </div>
@@ -417,26 +325,26 @@
                     <img
                       class="frame-child8"
                       alt=""
-                      src="./public/rectangle-538.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-538.png"
                     />
 
                     <button class="group-button">
                       <img
                         class="icon6"
                         alt=""
-                        src="./public/-20240405--317@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/sun.png"
                       />
 
                       <img
                         class="icon7"
                         alt=""
-                        src="./public/-20240405--402@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--402@2x.png"
                       />
                     </button>
                     <img
                       class="vector-icon10"
                       alt=""
-                      src="./public/expander.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/expander.png"
                     />
 
                     <div class="wrapper13">
@@ -447,14 +355,14 @@
                     <img
                       class="frame-child9"
                       alt=""
-                      src="./public/rectangle-571.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-571.png"
                     />
 
                     <div class="parent5">
                       <img
                         class="icon8"
                         alt=""
-                        src="./public/-20240405--218-1@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--218-1@2x.png"
                       />
 
                       <div class="wrapper14">
@@ -473,19 +381,19 @@
                           <img
                             class="vector-icon11"
                             alt=""
-                            src="./public/vector-1.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/food.png"
                           />
 
                           <img
                             class="vector-icon12"
                             alt=""
-                            src="./public/vector-2.svg"
+                            src="../../../../assets/icon/Profile/AIrecommended/Card/spicy.png"
                           />
                         </div>
                         <img
                           class="vector-icon13"
                           alt=""
-                          src="./public/vector-3.svg"
+                          src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                         />
                       </div>
                       <div class="frame-parent14">
@@ -508,7 +416,7 @@
                             <img
                               class="vector-icon14"
                               alt=""
-                              src="./public/vector-4.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/music.png"
                             />
 
                             <div class="wrapper18">
@@ -519,7 +427,7 @@
                             <img
                               class="group-icon4"
                               alt=""
-                              src="./public/group-2.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/singer.png"
                             />
 
                             <div class="dean-container">
@@ -530,7 +438,7 @@
                             <img
                               class="vector-icon15"
                               alt=""
-                              src="./public/vector-3.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                             />
 
                             <div class="rb-frame">
@@ -548,7 +456,7 @@
                             <img
                               class="image-handler-icon"
                               alt=""
-                              src="./public/vector-6.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/movie.png"
                             />
 
                             <div class="link-collector">
@@ -559,7 +467,7 @@
                             <img
                               class="vector-icon16"
                               alt=""
-                              src="./public/vector-7.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/director.png"
                             />
 
                             <div class="list-creator">
@@ -570,7 +478,7 @@
                             <img
                               class="search-engine-icon"
                               alt=""
-                              src="./public/vector-3.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                             />
 
                             <div class="summarizer">
@@ -591,27 +499,27 @@
                     <img
                       class="frame-child14"
                       alt=""
-                      src="./public/rectangle-538.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-538.png"
                     />
 
                     <div class="parent7">
                       <img
                         class="icon9"
                         alt=""
-                        src="./public/-20240405--318@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/cloudy.png"
                       />
 
                       <img
                         class="icon10"
                         alt=""
-                        src="./public/-20240405--40521@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--40521@2x.png"
                       />
                     </div>
                     <div class="vector-parent14">
                       <img
                         class="vector-icon17"
                         alt=""
-                        src="./public/expander.svg"
+                        src="@/assets/icon/Profile/AIrecommended/Card/expander.png"
                       />
 
                       <div class="div29">5점</div>
@@ -621,14 +529,14 @@
                     <img
                       class="frame-child15"
                       alt=""
-                      src="./public/rectangle-571.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-571.png"
                     />
 
                     <div class="parent8">
                       <img
                         class="icon11"
                         alt=""
-                        src="./public/-20240405--218-1@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--218-1@2x.png"
                       />
 
                       <div class="wrapper20">
@@ -648,19 +556,19 @@
                             <img
                               class="vector-icon18"
                               alt=""
-                              src="./public/vector-1.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/food.png"
                             />
 
                             <img
                               class="vector-icon19"
                               alt=""
-                              src="./public/vector-2.svg"
+                              src="../../../../assets/icon/Profile/AIrecommended/Card/spicy.png"
                             />
                           </div>
                           <img
                             class="vector-icon20"
                             alt=""
-                            src="./public/vector-3.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                           />
                         </div>
                         <div class="parent9">
@@ -681,7 +589,7 @@
                           <img
                             class="vector-icon21"
                             alt=""
-                            src="./public/vector-4.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/music.png"
                           />
 
                           <div class="wrapper24">
@@ -692,7 +600,7 @@
                           <img
                             class="group-icon5"
                             alt=""
-                            src="./public/group-2.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/singer.png"
                           />
 
                           <div class="dean-frame">
@@ -703,7 +611,7 @@
                           <img
                             class="vector-icon22"
                             alt=""
-                            src="./public/vector-3.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                           />
 
                           <div class="rb-wrapper1">
@@ -719,7 +627,7 @@
                           <img
                             class="vector-icon23"
                             alt=""
-                            src="./public/vector-6.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/movie.png"
                           />
 
                           <div class="wrapper25">
@@ -730,7 +638,7 @@
                           <img
                             class="vector-icon24"
                             alt=""
-                            src="./public/vector-7.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/director.png"
                           />
 
                           <div class="wrapper26">
@@ -741,7 +649,7 @@
                           <img
                             class="vector-icon25"
                             alt=""
-                            src="./public/vector-3.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                           />
 
                           <div class="wrapper27">
@@ -761,27 +669,27 @@
                     <img
                       class="frame-child20"
                       alt=""
-                      src="./public/rectangle-538.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-538.png"
                     />
 
                     <div class="parent10">
                       <img
                         class="icon12"
                         alt=""
-                        src="./public/-20240405--318@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/cloudy.png"
                       />
 
                       <img
                         class="icon13"
                         alt=""
-                        src="./public/-20240405--40521@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--40521@2x.png"
                       />
                     </div>
                     <div class="vector-parent23">
                       <img
                         class="vector-icon26"
                         alt=""
-                        src="./public/expander.svg"
+                        src="@/assets/icon/Profile/AIrecommended/Card/expander.png"
                       />
 
                       <div class="div39">5점</div>
@@ -791,14 +699,14 @@
                     <img
                       class="frame-child21"
                       alt=""
-                      src="./public/rectangle-571.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-571.png"
                     />
 
                     <div class="parent11">
                       <img
                         class="icon14"
                         alt=""
-                        src="./public/-20240405--218-1@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--218-1@2x.png"
                       />
 
                       <div class="wrapper29">
@@ -817,19 +725,19 @@
                           <img
                             class="vector-icon27"
                             alt=""
-                            src="./public/vector-1.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/food.png"
                           />
 
                           <img
                             class="vector-icon28"
                             alt=""
-                            src="./public/vector-2.svg"
+                            src="../../../../assets/icon/Profile/AIrecommended/Card/spicy.png"
                           />
                         </div>
                         <img
                           class="vector-icon29"
                           alt=""
-                          src="./public/vector-3.svg"
+                          src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                         />
                       </div>
                       <div class="frame-wrapper4">
@@ -852,7 +760,7 @@
                             <img
                               class="vector-icon30"
                               alt=""
-                              src="./public/vector-4.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/music.png"
                             />
 
                             <div class="wrapper33">
@@ -863,7 +771,7 @@
                             <img
                               class="group-icon6"
                               alt=""
-                              src="./public/group-2.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/singer.png"
                             />
 
                             <div class="dean-wrapper1">
@@ -874,7 +782,7 @@
                             <img
                               class="vector-icon31"
                               alt=""
-                              src="./public/vector-3.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                             />
 
                             <div class="rb-wrapper2">
@@ -892,7 +800,7 @@
                             <img
                               class="vector-icon32"
                               alt=""
-                              src="./public/vector-6.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/movie.png"
                             />
 
                             <div class="wrapper34">
@@ -903,7 +811,7 @@
                             <img
                               class="vector-icon33"
                               alt=""
-                              src="./public/vector-7.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/director.png"
                             />
 
                             <div class="wrapper35">
@@ -914,7 +822,7 @@
                             <img
                               class="vector-icon34"
                               alt=""
-                              src="./public/vector-3.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                             />
 
                             <div class="wrapper36">
@@ -935,26 +843,26 @@
                     <img
                       class="frame-child26"
                       alt=""
-                      src="./public/rectangle-538.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-538.png"
                     />
 
                     <div class="parent13">
                       <img
                         class="icon15"
                         alt=""
-                        src="./public/-20240405--318@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/cloudy.png"
                       />
 
                       <img
                         class="icon16"
                         alt=""
-                        src="./public/-20240405--40521@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--40521@2x.png"
                       />
                     </div>
                     <img
                       class="vector-icon35"
                       alt=""
-                      src="./public/expander.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/expander.png"
                     />
 
                     <div class="div49">5점</div>
@@ -963,14 +871,14 @@
                     <img
                       class="frame-child27"
                       alt=""
-                      src="./public/rectangle-571.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-571.png"
                     />
 
                     <div class="parent14">
                       <img
                         class="icon17"
                         alt=""
-                        src="./public/-20240405--218-1@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--218-1@2x.png"
                       />
 
                       <div class="wrapper38">
@@ -989,19 +897,19 @@
                           <img
                             class="vector-icon36"
                             alt=""
-                            src="./public/vector-1.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/food.png"
                           />
 
                           <img
                             class="vector-icon37"
                             alt=""
-                            src="./public/vector-2.svg"
+                            src="../../../../assets/icon/Profile/AIrecommended/Card/spicy.png"
                           />
                         </div>
                         <img
                           class="vector-icon38"
                           alt=""
-                          src="./public/vector-3.svg"
+                          src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                         />
                       </div>
                       <div class="frame-parent30">
@@ -1024,7 +932,7 @@
                             <img
                               class="vector-icon39"
                               alt=""
-                              src="./public/vector-4.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/music.png"
                             />
 
                             <div class="wrapper42">
@@ -1035,7 +943,7 @@
                             <img
                               class="group-icon7"
                               alt=""
-                              src="./public/group-2.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/singer.png"
                             />
 
                             <div class="dean-wrapper2">
@@ -1046,7 +954,7 @@
                             <img
                               class="vector-icon40"
                               alt=""
-                              src="./public/vector-3.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                             />
 
                             <div class="rb-wrapper3">
@@ -1062,7 +970,7 @@
                             <img
                               class="vector-icon41"
                               alt=""
-                              src="./public/vector-6.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/movie.png"
                             />
 
                             <div class="wrapper43">
@@ -1073,7 +981,7 @@
                             <img
                               class="vector-icon42"
                               alt=""
-                              src="./public/vector-7.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/director.png"
                             />
 
                             <div class="wrapper44">
@@ -1084,7 +992,7 @@
                             <img
                               class="vector-icon43"
                               alt=""
-                              src="./public/vector-3.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                             />
 
                             <div class="wrapper45">
@@ -1105,26 +1013,26 @@
                     <img
                       class="frame-child32"
                       alt=""
-                      src="./public/rectangle-538.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-538.png"
                     />
 
                     <div class="parent16">
                       <img
                         class="icon18"
                         alt=""
-                        src="./public/-20240405--318@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/cloudy.png"
                       />
 
                       <img
                         class="icon19"
                         alt=""
-                        src="./public/-20240405--40521@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--40521@2x.png"
                       />
                     </div>
                     <img
                       class="vector-icon44"
                       alt=""
-                      src="./public/expander.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/expander.png"
                     />
 
                     <div class="div59">5점</div>
@@ -1133,14 +1041,14 @@
                     <img
                       class="frame-child33"
                       alt=""
-                      src="./public/rectangle-571.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-571.png"
                     />
 
                     <div class="parent17">
                       <img
                         class="icon20"
                         alt=""
-                        src="./public/-20240405--218-1@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--218-1@2x.png"
                       />
 
                       <div class="wrapper47">
@@ -1160,19 +1068,19 @@
                             <img
                               class="vector-icon45"
                               alt=""
-                              src="./public/vector-1.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/food.png"
                             />
 
                             <img
                               class="vector-icon46"
                               alt=""
-                              src="./public/vector-2.svg"
+                              src="../../../../assets/icon/Profile/AIrecommended/Card/spicy.png"
                             />
                           </div>
                           <img
                             class="vector-icon47"
                             alt=""
-                            src="./public/vector-3.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                           />
                         </div>
                         <div class="parent18">
@@ -1193,7 +1101,7 @@
                           <img
                             class="vector-icon48"
                             alt=""
-                            src="./public/vector-4.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/music.png"
                           />
 
                           <div class="wrapper51">
@@ -1204,7 +1112,7 @@
                           <img
                             class="group-icon8"
                             alt=""
-                            src="./public/group-8.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/singer.png"
                           />
 
                           <div class="dean-wrapper3">
@@ -1215,7 +1123,7 @@
                           <img
                             class="vector-icon49"
                             alt=""
-                            src="./public/vector-3.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                           />
 
                           <div class="rb-wrapper4">
@@ -1231,7 +1139,7 @@
                           <img
                             class="vector-icon50"
                             alt=""
-                            src="./public/vector-6.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/movie.png"
                           />
 
                           <div class="wrapper52">
@@ -1242,7 +1150,7 @@
                           <img
                             class="vector-icon51"
                             alt=""
-                            src="./public/vector-7.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/director.png"
                           />
 
                           <div class="wrapper53">
@@ -1253,7 +1161,7 @@
                           <img
                             class="vector-icon52"
                             alt=""
-                            src="./public/vector-3.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                           />
 
                           <div class="wrapper54">
@@ -1273,26 +1181,26 @@
                     <img
                       class="frame-child38"
                       alt=""
-                      src="./public/rectangle-538.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-538.png"
                     />
 
                     <div class="parent19">
                       <img
                         class="icon21"
                         alt=""
-                        src="./public/-20240405--318@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/cloudy.png"
                       />
 
                       <img
                         class="icon22"
                         alt=""
-                        src="./public/-20240405--40521@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--40521@2x.png"
                       />
                     </div>
                     <img
                       class="vector-icon53"
                       alt=""
-                      src="./public/expander.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/expander.png"
                     />
 
                     <div class="div69">5점</div>
@@ -1301,14 +1209,14 @@
                     <img
                       class="frame-child39"
                       alt=""
-                      src="./public/rectangle-571.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-571.png"
                     />
 
                     <div class="parent20">
                       <img
                         class="icon23"
                         alt=""
-                        src="./public/-20240405--218-1@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--218-1@2x.png"
                       />
 
                       <div class="wrapper56">
@@ -1327,19 +1235,19 @@
                           <img
                             class="vector-icon54"
                             alt=""
-                            src="./public/vector-1.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/food.png"
                           />
 
                           <img
                             class="vector-icon55"
                             alt=""
-                            src="./public/vector-2.svg"
+                            src="../../../../assets/icon/Profile/AIrecommended/Card/spicy.png"
                           />
                         </div>
                         <img
                           class="vector-icon56"
                           alt=""
-                          src="./public/vector-3.svg"
+                          src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                         />
                       </div>
                       <div class="frame-parent40">
@@ -1362,7 +1270,7 @@
                             <img
                               class="vector-icon57"
                               alt=""
-                              src="./public/vector-4.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/music.png"
                             />
 
                             <div class="wrapper60">
@@ -1373,7 +1281,7 @@
                             <img
                               class="group-icon9"
                               alt=""
-                              src="./public/group-2.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/singer.png"
                             />
 
                             <div class="dean-wrapper4">
@@ -1384,7 +1292,7 @@
                             <img
                               class="vector-icon58"
                               alt=""
-                              src="./public/vector-3.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                             />
 
                             <div class="rb-wrapper5">
@@ -1402,7 +1310,7 @@
                             <img
                               class="vector-icon59"
                               alt=""
-                              src="./public/vector-6.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/movie.png"
                             />
 
                             <div class="wrapper61">
@@ -1413,7 +1321,7 @@
                             <img
                               class="vector-icon60"
                               alt=""
-                              src="./public/vector-7.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/director.png"
                             />
 
                             <div class="wrapper62">
@@ -1424,7 +1332,7 @@
                             <img
                               class="vector-icon61"
                               alt=""
-                              src="./public/vector-3.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                             />
 
                             <div class="wrapper63">
@@ -1445,27 +1353,27 @@
                     <img
                       class="frame-child44"
                       alt=""
-                      src="./public/rectangle-538.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-538.png"
                     />
 
                     <div class="parent22">
                       <img
                         class="icon24"
                         alt=""
-                        src="./public/-20240405--318@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/cloudy.png"
                       />
 
                       <img
                         class="icon25"
                         alt=""
-                        src="./public/-20240405--40521@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--40521@2x.png"
                       />
                     </div>
                     <div class="vector-parent56">
                       <img
                         class="vector-icon62"
                         alt=""
-                        src="./public/expander.svg"
+                        src="@/assets/icon/Profile/AIrecommended/Card/expander.png"
                       />
 
                       <div class="div79">5점</div>
@@ -1475,14 +1383,14 @@
                     <img
                       class="frame-child45"
                       alt=""
-                      src="./public/rectangle-571.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-571.png"
                     />
 
                     <div class="parent23">
                       <img
                         class="icon26"
                         alt=""
-                        src="./public/-20240405--218-1@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--218-1@2x.png"
                       />
 
                       <div class="wrapper65">
@@ -1502,19 +1410,19 @@
                             <img
                               class="vector-icon63"
                               alt=""
-                              src="./public/vector-1.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/food.png"
                             />
 
                             <img
                               class="vector-icon64"
                               alt=""
-                              src="./public/vector-2.svg"
+                              src="../../../../assets/icon/Profile/AIrecommended/Card/spicy.png"
                             />
                           </div>
                           <img
                             class="vector-icon65"
                             alt=""
-                            src="./public/vector-3.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                           />
                         </div>
                         <div class="parent24">
@@ -1535,7 +1443,7 @@
                           <img
                             class="vector-icon66"
                             alt=""
-                            src="./public/vector-4.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/music.png"
                           />
 
                           <div class="wrapper69">
@@ -1546,7 +1454,7 @@
                           <img
                             class="group-icon10"
                             alt=""
-                            src="./public/group-2.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/singer.png"
                           />
 
                           <div class="dean-wrapper5">
@@ -1557,7 +1465,7 @@
                           <img
                             class="vector-icon67"
                             alt=""
-                            src="./public/vector-3.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                           />
 
                           <div class="rb-wrapper6">
@@ -1573,7 +1481,7 @@
                           <img
                             class="vector-icon68"
                             alt=""
-                            src="./public/vector-6.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/movie.png"
                           />
 
                           <div class="wrapper70">
@@ -1584,7 +1492,7 @@
                           <img
                             class="vector-icon69"
                             alt=""
-                            src="./public/vector-7.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/director.png"
                           />
 
                           <div class="wrapper71">
@@ -1595,7 +1503,7 @@
                           <img
                             class="vector-icon70"
                             alt=""
-                            src="./public/vector-3.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                           />
 
                           <div class="wrapper72">
@@ -1615,27 +1523,27 @@
                     <img
                       class="frame-child50"
                       alt=""
-                      src="./public/rectangle-538.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-538.png"
                     />
 
                     <div class="parent25">
                       <img
                         class="icon27"
                         alt=""
-                        src="./public/-20240405--318@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/cloudy.png"
                       />
 
                       <img
                         class="icon28"
                         alt=""
-                        src="./public/-20240405--40521@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--40521@2x.png"
                       />
                     </div>
                     <div class="vector-parent65">
                       <img
                         class="vector-icon71"
                         alt=""
-                        src="./public/expander.svg"
+                        src="@/assets/icon/Profile/AIrecommended/Card/expander.png"
                       />
 
                       <div class="div89">5점</div>
@@ -1645,14 +1553,14 @@
                     <img
                       class="frame-child51"
                       alt=""
-                      src="./public/rectangle-571.svg"
+                      src="@/assets/icon/Profile/AIrecommended/Card/rectangle-571.png"
                     />
 
                     <div class="parent26">
                       <img
                         class="icon29"
                         alt=""
-                        src="./public/-20240405--218-1@2x.png"
+                        src="@/assets/icon/Profile/AIrecommended/Card/-20240405--218-1@2x.png"
                       />
 
                       <div class="wrapper74">
@@ -1671,19 +1579,19 @@
                           <img
                             class="vector-icon72"
                             alt=""
-                            src="./public/vector-1.svg"
+                            src="@/assets/icon/Profile/AIrecommended/Card/food.png"
                           />
 
                           <img
                             class="vector-icon73"
                             alt=""
-                            src="./public/vector-2.svg"
+                            src="../../../../assets/icon/Profile/AIrecommended/Card/spicy.png"
                           />
                         </div>
                         <img
                           class="vector-icon74"
                           alt=""
-                          src="./public/vector-3.svg"
+                          src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                         />
                       </div>
                       <div class="frame-wrapper7">
@@ -1706,7 +1614,7 @@
                             <img
                               class="vector-icon75"
                               alt=""
-                              src="./public/vector-4.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/music.png"
                             />
 
                             <div class="wrapper78">
@@ -1717,7 +1625,7 @@
                             <img
                               class="group-icon11"
                               alt=""
-                              src="./public/group-2.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/singer.png"
                             />
 
                             <div class="dean-wrapper6">
@@ -1728,7 +1636,7 @@
                             <img
                               class="vector-icon76"
                               alt=""
-                              src="./public/vector-3.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                             />
 
                             <div class="rb-wrapper7">
@@ -1746,7 +1654,7 @@
                             <img
                               class="vector-icon77"
                               alt=""
-                              src="./public/vector-6.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/movie.png"
                             />
 
                             <div class="wrapper79">
@@ -1757,7 +1665,7 @@
                             <img
                               class="vector-icon78"
                               alt=""
-                              src="./public/vector-7.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/director.png"
                             />
 
                             <div class="wrapper80">
@@ -1768,7 +1676,7 @@
                             <img
                               class="vector-icon79"
                               alt=""
-                              src="./public/vector-3.svg"
+                              src="@/assets/icon/Profile/AIrecommended/Card/category.png"
                             />
 
                             <div class="wrapper81">
@@ -1789,7 +1697,7 @@
                 <img
                   class="link-manager-icon"
                   alt=""
-                  src="./public/vector-89.svg"
+                  src="@/assets/icon/Profile/AIrecommended/Card/left.png"
                 />
               </div>
               <div class="ellipse-parent">
@@ -1812,7 +1720,7 @@
                 <img
                   class="vector-icon80"
                   alt=""
-                  src="./public/vector-90.svg"
+                  src="@/assets/icon/Profile/AIrecommended/Card/right.png"
                 />
               </div>
             </div>
@@ -1829,6 +1737,8 @@
 
 </script>
 
-<style scoped>
-
+<style>
+@import "@/assets/css/Profile/AIrecommended/Card/global.css";
+@import "@/assets/css/Profile/AIrecommended/Card/Card.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 </style>

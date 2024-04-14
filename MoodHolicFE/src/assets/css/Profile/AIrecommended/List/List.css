@@ -260,8 +260,8 @@
   display: none;
 }
 .icon1 {
-  height: 52px;
-  width: 48.1px;
+  height: 45px;
+  width: 41.1px;
   object-fit: contain;
   z-index: 2;
 }
@@ -274,7 +274,7 @@
 }
 .progress-indicator {
   padding: var(--padding-6xs-2) var(--padding-6xl-3) var(--padding-9xs-1);
-  background-image: url(./public/-20240405--31812@2x.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/List/cloudy.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -537,8 +537,8 @@
   display: none;
 }
 .icon3 {
-  height: 52px;
-  width: 48.1px;
+  height: 45px;
+  width: 41.1px;
   object-fit: contain;
   z-index: 2;
 }
@@ -551,7 +551,7 @@
 }
 .progress-indicator1 {
   padding: var(--padding-5xs-1) var(--padding-6xl-3) var(--padding-10xs-2);
-  background-image: url(./public/-20240405--31813@2x.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/List/cloudy.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -813,8 +813,8 @@
   display: none;
 }
 .icon5 {
-  height: 48.8px;
-  width: 35.6px;
+  height: 45px;
+  width: 41.1px;
   object-fit: contain;
   z-index: 2;
 }
@@ -830,7 +830,7 @@
   border: 0;
   padding: var(--padding-mini) var(--padding-13xl) var(--padding-mini-2);
   background-color: transparent;
-  background-image: url(./public/-20240405--3174@2x.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/List/thunder.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -1092,8 +1092,8 @@
   display: none;
 }
 .icon7 {
-  height: 52px;
-  width: 48.1px;
+  height: 45px;
+  width: 41.1px;
   object-fit: contain;
   z-index: 2;
 }
@@ -1106,7 +1106,7 @@
 }
 .progress-indicator2 {
   padding: var(--padding-8xs-9) var(--padding-6xl-3) var(--padding-8xs-4);
-  background-image: url(./public/-20240405--31814@2x.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/List/cloudy.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -1369,8 +1369,9 @@
   display: none;
 }
 .icon9 {
-  height: 37.5px;
-  width: 35px;
+  height: 52px;
+  width: 48.1px;
+  object-fit: contain;
   z-index: 2;
 }
 .parent3,
@@ -1383,7 +1384,7 @@
 .parent3 {
   padding: var(--padding-11xl) var(--padding-12xl-9) var(--padding-4xl-5)
     var(--padding-17xl-4);
-  background-image: url(./public/-20240405--317@2x.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/List/sun.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -1647,8 +1648,9 @@
   display: none;
 }
 .icon11 {
-  height: 37.5px;
-  width: 35px;
+  height: 52px;
+  width: 48.1px;
+  object-fit: contain;
   z-index: 2;
 }
 .parent5,
@@ -1661,7 +1663,7 @@
 .parent5 {
   padding: 30.6px var(--padding-12xl-9) var(--padding-3xl-9)
     var(--padding-17xl-4);
-  background-image: url(./public/-20240405--317@2x.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/List/sun.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;

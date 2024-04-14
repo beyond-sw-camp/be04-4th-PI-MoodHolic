@@ -7,16 +7,6 @@
   width: 1837.9px;
   height: 1px;
 }
-.moodholiclogo-2-icon {
-  position: absolute;
-  height: calc(100% - 1.2px);
-  top: 0;
-  bottom: 1.2px;
-  left: 829.5px;
-  max-height: 100%;
-  width: 167px;
-  object-fit: contain;
-}
 .h1 {
   margin: 0;
   position: absolute;
@@ -74,14 +64,7 @@
   width: 35px;
   height: 35px;
 }
-.uimgraph-bar-icon {
-  position: absolute;
-  top: 42px;
-  left: 1696px;
-  width: 46px;
-  height: 41px;
-  overflow: hidden;
-}
+
 .output-handler-parent {
   align-self: stretch;
   height: 122.2px;
@@ -267,7 +250,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padding-lg-3) var(--padding-7xl-5) var(--padding-mid-4);
-  background-image: url(./public/-20240405--318@2x.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/Card/cloudy.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -303,7 +286,7 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-mid) var(--padding-5xs)
-    var(--padding-59xl);
+  var(--padding-59xl);
   background-color: var(--color-white);
   align-self: stretch;
   display: flex;
@@ -784,7 +767,7 @@
 .parent2 {
   flex-direction: row;
   padding: var(--padding-smi-3) var(--padding-mini) 15.7px 15.9px;
-  background-image: url(./public/-20240405--317@2x.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/Card/sun.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -1296,13 +1279,13 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xl-3) 21.8px var(--padding-mini-2)
-    var(--padding-10xl-2);
+  var(--padding-10xl-2);
   background-color: transparent;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  background-image: url(./public/-20240405--317@2x.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/Card/sun.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -1345,7 +1328,7 @@
   align-items: flex-start;
   justify-content: space-between;
   padding: var(--padding-8xs) var(--padding-mid) var(--padding-3xs)
-    var(--padding-63xl);
+  var(--padding-63xl);
   gap: var(--gap-xl);
   z-index: 1;
 }
@@ -1823,7 +1806,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padding-lg-3) var(--padding-7xl-5) var(--padding-mid-4);
-  background-image: url(./public/-20240405--318@2x.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/Card/cloudy.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -1860,7 +1843,7 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-mid) var(--padding-5xs)
-    var(--padding-59xl);
+  var(--padding-59xl);
   background-color: var(--color-white);
   border-radius: var(--br-mini);
   gap: var(--gap-3xl-2);
@@ -2331,7 +2314,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padding-lg-3) var(--padding-7xl-5) var(--padding-mid-4);
-  background-image: url(./public/-20240405--318@2x.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/Card/cloudy.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -2368,7 +2351,7 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-mid) var(--padding-5xs)
-    var(--padding-59xl);
+  var(--padding-59xl);
   background-color: var(--color-white);
   border-radius: var(--br-mini);
   gap: var(--gap-3xl-2);
@@ -2852,7 +2835,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padding-lg-3) var(--padding-7xl-5) var(--padding-mid-4);
-  background-image: url(./public/-20240405--318@2x.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/Card/cloudy.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -2888,7 +2871,7 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-mid) var(--padding-5xs)
-    var(--padding-59xl);
+  var(--padding-59xl);
   background-color: var(--color-white);
   align-self: stretch;
   display: flex;
@@ -3367,7 +3350,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padding-lg-3) var(--padding-7xl-5) var(--padding-mid-4);
-  background-image: url(./public/-20240405--318@2x.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/Card/cloudy.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -3403,7 +3386,7 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-mid) var(--padding-5xs)
-    var(--padding-59xl);
+  var(--padding-59xl);
   background-color: var(--color-white);
   align-self: stretch;
   display: flex;
@@ -3877,7 +3860,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padding-lg-3) var(--padding-7xl-5) var(--padding-mid-4);
-  background-image: url(./public/-20240405--318@2x.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/Card/cloudy.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -3913,7 +3896,7 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-mid) var(--padding-5xs)
-    var(--padding-59xl);
+  var(--padding-59xl);
   background-color: var(--color-white);
   align-self: stretch;
   display: flex;
@@ -4398,7 +4381,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padding-lg-3) var(--padding-7xl-5) var(--padding-mid-4);
-  background-image: url(./public/-20240405--318@2x.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/Card/cloudy.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -4435,7 +4418,7 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-mid) var(--padding-5xs)
-    var(--padding-59xl);
+  var(--padding-59xl);
   background-color: var(--color-white);
   border-radius: var(--br-mini);
   gap: var(--gap-3xl-2);
@@ -4906,7 +4889,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padding-lg-3) var(--padding-7xl-5) var(--padding-mid-4);
-  background-image: url(./public/-20240405--318@2x.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/Card/cloudy.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -4943,7 +4926,7 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-mid) var(--padding-5xs)
-    var(--padding-59xl);
+  var(--padding-59xl);
   background-color: var(--color-white);
   border-radius: var(--br-mini);
   gap: var(--gap-3xl-2);

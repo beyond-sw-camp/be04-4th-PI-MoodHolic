@@ -5,14 +5,15 @@ import lombok.Data;
 import java.util.HashMap;
 
 @Data
-public class MemberMovieGenreRanking {
+public class MemberFoodGenreRanking {
     private HashMap<String, Integer> movieRankings;
     private String topName;
     private int topCnt;
 
-    public MemberMovieGenreRanking(HashMap<String, Integer> lists, int maximum, String name) {
+    public MemberFoodGenreRanking(HashMap<String, Integer> lists, int maximum, String name) {
         movieRankings=lists;
         topName=name;
         topCnt=maximum;
     }
+
 }

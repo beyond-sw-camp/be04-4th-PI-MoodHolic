@@ -6,6 +6,8 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,7 @@ import java.util.Optional;
 @RestController
 public class UserController {
 
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
     private final MemberDAO memberDAO;
     private final SecretKey secretKey;
 
@@ -33,23 +36,26 @@ public class UserController {
     public ResponseEntity<String> getUserInfo(@RequestHeader("Authorization") String authorizationHeader) {
         String token = extractTokenFromHeader(authorizationHeader);
         if (token != null) {
-            String email = getEmailFromToken(token);
-            String role = getProviderFromToken(token);
-            // Log extracted information
-            System.out.println("Email extracted: " + email);
-            System.out.println("Provider extracted: " + role);
+            try {
+                Jws<Claims> claims = Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token);
+                String email = claims.getBody().get("email", String.class);
+                String provider = claims.getBody().get("provider", String.class);
+                logger.info("Email extracted: {}", email);
+                logger.info("Provider extracted: {}", provider);
 
-            if (email != null && role != null) {
-                Optional<Member> optionalMember = memberDAO.findByEmailAndProvider(email, role);
-                if (optionalMember.isPresent()) {
-                    Member member = optionalMember.get();
-                    return ResponseEntity.ok("사용자 정보 조회 성공: User ID = " + email + ", Member Info = " + member.toString());
-                } else {
-                    return ResponseEntity.ok("사용자 정보가 존재하지 않습니다.");
+                if (email != null && provider != null) {
+                    Optional<Member> optionalMember = memberDAO.findByEmailAndProvider(email, provider);
+                    if (optionalMember.isPresent()) {
+                        Member member = optionalMember.get();
+                        return ResponseEntity.ok("사용자 정보 조회 성공: User ID = " + email + ", Member Info = " + member.toString());
+                    } else {
+                        return ResponseEntity.ok("사용자 정보가 존재하지 않습니다.");
+                    }
                 }
-            } else {
-                return ResponseEntity.badRequest().body("토큰에서 사용자 정보를 추출할 수 없습니다.");
+            } catch (Exception e) {
+                logger.error("Token parsing error: {}", e.getMessage());
             }
+            return ResponseEntity.badRequest().body("토큰에서 사용자 정보를 추출할 수 없습니다.");
         } else {
             return ResponseEntity.status(401).body("사용자가 인증되지 않았습니다.");
         }
@@ -61,32 +67,4 @@ public class UserController {
         }
         return null;
     }
-
-    private String getEmailFromToken(String token) {
-        try {
-            Jws<Claims> claimsJws = Jwts.parserBuilder()
-                    .setSigningKey(secretKey)
-                    .build()
-                    .parseClaimsJws(token);
-            return claimsJws.getBody().get("email", String.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-
-    private String getProviderFromToken(String token) {
-        try {
-            Jws<Claims> claimsJws = Jwts.parserBuilder()
-                    .setSigningKey(secretKey)
-                    .build()
-                    .parseClaimsJws(token);
-            return claimsJws.getBody().get("role", String.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
 }

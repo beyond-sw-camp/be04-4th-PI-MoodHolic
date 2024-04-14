@@ -2,6 +2,7 @@ package akatsuki.moodholic.controller;
 
 import akatsuki.moodholic.domain.DiaryFood;
 import akatsuki.moodholic.domain.Food;
+import akatsuki.moodholic.dto.MemberFoodGenreRanking;
 import akatsuki.moodholic.service.facade.FoodFacadeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -61,6 +62,11 @@ public class FoodController {
     @Operation(summary = "회원의 좋아요 표시된 음식 횟수 조회", description = "한 회원이 좋아요 표시한 음식 횟수 조회 기능")
     public ResponseEntity<HashMap<String,Integer>> countFoodCategoryWithMemberLike(@PathVariable long memberId){
         return ResponseEntity.ok().body( foodFacadeService.countFoodCategoryWithMemberLike(memberId) ) ;
+    }
+
+    @GetMapping("/genres/{memberId}")
+    public ResponseEntity<MemberFoodGenreRanking> getMemberFoodGenreRanking(@PathVariable long memberId){
+        return ResponseEntity.ok().body(foodFacadeService.getMemberFoodGenreRanking(memberId));
     }
 
 

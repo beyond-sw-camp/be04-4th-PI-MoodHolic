@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.SortedMap;
 
 @Service
 public class CalendarFacadeService {
@@ -26,17 +27,17 @@ public class CalendarFacadeService {
 
     public List<Calendar> getCalendar(long memberId) {
         List<Diary> diaries = getDiaries(memberId);
-        HashMap<Integer, Integer> emotions = getIntegerIntegerHashMap(diaries);
+        SortedMap<Integer, Integer> emotions = getIntegerIntegerHashMap(diaries);
         return calendarService.getCalendar(diaries,emotions);
     }
     public List<Calendar> getCalendarOfYear(long memberId, int year) {
         List<Diary> diaries = getDiaries(memberId);
-        HashMap<Integer, Integer> emotions = getIntegerIntegerHashMap(diaries);
+        SortedMap<Integer, Integer> emotions = getIntegerIntegerHashMap(diaries);
         return calendarService.getCalendarOfYear(getDiaries(memberId),year,emotions);
     }
 
-    private HashMap<Integer, Integer> getIntegerIntegerHashMap(List<Diary> diaries) {
-        HashMap<Integer,Integer> emotions = diaryEmotionService.getEmotionMap(diaries);
+    private SortedMap<Integer, Integer> getIntegerIntegerHashMap(List<Diary> diaries) {
+        SortedMap<Integer,Integer> emotions = diaryEmotionService.getEmotionMap(diaries);
         return emotions;
     }
 

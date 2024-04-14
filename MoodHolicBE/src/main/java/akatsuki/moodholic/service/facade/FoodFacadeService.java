@@ -1,8 +1,8 @@
 package akatsuki.moodholic.service.facade;
 
-import akatsuki.moodholic.domain.Diary;
-import akatsuki.moodholic.domain.DiaryFood;
-import akatsuki.moodholic.domain.Food;
+import akatsuki.moodholic.domain.*;
+import akatsuki.moodholic.dto.MemberFoodGenreRanking;
+import akatsuki.moodholic.dto.MemberMovieGenreRanking;
 import akatsuki.moodholic.repository.DiaryFoodDAO;
 import akatsuki.moodholic.service.DiaryFoodService;
 import akatsuki.moodholic.service.DiaryService;
@@ -18,7 +18,12 @@ public class FoodFacadeService {
     private  final FoodService foodService;
     private final DiaryService diaryService;
     private final DiaryFoodService diaryFoodService;
-
+    int maximum = 0;
+    String name="";
+    private void init() {
+        maximum=0;
+        name="";
+    }
     @Autowired
     public FoodFacadeService(FoodService foodService, DiaryService diaryService, DiaryFoodService diaryFoodService) {
         this.foodService = foodService;
@@ -55,4 +60,26 @@ public class FoodFacadeService {
         return diaryFoodService.getMemberLikeFood(diaries);
     }
 
+    public MemberFoodGenreRanking getMemberFoodGenreRanking(long memberId) {
+        init();
+        List<Diary> diaries = diaryService.getMemberDiaries(memberId);
+        List<DiaryFood> diaryFoods= diaryFoodService.getMemberLikeFood(diaries);
+        HashMap<String, Integer> lists = new HashMap<>();
+
+        diaryFoods.forEach(diaryFood -> {
+            if(lists.get(diaryFood.getFoodId().getFoodCategory().name())==null) {
+                lists.put(diaryFood.getFoodId().getFoodCategory().name(), 1);
+            }else{
+                int data = lists.get(diaryFood.getFoodId().getFoodCategory().name());
+                if (maximum<data+1){
+                    maximum=data+1;
+                    name=diaryFood.getFoodId().getFoodCategory().name();
+                }
+                lists.replace(diaryFood.getFoodId().getFoodCategory().name(), data + 1);
+            }
+        });
+
+        return new MemberFoodGenreRanking(lists,maximum,name);
+
+    }
 }

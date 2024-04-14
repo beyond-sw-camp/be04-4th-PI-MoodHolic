@@ -31,7 +31,8 @@ public class CalendarController {
     }
 
     @GetMapping("/year/{memberId}")
-    @Operation(summary = "년도에 따른 달력 리스트 출력", description = "맴버가 작성한 기록이 있는 모든 다이어리 날짜와 저장상태들을 요청한 년도에 따라 반환합니다." +
+    @Operation(summary = "년도에 따른 달력 리스트 출력", description = "맴버가 작성한 기록이 있는 모든 다이어리 날짜와 저장상태들을 " +
+            "요청한 년도에 따라 반환합니다." +
             "\n만약 임시저장되어 있는 다이어리도 있을 수 있기 때문에 상태값도 포함하여 반환합니다.")
     public ResponseEntity<List<Calendar>> getCalendarOfYear(@PathVariable long memberId, @RequestParam(name = "year") int year){
         List<Calendar> returnValue = calendarFacadeService.getCalendarOfYear(memberId,year);

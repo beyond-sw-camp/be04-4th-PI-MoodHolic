@@ -2,6 +2,7 @@ package akatsuki.moodholic.controller;
 
 import akatsuki.moodholic.domain.DiaryMusic;
 import akatsuki.moodholic.domain.Music;
+import akatsuki.moodholic.dto.MemberMusicGenreRanking;
 import akatsuki.moodholic.service.MusicService;
 import akatsuki.moodholic.service.facade.MusicFacadeService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -52,6 +53,11 @@ public class MusicController {
     @GetMapping("/liked/{memberId}")
     public ResponseEntity<List<DiaryMusic>> getMemberLikeMusic(@PathVariable long memberId){
         return ResponseEntity.ok().body(musicFacadeService.getMemberLikeMusic(memberId));
+    }
+    @GetMapping("/genres/{memberId}")
+    public ResponseEntity<MemberMusicGenreRanking> enreRanking(@PathVariable long memberId){
+        MemberMusicGenreRanking returnValue = musicFacadeService.getMemberMusicGenreRanking(memberId);
+        return ResponseEntity.ok().body(returnValue);
     }
 
 }

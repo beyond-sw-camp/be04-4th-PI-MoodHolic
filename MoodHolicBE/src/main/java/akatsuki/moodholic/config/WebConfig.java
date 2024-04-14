@@ -15,14 +15,14 @@ import java.util.List;
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-
+        // 개발 중인 경우 와일드카드 '*' 대신 구체적인 도메인을 명시하는 것이 좋습니다.
+        // 예를 들어 프론트엔드가 호스팅되는 URL을 지정
         registry.addMapping("/**")
                 .allowedOrigins(
-                        "*"
-        //                추후 docker 포트 맞춰서 할 것
-//                        ,"http://localhost:8011"
+                        "http://localhost:8001",  // React 개발 서버
+                        "http://localhost:5173"   // Vue 개발 서버
                 )
-                .allowedMethods("GET","POST","PUT","DELETE")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("Authorization", "Content-Type")
                 .exposedHeaders("Custom-Header")
                 .allowCredentials(false)

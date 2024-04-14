@@ -12,9 +12,10 @@
               style="font-size: 40px;"
             >
         <div class="pop-over-content" @click="clickContent(customData.diaryId)" align="center">
-            <img :src="`${customData.description}`"  style=" max-width: 100px;" alt=""> <hr style="margin-top: 0; margin-bottom: 0;">
-            <span style="font-size: 15px;">요약: {{ customData.summary }}</span> <br>
-            <span style="font-size: 15px;">내용: {{ customData.content}}</span> <br>  
+            <img :src="`${customData.description}`"  style=" max-width: 100px;" alt=""> 
+            <!-- <hr style="margin-top: 0; margin-bottom: 0;"> -->
+            <!-- <span style="font-size: 15px;">요약: {{ customData.summary }}</span> <br>
+            <span style="font-size: 15px;">내용: {{ customData.content}}</span> <br>   -->
         </div>
       </a>
     </div>
@@ -26,24 +27,26 @@
       <span class="close" @click="closePopup">&times;</span>
         
         <div style="display:flex;" align="center">
-          <div style="border-radius: 30px; background-color: white; padding: 30px;   margin: 10px; ">
-            <img :src="`${clickedEmotionImg}`"  style=" max-width: 200px;" alt="">
+          <div style="border-radius: 30px; background-color: white; padding: 30px; margin: 10px; height:100%; width:40%; min-width: 100px; ">
+            <img :src="`${clickedEmotionImg}`"  style=" max-width: 100%; height: auto;" alt="">
           </div>
 
-          <div style="border-radius: 30px; background-color: white; padding: 15px; margin: 10px; text-align: left; font-size: 30px; width:50%; padding-left:10%; padding-top:8%">
+          <div style="border-radius: 30px; background-color: white; padding: 30px; margin: 10px; text-align: left; font-size: 3vw; width:60%;  padding-left:30px; width:100%;">
             <div>🗓️ {{diary.diary.date}}</div><br>
             <div>❤️ {{diary.emotion}}<br></div>
           </div>  
         </div>
 
         <div style="border-radius: 30px; background-color: white; padding: 15px; padding-top: 1px;   margin: 10px;  ">
-          <h3>오늘의 기분</h3> {{diary.diary.summary}}<br>
-          <h3>하루 이야기</h3> {{diary.diary.content}}<br>{{diary.diary.content}}<br>
+          <h3 style="font-size: 25px;">✨ 오늘의 기분<hr></h3> {{diary.diary.summary}}<br><br><br>
+          <h3 style="font-size: 25px;">🌠 하루 이야기<hr></h3> {{diary.diary.content}}<br><br>
         </div>
-        <div align="center" style="font-size:30px">AI's PICK</div>
+        <br>
+        <div align="center" style="font-size:30px; background-color: pink; border-radius: 20px; font-weight: 1000;">AI's PICK</div>
+        <br>
           
-        <div style="display: flex; width:100%; " align="center" >
-          <div style="border-radius: 30px; background-color: white;  padding-bottom: 7%;   margin: 0 auto; text-align: left; width:30% ">
+        <div style="display: flex; width:100%; font-weight: 700;" align="center" >
+          <div style="border-radius: 30px; background-color: white;  padding-bottom: 7%;   margin: 0 auto; text-align: left; width:30%; ">
             <h3 align="center" > 음식</h3>
             <div style="padding-left: 30%;">🎬 {{diary.food.foodName}}<br></div>
             <div style="padding-left: 30%;">❖ {{diary.food.foodCategory}}<br></div>
@@ -51,21 +54,18 @@
           </div>
           <div style="border-radius: 30px; background-color: white;  padding-bottom: 7%;   margin: 0 auto; text-align: left; width:30%">
             <h3 align="center"> 영화</h3>
-            <div style="padding-left: 30%;">🎬: {{diary.movie.movieName}}<br></div>
-            <div style="padding-left: 30%;">❖: {{diary.movie.movieGenre}}<br></div>
+            <div style="padding-left: 30%;">🎬 {{diary.movie.movieName}}<br></div>
+            <div style="padding-left: 30%;">❖ {{diary.movie.movieGenre}}<br></div>
           </div>
           <div style="border-radius: 30px; background-color: white;  padding-bottom: 7%;   margin: 0 auto; text-align: left; width:30%">
             <h3 align="center"> 음악</h3>
-            <div style="padding-left: 30%;">🎵: {{diary.music.musicName}}<br></div>
-            <div style="padding-left: 30%;">🎤: {{diary.music.singer}}<br></div>
-            <div style="padding-left: 30%;">❖: {{diary.music.musicGenre}}<br></div>
+            <div style="padding-left: 30%;">🎵 {{diary.music.musicName}}<br></div>
+            <div style="padding-left: 30%;">🎤 {{diary.music.singer}}<br></div>
+            <div style="padding-left: 30%;">❖ {{diary.music.musicGenre}}<br></div>
           </div>
         </div>
      </div>
   </div>
-
-
-
 </template>
 
 <script setup>
@@ -81,6 +81,14 @@ const date = ref([]);
 const attributes = ref([]);
 const diary = ref(null);
 let clickedEmotionImg = ref('');
+
+// const memberId = ref([]);
+// try{
+//   memberId = 
+// }catch(e){
+
+// }
+
 
 const showPopup = ref(false);
 
@@ -292,6 +300,7 @@ const getDiary = async(index)=> {
         border-radius: 30px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         width: 75%;
+        max-width: 800px;
         height: 80%;
         overflow-y: auto; /* 수직 스크롤 활성화 */
         max-height: 80vh; /* 팝업 창의 최대 높이 지정 */

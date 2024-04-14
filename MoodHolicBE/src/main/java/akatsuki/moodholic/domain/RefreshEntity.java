@@ -7,11 +7,12 @@ import org.springframework.data.redis.core.RedisHash;
 
 @Getter
 @Setter
-@RedisHash(value = "refreshToken", timeToLive = 604800)
+@RedisHash(value = "RefreshEntity", timeToLive = 604800)
 public class RefreshEntity {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String email;
     private String refreshToken;
     private String provide;

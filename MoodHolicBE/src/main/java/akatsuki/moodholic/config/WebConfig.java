@@ -15,17 +15,16 @@ import java.util.List;
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-
         registry.addMapping("/**")
                 .allowedOrigins(
-                        "*"
-        //                추후 docker 포트 맞춰서 할 것
-//                        ,"http://localhost:8011"
+//                        "*"
+                        "http://localhost:8081",  // React 개발 서버
+                        "https://localhost:5173"   // Vue 개발 서버
                 )
-                .allowedMethods("GET","POST","PUT","DELETE")
-                .allowedHeaders("Authorization", "Content-Type")
-                .exposedHeaders("Custom-Header")
-                .allowCredentials(false)
+                .allowedMethods("*")
+                .allowedHeaders("*")
+                .exposedHeaders("Authorization")
+                .allowCredentials(true)
                 .maxAge(3600);
     }
 

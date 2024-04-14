@@ -1,57 +1,13 @@
 <template>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./index.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
-  </head>
   <body>
-    <div class="ai">
-      <header class="line-parent">
-        <div class="frame-child"></div>
-        <img
-          class="moodholiclogo-2-icon"
-          loading="lazy"
-          alt=""
-          src="./public/moodholiclogo-25@2x.png"
-        />
-
-        <div class="div">오늘 날씨</div>
-        <div class="image-1-parent">
-          <img
-            class="image-1-icon"
-            loading="lazy"
-            alt=""
-            src="./public/image-16@2x.png"
-          />
-
-          <div class="div1">14 ℃</div>
-        </div>
-        <img
-          class="group-icon"
-          loading="lazy"
-          alt=""
-          src="./public/group7@2x.png"
-        />
-
-        <img class="group-icon1" alt="" src="./public/group3.svg" />
-
-        <img class="uimgraph-bar-icon" alt="" src="./public/uimgraphbar.svg" />
-      </header>
+  <div class="ai">
       <section class="ai-inner">
         <div class="frame-parent">
           <div class="frame-wrapper">
             <button class="rectangle-parent">
               <div class="frame-item"></div>
               <div class="calendar-wrapper">
-                <img class="calendar-icon" alt="" src="./public/calendar.svg" />
+                <img class="calendar-icon" alt="" src="@/assets/icon/Profile/Diary/View/back.png"/>
               </div>
               <div class="div2">뒤로가기</div>
             </button>
@@ -60,7 +16,7 @@
             <div class="frame-inner"></div>
             <div class="frame-group">
               <div class="parent">
-                <img class="icon" alt="" src="./public/-20240405--318@2x.png" />
+                <img class="icon" alt="" src="@/assets/icon/Profile/Diary/View/-20240405--318@2x.png" />
 
                 <div class="day-label-parent">
                   <div class="day-label"></div>
@@ -68,7 +24,7 @@
                     class="icon1"
                     loading="lazy"
                     alt=""
-                    src="./public/-20240405--4054@2x.png"
+                    src="@/assets/icon/Profile/Diary/View/-20240405--405@2x.png"
                   />
                 </div>
               </div>
@@ -80,7 +36,7 @@
                       class="mood-icon-child"
                       loading="lazy"
                       alt=""
-                      src="./public/group-143.svg"
+                      src="@/assets/icon/Profile/Diary/View/calendar.png"
                     />
 
                     <div class="wrapper">
@@ -94,7 +50,7 @@
                     <img
                       class="vector-icon"
                       alt=""
-                      src="./public/vector-116.svg"
+                      src="@/assets/icon/Profile/Diary/View/score.png"
                     />
 
                     <div class="mood-picker-dot">
@@ -112,7 +68,7 @@
                     class="icon2"
                     loading="lazy"
                     alt=""
-                    src="./public/-20240405--218-17@2x.png"
+                    src="@/assets/icon/Profile/Diary/View/-20240405--218-1@2x.png"
                   />
 
                   <div class="button">
@@ -129,7 +85,7 @@
                     class="icon3"
                     loading="lazy"
                     alt=""
-                    src="./public/-20240405--218-2@2x.png"
+                    src="@/assets/icon/Profile/Diary/View/-20240405--218-1@2x.png"
                   />
 
                   <div class="select-input">
@@ -161,7 +117,7 @@
                         <img
                           class="pick-icon"
                           alt=""
-                          src="./public/vector-110.svg"
+                          src="@/assets/icon/Profile/Diary/View/pick.png"
                         />
                       </div>
                       <h2 class="ai-pick">AI Pick</h2>
@@ -181,7 +137,7 @@
                           <img
                             class="asian-cuisine-icon"
                             alt=""
-                            src="./public/vector-210.svg"
+                            src="@/assets/icon/Profile/Diary/View/food.png"
                           />
 
                           <div class="korean-category">
@@ -192,7 +148,7 @@
                           <img
                             class="vector-icon1"
                             alt=""
-                            src="./public/vector-310.svg"
+                            src="@/assets/icon/Profile/Diary/View/spicy.png"
                           />
 
                           <div class="food-name">
@@ -203,7 +159,7 @@
                           <img
                             class="vector-icon2"
                             alt=""
-                            src="./public/vector-410.svg"
+                            src="@/assets/icon/Profile/Diary/View/category.png"
                           />
 
                           <div class="wrapper1">
@@ -215,7 +171,7 @@
                         <img
                           class="vector-icon3"
                           alt=""
-                          src="./public/vector-614.svg"
+                          src="@/assets/icon/Profile/Diary/View/like.png"
                         />
                       </div>
                     </div>
@@ -236,7 +192,7 @@
                           <img
                             class="group-icon2"
                             alt=""
-                            src="./public/group-21.svg"
+                            src="@/assets/icon/Profile/Diary/View/music.png"
                           />
 
                           <div class="caterpillar">
@@ -249,7 +205,7 @@
                           <img
                             class="group-icon3"
                             alt=""
-                            src="./public/group-31.svg"
+                            src="@/assets/icon/Profile/Diary/View/singer.png"
                           />
 
                           <div class="drama-genre">
@@ -261,7 +217,7 @@
                         <img
                           class="vector-icon4"
                           alt=""
-                          src="./public/vector-510.svg"
+                          src="@/assets/icon/Profile/Diary/View/category.png"
                         />
 
                         <div class="r-b-image">
@@ -273,7 +229,7 @@
                       <img
                         class="vector-icon5"
                         alt=""
-                        src="./public/vector-614.svg"
+                        src="@/assets/icon/Profile/Diary/View/like.png"
                       />
                     </div>
                   </div>
@@ -293,7 +249,7 @@
                           <img
                             class="vector-icon6"
                             alt=""
-                            src="./public/vector-610.svg"
+                            src="@/assets/icon/Profile/Diary/View/movie.png"
                           />
 
                           <div class="div15">기생충</div>
@@ -303,7 +259,7 @@
                         <img
                           class="vector-icon7"
                           alt=""
-                          src="./public/vector-102.svg"
+                          src="@/assets/icon/Profile/Diary/View/director.png"
                         />
 
                         <div class="vegetable-icon">
@@ -315,7 +271,7 @@
                           <img
                             class="vector-icon8"
                             alt=""
-                            src="./public/vector-82.svg"
+                            src="@/assets/icon/Profile/Diary/View/category.png"
                           />
 
                           <div class="drama-title">
@@ -328,7 +284,7 @@
                       <img
                         class="vector-icon9"
                         alt=""
-                        src="./public/vector-614.svg"
+                        src="@/assets/icon/Profile/Diary/View/like.png"
                       />
                     </div>
                   </div>
@@ -340,13 +296,14 @@
       </section>
     </div>
   </body>
-</html>
 </template>
 
 <script setup>
 
 </script>
 
-<style scoped>
-
+<style>
+@import "src/assets/css/Profile/Diary/View/global.css";
+@import "src/assets/css/Profile/Diary/View/index.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 </style>

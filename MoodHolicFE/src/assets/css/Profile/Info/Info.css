@@ -1,3 +1,15 @@
+/*.button-wrapper {*/
+/*  border: none;*/
+/*  padding: 10px 20px;*/
+/*  color: #333;*/
+/*  cursor: pointer;*/
+/*}*/
+/*.button-wrapper:hover {*/
+/*  background-color: #CBD4FF;*/
+/*}*/
+/*.button-wrapper:focus {*/
+/*  outline: 0;*/
+/*}*/
 .frame-child {
   position: absolute;
   top: 121.2px;
@@ -87,7 +99,7 @@
   font-family: var(--font-inter);
 }
 .konan {
-  margin: 0;
+  margin-top: 150px;
   height: 48px;
   position: relative;
   font-size: inherit;
@@ -200,7 +212,7 @@
 }
 .vector-group {
   flex: 1;
-  border-radius: var(--br-mini);
+  border-style: none;
   background-color: var(--color-whitesmoke);
   flex-direction: column;
   padding: 15.2px var(--padding-7xl) var(--padding-xl-6) 32.5px;
@@ -331,8 +343,8 @@
   min-width: 78px;
 }
 .image-2-icon {
-  height: 56.3px;
-  width: 64px;
+  height: 65px;
+  width: 75px;
   object-fit: contain;
 }
 .image-2-wrapper,
@@ -349,7 +361,7 @@
   border-radius: var(--br-mini);
   background-color: var(--color-whitesmoke);
   flex-direction: column;
-  padding: 15.2px var(--padding-xl) 23.3px 30.7px;
+  padding: 15.2px var(--padding-xl) 15px 30px;
   gap: var(--gap-2xs);
 }
 .frame-child4 {

@@ -3,14 +3,14 @@
     <Header/>
   </header>
   <main>
-    <Write/>
+    <Info/>
   </main>
 </template>
 
 <script setup>
 
 import Header from "@/components/Header/Header.vue";
-import Write from "@/components/Profile/Diary/Write/Write.vue";
+import Info from "@/components/Profile/Info/Info.vue";
 
 </script>
 

@@ -1,14 +1,3 @@
-.line-parent {
-  align-self: stretch;
-  height: 128.6px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 6.6px;
-  max-width: 100%;
-}
-
 .frame-child {
   width: 1824px;
   display: flex;
@@ -19,12 +8,21 @@
   box-sizing: border-box;
   max-width: 100%;
 }
-
 .moodholiclogo-2-icon {
   height: 121px;
   width: 167px;
   position: relative;
   object-fit: cover;
+}
+.line-parent {
+  align-self: stretch;
+  height: 128.6px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 6.6px;
+  max-width: 100%;
 }
 
 .frame-kid {
@@ -64,7 +62,7 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  padding: 0 0 24.2px var(--padding-5xs);
+  padding: 0 0 var(--padding-5xl-2) var(--padding-5xs);
   font-size: var(--font-size-6xl);
 }
 .mood-holic {
@@ -86,7 +84,7 @@
   justify-content: center;
   padding: 0 var(--padding-xl) 0 var(--padding-11xl);
 }
-.frame-inner {
+.sign-in-button-child {
   align-self: stretch;
   height: 1px;
   position: relative;
@@ -94,14 +92,14 @@
   box-sizing: border-box;
   z-index: 1;
 }
-.frame-parent {
+.sign-in-button {
   align-self: stretch;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
   padding: 0 0 var(--padding-xs-4);
-  gap: 19.8px;
+  gap: var(--gap-lgi-8);
   font-size: var(--font-size-11xl);
 }
 .b {
@@ -119,7 +117,7 @@
   box-sizing: border-box;
   max-width: 100%;
 }
-.rectangle-div {
+.create-account-button-child {
   height: 59.2px;
   width: 420.7px;
   position: relative;
@@ -128,17 +126,15 @@
   display: none;
   max-width: 100%;
 }
-.b1,
-.group-icon {
-  position: relative;
-  z-index: 2;
-}
-.group-icon {
+.create-account-button-item {
   height: 20.1px;
   width: 21.8px;
+  position: relative;
   min-height: 20px;
+  z-index: 2;
 }
 .b1 {
+  position: relative;
   font-size: var(--font-size-mini);
   line-height: 18.4px;
   display: inline-block;
@@ -146,8 +142,9 @@
   color: var(--color-darkgray);
   text-align: center;
   min-width: 118px;
+  z-index: 2;
 }
-.rectangle-group {
+.create-account-button {
   cursor: pointer;
   border: 0;
   padding: var(--padding-xl) var(--padding-xl-2) var(--padding-lgi-1);
@@ -161,23 +158,23 @@
   white-space: nowrap;
   z-index: 1;
 }
-.rectangle-group:hover {
+.create-account-button:hover {
   background-color: var(--color-gainsboro);
 }
-.frame-group,
-.frame-wrapper,
-.rectangle-group {
+.create-account-button,
+.google-login-button,
+.google-login-button-wrapper {
   display: flex;
   justify-content: flex-start;
   max-width: 100%;
 }
-.frame-group {
+.google-login-button {
   flex: 1;
   flex-direction: column;
   align-items: flex-end;
   gap: var(--gap-3xl);
 }
-.frame-wrapper {
+.google-login-button-wrapper {
   width: 429.5px;
   flex-direction: row;
   align-items: flex-start;
@@ -185,7 +182,7 @@
   box-sizing: border-box;
   color: var(--color-gray-100);
 }
-.frame-child1 {
+.frame-inner {
   height: 59.2px;
   width: 420.7px;
   position: relative;
@@ -194,7 +191,7 @@
   display: none;
   max-width: 100%;
 }
-.frame-child2 {
+.rectangle-div {
   position: absolute;
   top: 0;
   left: 2px;
@@ -202,41 +199,32 @@
   background-color: var(--color-black);
   width: 18px;
   height: 18px;
-  display: none;
+  z-index: 2;
 }
 .vector-icon {
   position: absolute;
-  height: 100%;
-  width: 100%;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-  z-index: 1;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
 }
-.b2,
-.group-div {
-  position: relative;
-  z-index: 2;
-}
-.group-div {
+.rectangle-container {
   height: 20.1px;
   width: 21.8px;
-  border-radius: var(--br-11xs);
-  background-color: var(--color-black);
+  position: relative;
 }
 .b2 {
+  position: relative;
   font-size: var(--font-size-mini);
   line-height: 18.4px;
   font-family: var(--font-inter);
   color: var(--color-darkgray);
   text-align: center;
+  z-index: 2;
 }
-.frame-container,
-.rectangle-container {
+.rectangle-group,
+.sign-in-header {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -244,7 +232,7 @@
   box-sizing: border-box;
   max-width: 100%;
 }
-.rectangle-container {
+.rectangle-group {
   cursor: pointer;
   border: 0;
   padding: var(--padding-xl) var(--padding-xl-2) var(--padding-lgi-1);
@@ -254,7 +242,7 @@
   gap: 96.2px;
   z-index: 1;
 }
-.frame-container {
+.sign-in-header {
   width: 429.5px;
   padding: 0 var(--padding-9xs) 19.2px var(--padding-8xs-4);
 }
@@ -277,7 +265,7 @@
   color: var(--color-darkslategray);
 }
 .frame,
-.frame-div,
+.frame-wrapper,
 .parent {
   display: flex;
   align-items: flex-start;
@@ -287,7 +275,7 @@
   justify-content: flex-start;
   gap: var(--gap-mid-7);
 }
-.frame-div {
+.frame-wrapper {
   align-self: stretch;
   flex-direction: row;
   justify-content: center;
@@ -300,7 +288,8 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: var(--padding-66xl) 61.3px 86.7px 61.4px;
+  padding: var(--padding-66xl) var(--padding-42xl-3) 86.7px
+    var(--padding-42xl-4);
   gap: var(--gap-12xl-8);
   max-width: 100%;
 }
@@ -332,7 +321,7 @@
   justify-content: flex-start;
   padding: var(--padding-4xs) var(--padding-24xl) var(--padding-136xl)
     var(--padding-21xl);
-  gap: 111.8px;
+  gap: var(--gap-92xl-8);
   line-height: normal;
   letter-spacing: normal;
 }
@@ -365,10 +354,10 @@
   .mood-holic {
     font-size: var(--font-size-lg);
   }
-  .rectangle-group {
+  .create-account-button {
     gap: 57px;
   }
-  .rectangle-container {
+  .rectangle-group {
     gap: 48px;
   }
 }

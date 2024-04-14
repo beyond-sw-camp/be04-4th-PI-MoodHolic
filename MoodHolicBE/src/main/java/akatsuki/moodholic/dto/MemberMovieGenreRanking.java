@@ -10,10 +10,6 @@ public class MemberMovieGenreRanking {
     private String topName;
     private int topCnt;
 
-    public MemberMovieGenreRanking() {
-        movieRankings = new HashMap<>();
-    }
-
     public MemberMovieGenreRanking(HashMap<String, Integer> lists, int maximum, String name) {
         movieRankings=lists;
         topName=name;

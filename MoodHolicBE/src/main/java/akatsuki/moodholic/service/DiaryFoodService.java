@@ -2,6 +2,7 @@ package akatsuki.moodholic.service;
 
 import akatsuki.moodholic.domain.Diary;
 import akatsuki.moodholic.domain.DiaryFood;
+import akatsuki.moodholic.domain.DiaryMovie;
 
 import java.util.HashMap;
 import java.util.List;

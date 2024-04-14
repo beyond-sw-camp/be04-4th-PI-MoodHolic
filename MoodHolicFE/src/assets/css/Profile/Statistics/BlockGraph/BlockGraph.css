@@ -402,9 +402,8 @@
   padding: 0 0 0 var(--padding-6xs-7);
   box-sizing: border-box;
 }
-.span,
-.span1,
-.span2 {
+
+.span1 {
   font-size: var(--font-size-11xl);
   color: var(--color-gold-100);
 }

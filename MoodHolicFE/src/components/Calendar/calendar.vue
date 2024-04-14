@@ -81,12 +81,14 @@ const date = ref([]);
 const attributes = ref([]);
 const diary = ref(null);
 let clickedEmotionImg = ref('');
+
 // const memberId = ref([]);
 // try{
 //   memberId = 
 // }catch(e){
 
 // }
+
 
 const showPopup = ref(false);
 

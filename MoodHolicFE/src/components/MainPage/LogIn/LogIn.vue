@@ -1,6 +1,5 @@
 <template>
   <div class="main-container">
-
     <div class="login-card">
       <div class="greeting-wrapper">
         <h2 class="greeting">오늘도 당신의</h2>
@@ -26,21 +25,32 @@
 
       <div class="signup-invitation">
         <p class="signup-invitation">아직 회원이 아니신가요?</p>
-        <button class="signup-button">새 계정으로 회원가입</button>
+        <button class="signup-button" @click="signup">새 계정으로 회원가입</button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-function onGoogleLogin() {
-  window.location.href = 'http://localhost:8888/login/oauth2/code/google';
-}
+const onGoogleLogin = async () => {
+  window.location.href = 'https://localhost:8888/login/oauth2/code/google';
+};
 
-function onKakaoLogin() {
-  window.location.href = 'http://localhost:8888/login/oauth2/code/kakao';
-}
+const onKakaoLogin = async () => {
+  window.location.href = 'https://localhost:8888/login/oauth2/code/kakao';
+};
+
 </script>
+
+
+
+
+
+
+
+
+
+
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');

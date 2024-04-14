@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory} from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 
 import Login from "@/components/MainPage/Login/LogIn.vue";
 import SignUp from "@/components/MainPage/SighUp/SignUp.vue";
@@ -17,16 +17,11 @@ const routes = [
         path: '/',
         component: BeforeLogInMain
     }
-    // {   // 통계
-    //     path: '/statistics',
-    //     component:
-    // }
-
-]
+];
 
 const router = createRouter({
     history: createWebHistory(),
     routes
-})
+});
 
 export default router;

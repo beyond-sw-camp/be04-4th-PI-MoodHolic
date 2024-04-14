@@ -9,17 +9,21 @@
     <img class="moodholiclogo-icon" style="cursor: pointer;" @click="changeRouter('/')" loading="lazy" src="@/assets/icon/header/moodholiclogo.png"/>
 
     <!-- Right Icons -->
-    <div class="right-icons">
+    <div class="right-icons" v-if="isAuthenticated">
       <img class="header-icon" style="cursor: pointer;" @click="changeRouter('/mypage')" alt="Profile Shortcut" src="@/assets/icon/header/profile.png" />
       <img class="header-icon" style="cursor: pointer;" @click="changeRouter('/statistics')" alt="Statistics Page Shortcut" src="@/assets/icon/header/statistics.png" />
-      <img class="header-icon" style="cursor: pointer;" @click="changeRouter('/logout')" alt="Logout Button" src="@/assets/icon/header/logout.png" />
+      <img class="header-icon" style="cursor: pointer;" @click="logout('/logout')" alt="Logout Button" src="@/assets/icon/header/logout.png" />
     </div>
   </header>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
+import { useStore } from 'vuex';
 import router from "@/router/index.js";
+
+const store = useStore();
+const isAuthenticated = computed(() => store.getters.isAuthenticated);
 
 const weatherInfo = ref({
   temperature: 'Loading...',
@@ -57,7 +61,28 @@ onMounted(() => {
 const changeRouter = (route) => {
   router.push(route);
 };
+
+// 로그아웃 처리
+const logout = async () => {
+  // 로그아웃 API 호출
+  try {
+    const response = await fetch('https://localhost:8888/logout', {
+      method: 'POST',
+      credentials: 'include'  // 쿠키 포함시킴
+    });
+    if (response.ok) {
+      await store.dispatch('logout');  // 상태 업데이트
+      await router.push('/login');  // 로그인 페이지로 리다이렉션
+    } else {
+      throw new Error('Failed to logout');
+    }
+  } catch (error) {
+    console.error('Logout error:', error);
+  }
+};
+
 </script>
+
 
 
 

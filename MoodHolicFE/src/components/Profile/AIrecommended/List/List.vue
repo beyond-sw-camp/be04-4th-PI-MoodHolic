@@ -565,7 +565,7 @@
 
 </script>
 
-<style scoped>
+<style>
 @import "@/assets/css/Profile/AIrecommended/List/global.css";
 @import "@/assets/css/Profile/AIrecommended/List/List.css";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');

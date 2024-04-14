@@ -1737,7 +1737,7 @@
 
 </script>
 
-<style scoped>
+<style>
 @import "@/assets/css/Profile/AIrecommended/Card/global.css";
 @import "@/assets/css/Profile/AIrecommended/Card/Card.css";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');

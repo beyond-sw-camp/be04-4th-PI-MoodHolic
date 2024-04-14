@@ -71,13 +71,14 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
         // AccessToken 헤더에 담기
         response.setHeader("Authorization", "Bearer " + accessToken);
         response.setStatus(HttpStatus.OK.value());
+        response.sendRedirect("http://localhost:5173/");
     }
 
     private Cookie createCookie(String name, String value, int maxAge) {
         Cookie cookie = new Cookie(name, value);
         cookie.setMaxAge(maxAge);
         cookie.setPath("/");
-//        cookie.setHttpOnly(true);
+        cookie.setHttpOnly(false);
         return cookie;
     }
 }

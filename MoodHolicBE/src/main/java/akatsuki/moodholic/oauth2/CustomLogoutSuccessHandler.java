@@ -30,7 +30,6 @@ public class CustomLogoutSuccessHandler implements LogoutSuccessHandler {
         String refreshTokenValue = extractRefreshToken(request.getCookies());
 
         if (refreshTokenValue != null) {
-            // RefreshToken 값으로 엔티티를 삭제하고 로그를 남깁니다.
             refreshRepository.deleteByRefreshToken(refreshTokenValue);
             log.info("Refresh token deleted: {}", refreshTokenValue);
         } else {

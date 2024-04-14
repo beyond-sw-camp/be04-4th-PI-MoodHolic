@@ -3,47 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./index.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
   </head>
   <body>
     <div class="div">
-      <header class="line-parent">
-        <div class="frame-child"></div>
-        <img
-          class="moodholiclogo-2-icon"
-          loading="lazy"
-          alt=""
-          src="./public/moodholiclogo-2@2x.png"
-        />
-
-        <h1 class="h1">오늘 날씨</h1>
-        <div class="image-1-parent">
-          <img
-            class="image-1-icon"
-            loading="lazy"
-            alt=""
-            src="./public/image-1@2x.png"
-          />
-
-          <div class="div1">14 ℃</div>
-        </div>
-        <img
-          class="group-icon"
-          loading="lazy"
-          alt=""
-          src="./public/group@2x.png"
-        />
-
-        <img class="group-icon1" alt="" src="./public/group3.svg" />
-
-        <img class="frame-item" alt="" src="./public/group-177.svg" />
-      </header>
       <main class="inner">
         <section class="rectangle-parent">
           <div class="frame-inner"></div>
@@ -52,7 +14,7 @@
               <button class="rectangle-group">
                 <div class="rectangle-div"></div>
                 <div class="vector-wrapper">
-                  <img class="vector-icon" alt="" src="./public/vector.svg" />
+                  <img class="vector-icon" alt="" src="@/assets/icon/Profile/Calendar/Year/down.svg" />
                 </div>
                 <div class="div2">전체</div>
               </button>
@@ -63,7 +25,7 @@
                   <img
                     class="vector-icon1"
                     alt=""
-                    src="./public/vector-1.svg"
+                    src="@/assets/icon/Profile/Calendar/Year/left.svg"
                   />
                 </div>
                 <div class="div3">2024년</div>
@@ -71,14 +33,14 @@
                   <img
                     class="vector-icon2"
                     alt=""
-                    src="./public/vector-2.svg"
+                    src="@/assets/icon/Profile/Calendar/Year/right.svg"
                   />
                 </div>
               </div>
             </div>
             <button class="rectangle-container">
               <div class="frame-child1"></div>
-              <img class="vector-icon3" alt="" src="./public/vector-3.svg" />
+              <img class="vector-icon3" alt="" src="@/assets/icon/Profile/Calendar/Year/pencil.svg" />
 
               <div class="div4">작성하기</div>
             </button>
@@ -5095,6 +5057,9 @@
 
 </script>
 
-<style scoped>
+<style>
+@import "@/assets/css/Profile/Calendar/Year/global.css";
+@import "@/assets/css/Profile/Calendar/Year/Year.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 </style>

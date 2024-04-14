@@ -10,4 +10,6 @@ public interface DiaryEmotionDAO extends JpaRepository<DiaryEmotion, Integer> {
     DiaryEmotion findByDiaryIdDiaryId(int diaryId);
 
     void deleteByDiaryIdDiaryId(int diaryId);
+
+    DiaryEmotion findByDiaryIdDiaryIdOrderByDiaryIdDateAsc(int diaryId);
 }

@@ -2,6 +2,7 @@ package akatsuki.moodholic.service;
 
 import akatsuki.moodholic.domain.Diary;
 import akatsuki.moodholic.domain.DiaryFood;
+import akatsuki.moodholic.domain.DiaryMovie;
 import akatsuki.moodholic.repository.DiaryFoodDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -86,5 +87,6 @@ public class DiaryFoodServiceImpl implements DiaryFoodService{
         DiaryFood diaryFood = diaryFoodDAO.findByDiaryId(diaryId);
         diaryFood.setFoodLike(food);
     }
+
 
 }

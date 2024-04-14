@@ -5,6 +5,8 @@
       <img :src="'https://openweathermap.org/img/wn/' + weatherInfo.icon + '.png'" alt="Weather Icon" class="weather-icon"/>
       <span class="temperature">{{ weatherInfo.temperature }}°C</span>
     </div>
+
+
     <!-- Main Logo -->
     <img class="moodholiclogo-icon" style="cursor: pointer;" @click="changeRouter('/')" loading="lazy" src="@/assets/icon/header/moodholiclogo.png"/>
 
@@ -13,6 +15,18 @@
       <img class="header-icon" style="cursor: pointer;" @click="changeRouter('/mypage')" alt="Profile Shortcut" src="@/assets/icon/header/profile.png" />
       <img class="header-icon" style="cursor: pointer;" @click="changeRouter('/statistics')" alt="Statistics Page Shortcut" src="@/assets/icon/header/statistics.png" />
       <img class="header-icon" style="cursor: pointer;" @click="logout('/logout')" alt="Logout Button" src="@/assets/icon/header/logout.png" />
+
+<!-- 
+    메인 로고
+    <img class="moodholiclogo-icon" loading="lazy" src="@/assets/icon/header/moodholiclogo.png"/>
+
+    맨 오른쪽 아이콘들
+    <div class="right-icons">
+      <img class="header-icon" alt="Profile Shortcut" src="@/assets/icon/header/profile.png" />
+      <img class="header-icon" alt="Statistics Page Shortcut" src="@/assets/icon/header/statistics.png" />
+      <img class="header-icon" alt="Logout Button" src="@/assets/icon/header/logout.png" />
+-->
+
     </div>
   </header>
 </template>
@@ -98,6 +112,7 @@ const logout = async () => {
   justify-content: space-between;
   padding: 20px 10px;
   border-bottom: 2px solid #ccc;
+  align-self: stretch;
 }
 
 .weather-container {

@@ -6,12 +6,12 @@ import java.util.HashMap;
 
 @Data
 public class MemberMusicGenreRanking {
-    private HashMap<String, Integer> movieRankings;
+    private HashMap<String, Integer> musicRankings;
     private String topName;
     private int topCnt;
 
     public MemberMusicGenreRanking(HashMap<String, Integer> lists, int maximum, String name) {
-        movieRankings=lists;
+        musicRankings=lists;
         topName=name;
         topCnt=maximum;
     }

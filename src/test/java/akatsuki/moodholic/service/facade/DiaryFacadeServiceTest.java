@@ -71,18 +71,18 @@ class DiaryFacadeServiceTest {
         assertEquals("임시저장",text);
     }
     //    다이어리 저장
-//    @Test
-//    @DisplayName("다이어리 저장")
-//    void postDiary2(){
-//        /*given*/
-//        Member member = memberDAO.findById(memberId).orElseThrow();
-//        Testdiary.setMember(member);
-//        Testdiary.setStatus(1);
-//        /*when*/
-//        String text = diaryFacadeService.postDiary(Testdiary);
-//        /*then*/
-//        assertEquals("저장",text);
-//    }
+    @Test
+    @DisplayName("다이어리 저장")
+    void postDiary2(){
+        /*given*/
+        Member member = memberDAO.findById(memberId).orElseThrow();
+        Testdiary.setMember(member);
+        Testdiary.setStatus(1);
+        /*when*/
+        String text = diaryFacadeService.postDiary(Testdiary);
+        /*then*/
+        assertEquals("저장",text);
+    }
     //    다이어리 중복저장
     @Test
     @DisplayName("다이어리 중복저장")

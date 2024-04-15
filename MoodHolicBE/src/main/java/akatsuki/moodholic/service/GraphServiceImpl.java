@@ -5,8 +5,9 @@ import akatsuki.moodholic.domain.DiaryEmotion;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.SortedMap;
 import java.util.List;
+import java.util.TreeMap;
 
 @Service
 public class GraphServiceImpl implements GraphService{
@@ -15,10 +16,10 @@ public class GraphServiceImpl implements GraphService{
     double cnt;
     String past;
     List<DiaryEmotion> emotionList;
-    HashMap<String,Double> returnValue;
+    SortedMap<String,Double> returnValue;
 
     private void init() {
-        returnValue = new HashMap<>();
+        returnValue = new TreeMap<>();
         past= "";
         sum=0;
         cnt=0;
@@ -26,28 +27,35 @@ public class GraphServiceImpl implements GraphService{
     }
 
      @Override
-     public HashMap<String,Double> GetEmotionMonth(long memberId, List<Diary> diaryList,HashMap<Integer,Integer> memberEmotion){
+     public SortedMap<String,Double> GetEmotionMonth(long memberId, List<Diary> diaryList,SortedMap<Integer,Integer> memberEmotion){
          init();
          diaryList.forEach(diary->{
             String[] date = diary.getDate().split("-");
             String cmpDate = date[0]+"-"+date[1];
             compare(cmpDate, diary,memberEmotion);
         });
+         if (!past.isEmpty()) {
+             returnValue.put(past, Math.round((sum / cnt) * 100) / 100.0d);
+         }
         return returnValue;
     }
     @Override
-    public HashMap<String,Double> GetEmotionYear(long memberId, List<Diary> diaryList,HashMap<Integer,Integer> memberEmotion){
+    public SortedMap<String,Double> GetEmotionYear(long memberId, List<Diary> diaryList,SortedMap<Integer,Integer> memberEmotion){
         init();
         diaryList.forEach(diary->{
             String[] date = diary.getDate().split("-");
             String cmpDate = date[0];
+            System.out.println("cmpDate = " + cmpDate);
             compare(cmpDate,diary,memberEmotion);
         });
+        if (!past.isEmpty()) {
+            returnValue.put(past, Math.round((sum / cnt) * 100) / 100.0d);
+        }
         return returnValue;
     }
 
     @Override
-    public HashMap<String, Double> GetEmotionWeek(long memberId, List<Diary> diaryList,HashMap<Integer,Integer> memberEmotion) {
+    public SortedMap<String, Double> GetEmotionWeek(long memberId, List<Diary> diaryList,SortedMap<Integer,Integer> memberEmotion) {
         init();
         diaryList.forEach(diary -> {
             String[] date = diary.getDate().split("-");
@@ -56,14 +64,26 @@ public class GraphServiceImpl implements GraphService{
             String cmpDate = date[0] + "-" + date[1] + "-W" + weekOfMonth;
             compare(cmpDate, diary,memberEmotion);
         });
-        // 마지막 주 처리
         if (!past.isEmpty()) {
             returnValue.put(past, Math.round((sum / cnt) * 100) / 100.0d);
         }
         return returnValue;
     }
 
-    private void compare(String cmpDate, Diary diary,HashMap<Integer,Integer> memberEmotion) {
+//    @Override
+//    public SortedMap<String, Double> GetEmotionDay(long memberId, List<Diary> diaryList,SortedMap<Integer,Integer> memberEmotion) {
+//        init();
+//        diaryList.forEach(diary -> {
+//            String[] date = diary.getDate().split("-");
+//            int Year = Integer.parseInt(date[2]);
+//            int Month =
+//            int Day =
+//        });
+//        return returnValue;
+//    }
+
+
+    private void compare(String cmpDate, Diary diary,SortedMap<Integer,Integer> memberEmotion) {
 
         int score = memberEmotion.get(diary.getDiaryId());
 

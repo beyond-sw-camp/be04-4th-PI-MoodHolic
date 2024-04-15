@@ -2,18 +2,64 @@
   <header>
     <Header/>
   </header>
+  
   <main>
-    <Info/>
+    <router-view/>
   </main>
+  
+<!--    <Card/>-->
+<!--  <List/>-->
+<!--  <View/>-->
+<!--<Month/>-->
+ <!-- <Year/> -->
+<!--  <Preview/> -->
 </template>
 
 <script setup>
+  import Header from "@/components/Header/Header.vue";
+  import { onMounted } from 'vue';
+  import { useStore } from 'vuex';
+  import router from "@/router/index.js";
+  // import View from "@/components/Profile/Diary/View/View.vue";
+  // import Preview from "@/components/Profile/Diary/Preview/Preview.vue";
+  
+  // import Info from "@/components/Profile/Info/Info.vue";
+  
+  import Year from "@/components/Profile/Calendar/Year/Year.vue";
+  // import List from "@/components/Profile/AIrecommended/List/List.vue";
+  // import Card from "@/components/Profile/AIrecommended/Card/Card.vue";
+  // import Month from "@/components/Profile/Calendar/Month/Month.vue";
 
-import Header from "@/components/Header/Header.vue";
-import Info from "@/components/Profile/Info/Info.vue";
 
+const store = useStore();
+
+onMounted(async () => {
+  await store.dispatch('checkAuth');
+  // URL에서 토큰이 있는 경우 로그인 처리
+  const urlParams = new URLSearchParams(window.location.search);
+  const token = urlParams.get('token');
+  if (token) {
+    await store.dispatch('login', token);
+    router.push(router.currentRoute.value); // 강제로 새로 고침
+  }
+});
+
+// 쿠키에서 refreshToken 검색 후 로컬 스토리지에 저장
+document.addEventListener('DOMContentLoaded', async () => {
+  const cookies = document.cookie.split('; ');
+  let authToken = '';
+
+  for (let i = 0; i < cookies.length; i++) {
+    if (cookies[i].startsWith('refreshToken=')) {
+      authToken = cookies[i].split('=')[1];
+      break;
+    }
+  }
+
+  if (authToken) {
+    localStorage.setItem('authToken', authToken);
+    await store.dispatch('login', authToken);
+    router.push(router.currentRoute.value); // 상태 갱신 후 현재 라우트로 리다이렉트
+  }
+});
 </script>
-
-<style scoped>
-
-</style>

@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <header class="line-parent">
       <div class="frame-child"></div>
@@ -11,11 +12,11 @@
       <img class="uimgraph-bar-icon" alt="" src="./public/uimgraphbar.svg" />
     </header>
 
-
     <section class="inner">
       <div class="frame-parent">
         <div class="rectangle-parent">
           <div class="frame-item"></div>
+
           <div class="frame-wrapper">
             <div class="frame-group">
               <div class="wrapper">
@@ -52,8 +53,19 @@
                 <p class="p2">쫄깃 쫄깃 해지는 것 같다. 반팔입은 사람들은 안 추운걸꽈,,,?</p>
                 <p class="p3">집에는 언제 가쥐? 내일은 이사가는 날이라 집가서 짐을 싸야할</p>
                 <p class="p4">것 같다.</p>
+
+              </div>
+              <div class="vector-group">
+                <img
+                    class="vector-icon2"
+                    alt=""
+                    src="@/assets/icon/Profile/Diary/Preview/category.png"
+                />
+
+                <div class="div10">드라마</div>
               </div>
             </div>
+
           </div>
         </div>
         <div class="frame-parent1">
@@ -119,11 +131,12 @@
           <div class="parasite-name">
             <div class="drama-genre-parent">
               <div class="drama-genre">
-                <img class="vector-icon4" alt="" src="./public/vector6.svg" />
+                <img class="vector-icon4" alt="" src="./public/vector6.svg" /
               </div>
               <div class="div14">기생충</div>
             </div>
           </div>
+
           <div class="actor-image">
             <img class="vector-icon5" alt="" src="./public/vector-6.svg" />
             <div class="wrapper1">
@@ -157,6 +170,7 @@
 </script>
 
 <style>
+
   @import "src/assets/css/Profile/Diary/Preview/global.css";
   @import "src/assets/css/Profile/Diary/Preview/Preview.css";
 </style>

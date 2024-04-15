@@ -1,27 +1,9 @@
 <template>
     <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./index.css" />
-    <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
-    </head>
     <body>
     <div class="div">
         <header class="frame-parent">
-        <div class="moodholiclogo-2-wrapper">
-            <img
-            class="moodholiclogo-2-icon"
-            loading="lazy"
-            alt=""
-            src="./public/moodholiclogo-21@2x.png"/>
-        </div>
-        <div class="frame-child"></div>
+
         </header>
         <section class="inner">
         <div class="rectangle-parent">
@@ -34,7 +16,7 @@
                     class="icon"
                     loading="lazy"
                     alt=""
-                    src="./public/-20240405--317@2x.png"/>
+                    src="@/assets/icon/MainPage/Welcome/-20240405--317@2x.png"/>
                 </div>
                 <div class="frame-container">
                     <div class="konan-wrapper">
@@ -74,5 +56,6 @@
 </script>
 
 <style>
-
+@import '@/assets/css/MainPage/Welcome/global.css';
+@import '@/assets/css/MainPage/Welcome/Welcome.css';
 </style>

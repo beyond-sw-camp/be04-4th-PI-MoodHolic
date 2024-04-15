@@ -7,12 +7,13 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.SortedMap;
 
 @Service
 public class CalendarServiceImpl implements CalendarService{
 
     @Override
-    public List<Calendar> getCalendar(List<Diary> diaryList, HashMap<Integer, Integer> emotions) {
+    public List<Calendar> getCalendar(List<Diary> diaryList, SortedMap<Integer, Integer> emotions) {
         List<Calendar> calendar = new ArrayList<>();
         diaryList.forEach(diary ->{
             String[] DATE = diary.getDate().split("-");
@@ -35,7 +36,7 @@ public class CalendarServiceImpl implements CalendarService{
         return calendar;
     }
 
-    public List<Calendar> getCalendarOfYear(List<Diary> diaryList, int year, HashMap<Integer, Integer> emotions){
+    public List<Calendar> getCalendarOfYear(List<Diary> diaryList, int year, SortedMap<Integer, Integer> emotions){
         List<Calendar> calendar = new ArrayList<>();
         String YEAR = year+"";
         diaryList.forEach(diary ->{

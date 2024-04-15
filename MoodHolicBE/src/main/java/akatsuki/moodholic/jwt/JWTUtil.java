@@ -1,6 +1,5 @@
 package akatsuki.moodholic.jwt;
 
-import akatsuki.moodholic.repository.RefreshRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;

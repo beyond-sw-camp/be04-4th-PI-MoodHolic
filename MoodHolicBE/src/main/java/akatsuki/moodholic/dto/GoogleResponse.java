@@ -32,7 +32,7 @@ public class GoogleResponse implements OAuth2Response {
     }
 
     @Override
-    public String getName() {
+    public String getNickname() {
         return Optional.ofNullable(attribute.get("name"))
                 .map(Object::toString)
                 .orElse(""); // Ensuring consistency in handling potential nulls.

@@ -1,63 +1,74 @@
 package akatsuki.moodholic.oauth2;
 
+import akatsuki.moodholic.domain.RefreshEntity;
 import akatsuki.moodholic.dto.CustomOAuth2User;
 import akatsuki.moodholic.jwt.JWTUtil;
-import akatsuki.moodholic.domain.Token;
-import akatsuki.moodholic.repository.TokenDAO; // 수정된 import 문
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
+import java.time.Duration;
+import java.util.Collection;
 import java.util.Date;
+import java.util.Iterator;
 
 @Component
 public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
-    private final JWTUtil jwtUtil;
-    private final TokenDAO tokenDAO; // TokenDAO 사용
+    private static final Logger logger = LoggerFactory.getLogger(CustomSuccessHandler.class);
 
     @Autowired
-    public CustomSuccessHandler(JWTUtil jwtUtil, TokenDAO tokenDAO) {
-        this.jwtUtil = jwtUtil;
-        this.tokenDAO = tokenDAO;
-    }
+    private JWTUtil jwtUtil;
+
+    @Autowired
+    private StringRedisTemplate redisTemplate;
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         CustomOAuth2User customUserDetails = (CustomOAuth2User) authentication.getPrincipal();
-        String email = customUserDetails.getEmail();
-        String role = customUserDetails.getAuthorities().iterator().next().getAuthority();
 
-        Token storedToken = tokenDAO.findById(email).orElse(new Token(email, "", "", new Date(), new Date()));
-        String refreshToken = jwtUtil.createRefreshToken(role, email);
-        String accessToken = jwtUtil.createAccessToken(role, email);
-        Date accessTokenExpiration = jwtUtil.extractExpiration(accessToken);
+        String email = authentication.getName();
+        String provider = customUserDetails.getProvider();
 
-        storedToken.setAccessToken(accessToken);
-        storedToken.setRefreshToken(refreshToken);
-        storedToken.setIssuedAt(new Date());
-        storedToken.setAccessTokenExpiresAt(accessTokenExpiration);
-        tokenDAO.save(storedToken);
+        Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+        Iterator<? extends GrantedAuthority> iterator = authorities.iterator();
+        GrantedAuthority auth = iterator.next();
+        String role = auth.getAuthority();
 
-        setTokenResponse(response, storedToken);
+        // AccessToken 생성
+        String accessToken = jwtUtil.createJwt("access", email, role, provider, jwtUtil.getAccessTokenExpirationTime());
+        logger.info("생성된 accessToken = " + accessToken);
+
+        // RefreshToken 생성 및 Redis에 저장
+        String refreshToken = jwtUtil.createJwt("refresh", email, role, provider, jwtUtil.getRefreshTokenExpirationTime());
+        redisTemplate.opsForValue().set(refreshToken, email, Duration.ofSeconds(jwtUtil.getRefreshTokenExpirationTime() / 1000));
+        logger.info("생성된 refreshToken = " + refreshToken);
+
+        // RefreshToken 쿠키에 설정
+        response.addCookie(createCookie("refreshToken", refreshToken, (int) (jwtUtil.getRefreshTokenExpirationTime() / 1000)));
+
+        // AccessToken 헤더에 설정
+        response.setHeader("Authorization", "Bearer " + accessToken);
+        response.setStatus(HttpStatus.OK.value());
+        response.sendRedirect("http://localhost:5173/");
     }
 
-    private void setTokenResponse(HttpServletResponse response, Token storedToken) throws IOException {
-        response.setHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-        response.setHeader("AccessToken", storedToken.getAccessToken());
-        response.setHeader("RefreshToken", storedToken.getRefreshToken());
-        response.setHeader("Authorization", "Bearer " + storedToken.getAccessToken());
-
-        Cookie accessTokenCookie = new Cookie("AccessToken", storedToken.getAccessToken());
-        accessTokenCookie.setMaxAge(30 * 60); // 30분 유효
-        accessTokenCookie.setPath("/");
-        response.addCookie(accessTokenCookie);
-
-        response.sendRedirect("http://localhost:8888/");
+    private Cookie createCookie(String name, String value, int maxAge) {
+        Cookie cookie = new Cookie(name, value);
+        cookie.setMaxAge(maxAge);
+        cookie.setPath("/");
+        cookie.setHttpOnly(false);
+        return cookie;
     }
 }

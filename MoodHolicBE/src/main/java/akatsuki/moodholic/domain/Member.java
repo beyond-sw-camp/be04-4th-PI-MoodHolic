@@ -29,12 +29,10 @@ public class Member {
     private String imgPath;
     @Column(name = "role")
     private String role;
-    // 여기서부턴 provider 정보
     @Column(name = "provider")
     private String provider;
     @Column(name = "provider_code")
     private String providerCode;
-    // provider + providerCode
 
 }
 

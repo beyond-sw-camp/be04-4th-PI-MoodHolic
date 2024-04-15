@@ -46,14 +46,15 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         }
 
         String email = oAuth2Response.getEmail();
-        String providerId = oAuth2Response.getProviderId();
-        Optional<Member> optionalMember = memberDAO.findByEmailAndProviderId(email, providerId);
+        String providerCode = oAuth2Response.getProviderId();
+//        Optional<Member> optionalMember = memberDAO.findByEmailAndProviderId(email, providerId);
+        Optional<Member> optionalMember = memberDAO.findByProviderCode(providerCode);
 
         Member member = null;
         if (optionalMember.isPresent()) {
             member = optionalMember.get();
             // 이미 존재하는 사용자에 대한 처리
-            member.setNickname(oAuth2Response.getName());
+            member.setNickname(oAuth2Response.getNickname());
             member.setImgPath(oAuth2Response.getThumbnail());
             memberDAO.save(member);
             System.out.println("이미 가입됨.: " + email + " 유저 정보를 업데이트 합니다.");
@@ -61,10 +62,10 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
             // 새로운 사용자 생성
             Member newMember = Member.builder()
                     .email(email)
-                    .nickname(oAuth2Response.getName())
+                    .nickname(oAuth2Response.getNickname())
                     .imgPath(oAuth2Response.getThumbnail())
                     .provider(oAuth2Response.getProvider())
-                    .providerCode(providerId)
+                    .providerCode(providerCode)
                     .role("ROLE_USER")
                     .build();
             memberDAO.save(newMember);
@@ -73,6 +74,5 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
         // 사용자 권한 정보를 설정하기 위해 Member 객체를 기반으로 CustomOAuth2User 객체 생성
         return new CustomOAuth2User(member);
-
     }
 }

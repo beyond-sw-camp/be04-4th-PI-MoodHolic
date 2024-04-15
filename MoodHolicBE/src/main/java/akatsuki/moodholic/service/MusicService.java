@@ -10,11 +10,9 @@ public interface MusicService {
 
     List<Music> getAllMusics();
 
-    List<DiaryMusic> findLikedDiaryMusics();
-
-    List<String> findLikedMusicNames();
-
     List<Object[]> countMusicGenresWithLikes();
 
-    List<DiaryMusic> getMemberLikeMusic(long memberId);
+    Music findByMusicName(String musicName);
+
+    Music saveMusic(Music music);
 }

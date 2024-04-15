@@ -18,7 +18,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/category/music")
-@Tag(name = "노래 조회 컨트롤러", description = "추천받은 노래를 조회하는 기능")
+@Tag(name = "노래 조회 컨트롤러", description = "추천 받은 노래를 조회하는 기능")
 public class MusicController {
 
     private final MusicFacadeService musicFacadeService;

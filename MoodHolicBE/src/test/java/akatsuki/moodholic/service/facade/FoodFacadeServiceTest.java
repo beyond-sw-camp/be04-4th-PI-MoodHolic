@@ -55,12 +55,6 @@ class FoodFacadeServiceTest {
     }
 
     @Test
-    @DisplayName("모든 음식 조회")
-    public void findLikedFoodNames() {
-
-    }
-
-    @Test
     @DisplayName("좋아요 표시된 음식 이름 횟수")
     public void countFoodNameWithLikes(){
         long memberId =1;

@@ -40,7 +40,7 @@ public class FoodFacadeService {
         return diaryFoodService.findLikedDiaryFoods();
     }
 
-    public HashMap<String,Integer> countFoodCategoryWithMemberLike(long memberId){
+    public HashMap<String,Integer> countFoodNameWithMemberLike(long memberId){
         List<Diary> diaries = diaryService.getMemberDiaries(memberId);
         HashMap<String,Integer> returnValue = diaryFoodService.countMembersFoodLike(diaries);
         System.out.println("returnValue = " + returnValue);
@@ -51,9 +51,9 @@ public class FoodFacadeService {
         return diaryFoodService.findLikedFoodNames();
     }
 
-    public List<Object[]> countFoodCategorysWithLikes() {
-        return foodService.countFoodCategorysWithLikes();
-    }
+//    public List<Object[]> countFoodCategorysWithLikes() {
+//        return foodService.countFoodCategorysWithLikes();
+//    }
 
     public List<DiaryFood> getMemberLikeFood(long memberId) {
         List<Diary> diaries = diaryService.getMemberDiaries(memberId);

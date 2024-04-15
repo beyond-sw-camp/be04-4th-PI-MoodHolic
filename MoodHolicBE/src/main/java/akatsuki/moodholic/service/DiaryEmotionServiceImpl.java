@@ -40,7 +40,7 @@ public class DiaryEmotionServiceImpl implements DiaryEmotionService{
         SortedMap<Integer,Integer> returnValue= new TreeMap<>();
         diaryList.forEach(diary -> {
             DiaryEmotion diaryEmotion = diaryEmotionDAO.findByDiaryIdDiaryIdOrderByDiaryIdDateAsc(diary.getDiaryId());
-            if(diaryEmotion.getDiaryId()!=null){
+            if(diaryEmotion!=null&&diaryEmotion.getDiaryId()!=null){
                 returnValue.put(diaryEmotion.getDiaryId().getDiaryId(),diaryEmotion.getEmotionId());
             }
         });
@@ -53,7 +53,7 @@ public class DiaryEmotionServiceImpl implements DiaryEmotionService{
         SortedMap<String,Double> returnValue= new TreeMap<>();
         diaryList.forEach(diary -> {
             DiaryEmotion diaryEmotion = diaryEmotionDAO.findByDiaryIdDiaryIdOrderByDiaryIdDateAsc(diary.getDiaryId());
-            if(diaryEmotion.getDiaryId()!=null){
+            if(diaryEmotion!=null&&diaryEmotion.getDiaryId()!=null){
                 returnValue.put(diaryEmotion.getDiaryId().getDate(), diaryEmotion.getEmotionId()*1.0);
             }
         });

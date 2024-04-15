@@ -75,7 +75,7 @@ const logout = async () => {
     });
     if (response.ok) {
       await store.dispatch('logout');  // 상태 업데이트
-      await router.push('/login');  // 로그인 페이지로 리다이렉션
+      await router.push('/');
     } else {
       throw new Error('Failed to logout');
     }
@@ -142,45 +142,5 @@ const logout = async () => {
 
 </style>
 
-<script>
-export default {
-  name: 'HeaderComponent',
-  data() {
-    return {
-      weatherInfo: {
-        temperature: 'Loading...',
-        icon: null
-      },
-    };
-  },
-  methods: {
-    async fetchWeather() {
-      const city = 'Seoul';
-      const apiKey = 'aa237cabd8bd6dd1e5374da90756d5b5';
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error('Failed to fetch weather data');
-        }
-        const data = await response.json();
-        this.weatherInfo = {
-          temperature: data.main.temp,
-          icon: data.weather[0].icon
-        };
-      } catch (error) {
-        console.error('Failed to fetch weather data:', error);
-        this.weatherInfo = {
-          temperature: 'N/A',
-          icon: null
-        };
-      }
-    },
-  },
-  mounted() {
-    this.fetchWeather();
-  },
-};
-</script>
 

@@ -30,7 +30,7 @@ public class DiaryController {
         return ResponseEntity.ok().body(response);
     }
     @PostMapping("")
-    @Operation(summary = "다이어리 저장", description = "요청온 다이어리의 상태에 따라 임시저장 또는 저장을 수행합니다. " +
+    @Operation(summary = "다이어리 저장", description = "요청온 다이어리의 상태에 따라 임시 저장 또는 저장을 수행합니다. " +
             "저장 시 ChatGPT에 프롬프트 전달하여 GPT의 응답을 받아 DB에 저장합니다.")
     public ResponseEntity<String> postDiary(@RequestBody Diary diary){
         String response = facadeService.postDiary(diary);

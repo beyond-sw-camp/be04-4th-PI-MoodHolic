@@ -1,20 +1,30 @@
 ```
+📂 .github
+├─ 📂 Template
+📂 public
 📂 public
 ├─ 📂 Favicon.ico
 📂 src
 ├─ 📂 assets
 │  ├─ 📂 css
 │  └─ 📂 icon
+│  └─ 📂 imges
 ├─ 📂 components
-│  └─ 📂 category별 폴더
-│     └─ 📄 .vue 파일 // Login.Vue 파일 등
-├─ 📄 App.vue
-├─ 📄 main.js
+│  └─ 📂 calendar
+│  └─ 📂 header
+│  └─ 📂 main
+├─ 📂 router
+│  ├─ 📄 router.js
 ├─ 📂 store
-   └─ 📄 store.js
-├─ 📂 view
-│  └─ 📂 category별 폴더
-│     └─ 📄 .vue 파일
-└─ 📂 router
-   └─ 📄 index.js
+│  ├─ 📄 store.js
+├─ 📂 views
+├─ 📄 App.Vue
+├─ 📄 main.js
+├─ 📄 .gitignore
+├─ 📄 index.html
+├─ 📄 jsconfig.json
+├─ 📄 package.json
+├─ 📄 package-lock.json
+├─ 📄 README.md
+├─ 📄 vite.config.js 
 ```

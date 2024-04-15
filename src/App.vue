@@ -2,20 +2,19 @@
   <header>
     <Header/>
   </header>
-
   <main>
     <router-view/>
+    <Userinfo/>
   </main>
 
 </template>
 
 <script setup>
-  import Header from "@/components/header/Header.vue";
-  import { onMounted } from 'vue';
-  import { useStore } from 'vuex';
-  import router from "@/router/router.js";
-  import Example from "@/components/calendar/Example.vue";
-  import Calendar from "@/components/calendar/Calendar.vue";
+import Header from "@/components/header/Header.vue";
+import { onMounted } from 'vue';
+import { useStore } from 'vuex';
+import router from "@/router/router.js";
+import { watchEffect } from 'vue';
 
 
 const store = useStore();
@@ -49,4 +48,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     router.push(router.currentRoute.value); // 상태 갱신 후 현재 라우트로 리다이렉트
   }
 });
+
 </script>

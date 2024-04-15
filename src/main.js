@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from "./router/index.js";
+import router from "./router/router.js";
 import store from "@/store/store.js";
 import VCalendar from 'v-calendar';
 import 'v-calendar/style.css';

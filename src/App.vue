@@ -10,12 +10,12 @@
 </template>
 
 <script setup>
-  import Header from "@/components/Header/Header.vue";
+  import Header from "@/components/header/Header.vue";
   import { onMounted } from 'vue';
   import { useStore } from 'vuex';
-  import router from "@/router/index.js";
-  import Example from "@/components/Calendar/Example.vue";
-  import Calendar from "@/components/Calendar/calendar.vue";
+  import router from "@/router/router.js";
+  import Example from "@/components/calendar/Example.vue";
+  import Calendar from "@/components/calendar/Calendar.vue";
 
 
 const store = useStore();

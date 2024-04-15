@@ -31,9 +31,9 @@
 </template>
 
 <script setup>
-import MovieBarGraph from "@/components/Calendar/Movie-BarGraph.vue";
-import EmotionLineGraph from "@/components/Calendar/Emotion-LineGraph.vue";
-import EmotionBarGraph from "@/components/Calendar/Emotion-BarGraph.vue";
+import MovieBarGraph from "@/components/calendar/Movie-BarGraph.vue";
+import EmotionLineGraph from "@/components/calendar/Emotion-LineGraph.vue";
+import EmotionBarGraph from "@/components/calendar/Emotion-BarGraph.vue";
 import Calendar from "@/App.vue";
 </script>
 

@@ -70,9 +70,9 @@
 
 <script setup>
 import {ref} from 'vue';
-import happyImg from '@/components/Calendar/img0.png';
-import sadImg from '@/components/Calendar/img1.png';
-import sosoImg from '@/components/Calendar/img2.png';
+import happyImg from '@/components/calendar/img0.png';
+import sadImg from '@/components/calendar/img1.png';
+import sosoImg from '@/components/calendar/img2.png';
 
 
 

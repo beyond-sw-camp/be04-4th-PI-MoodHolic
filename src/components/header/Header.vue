@@ -23,7 +23,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue';
 import { useStore } from 'vuex';
-import router from "@/router/index.js";
+import router from "@/router/router.js";
 
 const store = useStore();
 const isAuthenticated = computed(() => store.getters.isAuthenticated);

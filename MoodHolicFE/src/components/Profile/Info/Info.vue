@@ -1,49 +1,6 @@
 <template>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./index.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
-  </head>
   <body>
     <div class="div">
-      <header class="line-parent">
-        <div class="frame-child"></div>
-        <img
-          class="moodholiclogo-2-icon"
-          loading="lazy"
-          alt=""
-          src="./public/moodholiclogo-25@2x.png"
-        />
-
-        <div class="div1">오늘 날씨</div>
-        <div class="image-1-parent">
-          <img
-            class="image-1-icon"
-            loading="lazy"
-            alt=""
-            src="./public/image-16@2x.png"
-          />
-
-          <div class="div2">14 ℃</div>
-        </div>
-        <img
-          class="group-icon"
-          loading="lazy"
-          alt=""
-          src="./public/group7@2x.png"
-        />
-
-        <img class="group-icon1" alt="" src="./public/group-1.svg" />
-
-        <img class="frame-item" alt="" src="./public/group-177.svg" />
-      </header>
       <section class="inner">
         <div class="frame-parent">
           <div class="frame-wrapper">
@@ -61,7 +18,7 @@
                   <img
                     class="frame-inner"
                     alt=""
-                    src="./public/rectangle-16.svg"
+                    src="@/assets/icon/Profile/Info/my.png"
                   />
 
                   <b class="b">내 정보</b>
@@ -70,33 +27,36 @@
                       class="vector-icon"
                       loading="lazy"
                       alt=""
-                      src="./public/vector.svg"
+                      src="@/assets/icon/Profile/Info/my.png"
                     />
                   </div>
                 </div>
+
+                <button type="button" onclick="alert('내 관심 랭킹')">
                 <div class="vector-group">
                   <img
                     class="rectangle-icon"
                     alt=""
-                    src="./public/rectangle-16.svg"
+                    src="@/assets/icon/Profile/Info/rectangle-16.png"
                   />
-
                   <b class="b1">내 관심 랭킹</b>
                   <div class="vector-container">
                     <img
                       class="vector-icon1"
                       alt=""
-                      src="./public/vector-1.svg"
+                      src="@/assets/icon/Profile/Info/heartLine.png"
                     />
                   </div>
                 </div>
+                </button>
+
               </div>
               <div class="frame-parent2">
                 <div class="group-div">
                   <img
                     class="frame-child1"
                     alt=""
-                    src="./public/rectangle-16.svg"
+                    src="@/assets/icon/Profile/Info/rectangle-16.png"
                   />
 
                   <b class="b2">내 캘린더</b>
@@ -104,7 +64,7 @@
                     <img
                       class="group-icon2"
                       alt=""
-                      src="./public/group-2.svg"
+                      src="@/assets/icon/Profile/Info/calendar.png"
                     />
                   </div>
                 </div>
@@ -112,7 +72,7 @@
                   <img
                     class="frame-child2"
                     alt=""
-                    src="./public/rectangle-16.svg"
+                    src="@/assets/icon/Profile/Info/rectangle-16.png"
                   />
 
                   <b class="b3">내 다이어리</b>
@@ -120,7 +80,7 @@
                     <img
                       class="group-icon3"
                       alt=""
-                      src="./public/group-3.svg"
+                      src="@/assets/icon/Profile/Info/diary.png"
                     />
                   </div>
                 </div>
@@ -131,7 +91,7 @@
                 <img
                   class="frame-child3"
                   alt=""
-                  src="./public/rectangle-16.svg"
+                  src="@/assets/icon/Profile/Info/rectangle-16.png"
                 />
 
                 <b class="ai">AI 추천 목록</b>
@@ -140,7 +100,7 @@
                     class="image-2-icon"
                     loading="lazy"
                     alt=""
-                    src="./public/image-2@2x.png"
+                    src="@/assets/icon/Profile/Info/ai.png"
                   />
                 </div>
               </div>
@@ -148,15 +108,15 @@
                 <img
                   class="frame-child4"
                   alt=""
-                  src="./public/rectangle-16.svg"
+                  src="@/assets/icon/Profile/Info/rectangle-16.png"
                 />
 
-                <b class="b4">내 다이어리</b>
+                <b class="b4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;개발중</b>
                 <div class="vector-frame">
                   <img
                     class="vector-icon2"
                     alt=""
-                    src="./public/vector-2.svg"
+                    src="@/assets/icon/Profile/Info/categoryBlue.png"
                   />
                 </div>
               </div>
@@ -166,7 +126,6 @@
       </section>
     </div>
   </body>
-</html>
 
 </template>
 
@@ -174,6 +133,8 @@
 
 </script>
 
-<style scoped>
-
+<style>
+@import "src/assets/css/Profile/Info/global.css";
+@import "src/assets/css/Profile/Info/Info.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 </style>

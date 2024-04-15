@@ -105,7 +105,7 @@
   const router = useRouter();
 
   const redirectToLogin = () => {
-    router.push('/login');
+    router.replace('/login');
   };
 </script>
 

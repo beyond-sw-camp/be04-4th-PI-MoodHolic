@@ -13,9 +13,10 @@
   <div style="background-color: #FFF4CC; padding:30px; width: 80%; border-radius: 30px;">
     <div style="display: flex; ">
       <div style="width:20% ;"><br><br><br><br>
+        <!-- <img src='@/components/Calendar/img0.png'  style=" max-width: 70%;" alt=""> <br>
         <img src='@/components/Calendar/img0.png'  style=" max-width: 70%;" alt=""> <br>
         <img src='@/components/Calendar/img1.png'  style=" max-width: 70%;" alt=""> <br>
-        <img src='@/components/Calendar/img2.png'  style=" max-width: 70%;" alt=""> <br>
+        <img src='@/components/Calendar/img2.png'  style=" max-width: 70%;" alt=""> <br> -->
       </div>
       <div style="width: 80%; ">
           <emotion-line-graph/>

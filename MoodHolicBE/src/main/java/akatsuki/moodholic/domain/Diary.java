@@ -1,12 +1,16 @@
 package akatsuki.moodholic.domain;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity
 @Table(name="diary")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Diary {
 
     @Id
@@ -31,7 +35,12 @@ public class Diary {
     @JoinColumn(name= "member_id")
     private Member member;
 
-
-
-
+    public Diary(String date, String content, int status, String imgPath, String summary, Member member) {
+        this.date = date;
+        this.content = content;
+        this.status = status;
+        this.imgPath = imgPath;
+        this.summary = summary;
+        this.member = member;
+    }
 }

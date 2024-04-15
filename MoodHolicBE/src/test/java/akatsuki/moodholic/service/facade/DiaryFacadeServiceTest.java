@@ -1,10 +1,11 @@
 package akatsuki.moodholic.service.facade;
 
 import akatsuki.moodholic.domain.Diary;
+import akatsuki.moodholic.domain.Member;
 import akatsuki.moodholic.dto.ResponseDiary;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import akatsuki.moodholic.repository.DiaryDAO;
+import akatsuki.moodholic.repository.MemberDAO;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,12 +17,23 @@ import static org.junit.jupiter.api.Assertions.*;
 class DiaryFacadeServiceTest {
     @Autowired
     DiaryFacadeService diaryFacadeService;
+    @Autowired
+    MemberDAO memberDAO;
 
-    int diaryId;
+    int diaryId=10;
+    private long memberId=1;
     /*given*/
     /*when*/
     /*then*/
 
+    Diary Testdiary = new Diary("2025-01-01",
+            "너 내 동료가 돼라",0,null,"원피스같은 기분", new Member(1));
+
+    @BeforeEach
+    void before(){
+        Diary Testdiary = new Diary("2025-01-01",
+                "너 내 동료가 돼라",0,null,"원피스같은 기분", new Member(1));
+    }
 
     @Test
     @DisplayName("다이어리 정보 불러오기")
@@ -45,38 +57,42 @@ class DiaryFacadeServiceTest {
         });
     }
 
+
 //    다이어리 임시저장
     @Test
     @DisplayName("다이어리 임시저장")
     void postDiary1(){
-
         /*given*/
-        Diary diary = new Diary();
+        Member member = memberDAO.findById(memberId).orElseThrow();
+        Testdiary.setMember(member);
         /*when*/
-
+        String text = diaryFacadeService.postDiary(Testdiary);
         /*then*/
-
+        assertEquals("임시저장",text);
     }
 //    다이어리 저장
     @Test
     @DisplayName("다이어리 저장")
     void postDiary2(){
         /*given*/
-
+        Member member = memberDAO.findById(memberId).orElseThrow();
+        Testdiary.setMember(member);
+        Testdiary.setStatus(1);
         /*when*/
-
+        String text = diaryFacadeService.postDiary(Testdiary);
         /*then*/
-
+        assertEquals("저장",text);
     }
 //    다이어리 중복저장
     @Test
     @DisplayName("다이어리 중복저장")
     void postDiary3(){
         /*given*/
-
+        Diary diary = diaryFacadeService.getDiary(diaryId).getDiary();
         /*when*/
-
+        String text = diaryFacadeService.postDiary(diary);
         /*then*/
+        assertEquals("중복",text);
     }
 
     @Test

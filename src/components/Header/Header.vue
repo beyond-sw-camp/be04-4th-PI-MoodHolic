@@ -16,17 +16,6 @@
       <img class="header-icon" style="cursor: pointer;" @click="changeRouter('/statistics')" alt="Statistics Page Shortcut" src="@/assets/icon/header/statistics.png" />
       <img class="header-icon" style="cursor: pointer;" @click="logout('/logout')" alt="Logout Button" src="@/assets/icon/header/logout.png" />
 
-<!-- 
-    메인 로고
-    <img class="moodholiclogo-icon" loading="lazy" src="@/assets/icon/header/moodholiclogo.png"/>
-
-    맨 오른쪽 아이콘들
-    <div class="right-icons">
-      <img class="header-icon" alt="Profile Shortcut" src="@/assets/icon/header/profile.png" />
-      <img class="header-icon" alt="Statistics Page Shortcut" src="@/assets/icon/header/statistics.png" />
-      <img class="header-icon" alt="Logout Button" src="@/assets/icon/header/logout.png" />
--->
-
     </div>
   </header>
 </template>
@@ -80,7 +69,7 @@ const changeRouter = (route) => {
 const logout = async () => {
   // 로그아웃 API 호출
   try {
-    const response = await fetch('https://localhost:8888/logout', {
+    const response = await fetch('http://localhost:8888/logout', {
       method: 'POST',
       credentials: 'include'  // 쿠키 포함시킴
     });

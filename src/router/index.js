@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import LogIn from "@/components/main/LogIn/LogIn.vue";
+import SignUp from "@/components/main/SighUp/SignUp.vue";
+import BeforeLogInMain from "@/components/main/Main.vue";
 
-import Login from "@/components/MainPage/Login/LogIn.vue";
-import SignUp from "@/components/MainPage/SighUp/SignUp.vue";
-import BeforeLogInMain from "@/components/MainPage/BeforeLogInMain/BeforeLogInMain.vue";
 
 const routes = [
     {   // 로그인
         path: '/login',
-        component: Login
+        component: LogIn
     },
     {   // 회원가입
         path: '/signup',

@@ -5,14 +5,14 @@
     </template>
     <template #day-popover="{ dayTitle, attributes }">
     <div class="px-1">
-          
+
             <a
               v-for="{ key, customData,dates } in attributes"
               :key="key"
               style="font-size: 40px;"
             >
         <div class="pop-over-content" @click="clickContent(customData.diaryId)" align="center">
-            <img :src="`${customData.description}`"  style=" max-width: 100px;" alt=""> 
+            <img :src="`${customData.description}`"  style=" max-width: 100px;" alt="">
             <!-- <hr style="margin-top: 0; margin-bottom: 0;"> -->
             <!-- <span style="font-size: 15px;">요약: {{ customData.summary }}</span> <br>
             <span style="font-size: 15px;">내용: {{ customData.content}}</span> <br>   -->
@@ -21,11 +21,11 @@
     </div>
   </template>
   </VCalendar>
-  
+
   <div class="popup-overlay" v-if="showPopup">
     <div class="popup-content">
       <span class="close" @click="closePopup">&times;</span>
-        
+
         <div style="display:flex;" align="center">
           <div style="border-radius: 30px; background-color: white; padding: 30px; margin: 10px; height:100%; width:40%; min-width: 100px; ">
             <img :src="`${clickedEmotionImg}`"  style=" max-width: 100%; height: auto;" alt="">
@@ -34,7 +34,7 @@
           <div style="border-radius: 30px; background-color: white; padding: 30px; margin: 10px; text-align: left; font-size: 3vw; width:60%;  padding-left:30px; width:100%;">
             <div>🗓️ {{diary.diary.date}}</div><br>
             <div>❤️ {{diary.emotion}}<br></div>
-          </div>  
+          </div>
         </div>
 
         <div style="border-radius: 30px; background-color: white; padding: 15px; padding-top: 1px;   margin: 10px;  ">
@@ -44,7 +44,7 @@
         <br>
         <div align="center" style="font-size:30px; background-color: pink; border-radius: 20px; font-weight: 1000;">AI's PICK</div>
         <br>
-          
+
         <div style="display: flex; width:100%; font-weight: 700;" align="center" >
           <div style="border-radius: 30px; background-color: white;  padding-bottom: 7%;   margin: 0 auto; text-align: left; width:30%; ">
             <h3 align="center" > 음식</h3>
@@ -70,9 +70,9 @@
 
 <script setup>
 import {ref} from 'vue';
-import happyImg from './img0.png'; 
-import sadImg from './img1.png';
-import sosoImg from './img2.png';
+import happyImg from '@/components/Calendar/img0.png';
+import sadImg from '@/components/Calendar/img1.png';
+import sosoImg from '@/components/Calendar/img2.png';
 
 
 
@@ -84,7 +84,7 @@ let clickedEmotionImg = ref('');
 
 // const memberId = ref([]);
 // try{
-//   memberId = 
+//   memberId =
 // }catch(e){
 
 // }
@@ -109,7 +109,7 @@ const getMemberDate = async()=> {
             if (!response.ok) {
             throw new Error('Network response was not ok');
             }
-            
+
             return response.json();
   })
   .then(data=>{
@@ -154,7 +154,7 @@ function checkStatus(status) {
   if(status=='1'){
     return 'green';
   }else{
-    return 'gray'; 
+    return 'gray';
   }
 }
 
@@ -181,7 +181,7 @@ const getDiary = async(index)=> {
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
-    }            
+    }
     return response.json();
   })
   .then(data=>{
@@ -192,7 +192,7 @@ const getDiary = async(index)=> {
     console.log(clickedEmotionImg);
   })
   };
-  
+
 </script>
 
 
@@ -206,7 +206,7 @@ const getDiary = async(index)=> {
   /* height: 100; */
 }
 .vc-weeks{
-  
+
   margin-top: 60px;
   margin-bottom: 30px;
   margin-right: 30px;
@@ -227,7 +227,7 @@ const getDiary = async(index)=> {
 .vc-week{
   height: 100px;
   /* width: 100px; */
-  
+
 }
 
 
@@ -241,7 +241,7 @@ const getDiary = async(index)=> {
 
 
 .vc-pane{
-  background-color: #FFD930; 
+  background-color: #FFD930;
   border-radius: 30px;
   border: 3px solid rgb(202, 202, 37);
 }
@@ -255,7 +255,7 @@ const getDiary = async(index)=> {
 
 .vc-header.is-lg{
   margin-top: 50px;
-  
+
 }
 .px-2{
   padding-right: 10px;
@@ -304,7 +304,7 @@ const getDiary = async(index)=> {
         height: 80%;
         overflow-y: auto; /* 수직 스크롤 활성화 */
         max-height: 80vh; /* 팝업 창의 최대 높이 지정 */
-    
+
     }
 
     .popup-content h2 {

@@ -1,41 +1,40 @@
 <template>
   <div>
-    <calendar></calendar>
+    <calendar/>
   </div>
 
   <br>
 
   <div style="background-color: #FFF4CC; padding:30px; width: 80%; border-radius: 30px;">
-    <graph>  </graph>
+    <emotion-bar-graph/>
   </div>
   <br>
-  
+
   <div style="background-color: #FFF4CC; padding:30px; width: 80%; border-radius: 30px;">
     <div style="display: flex; ">
       <div style="width:20% ;"><br><br><br><br>
-        <img src='./img0.png'  style=" max-width: 70%;" alt=""> <br>
-        <img src='./img1.png'  style=" max-width: 70%;" alt=""> <br>
-        <img src='./img2.png'  style=" max-width: 70%;" alt=""> <br>
+        <img src='@/components/Calendar/img0.png'  style=" max-width: 70%;" alt=""> <br>
+        <img src='@/components/Calendar/img1.png'  style=" max-width: 70%;" alt=""> <br>
+        <img src='@/components/Calendar/img2.png'  style=" max-width: 70%;" alt=""> <br>
       </div>
       <div style="width: 80%; ">
-          <lines>
-          </lines>
+          <emotion-line-graph/>
       </div>
     </div>
   </div>
-  
+
 
   <div style="background-color: #FFF4CC; padding:30px; width: 80%; border-radius: 30px;">
-    <MovieRanking>  </MovieRanking>
+    <movie-bar-graph/>
   </div>
 
 </template>
 
 <script setup>
-  import calendar from './calendar.vue';
-  import lines from './Emotion-LineGraph.vue';
-  import graph from './Emotion-BarGraph.vue';
-  import MovieRanking from './Movie-BarGraph.vue';
+import MovieBarGraph from "@/components/Calendar/Movie-BarGraph.vue";
+import EmotionLineGraph from "@/components/Calendar/Emotion-LineGraph.vue";
+import EmotionBarGraph from "@/components/Calendar/Emotion-BarGraph.vue";
+import Calendar from "@/App.vue";
 </script>
 
 <style scoped>

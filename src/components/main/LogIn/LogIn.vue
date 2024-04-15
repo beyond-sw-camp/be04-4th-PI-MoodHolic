@@ -33,22 +33,14 @@
 
 <script setup>
 const onGoogleLogin = async () => {
-  window.location.href = 'https://localhost:8888/login/oauth2/code/google';
+  window.location.href = 'http://localhost:8888/login/oauth2/code/google';
 };
 
 const onKakaoLogin = async () => {
-  window.location.href = 'https://localhost:8888/login/oauth2/code/kakao';
+  window.location.href = 'http://localhost:8888/login/oauth2/code/kakao';
 };
 
 </script>
-
-
-
-
-
-
-
-
 
 
 

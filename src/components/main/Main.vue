@@ -13,7 +13,7 @@
                 class="image-3-icon"
                 loading="lazy"
                 alt=""
-                src="@/assets/icon/MainPage/BeforeLogInMain/image-3@2x.png"/>
+                src="../../assets/icon/MainPage/BeforeLogInMain/image-3@2x.png"/>
 
             <div class="div3">
               <b style="font-size: 40px;">인공지능 심리전문가</b>
@@ -38,7 +38,7 @@
                   <img
                       class="diary-writing-icon"
                       alt=""
-                      src="@/assets/icon/MainPage/BeforeLogInMain/diary-writing.png"/>
+                      src="../../assets/icon/MainPage/BeforeLogInMain/diary-writing.png"/>
                 </div>
               </button>
             </div>
@@ -57,7 +57,7 @@
                         class="icon"
                         loading="lazy"
                         alt=""
-                        src="@/assets/icon/MainPage/BeforeLogInMain/-20240405--402@2x.png"/>
+                        src="../../assets/icon/MainPage/BeforeLogInMain/-20240405--402@2x.png"/>
                   </div>
                   <button class="rectangle-container">
                     <div class="rectangle-div"></div>
@@ -70,7 +70,7 @@
                         class="icon1"
                         loading="lazy"
                         alt=""
-                        src="@/assets/icon/MainPage/BeforeLogInMain/-20240405--405@2x.png"/>
+                        src="../../assets/icon/MainPage/BeforeLogInMain/-20240405--405@2x.png"/>
                   </div>
                   <button class="group-button">
                     <div class="frame-child1"></div>
@@ -81,7 +81,7 @@
                   <img
                       class="icon2"
                       alt=""
-                      src="@/assets/icon/MainPage/BeforeLogInMain/-20240405--405-1@2x.png"/>
+                      src="../../assets/icon/MainPage/BeforeLogInMain/-20240405--405-1@2x.png"/>
 
                   <button class="rectangle-parent1">
                     <div class="frame-child2"></div>

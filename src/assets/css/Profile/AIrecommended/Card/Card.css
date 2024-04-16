@@ -767,7 +767,7 @@
 .parent2 {
   flex-direction: row;
   padding: var(--padding-smi-3) var(--padding-mini) 15.7px 15.9px;
-  background-image: url(@/assets/icon/Profile/AIrecommended/Card/sun.png);
+  background-image: url(@/assets/icon/Profile/AIrecommended/Card/thunder.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -803,15 +803,19 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-5xs-3);
+  border-radius: var(--br-mini);
 }
 .frame-button {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) var(--padding-mid) var(--padding-4xs) 93px;
+  padding: var(--padding-6xs) var(--padding-mid) var(--padding-5xs)
+  var(--padding-59xl);
   background-color: var(--color-white);
   align-self: stretch;
-  border-radius: var(--br-mini);
-  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
   gap: var(--gap-xl);
   z-index: 1;
 }
@@ -1840,14 +1844,18 @@
   gap: var(--gap-5xs-3);
 }
 .vector-parent13 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-6xs) var(--padding-mid) var(--padding-5xs)
-  var(--padding-59xl);
+  align-self: stretch;
   background-color: var(--color-white);
-  border-radius: var(--br-mini);
-  gap: var(--gap-3xl-2);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--padding-8xs) var(--padding-mid) var(--padding-3xs)
+  var(--padding-63xl);
+  gap: var(--gap-xl);
   z-index: 1;
+  border: none;
+  border-radius: var(--br-mini);
 }
 .frame-child15 {
   width: 250px;
@@ -2348,14 +2356,18 @@
   gap: var(--gap-5xs-3);
 }
 .vector-parent22 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-6xs) var(--padding-mid) var(--padding-5xs)
-  var(--padding-59xl);
+  align-self: stretch;
   background-color: var(--color-white);
-  border-radius: var(--br-mini);
-  gap: var(--gap-3xl-2);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--padding-8xs) var(--padding-mid) var(--padding-3xs)
+  var(--padding-63xl);
+  gap: var(--gap-xl);
   z-index: 1;
+  border: none;
+  border-radius: var(--br-mini);
 }
 .frame-child21 {
   width: 250px;
@@ -2868,18 +2880,18 @@
   border-radius: var(--br-mini);
 }
 .vector-parent31 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-6xs) var(--padding-mid) var(--padding-5xs)
-  var(--padding-59xl);
-  background-color: var(--color-white);
   align-self: stretch;
+  background-color: var(--color-white);
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
+  padding: var(--padding-8xs) var(--padding-mid) var(--padding-3xs)
+  var(--padding-63xl);
   gap: var(--gap-xl);
   z-index: 1;
+  border: none;
+  border-radius: var(--br-mini);
 }
 .frame-child27 {
   width: 250px;
@@ -3383,18 +3395,18 @@
   border-radius: var(--br-mini);
 }
 .vector-parent39 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-6xs) var(--padding-mid) var(--padding-5xs)
-  var(--padding-59xl);
-  background-color: var(--color-white);
   align-self: stretch;
+  background-color: var(--color-white);
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
+  padding: var(--padding-8xs) var(--padding-mid) var(--padding-3xs)
+  var(--padding-63xl);
   gap: var(--gap-xl);
   z-index: 1;
+  border: none;
+  border-radius: var(--br-mini);
 }
 .frame-child33 {
   width: 250px;
@@ -3893,18 +3905,18 @@
   border-radius: var(--br-mini);
 }
 .vector-parent47 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-6xs) var(--padding-mid) var(--padding-5xs)
-  var(--padding-59xl);
-  background-color: var(--color-white);
   align-self: stretch;
+  background-color: var(--color-white);
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
+  padding: var(--padding-8xs) var(--padding-mid) var(--padding-3xs)
+  var(--padding-63xl);
   gap: var(--gap-xl);
   z-index: 1;
+  border: none;
+  border-radius: var(--br-mini);
 }
 .frame-child39 {
   width: 250px;
@@ -4415,14 +4427,18 @@
   gap: var(--gap-5xs-3);
 }
 .vector-parent55 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-6xs) var(--padding-mid) var(--padding-5xs)
-  var(--padding-59xl);
+  align-self: stretch;
   background-color: var(--color-white);
-  border-radius: var(--br-mini);
-  gap: var(--gap-3xl-2);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--padding-8xs) var(--padding-mid) var(--padding-3xs)
+  var(--padding-63xl);
+  gap: var(--gap-xl);
   z-index: 1;
+  border: none;
+  border-radius: var(--br-mini);
 }
 .frame-child45 {
   width: 250px;
@@ -4923,14 +4939,18 @@
   gap: var(--gap-5xs-3);
 }
 .vector-parent64 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-6xs) var(--padding-mid) var(--padding-5xs)
-  var(--padding-59xl);
+  align-self: stretch;
   background-color: var(--color-white);
-  border-radius: var(--br-mini);
-  gap: var(--gap-3xl-2);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--padding-8xs) var(--padding-mid) var(--padding-3xs)
+  var(--padding-63xl);
+  gap: var(--gap-xl);
   z-index: 1;
+  border: none;
+  border-radius: var(--br-mini);
 }
 .frame-child51 {
   width: 250px;
@@ -5367,7 +5387,7 @@
 .frame-parent1 {
   width: 1522px;
   flex-wrap: wrap;
-  gap: 68px 42px;
+  gap: 5px 30px;
   min-height: 644px;
 }
 .frame-group,
@@ -5550,6 +5570,7 @@
   line-height: normal;
   letter-spacing: normal;
 }
+
 @media screen and (max-width: 975px) {
   .h1 {
     display: none;
@@ -5569,12 +5590,107 @@
   }
 }
 @media screen and (max-width: 700px) {
-  .frame-container,
-  .frame-div {
-    flex-wrap: wrap;
+  .b3,
+  .b4,
+  .b5,
+  .b6,
+  .b7,
+  .b8,
+  .b9,
+  .b10,
+  .b11,
+  .b12 {
+    margin-left: 80px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .group-div,
+  .rectangle-parent1,
+  .rectangle-parent2,
+  .rectangle-parent3,
+  .rectangle-parent4,
+  .rectangle-parent5,
+  .rectangle-parent6,
+  .rectangle-parent7,
+  .rectangle-parent8,
+  .rectangle-parent9 {
+    width: 90%; /* 기존 크기보다 크게 설정 */
+    max-width: 90%; /* 최대 너비 제한을 추가하여 화면 크기에 맞게 유연하게 조절 */
+  }
+}
+@media screen and (max-width: 700px) {
+  .frame-parent4,
+  .frame-parent7,
+  .frame-parent14,
+  .frame-parent16,
+  .frame-parent17,
+  .frame-parent30,
+  .frame-parent33,
+  .frame-parent44,
+  .frame-parent40{
+    gap: 35px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .frame-parent15,
+  .frame-parent12,
+  .frame-parent41,
+  .parent27,
+  .frame-parent52{
+    padding-right: 30px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .frame-parent2,
+  .frame-parent7,
+  .frame-parent12,
+  .frame-parent18,
+  .frame-parent22,
+  .frame-parent24,
+  .frame-parent28,
+  .frame-parent33,
+  .frame-parent38,
+  .frame-parent44,
+  .frame-parent49{
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .frame-parent25 {
+    margin-right: 35px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .frame-parent25,
+  .frame-parent27,
+  .frame-parent43,
+  .frame-parent52,
+  .frame-parent54{
+    margin-left: 35px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .parent,
+  .parent2,
+  .parent7,
+  .parent10,
+  .group-button,
+  .parent13,
+  .parent16,
+  .parent19,
+  .parent22,
+  .parent25 {
+    margin-left: 80px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .frame-container {
+    gap: var(--gap-2xl);
   }
   .frame-parent1 {
-    gap: var(--gap-2xl);
+    justify-content: center;
+    gap : 30px;
   }
   .frame-group {
     gap: var(--gap-16xl);

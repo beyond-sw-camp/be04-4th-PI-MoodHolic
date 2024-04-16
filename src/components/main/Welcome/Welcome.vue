@@ -56,6 +56,7 @@
 </script>
 
 <style>
-@import '@/assets/css/MainPage/Welcome/global.css';
-@import '@/assets/css/MainPage/Welcome/Welcome.css';
+@import 'src/assets/css/MainPage/Welcome/global.css';
+@import 'src/assets/css/MainPage/Welcome/Welcome.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 </style>

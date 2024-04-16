@@ -54,7 +54,7 @@ public class DataParse {
                 music.setSinger(musicInfo[1]);
                 music.setMusicGenre(musicInfo[2]);
                 break;
-            case "추천 음식(음식이름,메뉴카테고리(한식,양식,중식,일식,아시안),맵기(0~3))":
+            case "추천 음식(음식이름,메뉴카테고리(한식,양식,중식,일식,아시안), 맵기(0~3))":
                 String[] foodInfo = itemValue.split(" - ");
                 food.setFoodName(foodInfo[0]);
                 food.setFoodCategory(FOOD_CATEGORY.valueOf(foodInfo[1]));

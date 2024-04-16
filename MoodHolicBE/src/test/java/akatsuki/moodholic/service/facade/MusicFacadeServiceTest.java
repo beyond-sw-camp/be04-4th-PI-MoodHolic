@@ -1,7 +1,6 @@
 package akatsuki.moodholic.service.facade;
 
 import akatsuki.moodholic.domain.Diary;
-import akatsuki.moodholic.domain.DiaryMovie;
 import akatsuki.moodholic.domain.DiaryMusic;
 import akatsuki.moodholic.domain.Music;
 import akatsuki.moodholic.dto.MemberMusicGenreRanking;
@@ -53,7 +52,7 @@ class MusicFacadeServiceTest {
     void getMemberMusicGenreRanking() {
         long memberId =1;
         MemberMusicGenreRanking memberMusicGenreRanking = musicFacadeService.getMemberMusicGenreRanking(memberId);
-        List<Diary> diaryList = diaryFacadeService.getMemberDiary(memberId);
+        List<Diary> diaryList = diaryFacadeService.getMemberDiaries(memberId);
         List<DiaryMusic> diaryMovieList = diaryMusicService.getMemberLikeMusic(diaryList);
         diaryMovieList.forEach(diaryMusic -> {
             if(diaryMusic.getMusicId().getMusicGenre().equals(memberMusicGenreRanking.getTopName())){

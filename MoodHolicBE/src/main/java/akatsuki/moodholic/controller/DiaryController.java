@@ -2,6 +2,7 @@ package akatsuki.moodholic.controller;
 
 import akatsuki.moodholic.domain.*;
 import akatsuki.moodholic.dto.ResponseDiary;
+import akatsuki.moodholic.dto.ResponseDiaryPost;
 import akatsuki.moodholic.service.facade.DiaryFacadeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -32,8 +33,8 @@ public class DiaryController {
     @PostMapping("")
     @Operation(summary = "다이어리 저장", description = "요청온 다이어리의 상태에 따라 임시저장 또는 저장을 수행합니다. " +
             "저장 시 ChatGPT에 프롬프트 전달하여 GPT의 응답을 받아 DB에 저장합니다.")
-    public ResponseEntity<String> postDiary(@RequestBody Diary diary){
-        String response = facadeService.postDiary(diary);
+    public ResponseEntity<ResponseDiaryPost> postDiary(@RequestBody Diary diary){
+        ResponseDiaryPost response = facadeService.postDiary(diary);
         return ResponseEntity.ok().body(response);
     }
 
@@ -47,7 +48,7 @@ public class DiaryController {
     @GetMapping("/{memberid}/diaries")
     @Operation(summary = "맴버의 다이어리 리스트 조회", description = "멤버가 작성한 모든 다이어리를 반환합니다.")
     public ResponseEntity<List<Diary> > getMemberDiaries(@PathVariable long memberid){
-        List<Diary> response = facadeService.getMemberDiary(memberid);
+        List<Diary> response = facadeService.getMemberDiaries(memberid);
         return ResponseEntity.ok().body(response);
     }
 
@@ -60,6 +61,7 @@ public class DiaryController {
 
 
     @PutMapping("/{diaryId}/like")
+    @Operation(summary = "멤버 좋아요 체크", description = "GPT가 추천한 음식, 음악, 영화를 좋아요 누를 경우 이를 DB에 반환합니다.")
     public ResponseEntity<String> putMemberLike(@PathVariable int diaryId
             , @RequestParam(name = "food") boolean food
             , @RequestParam(name = "music") boolean music

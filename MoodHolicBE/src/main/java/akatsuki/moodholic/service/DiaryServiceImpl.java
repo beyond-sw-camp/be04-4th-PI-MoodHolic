@@ -2,6 +2,7 @@ package akatsuki.moodholic.service;
 
 import akatsuki.moodholic.domain.*;
 import akatsuki.moodholic.dto.ResponseDiary;
+import akatsuki.moodholic.dto.ResponseDiaryPost;
 import akatsuki.moodholic.etc.DataParse;
 import akatsuki.moodholic.repository.*;
 import akatsuki.moodholic.service.ChatGPTService;
@@ -22,24 +23,24 @@ public class  DiaryServiceImpl implements DiaryService{
 
     @Override
     @Transactional
-    public String postDiary(Diary requestdiary) {
+    public ResponseDiaryPost postDiary(Diary requestdiary) {
         Diary findDiary = diaryDAO.findByMemberMemberIdAndDate(requestdiary.getMember().getMemberId(),requestdiary.getDate());
         if(findDiary!=null){
             requestdiary.setDiaryId(findDiary.getDiaryId());
             if(findDiary.getStatus()==1){
                 System.out.println("이미 존재하여 생성하지 않습니다.");
-                return "실패";
+                return new ResponseDiaryPost("실패");
             }
         }
         requestdiary=diaryDAO.save(requestdiary);
         if(requestdiary.getStatus()==0){
             System.out.println("임시 저장 완료");
-            return "임시저장";
+            return new ResponseDiaryPost("임시저장");
         }
         String content = requestdiary.getContent();
         String prompt = getPrompt(requestdiary, content);
-
-        return prompt;
+        ResponseDiaryPost returnValue = new ResponseDiaryPost(prompt, requestdiary.getDiaryId());
+        return returnValue;
     }
     @Override
     public Diary findDiary(int diaryId){
@@ -76,7 +77,7 @@ public class  DiaryServiceImpl implements DiaryService{
                 "조언 및 인용구 한 줄: 당신도 할 수 있습니다.\n" +
                 "추천 영화(영화이름,장르): 인사 이야기 - 로맨스\n" +
                 "추천 음악(음악이름,가수,장르): 봄날 - 방탄소년단 - 힙합 \n" +
-                "추천 음식(음식이름,메뉴카테고리(한식,양식,중식,일식,아시안) 맵기(0~3)): 된장찌개 - 한식 - 1";
+                "추천 음식(음식이름,메뉴카테고리(한식,양식,중식,일식,아시안), 맵기(0~3)): 된장찌개 - 한식 - 1";
         return prompt;
     }
 

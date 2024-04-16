@@ -67,7 +67,8 @@
      </div>
   </div>
 
-  <button @click="openWritePopup()"> 글쓰기</button>
+  <button class="but" @click="openWritePopup()" style="margin-left: 35%; margin-right: 30%;"> 글쓰기</button>
+
 
   <div class="popup-overlay" v-if="writeActive">
     <div class="popup-content">
@@ -96,13 +97,22 @@
             <textarea placeholder="하루 동안 이야기를 들려주세요!" style="height: 450px;"  v-model="editedFeed.content"/>
           </div>
           
-          <form @submit.prevent="uploadImage">
-                  <input type="file" @change="previewImage" /> <!-- @change 이벤트를 사용하여 파일 선택 시 previewImage 메서드 호출 -->
-                  <img :src="imagePreview"/> <!-- 이미지 미리보기 -->
-                  <br />
-                  <button type="submit" @click="uploadImage(1)" >저장</button> 
-                  <button type="submit" @click="uploadImage(0)" >임시저장</button>
-          </form>
+          <div class="imgForm">
+            <form @submit.prevent="uploadImage">
+                    <input id="imgUpload" type="file" @change="previewImage" hidden/> <!-- @change 이벤트를 사용하여 파일 선택 시 previewImage 메서드 호출 -->
+                    <label for="imgUpload">
+                        <img class="img" v-if="!imgOn" src="@/assets/icon/Profile/Diary/Write/picture.png" />
+                        <img class="img" :src="imagePreview" /> <!-- 이미지 미리보기 -->
+                    </label>
+                      <!-- <img class="imgPrev" :src="imagePreview" /> 이미지 미리보기 -->
+                    <br/>
+            </form>
+          </div>
+          <br><br>
+          <div class="but-group">
+            <button class="but" type="submit" @click="uploadImage(1)" >저장</button> 
+            <button class="but" type="submit" @click="uploadImage(0)" >임시저장</button>
+          </div>
         </div>
   </div>
 </template>
@@ -334,7 +344,7 @@ const getDiary = async(index)=> {
     };
 
     const imagePreview = ref(null); // 이미지 미리보기 URL
-
+    const imgOn = ref(false);
     const previewImage = (event) => {
         const file = event.target.files[0];
         if (file) {
@@ -343,6 +353,7 @@ const getDiary = async(index)=> {
                 imagePreview.value = reader.result;
             };
             reader.readAsDataURL(file);
+            imgOn.value = true;
         }   
     };
 
@@ -535,6 +546,43 @@ const getDiary = async(index)=> {
     .popup-content button:hover {
         background-color: #45a049;
     }
+    .img{
+      height: 250px;
+    }
+    .imgForm{
+      background-color: #b7b7b7;
+      height: 300px;
+      display: flex;
+      justify-content: center; /* 수평 가운데 정렬 */
+      align-items: center; /* 수직 가운데 정렬 */
+    }
 
+    .but-group{
+      display: flex;
+      justify-content: center; /* 수평 가운데 정렬 */
+      align-items: center; /* 수직 가운데 정렬 */
+    }
+    .but {
+      
+      margin: 20px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #D9D9D9;
+      background-color: #D9D9D9;
+      color: #000000;
+      font-size: 30px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      width: 30%;
+    }
+
+    .but:hover {
+      background-color: #333333; /* 마우스를 올렸을 때 배경색 변경 */
+    }
+
+    .but.active {
+      background-color: #FEDB56;
+      border-color: #FEDB56;
+    }
 </style>
 

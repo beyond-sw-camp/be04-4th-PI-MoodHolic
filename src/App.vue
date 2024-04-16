@@ -3,11 +3,8 @@
     <Header/>
   </header>
   <main>
-    <div class="main-container">
       <router-view/>
-    </div>
   </main>
-
 </template>
 
 <script setup>

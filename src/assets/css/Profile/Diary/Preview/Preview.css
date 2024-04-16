@@ -978,6 +978,6 @@
 }
 @media screen and (max-width: 1200px) {
   .inner {
-    padding: 0px 0px 0px 0px;
+    padding: 0 0 0 0;
   }
 }

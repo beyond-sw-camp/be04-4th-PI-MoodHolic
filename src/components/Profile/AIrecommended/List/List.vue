@@ -498,7 +498,6 @@
                                 alt=""
                                 src="@/assets/icon/Profile/AIrecommended/List/food.png"
                               />
-
                               <div class="wrapper15">
                                 <div class="div20">미역국</div>
                               </div>

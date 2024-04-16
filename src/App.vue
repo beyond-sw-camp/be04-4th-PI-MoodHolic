@@ -3,13 +3,12 @@
     <Header/>
   </header>
   <main>
-    <router-view/>
+      <router-view/>
   </main>
-
 </template>
 
 <script setup>
-import Header from "@/components/header/Header.vue";
+import Header from "@/components/header/MainHeader.vue";
 import { onMounted } from 'vue';
 import { useStore } from 'vuex';
 import router from "@/router/router.js";
@@ -35,12 +34,12 @@ onMounted(async () => {
   if (authToken) {
     localStorage.setItem('authToken', authToken);
     await store.dispatch('login', authToken);
-    router.push(router.currentRoute.value); // 상태 갱신 후 현재 라우트로 리다이렉트
-// 쿠키에서 refreshToken 검색 후 로컬 스토리지에 저장
+    // await router.push(router.currentRoute.value); // 상태 갱신 후 현재 라우트로 리다이렉트
+    // 쿠키에서 refreshToken 검색 후 로컬 스토리지에 저장
   }
   if (token) {
     await store.dispatch('login', token);
-    router.push(router.currentRoute.value); // 강제로 새로 고침
+    // router.push(router.currentRoute.value); // 강제로 새로 고침
   }
 });
 

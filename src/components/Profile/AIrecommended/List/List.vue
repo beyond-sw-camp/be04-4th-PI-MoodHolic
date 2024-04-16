@@ -1,10 +1,4 @@
 <template>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-  </head>
-  <body>
     <div class="ai">
       <section class="stack-data">
         <div class="frame-parent">
@@ -504,7 +498,6 @@
                                 alt=""
                                 src="@/assets/icon/Profile/AIrecommended/List/food.png"
                               />
-
                               <div class="wrapper15">
                                 <div class="div20">미역국</div>
                               </div>
@@ -556,9 +549,6 @@
         </div>
       </section>
     </div>
-  </body>
-</html>
-
 </template>
 
 <script setup>

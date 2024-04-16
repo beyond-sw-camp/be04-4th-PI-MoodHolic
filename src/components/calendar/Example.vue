@@ -16,7 +16,7 @@
         <!-- <img src='@/components/calendar/img0.png'  style=" max-width: 70%;" alt=""> <br> -->
         <img src='@/components/calendar/img0.png'  style=" max-width: 70%;" alt=""> <br>
         <img src='@/components/calendar/img1.png'  style=" max-width: 70%;" alt=""> <br>
-        <img src='@/components/calendar/img2.png'  style=" max-width: 70%;" alt=""> <br> 
+        <img src='@/components/calendar/img2.png'  style=" max-width: 70%;" alt=""> <br>
       </div>
       <div style="width: 80%; ">
           <EmotionLineGraph/>
@@ -35,7 +35,7 @@
 import MovieBarGraph from "@/components/calendar/Movie-BarGraph.vue";
 import EmotionLineGraph from "@/components/calendar/Emotion-LineGraph.vue";
 import EmotionBarGraph from "@/components/calendar/Emotion-BarGraph.vue";
-import Calendar from "@/components/calendar/Calendar.vue";</script>
+import Calendar from "@/components/main/MemberMain.vue";</script>
 
 <style scoped>
 

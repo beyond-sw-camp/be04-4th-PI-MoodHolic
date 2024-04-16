@@ -29,7 +29,7 @@ public class MusicController {
     }
 
     @GetMapping("/all")
-    @Operation(summary = "노래 전체 조회", description = "단순노래 조회 기능")
+    @Operation(summary = "노래 전체 조회", description = "단순 노래 조회 기능")
     public ResponseEntity<List<Music>> getAllFoods() {
         return ResponseEntity.ok().body(musicFacadeService.getAllMusics());
     }

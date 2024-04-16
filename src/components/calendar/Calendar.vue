@@ -66,6 +66,9 @@
         </div>
      </div>
   </div>
+
+  <button @click="openWritePopup()"> 글쓰기</button>
+  <a v-if="writeActive"> <Write/></a>
 </template>
 
 <script setup>
@@ -73,9 +76,16 @@ import {ref} from 'vue';
 import happyImg from '@/components/calendar/img0.png';
 import sadImg from '@/components/calendar/img1.png';
 import sosoImg from '@/components/calendar/img2.png';
-
+import Write from '../Profile/Diary/Write/Write.vue';
 let memberId = ref(null);
+const writeActive = ref(false);
 
+const openWritePopup = ()=>{
+  writeActive.value=true;
+}
+const closeWritePopup = ()=>{
+  writeActive.value=false;
+}
 const getMemberId = async()=>{
   
   const authToken = 'Bearer '+localStorage.getItem('authToken');

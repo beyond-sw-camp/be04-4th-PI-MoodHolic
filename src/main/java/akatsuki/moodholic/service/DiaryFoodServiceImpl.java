@@ -50,7 +50,7 @@ public class DiaryFoodServiceImpl implements DiaryFoodService{
         List<DiaryFood> returnValue = new ArrayList<>();
         diaries.forEach(diary -> {
             DiaryFood diaryFood = diaryFoodDAO.findByDiaryId(diary.getDiaryId());
-            if(diaryFood.getFoodLike()==true){
+            if(diaryFood != null && diaryFood.getFoodLike()==true){
                 returnValue.add(diaryFood);
             }
         });

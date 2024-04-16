@@ -4,6 +4,11 @@ import LogIn from "@/components/main/LogIn/LogIn.vue";
 import Main from "@/components/main/Main.vue";
 import Calendar from "@/components/calendar/Calendar.vue";
 import SignUp from "@/components/main/SighUp/SignUp.vue";
+import Welcome from "@/components/main/Welcome/Welcome.vue";
+// import View from "@/components/Profile/Diary/View/View.vue";
+// import Preview from "@/components/Profile/Diary/Preview/Preview.vue";
+// import List from "@/components/Profile/AIrecommended/List/List.vue";
+// import Card from "@/components/Profile/AIrecommended/Card/Card.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -15,6 +20,26 @@ const router = createRouter({
         {
             path: '/signup',
             component: SignUp
+        },
+        // {
+        //     path: '/card',
+        //     component: Card
+        // },
+        // {
+        //     path: '/list',
+        //     component: List
+        // },
+        // {
+        //     path: '/preview',
+        //     component: Preview
+        // },
+        // {
+        //     path: '/view',
+        //     component: View
+        // },
+        {
+            path: '/welcome',
+            component: Welcome
         },
         {
             path: '/',

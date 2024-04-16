@@ -4,10 +4,10 @@
     <section class="inner">
       <div class=“layerPopup” v-if=showPopup>
         <div class=“popup-content”>
-          <span class=“close” @click=closePopup>&times;</span>
       <div class="day-of-week-label-parent">
         <div class="day-of-week-label">
           <div class="day-of-week-label-child"></div>
+          <span class=“close” @click=closePopup>&times;</span>
           <div class="wrapper">
             <div class="div2">4월 5일 금요일</div>
           </div>
@@ -58,15 +58,18 @@
                 src="@/assets/icon/Profile/Diary/Write/rectangle-510.png"
             />
 
-            <div class="thumbnail-label">
               <div class="image-container">
                 <label for="imageInput" class="image-button">
-                  <img :src="imageUrl" alt="Select Image">
+                  <img :src="imageUrl" alt="Today Select Photo">
+<!--                  <img-->
+<!--                      class="image-button"-->
+<!--                      src="@/assets/icon/Profile/Diary/Write/picture.png"-->
+<!--                      alt="Select Image">-->
                 </label>
                 <input type="file" id="imageInput" @change="handleImageChange" style="display: none;">
               </div>
-            </div>
-                <div class="div5">오늘을 대표하는 사진 1장을 남겨주세요!</div>
+
+                <div class="div5">오늘을 대표하는 사진 1장을 담아주세요!</div>
 
           </div>
         </div>
@@ -105,7 +108,7 @@ const closePopup = () => {
 
 // 사진 파일 추가
 const imageUrl = ref('@/assets/icon/Profile/Diary/Write/picture.png');
-let selectedImage = null;
+let selectedImage = imageUrl;
 
 const handleImageChange = (event) => {
   const file = event.target.files[0];
@@ -125,7 +128,7 @@ const buttonClick = () => {
 </script>
 
 <style>
-@import "src/assets/css/Profile/Diary/Write/global.css";
-@import "src/assets/css/Profile/Diary/Write/index.css";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  @import "@/assets/css/Profile/Diary/Write/global.css";
+  @import "@/assets/css/Profile/Diary/Write/write.css";
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 </style>

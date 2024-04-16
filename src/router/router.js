@@ -4,6 +4,8 @@ import LogIn from "@/components/main/LogIn/LogIn.vue";
 import Main from "@/components/main/Main.vue";
 import Calendar from "@/components/calendar/Calendar.vue";
 import SignUp from "@/components/main/SighUp/SignUp.vue";
+import Info from "@/components/Profile/Info/Info.vue";
+// import Write from "@/components/Profile/Diary/Write/Write.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -15,6 +17,14 @@ const router = createRouter({
         {
             path: '/signup',
             component: SignUp
+        },
+        // {
+        //     path: '/write',
+        //     component: Write
+        // },
+        {
+            path: '/info',
+            component: Info
         },
         {
             path: '/',

@@ -25,13 +25,19 @@
 
       <div class="signup-invitation">
         <p class="signup-invitation">아직 회원이 아니신가요?</p>
-        <button class="signup-button" @click="signup">새 계정으로 회원가입</button>
+        <button class="signup-button" style="cursor: pointer;" @click="SignUp('/signup')" >새 계정으로 회원가입</button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import router from "@/router/router.js";
+
+const SignUp = (route) => {
+  router.push(route);
+};
+
 const onGoogleLogin = async () => {
   window.location.href = 'http://localhost:8888/oauth2/authorization/google';
 };

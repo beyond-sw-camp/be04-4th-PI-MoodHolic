@@ -43,7 +43,6 @@ public class FoodFacadeService {
     public HashMap<String,Integer> countFoodNameWithMemberLike(long memberId){
         List<Diary> diaries = diaryService.getMemberDiaries(memberId);
         HashMap<String,Integer> returnValue = diaryFoodService.countMembersFoodLike(diaries);
-        System.out.println("returnValue = " + returnValue);
         return returnValue;
     }
 

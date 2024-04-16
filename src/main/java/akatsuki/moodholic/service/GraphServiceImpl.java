@@ -45,7 +45,6 @@ public class GraphServiceImpl implements GraphService{
         diaryList.forEach(diary->{
             String[] date = diary.getDate().split("-");
             String cmpDate = date[0];
-            System.out.println("cmpDate = " + cmpDate);
             compare(cmpDate,diary,memberEmotion);
         });
         if (!past.isEmpty()) {
@@ -69,19 +68,6 @@ public class GraphServiceImpl implements GraphService{
         }
         return returnValue;
     }
-
-//    @Override
-//    public SortedMap<String, Double> GetEmotionDay(long memberId, List<Diary> diaryList,SortedMap<Integer,Integer> memberEmotion) {
-//        init();
-//        diaryList.forEach(diary -> {
-//            String[] date = diary.getDate().split("-");
-//            int Year = Integer.parseInt(date[2]);
-//            int Month =
-//            int Day =
-//        });
-//        return returnValue;
-//    }
-
 
     private void compare(String cmpDate, Diary diary,SortedMap<Integer,Integer> memberEmotion) {
         if(memberEmotion.get(diary.getDiaryId())==null)

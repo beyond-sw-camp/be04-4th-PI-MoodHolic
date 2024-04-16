@@ -13,12 +13,13 @@ spring:
   main:
     allow-bean-definition-overriding: true
   jpa:
-    show-sql: true
+    show-sql: false
     database: mysql
     properties:
       hibernate:
-        format_sql: true
+        format_sql: false
     database-platform: org.hibernate.dialect.MySQL8Dialect
     generate-ddl: false
+
   profiles:
     active: private

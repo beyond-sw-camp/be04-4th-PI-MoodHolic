@@ -1,49 +1,5 @@
 <template>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./index.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
-  </head>
-  <body>
     <div class="div">
-      <header class="line-parent">
-        <div class="frame-child"></div>
-        <img
-          class="moodholiclogo-2-icon"
-          loading="lazy"
-          alt=""
-          src="./public/moodholiclogo-25@2x.png"
-        />
-
-        <div class="div1">오늘 날씨</div>
-        <div class="image-1-parent">
-          <img
-            class="image-1-icon"
-            loading="lazy"
-            alt=""
-            src="./public/image-16@2x.png"
-          />
-
-          <div class="div2">14 ℃</div>
-        </div>
-        <img
-          class="group-icon"
-          loading="lazy"
-          alt=""
-          src="./public/group7@2x.png"
-        />
-
-        <img class="group-icon1" alt="" src="./public/group3.svg" />
-
-        <img class="uimgraph-bar-icon" alt="" src="./public/uimgraphbar.svg" />
-      </header>
       <section class="inner">
         <div class="frame-parent">
           <div class="frame-wrapper">
@@ -134,8 +90,6 @@
         </div>
       </section>
     </div>
-  </body>
-</html>
 </template>
 
 <script setup>

@@ -1,5 +1,4 @@
 <template>
-  <body>
     <div class="div">
       <section class="inner">
         <div class="frame-parent">
@@ -125,8 +124,6 @@
         </div>
       </section>
     </div>
-  </body>
-
 </template>
 
 <script setup>

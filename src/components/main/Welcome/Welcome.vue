@@ -1,10 +1,6 @@
 <template>
-    <html>
-    <body>
     <div class="div">
-        <header class="frame-parent">
-
-        </header>
+        <header class="frame-parent"></header>
         <section class="inner">
         <div class="rectangle-parent">
             <div class="frame-item"></div>
@@ -47,8 +43,6 @@
         </div>
         </section>
     </div>
-    </body>
-</html>
 </template>
 
 <script setup>
@@ -56,7 +50,7 @@
 </script>
 
 <style>
-@import 'src/assets/css/MainPage/Welcome/global.css';
-@import 'src/assets/css/MainPage/Welcome/Welcome.css';
+@import '@/assets/css/MainPage/Welcome/global.css';
+@import '@/assets/css/MainPage/Welcome/Welcome.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 </style>

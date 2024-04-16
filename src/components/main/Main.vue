@@ -1,28 +1,22 @@
 <template>
-  <html>
-  <body>
   <div class="div">
-    <header class="line-parent">
-
-    </header>
-    <section class="inner">
+    <div class="line-parent"></div>
+    <div class="inner">
       <div class="frame-parent">
         <div class="emotion-diary-parent">
           <div class="emotion-diary">
-            <img
-                class="image-3-icon"
-                loading="lazy"
-                alt=""
-                src="../../assets/icon/MainPage/BeforeLogInMain/image-3@2x.png"/>
-
+                <img
+                    class="image-3-icon"
+                    loading="lazy"
+                    alt=""
+                    src="../../assets/icon/MainPage/BeforeLogInMain/image-3@2x.png"/>
             <div class="div3">
-              <b style="font-size: 40px;">인공지능 심리전문가</b>
-              <span class="span" style="font-size: 30px;">가 다이어리에 적은 오늘의 기분을 분석해</span>
+              <b class="bb">인공지능 심리전문가</b>
+              <span class="span">가 다이어리에 &nbsp;적은 오늘의 기분을 분석해</span>
             </div>
           </div>
           <div class="wrapper">
             <h3 class="h3">
-              <span> </span>
               <b class="b">음식, 음악, 영화, 조언</b>
               <span>을 추천하는 서비스를 제공합니다!</span>
             </h3>
@@ -44,10 +38,10 @@
             </div>
             <div class="frame-div">
               <div class="ai-wrapper">
-                <div class="ai">
+                <b class="ai">
                   다이어리 작성 후 AI가 점수를 내주고 그 점수에 따라 감정
                   아이콘이 자동으로 기록됩니다!
-                </div>
+                </b>
               </div>
               <div class="rectangle-group">
                 <div class="frame-inner"></div>
@@ -93,10 +87,8 @@
           </footer>
         </div>
       </div>
-    </section>
+    </div>
   </div>
-  </body>
-  </html>
 </template>
 
 <script setup>

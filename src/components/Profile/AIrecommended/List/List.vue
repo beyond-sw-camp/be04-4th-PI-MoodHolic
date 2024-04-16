@@ -1,10 +1,4 @@
 <template>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-  </head>
-  <body>
     <div class="ai">
       <section class="stack-data">
         <div class="frame-parent">
@@ -556,9 +550,6 @@
         </div>
       </section>
     </div>
-  </body>
-</html>
-
 </template>
 
 <script setup>

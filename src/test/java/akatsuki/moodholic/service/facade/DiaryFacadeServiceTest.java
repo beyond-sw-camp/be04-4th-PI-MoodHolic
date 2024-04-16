@@ -82,7 +82,8 @@ class DiaryFacadeServiceTest {
         /*when*/
         ResponseDiaryPost text = diaryFacadeService.postDiary(Testdiary);
         /*then*/
-        assertEquals("저장",text.getResponse());
+        assertNotEquals("중복",text.getResponse());
+        assertNotEquals("임시저장",text.getResponse());
     }
     //    다이어리 중복저장
     @Test

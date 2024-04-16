@@ -40,7 +40,6 @@ public class  DiaryServiceImpl implements DiaryService{
         String content = requestdiary.getContent();
         String prompt = getPrompt(requestdiary, content);
         ResponseDiaryPost returnValue = new ResponseDiaryPost(prompt, requestdiary.getDiaryId());
-        returnValue.setResponse("저장");
         return returnValue;
     }
     @Override

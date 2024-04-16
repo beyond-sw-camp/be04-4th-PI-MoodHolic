@@ -67,23 +67,23 @@ const changeRouter = (route) => {
 
 // 로그아웃 처리
 const logout = async () => {
-  // 로그아웃 API 호출
-  try {
-    const response = await fetch('http://localhost:8888/logout', {
-      method: 'POST',
-      credentials: 'include'  // 쿠키 포함시킴
-    });
-    if (response.ok) {
-      await store.dispatch('logout');  // 상태 업데이트
-      await router.push('/');
-    } else {
-      throw new Error('Failed to logout');
+  if (confirm('로그아웃 하시겠습니까?')) { // 사용자에게 로그아웃을 확인받음
+    try {
+      const response = await fetch('http://localhost:8888/logout', {
+        method: 'POST',
+        credentials: 'include'  // 쿠키 포함시킴
+      });
+      if (response.ok) {
+        await store.dispatch('logout');  // 상태 업데이트
+        await router.push('/');
+      } else {
+        throw new Error('Failed to logout');
+      }
+    } catch (error) {
+      console.error('Logout error:', error);
     }
-  } catch (error) {
-    console.error('Logout error:', error);
   }
 };
-
 </script>
 
 

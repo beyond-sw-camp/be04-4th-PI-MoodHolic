@@ -84,7 +84,8 @@ public class GraphServiceImpl implements GraphService{
 
 
     private void compare(String cmpDate, Diary diary,SortedMap<Integer,Integer> memberEmotion) {
-
+        if(memberEmotion.get(diary.getDiaryId())==null)
+            return;
         int score = memberEmotion.get(diary.getDiaryId());
 
         if (past.equals(cmpDate)) {

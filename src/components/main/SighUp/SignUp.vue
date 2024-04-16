@@ -1,9 +1,5 @@
 <template>
   <div class="main-container">
-    <header>
-      <header-component />
-    </header>
-
     <div class="login-container">
       <div class="login-card">
         <h2 class="greeting">오늘도 당신의</h2>
@@ -32,11 +28,11 @@
 
 <script setup>
 function onGoogleLogin() {
-  window.location.href = ' http://localhost:8888/login/oauth2/code/google';
+  window.location.href = 'http://localhost:8888/oauth2/authorization/google';
 }
 
 function onKakaoLogin() {
-  window.location.href = 'http://localhost:8888/login/oauth2/code/kakao';
+  window.location.href = 'http://localhost:8888/oauth2/authorization/kakao';
 
 }
 </script>

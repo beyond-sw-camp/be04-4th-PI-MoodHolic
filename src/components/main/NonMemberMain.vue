@@ -109,7 +109,7 @@
   };
 </script>
 
-<style scoped>
+<style>
   @import '@/assets/css/MainPage/BeforeLogInMain/global.css';
   @import '@/assets/css/MainPage/BeforeLogInMain/BeforeLogInMain.css';
 </style>

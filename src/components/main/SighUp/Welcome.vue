@@ -1,8 +1,5 @@
 <template>
   <div class="div">
-    <header class="frame-parent">
-      <!-- 헤더 콘텐츠가 필요한 경우 여기에 추가 -->
-    </header>
     <section class="inner">
       <div class="rectangle-parent">
         <div class="frame-item"></div>
@@ -43,13 +40,12 @@
   </div>
 </template>
 
-
 <script setup>
 
 </script>
 
-<style>
-@import 'src/assets/css/MainPage/Welcome/global.css';
-@import 'src/assets/css/MainPage/Welcome/Welcome.css';
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+<style scoped>
+  @import '@/assets/css/MainPage/Welcome/global.css';
+  @import '@/assets/css/MainPage/Welcome/Welcome.css';
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 </style>

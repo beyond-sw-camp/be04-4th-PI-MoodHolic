@@ -8,13 +8,13 @@
 
 
     <!-- Main Logo -->
-    <img class="moodholiclogo-icon" style="cursor: pointer;" @click="changeRouter('/')" loading="lazy" src="@/assets/icon/header/moodholiclogo.png"/>
+    <img class="moodholiclogo-icon" style="cursor: pointer;" @click="changeRouter('/')" loading="lazy" src="../../assets/icon/header/moodholiclogo.png"/>
 
     <!-- Right Icons -->
     <div class="right-icons" v-if="isAuthenticated">
-      <img class="header-icon" style="cursor: pointer;" @click="changeRouter('/mypage')" alt="Profile Shortcut" src="@/assets/icon/header/profile.png" />
-      <img class="header-icon" style="cursor: pointer;" @click="changeRouter('/statistics')" alt="Statistics Page Shortcut" src="@/assets/icon/header/statistics.png" />
-      <img class="header-icon" style="cursor: pointer;" @click="logout('/logout')" alt="Logout Button" src="@/assets/icon/header/logout.png" />
+      <img class="header-icon" style="cursor: pointer;" @click="changeRouter('/mypage')" alt="Profile Shortcut" src="../../assets/icon/header/profile.png" />
+      <img class="header-icon" style="cursor: pointer;" @click="changeRouter('/statistics')" alt="Statistics Page Shortcut" src="../../assets/icon/header/statistics.png" />
+      <img class="header-icon" style="cursor: pointer;" @click="logout('/logout')" alt="Logout Button" src="../../assets/icon/header/logout.png" />
 
     </div>
   </header>

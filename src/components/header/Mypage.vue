@@ -1,158 +1,137 @@
 <template>
-  <main class="main-container">
-    <h1 class="user-greeting">Konan님</h1>
-    <p class="user-question">오늘 하루 기분은 어떠신가요?</p>
-    <section class="image-grid">
-      <div class="image-row">
-        <div class="image-column">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0611a07510d0a0b602dd26ed1b9373131d55af57f346abdb58d8c3a1d36acdad?apiKey=79a2b7eb54dd4ed5b8fcf22467729821&" alt="Recommended image" class="recommended-image" />
+  <div class="div">
+    <section class="inner">
+      <div class="frame-parent">
+        <div class="frame-wrapper">
+          <div class="frame-group">
+            <div class="konan-wrapper">
+              <h1 class="konan">Konan님</h1>
+            </div>
+            <h2 class="h2">오늘 하루 기분은 어떠신가요?</h2>
+          </div>
         </div>
-        <div class="image-column">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/93bf189a3d84ff072154276653241e06fe75b7d4f0ced833542ae9db9eef5cc5?apiKey=79a2b7eb54dd4ed5b8fcf22467729821&" alt="Recommended image" class="recommended-image" />
-        </div>
-        <div class="image-column">
-          <div class="ai-recommendations">
-            <h2 class="ai-recommendations-title">AI 추천 목록</h2>
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cfc953b2f7dc58c3680dd24da19c3556e168aa03d70fd9710459183bf4e59218?apiKey=79a2b7eb54dd4ed5b8fcf22467729821&" alt="AI recommended image" class="ai-recommended-image" />
+
+        <div class="frame-container">
+          <div class="frame-div">
+            <div class="frame-parent1">
+              <div class="vector-parent">
+                <img
+                    class="frame-inner"
+                    alt=""
+                    src="@/assets/icon/Profile/Info/my.png"
+                />
+
+                <b class="b">내 정보</b>
+                <div class="vector-wrapper">
+                  <img
+                      class="vector-icon"
+                      loading="lazy"
+                      alt=""
+                      src="@/assets/icon/Profile/Info/my.png"
+                  />
+                </div>
+              </div>
+
+
+              <div class="vector-group">
+                <img
+                    class="rectangle-icon"
+                    alt=""
+                    src="@/assets/icon/Profile/Info/rectangle-16.png"
+                />
+                <b class="b1">내 관심 랭킹</b>
+                <div class="vector-container">
+                  <img
+                      class="vector-icon1"
+                      alt=""
+                      src="@/assets/icon/Profile/Info/heartLine.png"
+                  />
+                </div>
+              </div>
+
+            </div>
+            <div class="frame-parent2">
+              <div class="group-div">
+                <img
+                    class="frame-child1"
+                    alt=""
+                    src="@/assets/icon/Profile/Info/rectangle-16.png"
+                />
+
+                <b class="b2">내 캘린더</b>
+                <div class="group-wrapper">
+                  <img
+                      class="group-icon2"
+                      alt=""
+                      src="@/assets/icon/Profile/Info/calendar.png"
+                  />
+                </div>
+              </div>
+              <div class="vector-parent1">
+                <img
+                    class="frame-child2"
+                    alt=""
+                    src="@/assets/icon/Profile/Info/rectangle-16.png"
+                />
+
+                <b class="b3">내 다이어리</b>
+                <div class="group-container">
+                  <img
+                      class="group-icon3"
+                      alt=""
+                      src="@/assets/icon/Profile/Info/diary.png"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-parent3">
+            <div class="vector-parent2">
+              <img
+                  class="frame-child3"
+                  alt=""
+                  src="@/assets/icon/Profile/Info/rectangle-16.png"
+              />
+
+              <b class="ai">AI 추천 목록</b>
+              <div class="image-2-wrapper">
+                <img
+                    class="image-2-icon"
+                    loading="lazy"
+                    alt=""
+                    src="@/assets/icon/Profile/Info/ai.png"
+                />
+              </div>
+            </div>
+            <div class="vector-parent3">
+              <img
+                  class="frame-child4"
+                  alt=""
+                  src="@/assets/icon/Profile/Info/rectangle-16.png"
+              />
+
+              <b class="b4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;개발중</b>
+              <div class="vector-frame">
+                <img
+                    class="vector-icon2"
+                    alt=""
+                    src="@/assets/icon/Profile/Info/categoryBlue.png"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="image-grid">
-      <div class="image-row">
-        <div class="image-column">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f6a0846a1aeba9255f0c603fcc961208c7825ded9d469151d1dff8010a7d7b20?apiKey=79a2b7eb54dd4ed5b8fcf22467729821&" alt="Recommended image" class="recommended-image" />
-        </div>
-        <div class="image-column">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/88e0f77ea3f67221ab657ca58b9d449f9b7c053b28400765184e26f830117d58?apiKey=79a2b7eb54dd4ed5b8fcf22467729821&" alt="Recommended image" class="recommended-image" />
-        </div>
-        <div class="image-column">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/76424190919effbc1f48bce6bcb977f5503fbf0f7fc453f6f55749c035a3a1a5?apiKey=79a2b7eb54dd4ed5b8fcf22467729821&" alt="Recommended image" class="recommended-image" />
-        </div>
-      </div>
-    </section>
-  </main>
+  </div>
 </template>
 
-<style scoped>
-.main-container {
-  align-self: center;
-  display: flex;
-  margin-top: 186px;
-  width: 481px;
-  max-width: 100%;
-  flex-direction: column;
-}
+<script setup>
 
-@media (max-width: 991px) {
-  .main-container {
-    margin-top: 40px;
-  }
-}
+</script>
 
-.user-greeting {
-  color: #000;
-  align-self: center;
-  font: 700 40px Inter, sans-serif;
-}
-
-.user-question {
-  color: #676767;
-  align-self: center;
-  margin-top: 43px;
-  font: 400 25px Inter, sans-serif;
-}
-
-@media (max-width: 991px) {
-  .user-question {
-    margin-top: 40px;
-  }
-}
-
-.image-grid {
-  margin-top: 66px;
-  padding: 0 1px;
-}
-
-@media (max-width: 991px) {
-  .image-grid {
-    max-width: 100%;
-    margin-top: 40px;
-  }
-}
-
-.image-row {
-  gap: 20px;
-  display: flex;
-}
-
-@media (max-width: 991px) {
-  .image-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-  }
-}
-
-.image-column {
-  display: flex;
-  flex-direction: column;
-  line-height: normal;
-  width: 33%;
-  margin-left: 0;
-}
-
-@media (max-width: 991px) {
-  .image-column {
-    width: 100%;
-  }
-}
-
-.recommended-image {
-  aspect-ratio: 1.14;
-  object-fit: auto;
-  object-position: center;
-  width: 141px;
-  max-width: 100%;
-  flex-grow: 1;
-}
-
-@media (max-width: 991px) {
-  .recommended-image {
-    margin-top: 28px;
-  }
-}
-
-.ai-recommendations {
-  border-radius: 15px;
-  background-color: rgba(237, 237, 237, 1);
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  font-size: 15px;
-  color: #757575;
-  font-weight: 700;
-  width: 100%;
-  padding: 20px 30px;
-}
-
-@media (max-width: 991px) {
-  .ai-recommendations {
-    margin-top: 28px;
-    padding: 0 20px;
-  }
-}
-
-.ai-recommendations-title {
-  font-family: Inter, sans-serif;
-}
-
-.ai-recommended-image {
-  aspect-ratio: 1.14;
-  object-fit: auto;
-  object-position: center;
-  width: 64px;
-  box-shadow: 3px 5px 6px 0 rgba(0, 0, 0, 0.87);
-  margin-top: 14px;
-}
+<style>
+@import "@/assets/css/Profile/Info/global.css";
+@import "@/assets/css/Profile/Info/Mypage.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 </style>

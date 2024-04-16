@@ -1,10 +1,4 @@
 <template>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-  </head>
-  <body>
     <div class="ai">
       <main class="ai-inner">
         <section class="frame-parent">
@@ -1728,9 +1722,6 @@
         </section>
       </main>
     </div>
-  </body>
-</html>
-
 </template>
 
 <script setup>

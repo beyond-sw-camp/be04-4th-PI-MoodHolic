@@ -98,6 +98,7 @@ const logout = async () => {
   padding: 20px 10px;
   border-bottom: 2px solid #ccc;
   align-self: stretch;
+  height: 60px;
 }
 
 .weather-container {

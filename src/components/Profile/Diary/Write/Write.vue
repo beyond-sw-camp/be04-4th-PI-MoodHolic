@@ -1,5 +1,4 @@
 <template>
-  <body>
   <div class="popup-overlay">
     <section class="inner">
       <div class=“layerPopup” v-if=showPopup>
@@ -92,7 +91,6 @@
       </div>
     </section>
   </div>
-  </body>
 </template>
 
 <script setup>

@@ -2,10 +2,14 @@ import { createRouter, createWebHistory } from 'vue-router';
 import store from '@/store/store.js';
 import LogIn from "@/components/main/LogIn/LogIn.vue";
 import SignUp from "@/components/main/SighUp/SignUp.vue";
-import Mypage from "@/components/header/Mypage.vue";
-import Welcome from "@/components/main/SighUp/Welcome.vue";
 import Calendar from "@/components/main/MemberMain.vue";
-import NonMemberMain from "@/components/main/NonMemberMain.vue";
+// import View from "@/components/Profile/Diary/View/View.vue";
+// import Write from "@/components/Profile/Diary/Write/Write.vue";
+// import Info from "@/components/Profile/Info/Info.vue";
+// import Mypage from "@/components/header/Mypage.vue";
+// import Welcome from "@/components/main/SighUp/Welcome.vue";
+// import NonMemberMain from "@/components/main/NonMemberMain.vue";
+import Preview from "@/components/Profile/Diary/Preview/Preview.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -18,13 +22,29 @@ const router = createRouter({
             path: '/signup',
             component: SignUp
         },
+        // {
+        //     path: '/view',
+        //     component: View
+        // },
+        // {
+        //     path: '/write',
+        //     component: Write
+        // },
+        // {
+        //     path: '/info',
+        //     component: Info
+        // },
+        // {
+        //     path: '/mypage',
+        //     component: Mypage
+        // },
+        // {
+        //     path: '/welcome',
+        //     component: Welcome
+        // },
         {
-            path: '/mypage',
-            component: Mypage
-        },
-        {
-            path: '/welcome',
-            component: Welcome
+            path: '/preview',
+            component: Preview
         },
         {
             path: '/',

@@ -1,9 +1,10 @@
 server:
+#  port: 443
   port: 8888
-  ssl:
-    key-store: classpath:keystore.p12
-    key-store-password: changeit
-    key-store-type: PKCS12
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: changeit
+#    key-store-type: PKCS12
   tomcat:
     uri-encoding: UTF-8
 spring:

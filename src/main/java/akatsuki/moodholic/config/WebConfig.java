@@ -19,7 +19,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedOrigins(
 //                        "*"
                         "http://localhost:8081",  // React 개발 서버
-                        "https://localhost:5173"   // Vue 개발 서버
+                        "http://localhost:5173"   // Vue 개발 서버
                 )
                 .allowedMethods("*")
                 .allowedHeaders("*")

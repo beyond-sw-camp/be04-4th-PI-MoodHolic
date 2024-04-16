@@ -3,7 +3,17 @@ import store from '@/store/store.js';
 import Main from "@/components/main/Main.vue";
 import Calendar from "@/components/calendar/Calendar.vue";
 import SignUp from "@/components/main/SighUp/SignUp.vue";
+
 import LogIn from "@/components/main/LogIn/LogIn.vue";
+
+import Info from "@/components/Profile/Info/Info.vue";
+// import Write from "@/components/Profile/Diary/Write/Write.vue";
+import Welcome from "@/components/main/Welcome/Welcome.vue";
+// import View from "@/components/Profile/Diary/View/View.vue";
+// import Preview from "@/components/Profile/Diary/Preview/Preview.vue";
+// import List from "@/components/Profile/AIrecommended/List/List.vue";
+// import Card from "@/components/Profile/AIrecommended/Card/Card.vue";
+
 
 const router = createRouter({
     history: createWebHistory(),
@@ -17,8 +27,12 @@ const router = createRouter({
             component: SignUp
         },
         {
+            path: '/info',
+            component: Info
+        },
+        {
             path: '/welcome',
-            component: () => import("@/components/main/Welcome/Welcome.vue")
+            component: Welcome
         },
         {
             path: '/',

@@ -1,18 +1,16 @@
 <template>
   <header>
-    <Header/>
+    <MainHeader/>
   </header>
   <main>
-      <router-view/>
+    <router-view/>
   </main>
-
 </template>
 
 <script setup>
-import Header from "@/components/common/MainHeader.vue";
 import { onMounted } from 'vue';
 import { useStore } from 'vuex';
-import router from "@/router/router.js";
+import MainHeader from "@/components/common/MainHeader.vue";
 
 
 const store = useStore();

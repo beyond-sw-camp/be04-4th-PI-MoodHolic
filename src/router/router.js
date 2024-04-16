@@ -2,12 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router';
 import store from "@/store/store.js";
 import LogIn from "@/components/logIn/LogIn.vue";
 import SignUp from "@/components/signup/SignUp.vue";
-import Mypage from "@/components/header/Mypage.vue";
+import Mypage from "@/components/mypage/Mypage.vue";
 import Info from "@/components/mypage/Info.vue";
 import Statistics from "@/components/header/statistics/Statistics.vue";
 import Welcome from "@/components/signup/Welcome.vue";
-import MemberMain from "@/components/common/MemberMain.vue";
 import Preview from "@/components/mypage/Diary/Preview/Preview.vue";
+import MemberMain from "@/components/common/MemberMain.vue";
 import NonMemberMain from "@/components/common/NonMemberMain.vue";
 
 const router = createRouter({

@@ -50,44 +50,44 @@ const showMovieGraph = () => {
 </script>
 
 <style scoped>
-.graph {
-  background-color: #FFF4CC;
-  padding: 30px;
-  border-radius: 30px;
-  align-items: center;
-  margin-left: 5%;
-  margin-right: 5%;
-}
+  .graph {
+    background-color: #FFF4CC;
+    padding: 30px;
+    border-radius: 30px;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 
-.button-container {
-  text-align: center;
-  margin-bottom: 20px;
-}
+  .button-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-.button-container button {
-  margin: 0 10px;
-}
+  .button-container button {
+    margin: 0 10px;
+  }
 
-.but {
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #D9D9D9;
-  background-color: #D9D9D9;
-  color: #000000;
-  font-size: 15px;
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-  transition: background-color 0.3s ease;
-}
+  .but {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #D9D9D9;
+    background-color: #D9D9D9;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease;
+  }
 
-.but:hover {
-  background-color: #333333; /* 마우스를 올렸을 때 배경색 변경 */
-  color: #FFFFFF; /* 글자색 변경 */
-}
+  .but:hover {
+    background-color: #333333; /* 마우스를 올렸을 때 배경색 변경 */
+    color: #FFFFFF; /* 글자색 변경 */
+  }
 
-.but.active {
-  background-color: #FEDB56;
-  border-color: #FEDB56;
-}
+  .but.active {
+    background-color: #FEDB56;
+    border-color: #FEDB56;
+  }
 </style>

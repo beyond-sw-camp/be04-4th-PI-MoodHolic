@@ -239,10 +239,7 @@ const getDiary = async(index)=> {
 </script>
 
 
-
-
-
-<style>
+<style scoped>
 
 .vc-container .vc-weekday-1, .vc-container .vc-weekday-7 {
   color: red;

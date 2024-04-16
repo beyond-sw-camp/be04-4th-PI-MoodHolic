@@ -15,7 +15,7 @@ import { Chart, registerables } from 'chart.js';
 let memberId = ref(null);
 
 const getMemberId = async()=>{
-  
+
   const authToken = 'Bearer '+localStorage.getItem('authToken');
   console.log(authToken);
 
@@ -218,7 +218,7 @@ function toggleActive(period) {
 }
 </script>
 
-<style>
+<style scoped>
 /* Add your styles here */
 .but {
   margin: 10px;
@@ -229,7 +229,7 @@ function toggleActive(period) {
   color: #000000;
   font-size: 15px;
   font-weight: 600;
-  font-family: 'Inter', sans-serif; 
+  font-family: 'Inter', sans-serif;
 }
 
 .but:hover {
@@ -239,6 +239,6 @@ function toggleActive(period) {
 .but.active {
   background-color: #FEDB56;
   border-color: #FEDB56;
-  
+
 }
 </style>

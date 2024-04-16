@@ -91,50 +91,49 @@ const logout = async () => {
 
 
 <style scoped>
-.line-parent {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 10px;
-  border-bottom: 2px solid #ccc;
-  align-self: stretch;
-  height: 60px;
-}
+  .line-parent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    border-bottom: 2px solid #ccc;
+    align-self: stretch;
+    height: 60px;
+  }
 
-.weather-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
+  .weather-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
 
-.weather-icon {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-}
+  .weather-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
 
-.temperature {
-  font-size: 18px;
-  color: #333;
-}
+  .temperature {
+    font-size: 18px;
+    color: #333;
+  }
 
-.moodholiclogo-icon {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 100px;
-  height: auto;
-}
+  .moodholiclogo-icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100px;
+    height: auto;
+  }
 
-.right-icons {
-  display: flex;
-  align-items: center;
-}
+  .right-icons {
+    display: flex;
+    align-items: center;
+  }
 
-.header-icon {
-  width: 30px; /* 아이콘 크기 일관성 */
-  height: 30px; /* 아이콘 크기 일관성 */
-  margin-left: 10px; /* 아이콘 간 간격 */
-}
-
+  .header-icon {
+    width: 30px; /* 아이콘 크기 일관성 */
+    height: 30px; /* 아이콘 크기 일관성 */
+    margin-left: 10px; /* 아이콘 간 간격 */
+  }
 </style>

@@ -205,7 +205,7 @@
 // 데이터 바인딩이나 이벤트 처리 코드가 들어갈 자리입니다.
 </script>
 
-<style>
+<style scoped>
   @import "@/assets/css/Profile/Diary/Preview/Preview.css";
   @import "@/assets/css/Profile/Diary/Preview/global.css";
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');

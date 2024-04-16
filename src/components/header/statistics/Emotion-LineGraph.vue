@@ -1,5 +1,5 @@
 <template>
-  
+
   <div align="center">
     <button class="but" :class="{ 'active': isYearClicked }" @click="getYear">연간</button>
     <button class="but" :class="{ 'active': isMonthClicked }" @click="getMonth">월간</button>
@@ -14,11 +14,10 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { Chart, registerables } from 'chart.js';
-import { Line } from 'vue-chartjs'
 let memberId = ref(null);
 
 const getMemberId = async()=>{
-  
+
   const authToken = 'Bearer '+localStorage.getItem('authToken');
   console.log(authToken);
 
@@ -167,7 +166,7 @@ const getYear = async () => {
     isMonthClicked.value = false;
     isWeekClicked.value = false;
     isDayClicked.value = false;
-    updateChartWithNewData(newData);
+    await updateChartWithNewData(newData);
   }
 };
 
@@ -179,7 +178,7 @@ const getMonth = async () => {
     isMonthClicked.value = true;
     isWeekClicked.value = false;
     isDayClicked.value = false;
-    updateChartWithNewData(newData);
+    await updateChartWithNewData(newData);
   }
 };
 
@@ -190,7 +189,7 @@ const getWeek = async () => {
     isMonthClicked.value = false;
     isWeekClicked.value = true;
     isDayClicked.value = false;
-    updateChartWithNewData(newData);
+    await updateChartWithNewData(newData);
   }
 };
 const getDay = async () => {
@@ -200,7 +199,7 @@ const getDay = async () => {
     isMonthClicked.value = false;
     isWeekClicked.value = false;
     isDayClicked.value = true;
-    updateChartWithNewData(newData);
+    await updateChartWithNewData(newData);
   }
 };
 
@@ -217,38 +216,38 @@ function destroyChart() {
   if (myChart) {
     myChart.destroy();
   }
-  
+
 }
 
 </script>
 
 <style scoped>
-.but {
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #D9D9D9;
-  background-color: #D9D9D9;
-  color: #000000;
-  font-size: 15px;
-  font-weight: 600;
-  font-family: 'Inter', sans-serif; 
-}
-
-.but:hover {
-  background-color: #333333; /* 마우스를 올렸을 때 배경색 변경 */
-}
-
-.but.active {
-  background-color: #FEDB56;
-  border-color: #FEDB56;
-}
-
-@media screen and (max-width: 600px) {
   .but {
-    padding: 3px;
-    font-size: 10px;
-    margin: 3px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #D9D9D9;
+    background-color: #D9D9D9;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
   }
-}
+
+  .but:hover {
+    background-color: #333333; /* 마우스를 올렸을 때 배경색 변경 */
+  }
+
+  .but.active {
+    background-color: #FEDB56;
+    border-color: #FEDB56;
+  }
+
+  @media screen and (max-width: 600px) {
+    .but {
+      padding: 3px;
+      font-size: 10px;
+      margin: 3px;
+    }
+  }
 </style>

@@ -125,7 +125,7 @@ const buttonClick = () => {
 };
 </script>
 
-<style>
+<style scoped>
   @import "@/assets/css/Profile/Diary/Write/global.css";
   @import "@/assets/css/Profile/Diary/Write/write.css";
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');

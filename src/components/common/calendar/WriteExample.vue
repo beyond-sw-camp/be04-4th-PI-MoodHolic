@@ -169,11 +169,5 @@ const uploadImage = async(status) => {
         console.error('Error:', error);
       });
 };
-
-
-
 </script>
 
-<style scoped>
-
-</style>

@@ -17,10 +17,13 @@ export default createStore({
         login({ commit }, token) {
             commit('setAuth', { isAuthenticated: true, token });
             localStorage.setItem('authToken', token);
+            // location.reload(true);
+
         },
         logout({ commit }) {
             commit('setAuth', { isAuthenticated: false, token: null });
             localStorage.removeItem('authToken');
+            location.reload(true);
         },
         checkAuth({ commit }) {
             const token = localStorage.getItem('authToken');
@@ -29,6 +32,9 @@ export default createStore({
             } else {
                 commit('setAuth', { isAuthenticated: false, token: null });
             }
+        },
+        initializeAuth({ dispatch }) {
+            dispatch('checkAuth');
         }
     },
     getters: {
@@ -40,3 +46,4 @@ export default createStore({
         }
     }
 });
+

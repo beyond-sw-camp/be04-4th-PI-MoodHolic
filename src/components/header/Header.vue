@@ -75,7 +75,7 @@ const logout = async () => {
     });
     if (response.ok) {
       await store.dispatch('logout');  // 상태 업데이트
-      await router.push('/login');  // 로그인 페이지로 리다이렉션
+      await router.push('/');
     } else {
       throw new Error('Failed to logout');
     }
@@ -85,13 +85,6 @@ const logout = async () => {
 };
 
 </script>
-
-
-
-
-
-
-
 
 
 <style scoped>

@@ -11,6 +11,7 @@
               <h2 class="h2">오늘 하루 기분은 어떠신가요?</h2>
             </div>
           </div>
+
           <div class="frame-container">
             <div class="frame-div">
               <div class="frame-parent1">
@@ -32,7 +33,7 @@
                   </div>
                 </div>
 
-                <button type="button" onclick="alert('내 관심 랭킹')">
+
                 <div class="vector-group">
                   <img
                     class="rectangle-icon"
@@ -48,7 +49,6 @@
                     />
                   </div>
                 </div>
-                </button>
 
               </div>
               <div class="frame-parent2">
@@ -134,7 +134,7 @@
 </script>
 
 <style>
-@import "src/assets/css/Profile/Info/global.css";
-@import "src/assets/css/Profile/Info/Info.css";
+@import "@/assets/css/Profile/Info/global.css";
+@import "@/assets/css/Profile/Info/Info.css";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 </style>

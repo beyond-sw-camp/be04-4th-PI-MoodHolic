@@ -47,10 +47,10 @@ public class FoodController {
         return ResponseEntity.ok().body(foodFacadeService.findLikedFoodNames());
     }
 
-    @GetMapping("/category/likes-count")
-    public ResponseEntity<List<Object[]>> countFoodCategorysWithLikes() {
-        return ResponseEntity.ok().body(foodFacadeService.countFoodCategorysWithLikes());
-    }
+//    @GetMapping("/category/likes-count")
+//    public ResponseEntity<List<Object[]>> countFoodCategorysWithLikes() {
+//        return ResponseEntity.ok().body(foodFacadeService.countFoodCategorysWithLikes());
+//    }
 
     @GetMapping("/liked/{memberId}")
     @Operation(summary = "회원의 좋아요 표시된 음식 조회", description = "한 회원이 좋아요 표시한 음식 조회 기능")
@@ -61,7 +61,7 @@ public class FoodController {
     @GetMapping("/liked/{memberId}/count")
     @Operation(summary = "회원의 좋아요 표시된 음식 횟수 조회", description = "한 회원이 좋아요 표시한 음식 횟수 조회 기능")
     public ResponseEntity<HashMap<String,Integer>> countFoodCategoryWithMemberLike(@PathVariable long memberId){
-        return ResponseEntity.ok().body( foodFacadeService.countFoodCategoryWithMemberLike(memberId) ) ;
+        return ResponseEntity.ok().body( foodFacadeService.countFoodNameWithMemberLike(memberId) ) ;
     }
 
     @GetMapping("/genres/{memberId}")

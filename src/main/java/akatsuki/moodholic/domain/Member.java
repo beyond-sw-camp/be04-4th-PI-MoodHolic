@@ -34,5 +34,8 @@ public class Member {
     @Column(name = "provider_code")
     private String providerCode;
 
+    public Member(int memberId) {
+        this.memberId=memberId;
+    }
 }
 

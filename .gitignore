@@ -1,8 +1,15 @@
 # OSX
 .DS_Store
 
+build/classes/
+build/generated/
+build/reports/
+build/resources/
+build/test-results/
+build/tmp/
+build/resolvedMainClassName
 # Xcode
-build/
+
 *.pbxuser
 !default.pbxuser
 *.mode1v3

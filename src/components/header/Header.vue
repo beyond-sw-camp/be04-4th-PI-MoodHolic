@@ -32,8 +32,9 @@ const weatherInfo = ref({
   temperature: 'Loading...',
   icon: null
 });
-
+let count = 0;
 const fetchWeather = async () => {
+  count++;
   const city = 'Seoul';
   const apiKey = 'aa237cabd8bd6dd1e5374da90756d5b5';
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -44,10 +45,12 @@ const fetchWeather = async () => {
       throw new Error('Failed to fetch weather data');
     }
     const data = await response.json();
-    weatherInfo.value = {
-      temperature: data.main.temp,
-      icon: data.weather[0].icon
-    };
+    if(count === 1) {
+      weatherInfo.value = {
+        temperature: data.main.temp,
+        icon: data.weather[0].icon
+      };
+    }
   } catch (error) {
     console.error('Failed to fetch weather data:', error);
     weatherInfo.value = {

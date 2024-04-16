@@ -26,19 +26,34 @@
   </div>
 </template>
 
+
 <script setup>
-function onGoogleLogin() {
-  window.location.href = 'http://localhost:8888/oauth2/authorization/google';
-}
+import router from "@/router/router.js";
 
-function onKakaoLogin() {
-  window.location.href = 'http://localhost:8888/oauth2/authorization/kakao';
+async function onGoogleLogin() {
+  try {
+    const response = await fetch('http://localhost:8888/oauth2/authorization/google', {
+      method: 'GET',
+      credentials: 'include'
+    });
 
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+    const data = await response.json();
+
+    if (data.isNewUser) {
+      await router.push('/welcome');
+    } else {
+      await router.push('/home');
+    }
+  } catch (error) {
+    console.error('Failed to login:', error);
+  }
 }
 </script>
 
 <style scoped>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 .main-container {
   display: flex;

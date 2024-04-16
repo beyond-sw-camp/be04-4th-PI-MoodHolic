@@ -3,7 +3,10 @@
     <Header/>
   </header>
   <main>
+    <div class="main-container">
     <router-view/>
+    </div>
+
   </main>
 
 </template>
@@ -36,7 +39,7 @@ onMounted(async () => {
     localStorage.setItem('authToken', authToken);
     await store.dispatch('login', authToken);
     router.push(router.currentRoute.value); // 상태 갱신 후 현재 라우트로 리다이렉트
-// 쿠키에서 refreshToken 검색 후 로컬 스토리지에 저장
+    // 쿠키에서 refreshToken 검색 후 로컬 스토리지에 저장
   }
   if (token) {
     await store.dispatch('login', token);

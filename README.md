@@ -1,7 +1,8 @@
 ```
+📂 Mood.Holic.FE
+│
 📂 .github
 ├─ 📂 Template
-📂 public
 📂 public
 ├─ 📂 Favicon.ico
 📂 src

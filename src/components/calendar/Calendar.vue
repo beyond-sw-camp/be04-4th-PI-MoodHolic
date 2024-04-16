@@ -74,7 +74,49 @@ import happyImg from '@/components/calendar/img0.png';
 import sadImg from '@/components/calendar/img1.png';
 import sosoImg from '@/components/calendar/img2.png';
 
+let memberId = ref(null);
 
+const getMemberId = async()=>{
+  
+  const authToken = 'Bearer '+localStorage.getItem('authToken');
+  console.log(authToken);
+
+  const headers = {
+    'Authorization': authToken
+  };
+
+  await fetch('http://localhost:8888/userinfo', {
+    method: 'GET',
+    headers: headers,
+    credentials: 'include'  // 쿠키 포함시킴
+  })
+  .then(response => {
+    // 서버 응답을 처리
+    if (!response.ok) {
+      throw new Error('네트워크 오류 발생');
+    }
+    return response.text();
+  })
+  .then(data => {
+    // 응답 데이터 처리
+    console.log(data);
+    const memberIdPattern = /memberId=(\d+)/;
+    const memberIdMatch = data.match(memberIdPattern);
+    if (memberIdMatch) {
+       memberId = memberIdMatch[1];
+       console.log("Member ID:", memberId); // "Member ID: 4"
+       getMemberDate();
+    } else {
+      console.error("멤버 ID를 찾을 수 없음");
+    }
+
+  })
+  .catch(error => {
+    // 오류 처리
+    console.error('오류 발생:', error);
+  });
+}
+getMemberId();
 
 const calendar = ref(null);
 const date = ref([]);
@@ -104,7 +146,8 @@ const closePopup = () => {
 
 
 const getMemberDate = async()=> {
-  await fetch('http://localhost:8888/calendar/1')
+  console.log(memberId);
+  await fetch(`http://localhost:8888/calendar/${memberId}`)
   .then(response => {
             if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -119,7 +162,7 @@ const getMemberDate = async()=> {
     updateAttributes(data.length); // Update attributes after receiving data
   })
   };
-getMemberDate();
+
 
 
 function updateAttributes(dataLength) {

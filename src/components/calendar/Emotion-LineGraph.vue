@@ -14,6 +14,49 @@
 import { ref, onMounted } from 'vue';
 import { Chart, registerables } from 'chart.js';
 import { Line } from 'vue-chartjs'
+let memberId = ref(null);
+
+const getMemberId = async()=>{
+  
+  const authToken = 'Bearer '+localStorage.getItem('authToken');
+  console.log(authToken);
+
+  const headers = {
+    'Authorization': authToken
+  };
+
+  await fetch('http://localhost:8888/userinfo', {
+    method: 'GET',
+    headers: headers,
+    credentials: 'include'  // 쿠키 포함시킴
+  })
+  .then(response => {
+    // 서버 응답을 처리
+    if (!response.ok) {
+      throw new Error('네트워크 오류 발생');
+    }
+    return response.text();
+  })
+  .then(data => {
+    // 응답 데이터 처리
+    console.log(data);
+    const memberIdPattern = /memberId=(\d+)/;
+    const memberIdMatch = data.match(memberIdPattern);
+    if (memberIdMatch) {
+       memberId = memberIdMatch[1];
+       console.log("Member ID:", memberId); // "Member ID: 4"
+       getYear();
+    } else {
+      console.error("멤버 ID를 찾을 수 없음");
+    }
+
+  })
+  .catch(error => {
+    // 오류 처리
+    console.error('오류 발생:', error);
+  });
+}
+getMemberId();
 
 Chart.register(...registerables);
 
@@ -33,6 +76,7 @@ const options = {
     y: {
       beginAtZero: false,
       max: 10,
+      min: 0,
       grid: {
         display: false
       }
@@ -82,28 +126,28 @@ async function fetchDataAndSetData(url, dataRef) {
 
 async function getYearData() {
   if (!yearData) {
-    yearData = await fetchData('http://localhost:8888/graph/year/1');
+    yearData = await fetchData(`http://localhost:8888/graph/year/${memberId}`);
   }
   return yearData;
 }
 
 async function getMonthData() {
   if (!monthData) {
-    monthData = await fetchData('http://localhost:8888/graph/month/1');
+    monthData = await fetchData(`http://localhost:8888/graph/month/${memberId}`);
   }
   return monthData;
 }
 
 async function getWeekData() {
   if (!weekData) {
-    weekData = await fetchData('http://localhost:8888/graph/week/1');
+    weekData = await fetchData(`http://localhost:8888/graph/week/${memberId}`);
   }
   return weekData;
 }
 
 async function getDayData() {
   if (!dayData) {
-    dayData = await fetchData('http://localhost:8888/graph/day/1');
+    dayData = await fetchData(`http://localhost:8888/graph/day/${memberId}`);
   }
   return dayData;
 }
@@ -125,7 +169,7 @@ const getYear = async () => {
     updateChartWithNewData(newData);
   }
 };
-getYear();
+
 
 const getMonth = async () => {
   const newData = await getMonthData();

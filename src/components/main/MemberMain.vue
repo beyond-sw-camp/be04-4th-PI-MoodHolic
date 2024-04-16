@@ -68,7 +68,43 @@
   </div>
 
   <button @click="openWritePopup()"> 글쓰기</button>
-  <a v-if="writeActive"> <Write/></a>
+
+  <div class="popup-overlay" v-if="writeActive">
+    <div class="popup-content">
+          <span class="close" @click="closeEditPopup">&times;</span>
+          <h2 align = "center"> 다이어리 작성</h2>
+          <div class="form-group">
+            <img
+                        class="icon"
+                        loading="lazy"
+                        alt=""
+                        src="@/assets/icon/Profile/Diary/Write/-20240405--218-1@2x.png"
+                    />
+            <label for="editTitle">오늘의 기분</label>
+            <!-- <input type="text" id="editTitle" v-model="" > -->
+            <input type="text" id="editTitle" placeholder="오늘의 기분을 한줄 요약해 주세요!"  v-model="editedFeed.summary">
+          </div>
+          <div class="form-group">
+            <img
+                      class="icon1"
+                      loading="lazy"
+                      alt=""
+                      src="@/assets/icon/Profile/Diary/Write/-20240405--218-1@2x.png"
+            />
+            <label for="editContent" >하루 이야기</label>
+            <!-- <textarea style="height: 450px;" id="editContent" v-model="editedFeed.boardContent"></textarea> -->
+            <textarea placeholder="하루 동안 이야기를 들려주세요!" style="height: 450px;"  v-model="editedFeed.content"/>
+          </div>
+          
+          <form @submit.prevent="uploadImage">
+                  <input type="file" @change="previewImage" /> <!-- @change 이벤트를 사용하여 파일 선택 시 previewImage 메서드 호출 -->
+                  <img :src="imagePreview"/> <!-- 이미지 미리보기 -->
+                  <br />
+                  <button type="submit" @click="uploadImage(1)" >저장</button> 
+                  <button type="submit" @click="uploadImage(0)" >임시저장</button>
+          </form>
+        </div>
+  </div>
 </template>
 
 <script setup>
@@ -246,6 +282,108 @@ const getDiary = async(index)=> {
   })
   };
 
+  const img = ref(null);
+  const fileInput = ref(null); // ref 선언
+  const editedFeed = {
+        content:'',
+        date:'',
+        imgPath: '',
+        summary: '',
+        member: {
+            memberId: memberId
+        },
+        status:'',
+    };
+
+    console.log(Date.now());
+
+
+    const saveEditedFeed = async (imgUrl,getStatus) => {
+        const today = new Date();
+        const authToken = 'Bearer ' + localStorage.getItem('authToken');
+        const headers = {
+            'Authorization': authToken,
+            'Content-Type': 'application/json'
+        };
+        // 날짜를 원하는 형식으로 변환
+        console.log(today);
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        const formattedDate = `${year}-${month}-${day}`; // "2024-04-15"와 같은 형식으로 반환됩니다.
+
+        editedFeed.status = getStatus;
+        editedFeed.member.memberId = memberId;
+        editedFeed.date = formattedDate;
+        editedFeed.imgPath = imgUrl;
+        console.log(editedFeed);
+
+        try {
+            const response = await fetch(`http://localhost:8888/diary`, {
+                method: 'POST',
+                headers: headers,
+                credentials: 'include',
+                body: JSON.stringify(editedFeed) // 객체를 JSON 문자열로 변환하여 요청 본문으로 설정
+            }).then(data=>{
+                console.log(data);
+            });
+        
+        } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
+        }
+    };
+
+    const imagePreview = ref(null); // 이미지 미리보기 URL
+
+    const previewImage = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = () => {
+                imagePreview.value = reader.result;
+            };
+            reader.readAsDataURL(file);
+        }   
+    };
+
+    const uploadImage = async(status) => {
+        const authToken = 'Bearer ' + localStorage.getItem('authToken');
+        const headers = {
+            'Authorization': authToken,
+        };
+        const fileInput = document.querySelector('input[type="file"]');
+        const file = fileInput.files[0];
+        if(file ==null) {
+            saveEditedFeed("",status);
+            return;
+        }
+        const formData = new FormData();
+        formData.append('file', file);
+
+        // fetch(`http://localhost:8000/member-service/image/profile/${memberId.value}`, {
+        await fetch(`http://localhost:8888/image`, {
+            method: 'POST',
+            headers: headers,
+            credentials: 'include',
+            body: formData
+        })
+        .then(response => {
+            // 서버 응답을 JSON으로 파싱하지 않음
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            // 응답 반환
+            return response.json();
+        })
+        .then(data => {
+            console.log('Image URL:', data);
+            saveEditedFeed(data.imgUrl,status);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    };
+
 </script>
 
 
@@ -253,6 +391,9 @@ const getDiary = async(index)=> {
 
 
 <style>
+@import "/src/assets/css/Profile/Diary/Write/global.css";
+  @import "@/assets/css/Profile/Diary/Write/write.css";
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 .vc-container .vc-weekday-1, .vc-container .vc-weekday-7 {
   color: red;

@@ -2,6 +2,7 @@ package akatsuki.moodholic.service.facade;
 
 import akatsuki.moodholic.domain.*;
 import akatsuki.moodholic.dto.ResponseDiary;
+import akatsuki.moodholic.dto.ResponseDiaryPost;
 import akatsuki.moodholic.etc.DataParse;
 import akatsuki.moodholic.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,7 +74,7 @@ public class DiaryFacadeService {
         return emotionValue;
     }
 
-    public List<Diary> getMemberDiary(long memberId){
+    public List<Diary> getMemberDiaries(long memberId){
         return diaryService.getMemberDiaries(memberId);
     }
 
@@ -93,15 +94,14 @@ public class DiaryFacadeService {
     }
 
     @Transactional
-    public String postDiary(Diary requestdiary) {
-        String prompt=diaryService.postDiary(requestdiary);
-        if(prompt.equals("임시저장"))
-            return "임시저장";
-        if( prompt.equals("실패"))
-            return "중복";
-        DataParse response = chatGPTService.Response(prompt);
-        saveGPTResponse(requestdiary.getMember().getMemberId(),response,requestdiary);
-        return "저장";
+    public ResponseDiaryPost postDiary(Diary requestdiary) {
+        ResponseDiaryPost prompt=diaryService.postDiary(requestdiary);
+
+        if(!prompt.getResponse().equals("임시저장") && !prompt.getResponse().equals("실패")) {
+            DataParse response = chatGPTService.Response(prompt.getResponse());
+            saveGPTResponse(requestdiary.getMember().getMemberId(), response, requestdiary);
+        }
+        return prompt;
     }
 
     private int saveGPTResponse(long memberId, DataParse response, Diary diary) {

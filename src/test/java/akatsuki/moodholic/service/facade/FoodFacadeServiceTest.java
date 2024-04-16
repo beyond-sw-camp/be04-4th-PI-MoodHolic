@@ -4,7 +4,6 @@ import akatsuki.moodholic.domain.Diary;
 import akatsuki.moodholic.domain.DiaryFood;
 import akatsuki.moodholic.domain.Food;
 import akatsuki.moodholic.dto.MemberFoodGenreRanking;
-import akatsuki.moodholic.dto.ResponseDiary;
 import akatsuki.moodholic.repository.DiaryFoodDAO;
 import akatsuki.moodholic.repository.FoodDAO;
 import akatsuki.moodholic.service.DiaryFoodService;
@@ -84,7 +83,7 @@ class FoodFacadeServiceTest {
     public void getMemberFoodGenreRanking(){
         long memberId= 1;
         MemberFoodGenreRanking memberFoodGenreRanking = foodFacadeService.getMemberFoodGenreRanking(memberId);
-        List<Diary> diaryList = diaryFacadeService.getMemberDiary(memberId);
+        List<Diary> diaryList = diaryFacadeService.getMemberDiaries(memberId);
         List<DiaryFood> diaryFoodList = diaryFoodService.getMemberLikeFood(diaryList);
 
         diaryFoodList.forEach(diaryFood->{

@@ -51,7 +51,7 @@ class MovieFacadeServiceTest {
     void getMemberMovieGenreRanking() {
         long memberId = 1;
         MemberMovieGenreRanking memberMovieGenreRanking = movieFacadeService.getMemberMovieGenreRanking(memberId);
-        List<Diary> diaryList = diaryFacadeService.getMemberDiary(memberId);
+        List<Diary> diaryList = diaryFacadeService.getMemberDiaries(memberId);
         List<DiaryMovie> diaryMovieList = diaryMovieService.getMemberLikedMovie(diaryList);
         diaryMovieList.forEach(diaryMovie -> {
             if(diaryMovie.getMovieId().getMovieGenre().equals(memberMovieGenreRanking.getTopName())){

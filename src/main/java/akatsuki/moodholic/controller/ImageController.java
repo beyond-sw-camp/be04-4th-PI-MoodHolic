@@ -1,5 +1,6 @@
 package akatsuki.moodholic.controller;
 
+import akatsuki.moodholic.dto.ResponseImage;
 import akatsuki.moodholic.service.ImageService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -25,11 +26,11 @@ public class ImageController {
 
     @PostMapping("")
     @Operation(summary = "이미지 업로드", description = "단순 이미지 업로드 기능")
-    public ResponseEntity<String> upload(@RequestParam("file") MultipartFile file) throws IOException {
+    public ResponseEntity<ResponseImage> upload(@RequestParam("file") MultipartFile file) throws IOException {
         System.out.println("image upload request..");
         String imageUrl = imageService.uploadImage(file);
         System.out.println("imageUrl = " + imageUrl);
-        return ResponseEntity.status(HttpStatus.OK).body(imageUrl);
+        return ResponseEntity.ok().body(new ResponseImage(imageUrl));
     }
 
     @PostMapping("/profile/{memberId}")
@@ -38,7 +39,7 @@ public class ImageController {
         System.out.println("profile image upload request..");
         String imageUrl = imageService.profileUploadImage(memberId,file);
         System.out.println("imageUrl = " + imageUrl);
-        return ResponseEntity.status(HttpStatus.OK).body(imageUrl);
+        return ResponseEntity.ok().body(imageUrl);
     }
 
     @PostMapping("/diary/{diaryId}")

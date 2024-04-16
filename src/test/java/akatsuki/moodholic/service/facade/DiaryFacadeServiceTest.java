@@ -3,6 +3,7 @@ package akatsuki.moodholic.service.facade;
 import akatsuki.moodholic.domain.Diary;
 import akatsuki.moodholic.domain.Member;
 import akatsuki.moodholic.dto.ResponseDiary;
+import akatsuki.moodholic.dto.ResponseDiaryPost;
 import akatsuki.moodholic.repository.DiaryDAO;
 import akatsuki.moodholic.repository.MemberDAO;
 import org.junit.jupiter.api.*;
@@ -66,9 +67,9 @@ class DiaryFacadeServiceTest {
         Member member = memberDAO.findById(memberId).orElseThrow();
         Testdiary.setMember(member);
         /*when*/
-        String text = diaryFacadeService.postDiary(Testdiary);
+        ResponseDiaryPost text = diaryFacadeService.postDiary(Testdiary);
         /*then*/
-        assertEquals("임시저장",text);
+        assertEquals("임시저장",text.getResponse());
     }
     //    다이어리 저장
     @Test
@@ -79,9 +80,9 @@ class DiaryFacadeServiceTest {
         Testdiary.setMember(member);
         Testdiary.setStatus(1);
         /*when*/
-        String text = diaryFacadeService.postDiary(Testdiary);
+        ResponseDiaryPost text = diaryFacadeService.postDiary(Testdiary);
         /*then*/
-        assertEquals("저장",text);
+        assertEquals("저장",text.getResponse());
     }
     //    다이어리 중복저장
     @Test
@@ -90,9 +91,9 @@ class DiaryFacadeServiceTest {
         /*given*/
         Diary diary = diaryFacadeService.getDiary(diaryId).getDiary();
         /*when*/
-        String text = diaryFacadeService.postDiary(diary);
+        ResponseDiaryPost text = diaryFacadeService.postDiary(diary);
         /*then*/
-        assertEquals("중복",text);
+        assertEquals("중복",text.getResponse());
     }
 
     @Test

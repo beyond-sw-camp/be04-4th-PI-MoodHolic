@@ -5,9 +5,10 @@
     <button class="but" :class="{ 'active': isMonthClicked }" @click="getMonth">월간</button>
     <button class="but" :class="{ 'active': isWeekClicked }" @click="getWeek">주간</button>
     <button class="but" :class="{ 'active': isDayClicked }" @click="getDay">일간</button>
-    
   </div>
+  <div>
   <canvas ref="myChartCanvasa"></canvas>
+</div>
 </template>
 
 <script setup>
@@ -221,8 +222,7 @@ function destroyChart() {
 
 </script>
 
-<style>
-/* Add your styles here */
+<style scoped>
 .but {
   margin: 10px;
   padding: 10px;
@@ -242,6 +242,13 @@ function destroyChart() {
 .but.active {
   background-color: #FEDB56;
   border-color: #FEDB56;
-  
+}
+
+@media screen and (max-width: 600px) {
+  .but {
+    padding: 3px;
+    font-size: 10px;
+    margin: 3px;
+  }
 }
 </style>

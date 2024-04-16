@@ -86,6 +86,8 @@ const options = {
       }
     }
   }
+  
+
 };
 
 const myChartCanvasa = ref(null);

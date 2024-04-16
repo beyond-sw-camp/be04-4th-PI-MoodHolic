@@ -33,46 +33,52 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
         OAuth2User oAuth2User = super.loadUser(userRequest);
+        String registrationId = userRequest.getClientRegistration().getRegistrationId();
 
-        String registrationId = userRequest.getClientRegistration().getRegistrationId(); // 변수 재사용
+        OAuth2Response oAuth2Response = getOAuth2Response(oAuth2User, registrationId);
+        if (oAuth2Response == null) return null;
 
-        OAuth2Response oAuth2Response;
-        if (registrationId.equals("kakao")) {
-            oAuth2Response = new KakaoResponse(oAuth2User.getAttributes());
-        } else if (registrationId.equals("google")) {
-            oAuth2Response = new GoogleResponse(oAuth2User.getAttributes());
-        } else {
-            return null;
-        }
-
-        String email = oAuth2Response.getEmail();
         String providerCode = oAuth2Response.getProviderId();
-//        Optional<Member> optionalMember = memberDAO.findByEmailAndProviderId(email, providerId);
         Optional<Member> optionalMember = memberDAO.findByProviderCode(providerCode);
 
-        Member member = null;
+        Member member;
         if (optionalMember.isPresent()) {
-            member = optionalMember.get();
-            // 이미 존재하는 사용자에 대한 처리
-            member.setNickname(oAuth2Response.getNickname());
-            member.setImgPath(oAuth2Response.getThumbnail());
-            memberDAO.save(member);
-            System.out.println("이미 가입됨.: " + email + " 유저 정보를 업데이트 합니다.");
+            member = updateExistingMember(optionalMember.get(), oAuth2Response);
         } else {
-            // 새로운 사용자 생성
-            Member newMember = Member.builder()
-                    .email(email)
-                    .nickname(oAuth2Response.getNickname())
-                    .imgPath(oAuth2Response.getThumbnail())
-                    .provider(oAuth2Response.getProvider())
-                    .providerCode(providerCode)
-                    .role("ROLE_USER")
-                    .build();
-            memberDAO.save(newMember);
-            System.out.println("신규 회원: " + email);
+            member = createNewMember(oAuth2Response);
         }
 
-        // 사용자 권한 정보를 설정하기 위해 Member 객체를 기반으로 CustomOAuth2User 객체 생성
+        if (member == null) {
+            throw new IllegalStateException("Member cannot be null");
+        }
+
         return new CustomOAuth2User(member);
+    }
+
+    private Member updateExistingMember(Member member, OAuth2Response response) {
+        member.setNickname(response.getNickname());
+        member.setImgPath(response.getThumbnail());
+        return memberDAO.save(member);
+    }
+
+    private Member createNewMember(OAuth2Response response) {
+        Member newMember = Member.builder()
+                .email(response.getEmail())
+                .nickname(response.getNickname())
+                .imgPath(response.getThumbnail())
+                .provider(response.getProvider())
+                .providerCode(response.getProviderId())
+                .role("ROLE_USER")
+                .build();
+        return memberDAO.save(newMember);
+    }
+
+    private OAuth2Response getOAuth2Response(OAuth2User oAuth2User, String registrationId) {
+        if ("kakao".equals(registrationId)) {
+            return new KakaoResponse(oAuth2User.getAttributes());
+        } else if ("google".equals(registrationId)) {
+            return new GoogleResponse(oAuth2User.getAttributes());
+        }
+        return null;
     }
 }

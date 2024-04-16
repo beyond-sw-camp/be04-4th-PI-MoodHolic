@@ -21,7 +21,7 @@ class DiaryFacadeServiceTest {
     MemberDAO memberDAO;
 
     int diaryId=10;
-    private long memberId=1;
+    private long memberId=9;
     /*given*/
     /*when*/
     /*then*/

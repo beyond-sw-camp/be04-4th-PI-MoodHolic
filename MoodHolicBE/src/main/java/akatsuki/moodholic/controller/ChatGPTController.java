@@ -24,6 +24,7 @@ public class ChatGPTController {
     @GetMapping("/chat")
     public String Response(@RequestParam("prompt") String prompt) {
         ChatGPTRequest request = new ChatGPTRequest(model, prompt);
+        System.out.println("request = " + request);
         ChatGPTResponse chatGPTResponse = template.postForObject(apiURL, request, ChatGPTResponse.class);
         String responseText = chatGPTResponse.getChoices().get(0).getMessage().getContent();
         DataParse dataParse = new DataParse(responseText);

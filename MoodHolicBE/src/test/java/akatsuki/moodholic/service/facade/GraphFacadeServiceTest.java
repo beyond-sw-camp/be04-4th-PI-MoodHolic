@@ -41,7 +41,7 @@ class GraphFacadeServiceTest {
                 String[] diaryDate = diary.getDate().split("-");
 //                System.out.println("date = " + date);
 //                System.out.println("diaryDate[0] = " + diaryDate[0]);
-                if(date.equals(diaryDate[0])){
+                if(date.equals(diaryDate[0]) && diaryEmotionDAO.findByDiaryIdDiaryId(diary.getDiaryId())!= null){
                     cnt++;
                     sum+=diaryEmotionDAO.findByDiaryIdDiaryId(diary.getDiaryId()).getEmotionId();
                 }
@@ -63,7 +63,7 @@ class GraphFacadeServiceTest {
             cnt=0;
             diaryList.forEach(diary->{
                 String[] diaryDate = diary.getDate().split("-");
-                if(date.equals(diaryDate[0]+"-"+diaryDate[1])){
+                if(date.equals(diaryDate[0]+"-"+diaryDate[1]) && diaryEmotionDAO.findByDiaryIdDiaryId(diary.getDiaryId())!= null){
                     cnt++;
                     sum+=diaryEmotionDAO.findByDiaryIdDiaryId(diary.getDiaryId()).getEmotionId();
                 }
@@ -88,7 +88,7 @@ class GraphFacadeServiceTest {
                 int dayOfMonth = Integer.parseInt(diaryDate[2]);
                 int weekOfMonth = (dayOfMonth - 1) / 7 + 1;
                 String cmpDate = diaryDate[0] + "-" + diaryDate[1] + "-W" + weekOfMonth;
-                if(date.equals(cmpDate)){
+                if(date.equals(cmpDate) && diaryEmotionDAO.findByDiaryIdDiaryId(diary.getDiaryId())!= null){
                     cnt++;
                     sum+=diaryEmotionDAO.findByDiaryIdDiaryId(diary.getDiaryId()).getEmotionId();
                 }

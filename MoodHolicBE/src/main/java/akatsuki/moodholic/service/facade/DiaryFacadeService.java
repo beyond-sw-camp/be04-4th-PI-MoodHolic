@@ -105,6 +105,7 @@ public class DiaryFacadeService {
     }
 
     private int saveGPTResponse(long memberId, DataParse response, Diary diary) {
+        System.out.println("response = " + response);
         Food food = foodService.findFoodByFoodName(response.getFood().getFoodName());
         Movie movie = movieService.findByMovieName(response.getMovie().getMovieName());
         Music music = musicService.findByMusicName(response.getMusic().getMusicName());

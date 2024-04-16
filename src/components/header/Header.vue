@@ -87,13 +87,6 @@ const logout = async () => {
 </script>
 
 
-
-
-
-
-
-
-
 <style scoped>
 .line-parent {
   display: flex;

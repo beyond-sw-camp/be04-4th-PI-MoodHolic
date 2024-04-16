@@ -12,13 +12,13 @@
 
         <!-- 구글 로그인 버튼 -->
         <button @click="onGoogleLogin" class="login-button google">
-          <img class="button-icon" alt="Google Logo" src="@/assets/icon/MainPage/SighUp/google.png" />
+          <img class="button-icon" alt="Google Logo" src="../../assets/icon/MainPage/SighUp/google.png" />
           구글 계정으로 간편 회원가입
         </button>
 
         <!-- 카카오 로그인 버튼 -->
         <button @click="onKakaoLogin" class="login-button kakao">
-          <img class="button-icon" alt="Kakao Logo" src="@/assets/icon/MainPage/SighUp/kakao.png" />
+          <img class="button-icon" alt="Kakao Logo" src="../../assets/icon/MainPage/SighUp/kakao.png" />
           카카오 계정으로 간편 회원가입
         </button>
       </div>

@@ -15,7 +15,7 @@
                       class="icon"
                       loading="lazy"
                       alt=""
-                      src="@/assets/icon/Profile/Diary/Preview/-20240405--218-1@2x.png"
+                      src="../../../../assets/icon/Profile/Diary/Preview/-20240405--218-1@2x.png"
                   />
 
                   <div class="container">
@@ -36,7 +36,7 @@
                         class="icon1"
                         loading="lazy"
                         alt=""
-                        src="@/assets/icon/Profile/Diary/Preview/-20240405--218-1@2x.png"
+                        src="../../../../assets/icon/Profile/Diary/Preview/-20240405--218-1@2x.png"
                     />
 
                     <div class="frame">
@@ -73,7 +73,7 @@
                         class="vector-icon"
                         loading="lazy"
                         alt=""
-                        src="@/assets/icon/Profile/Diary/Preview/movie.png"
+                        src="../../../../assets/icon/Profile/Diary/Preview/movie.png"
                     />
                   </div>
                   <div class="div8">기생충</div>
@@ -83,7 +83,7 @@
                 <img
                     class="vector-icon1"
                     alt=""
-                    src="@/assets/icon/Profile/Diary/Preview/director.png"
+                    src="../../../../assets/icon/Profile/Diary/Preview/director.png"
                 />
 
                 <div class="wrapper1">
@@ -95,7 +95,7 @@
                   <img
                       class="vector-icon2"
                       alt=""
-                      src="@/assets/icon/Profile/Diary/Preview/category.png"
+                      src="../../../../assets/icon/Profile/Diary/Preview/category.png"
                   />
                 </div>
                 <div class="div10">드라마</div>
@@ -114,7 +114,7 @@
                   <img
                       class="vector-icon3"
                       alt=""
-                      src="@/assets/icon/Profile/Diary/Preview/music.png"
+                      src="../../../../assets/icon/Profile/Diary/Preview/music.png"
                   />
 
                   <div class="empty-space">21</div>
@@ -125,7 +125,7 @@
                   <img
                       class="group-icon2"
                       alt=""
-                      src="@/assets/icon/Profile/Diary/Preview/singer.png"
+                      src="../../../../assets/icon/Profile/Diary/Preview/singer.png"
                   />
 
                   <div class="dean">DEAN</div>
@@ -136,7 +136,7 @@
                   <img
                       class="vector-icon4"
                       alt=""
-                      src="@/assets/icon/Profile/Diary/Preview/category.png"
+                      src="../../../../assets/icon/Profile/Diary/Preview/category.png"
                   />
                 </div>
                 <div class="rb">R&B</div>
@@ -155,7 +155,7 @@
                   <img
                       class="d-e-a-n-label"
                       alt=""
-                      src="@/assets/icon/Profile/Diary/Preview/food.png"
+                      src="../../../../assets/icon/Profile/Diary/Preview/food.png"
                   />
 
                   <div class="div13">미역국</div>
@@ -166,7 +166,7 @@
                   <img
                       class="movie-label-icon"
                       alt=""
-                      src="@/assets/icon/Profile/Diary/Preview/spicy.png"
+                      src="../../../../assets/icon/Profile/Diary/Preview/spicy.png"
                   />
                 </div>
                 <div class="div14">1</div>
@@ -176,7 +176,7 @@
                   <img
                       class="vector-icon5"
                       alt=""
-                      src="@/assets/icon/Profile/Diary/Preview/category.png"
+                      src="../../../../assets/icon/Profile/Diary/Preview/category.png"
                   />
                 </div>
                 <div class="div15">드라마</div>
@@ -206,7 +206,7 @@
 </script>
 
 <style>
-@import "@/assets/css/Profile/Diary/Preview/Preview.css";
-@import "@/assets/css/Profile/Diary/Preview/global.css";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  @import "@/assets/css/Profile/Diary/Preview/Preview.css";
+  @import "@/assets/css/Profile/Diary/Preview/global.css";
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 </style>

@@ -10,9 +10,9 @@
       <div class="graph">
         <div class="line" style="display: flex; ">
           <div style="width:20%; padding-top:10%">
-            <img src='@/components/calendar/img0.png' style="max-width: 70%;" alt=""><br>
-            <img src='@/components/calendar/img1.png' style="max-width: 70%;" alt=""><br>
-            <img src='@/components/calendar/img2.png' style="max-width: 70%;" alt=""><br> 
+            <img src='../../common/calendar/img0.png' style="max-width: 70%;" alt=""><br>
+            <img src='../../common/calendar/img1.png' style="max-width: 70%;" alt=""><br>
+            <img src='../../common/calendar/img2.png' style="max-width: 70%;" alt=""><br>
           </div>
           <div style="width: 80%;">
             <EmotionLineGraph/>
@@ -30,8 +30,8 @@
 </template>
 
 <script setup>
-import MovieBarGraph from "@/components/calendar/Movie-BarGraph.vue";
-import EmotionLineGraph from "@/components/calendar/Emotion-LineGraph.vue";
+import MovieBarGraph from "@/components/header/statistics/Movie-BarGraph.vue";
+import EmotionLineGraph from "@/components/header/statistics/Emotion-LineGraph.vue";
 
 import { ref } from 'vue';
 
@@ -77,7 +77,7 @@ const showMovieGraph = () => {
   color: #000000;
   font-size: 15px;
   font-weight: 600;
-  font-family: 'Inter', sans-serif; 
+  font-family: 'Inter', sans-serif;
   transition: background-color 0.3s ease;
 }
 

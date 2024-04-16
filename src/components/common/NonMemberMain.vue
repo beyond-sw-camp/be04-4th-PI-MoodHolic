@@ -5,11 +5,11 @@
       <div class="frame-parent">
         <div class="emotion-diary-parent">
           <div class="emotion-diary">
-                <img
-                    class="image-3-icon"
-                    loading="lazy"
-                    alt=""
-                    src="../../assets/icon/MainPage/BeforeLogInMain/image-3@2x.png"/>
+            <img
+                class="image-3-icon"
+                loading="lazy"
+                alt=""
+                src="../../assets/icon/MainPage/BeforeLogInMain/image-3@2x.png"/>
             <div class="div3">
               <b class="bb">인공지능 심리전문가</b>
               <span class="span">가 다이어리에 &nbsp;적은 오늘의 기분을 분석해</span>
@@ -92,16 +92,16 @@
 </template>
 
 <script setup>
-  import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router';
 
-  const router = useRouter();
+const router = useRouter();
 
-  const redirectToLogin = () => {
-    router.replace('/login');
-  };
+const redirectToLogin = () => {
+  router.replace('/login');
+};
 </script>
 
 <style>
-  @import '@/assets/css/MainPage/BeforeLogInMain/global.css';
-  @import '@/assets/css/MainPage/BeforeLogInMain/BeforeLogInMain.css';
+@import '@/assets/css/MainPage/BeforeLogInMain/global.css';
+@import '@/assets/css/MainPage/BeforeLogInMain/BeforeLogInMain.css';
 </style>

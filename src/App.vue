@@ -5,10 +5,11 @@
   <main>
       <router-view/>
   </main>
+
 </template>
 
 <script setup>
-import Header from "@/components/header/MainHeader.vue";
+import Header from "@/components/common/MainHeader.vue";
 import { onMounted } from 'vue';
 import { useStore } from 'vuex';
 import router from "@/router/router.js";

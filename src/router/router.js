@@ -1,15 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import store from '@/store/store.js';
-import LogIn from "@/components/main/LogIn/LogIn.vue";
-import SignUp from "@/components/main/SighUp/SignUp.vue";
-import Calendar from "@/components/main/MemberMain.vue";
-// import View from "@/components/Profile/Diary/View/View.vue";
-// import Write from "@/components/Profile/Diary/Write/Write.vue";
-// import Info from "@/components/Profile/Info/Info.vue";
-// import Mypage from "@/components/header/Mypage.vue";
-// import Welcome from "@/components/main/SighUp/Welcome.vue";
-// import NonMemberMain from "@/components/main/NonMemberMain.vue";
-import Preview from "@/components/Profile/Diary/Preview/Preview.vue";
+import store from "@/store/store.js";
+import LogIn from "@/components/logIn/LogIn.vue";
+import SignUp from "@/components/signup/SignUp.vue";
+import Mypage from "@/components/header/Mypage.vue";
+import Info from "@/components/mypage/Info.vue";
+import Statistics from "@/components/header/statistics/Statistics.vue";
+import Welcome from "@/components/signup/Welcome.vue";
+import MemberMain from "@/components/common/MemberMain.vue";
+import Preview from "@/components/mypage/Diary/Preview/Preview.vue";
+import NonMemberMain from "@/components/common/NonMemberMain.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -22,36 +21,31 @@ const router = createRouter({
             path: '/signup',
             component: SignUp
         },
-        // {
-        //     path: '/view',
-        //     component: View
-        // },
-        // {
-        //     path: '/write',
-        //     component: Write
-        // },
-        // {
-        //     path: '/info',
-        //     component: Info
-        // },
-        // {
-        //     path: '/mypage',
-        //     component: Mypage
-        // },
-        // {
-        //     path: '/welcome',
-        //     component: Welcome
-        // },
         {
-            path: '/preview',
+            path: '/mypage',
+            component: Mypage
+        },
+        {
+          path: '/mypage/info',
+          component: Info
+        },
+        {
+            path: '/statistics',
+            component: Statistics
+        },
+        {
+            path: '/welcome',
+            component: Welcome
+        },
+        {
+            path: '/mypage/diary',
             component: Preview
         },
         {
             path: '/',
-            name: 'Home',
             component: () => {
                 if (store.getters.isAuthenticated) {
-                    return Calendar;
+                    return MemberMain;
                 } else {
                     return NonMemberMain;
                 }

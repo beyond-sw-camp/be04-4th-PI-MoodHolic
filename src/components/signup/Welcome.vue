@@ -1,5 +1,6 @@
 <template>
   <div class="div">
+    <header class="frame-parent"></header>
     <section class="inner">
       <div class="rectangle-parent">
         <div class="frame-item"></div>
@@ -7,7 +8,11 @@
           <div class="frame-wrapper">
             <div class="message-box-parent">
               <div class="message-box">
-                <img class="icon" loading="lazy" alt="" src="@/assets/icon/MainPage/Welcome/-20240405--317@2x.png"/>
+                <img
+                    class="icon"
+                    loading="lazy"
+                    alt=""
+                    src="../../assets/icon/MainPage/Welcome/-20240405--317@2x.png"/>
               </div>
               <div class="frame-container">
                 <div class="konan-wrapper">
@@ -44,8 +49,8 @@
 
 </script>
 
-<style scoped>
-  @import '@/assets/css/MainPage/Welcome/global.css';
-  @import '@/assets/css/MainPage/Welcome/Welcome.css';
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+<style>
+@import '@/assets/css/MainPage/Welcome/global.css';
+@import '@/assets/css/MainPage/Welcome/Welcome.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 </style>

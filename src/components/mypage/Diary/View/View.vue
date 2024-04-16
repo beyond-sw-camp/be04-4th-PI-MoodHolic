@@ -13,7 +13,7 @@
                     <img
                         class="vector-icon"
                         alt=""
-                        src="@/assets/icon/Profile/Diary/View/goldenpencil.png"
+                        src="../../../../assets/icon/Profile/Diary/View/goldenpencil.png"
                     />
                   </section>
                 </div>
@@ -24,7 +24,7 @@
                   <img
                       class="vector-icon1"
                       alt=""
-                      src="@/assets/icon/Profile/Diary/View/back.png"
+                      src="../../../../assets/icon/Profile/Diary/View/back.png"
                   />
                 </div>
                 <div class="div2">뒤로가기</div>
@@ -37,14 +37,14 @@
                   <img
                       class="icon"
                       alt=""
-                      src="@/assets/icon/Profile/Diary/View/-20240405--405@2x.png"
+                      src="../../../../assets/icon/Profile/Diary/View/-20240405--405@2x.png"
                   />
 
                   <img
                       class="icon1"
                       loading="lazy"
                       alt=""
-                      src="@/assets/icon/Profile/Diary/View/-20240405--218-1@2x.png"
+                      src="../../../../assets/icon/Profile/Diary/View/-20240405--218-1@2x.png"
                   />
                 </div>
               </div>
@@ -55,7 +55,7 @@
                     <img
                         class="frame-child2"
                         alt=""
-                        src="@/assets/icon/Profile/Diary/View/calendar.png"
+                        src="../../../../assets/icon/Profile/Diary/View/calendar.png"
                     />
 
                     <div class="wrapper">
@@ -69,7 +69,7 @@
                     <img
                         class="vector-icon2"
                         alt=""
-                        src="@/assets/icon/Profile/Diary/View/score.png"
+                        src="../../../../assets/icon/Profile/Diary/View/score.png"
                     />
 
                     <div class="container">
@@ -88,7 +88,7 @@
                     class="icon2"
                     loading="lazy"
                     alt=""
-                    src="@/assets/icon/Profile/Diary/View/-20240405--218-1@2x.png"
+                    src="../../../../assets/icon/Profile/Diary/View/-20240405--218-1@2x.png"
                 />
 
                 <div class="frame">
@@ -107,7 +107,7 @@
                       class="icon3"
                       loading="lazy"
                       alt=""
-                      src="@/assets/icon/Profile/Diary/View/-20240405--218-1@2x.png"
+                      src="../../../../assets/icon/Profile/Diary/View/-20240405--218-1@2x.png"
                   />
 
                   <div class="wrapper1">
@@ -146,14 +146,14 @@
                   <img
                       class="vector-icon3"
                       alt=""
-                      src="@/assets/icon/Profile/Diary/View/movie.png"
+                      src="../../../../assets/icon/Profile/Diary/View/movie.png"
                   />
                 </div>
                 <div class="div10">기생충</div>
               </div>
             </div>
             <div class="vector-group">
-              <img class="vector-icon4" alt="" src="@/assets/icon/Profile/Diary/View/director.png" />
+              <img class="vector-icon4" alt="" src="../../../../assets/icon/Profile/Diary/View/director.png" />
 
               <div class="wrapper2">
                 <div class="div11">봉준호</div>
@@ -161,7 +161,7 @@
             </div>
             <div class="dropdown">
               <div class="vector-frame">
-                <img class="vector-icon5" alt="" src="@/assets/icon/Profile/Diary/View/category.png" />
+                <img class="vector-icon5" alt="" src="../../../../assets/icon/Profile/Diary/View/category.png" />
               </div>
               <div class="div12">드라마</div>
             </div>
@@ -176,21 +176,21 @@
                 </div>
               </div>
               <div class="vector-parent1">
-                <img class="vector-icon6" alt="" src="@/assets/icon/Profile/Diary/View/music.png" />
+                <img class="vector-icon6" alt="" src="../../../../assets/icon/Profile/Diary/View/music.png" />
 
                 <div class="div14">21</div>
               </div>
             </div>
             <div class="frame-wrapper5">
               <div class="group-parent">
-                <img class="group-icon2" alt="" src="@/assets/icon/Profile/Diary/View/singer.png" />
+                <img class="group-icon2" alt="" src="../../../../assets/icon/Profile/Diary/View/singer.png" />
 
                 <div class="dean">DEAN</div>
               </div>
             </div>
             <div class="frame-parent4">
               <div class="vector-wrapper1">
-                <img class="vector-icon7" alt="" src="@/assets/icon/Profile/Diary/View/category.png" />
+                <img class="vector-icon7" alt="" src="../../../../assets/icon/Profile/Diary/View/category.png" />
               </div>
               <div class="rb">R&B</div>
             </div>
@@ -205,14 +205,14 @@
                 </div>
               </div>
               <div class="vector-parent2">
-                <img class="vector-icon8" alt="" src="@/assets/icon/Profile/Diary/View/food.png" />
+                <img class="vector-icon8" alt="" src="../../../../assets/icon/Profile/Diary/View/food.png" />
 
                 <div class="div16">미역국</div>
               </div>
             </div>
             <div class="frame-parent6">
               <div class="vector-wrapper2">
-                <img class="vector-icon9" alt="" src="@/assets/icon/Profile/Diary/View/spicy.png" />
+                <img class="vector-icon9" alt="" src="../../../../assets/icon/Profile/Diary/View/spicy.png" />
               </div>
               <div class="div17">1</div>
             </div>
@@ -221,7 +221,7 @@
                 <img
                     class="vector-icon10"
                     alt=""
-                    src="@/assets/icon/Profile/Diary/View/category.png"
+                    src="../../../../assets/icon/Profile/Diary/View/category.png"
                 />
               </div>
               <div class="div18">드라마</div>
@@ -238,7 +238,7 @@
 </script>
 
 <style>
-@import "src/assets/css/Profile/Diary/View/View.css";
-@import "src/assets/css/Profile/Diary/View/global.css";
+@import "../../../../assets/css/Profile/Diary/View/View.css";
+@import "../../../../assets/css/Profile/Diary/View/global.css";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 </style>

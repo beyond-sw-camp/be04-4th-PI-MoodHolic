@@ -19,7 +19,7 @@
                         class="icon"
                         loading="lazy"
                         alt=""
-                        src="@/assets/icon/Profile/Diary/Write/-20240405--218-1@2x.png"
+                        src="../../../../assets/icon/Profile/Diary/Write/-20240405--218-1@2x.png"
                     />
 
                     <div class="current-mood">
@@ -39,7 +39,7 @@
                       class="icon1"
                       loading="lazy"
                       alt=""
-                      src="@/assets/icon/Profile/Diary/Write/-20240405--218-1@2x.png"
+                      src="../../../../assets/icon/Profile/Diary/Write/-20240405--218-1@2x.png"
                   />
 
                   <div class="container">
@@ -54,7 +54,7 @@
             <img
                 class="frame-inner"
                 alt=""
-                src="@/assets/icon/Profile/Diary/Write/rectangle-510.png"
+                src="../../../../assets/icon/Profile/Diary/Write/rectangle-510.png"
             />
 
               <div class="image-container">

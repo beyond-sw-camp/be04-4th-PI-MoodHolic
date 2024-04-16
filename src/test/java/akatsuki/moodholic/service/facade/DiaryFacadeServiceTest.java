@@ -89,9 +89,9 @@ class DiaryFacadeServiceTest {
     @DisplayName("다이어리 중복저장")
     void postDiary3(){
         /*given*/
-        Diary diary = diaryFacadeService.getDiary(diaryId).getDiary();
+        ResponseDiary diary = diaryFacadeService.getDiary(diaryId);
         /*when*/
-        ResponseDiaryPost text = diaryFacadeService.postDiary(diary);
+        ResponseDiaryPost text = diaryFacadeService.postDiary(diary.getDiary());
         /*then*/
         assertEquals("중복",text.getResponse());
     }

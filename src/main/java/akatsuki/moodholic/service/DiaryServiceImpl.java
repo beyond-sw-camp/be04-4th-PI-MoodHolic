@@ -29,7 +29,7 @@ public class  DiaryServiceImpl implements DiaryService{
             requestdiary.setDiaryId(findDiary.getDiaryId());
             if(findDiary.getStatus()==1){
                 System.out.println("이미 존재하여 생성하지 않습니다.");
-                return new ResponseDiaryPost("실패");
+                return new ResponseDiaryPost("중복");
             }
         }
         requestdiary=diaryDAO.save(requestdiary);
@@ -40,6 +40,7 @@ public class  DiaryServiceImpl implements DiaryService{
         String content = requestdiary.getContent();
         String prompt = getPrompt(requestdiary, content);
         ResponseDiaryPost returnValue = new ResponseDiaryPost(prompt, requestdiary.getDiaryId());
+        returnValue.setResponse("저장");
         return returnValue;
     }
     @Override

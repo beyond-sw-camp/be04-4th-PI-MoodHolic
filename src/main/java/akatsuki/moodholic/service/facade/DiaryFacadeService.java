@@ -97,7 +97,7 @@ public class DiaryFacadeService {
     public ResponseDiaryPost postDiary(Diary requestdiary) {
         ResponseDiaryPost prompt=diaryService.postDiary(requestdiary);
 
-        if(!prompt.getResponse().equals("임시저장") && !prompt.getResponse().equals("실패")) {
+        if(!prompt.getResponse().equals("임시저장") && !prompt.getResponse().equals("중복")) {
             DataParse response = chatGPTService.Response(prompt.getResponse());
             saveGPTResponse(requestdiary.getMember().getMemberId(), response, requestdiary);
         }

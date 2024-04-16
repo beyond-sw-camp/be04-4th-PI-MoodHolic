@@ -32,8 +32,9 @@ const weatherInfo = ref({
   temperature: 'Loading...',
   icon: null
 });
-
+let count = 0;
 const fetchWeather = async () => {
+  count++;
   const city = 'Seoul';
   const apiKey = 'aa237cabd8bd6dd1e5374da90756d5b5';
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -44,10 +45,12 @@ const fetchWeather = async () => {
       throw new Error('Failed to fetch weather data');
     }
     const data = await response.json();
-    weatherInfo.value = {
-      temperature: data.main.temp,
-      icon: data.weather[0].icon
-    };
+    if(count === 1) {
+      weatherInfo.value = {
+        temperature: data.main.temp,
+        icon: data.weather[0].icon
+      };
+    }
   } catch (error) {
     console.error('Failed to fetch weather data:', error);
     weatherInfo.value = {
@@ -67,23 +70,23 @@ const changeRouter = (route) => {
 
 // 로그아웃 처리
 const logout = async () => {
-  // 로그아웃 API 호출
-  try {
-    const response = await fetch('http://localhost:8888/logout', {
-      method: 'POST',
-      credentials: 'include'  // 쿠키 포함시킴
-    });
-    if (response.ok) {
-      await store.dispatch('logout');  // 상태 업데이트
-      await router.push('/');
-    } else {
-      throw new Error('Failed to logout');
+  if (confirm('로그아웃 하시겠습니까?')) { // 사용자에게 로그아웃을 확인받음
+    try {
+      const response = await fetch('http://localhost:8888/logout', {
+        method: 'POST',
+        credentials: 'include'  // 쿠키 포함시킴
+      });
+      if (response.ok) {
+        await store.dispatch('logout');  // 상태 업데이트
+        await router.push('/');
+      } else {
+        throw new Error('Failed to logout');
+      }
+    } catch (error) {
+      console.error('Logout error:', error);
     }
-  } catch (error) {
-    console.error('Logout error:', error);
   }
 };
-
 </script>
 
 

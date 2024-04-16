@@ -1,9 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import store from '@/store/store.js';
-import LogIn from "@/components/main/LogIn/LogIn.vue";
 import Main from "@/components/main/Main.vue";
 import Calendar from "@/components/calendar/Calendar.vue";
 import SignUp from "@/components/main/SighUp/SignUp.vue";
+
+import LogIn from "@/components/main/LogIn/LogIn.vue";
+
 import Info from "@/components/Profile/Info/Info.vue";
 // import Write from "@/components/Profile/Diary/Write/Write.vue";
 import Welcome from "@/components/main/Welcome/Welcome.vue";
@@ -11,6 +13,7 @@ import Welcome from "@/components/main/Welcome/Welcome.vue";
 // import Preview from "@/components/Profile/Diary/Preview/Preview.vue";
 // import List from "@/components/Profile/AIrecommended/List/List.vue";
 // import Card from "@/components/Profile/AIrecommended/Card/Card.vue";
+
 
 const router = createRouter({
     history: createWebHistory(),
@@ -41,8 +44,9 @@ const router = createRouter({
                     return Main;
                 }
             }
-        }
-    ]
+        },
+     ]
+
 });
 
 router.beforeEach((to, from, next) => {
@@ -62,7 +66,7 @@ router.beforeEach((to, from, next) => {
 
     // 같은 경로(`/`)로 이동 시 로그인/로그아웃 후 페이지 새로 고침
     if (to.path === from.path && to.path === '/' && to.meta.forceUpdate) {
-        window.location.reload();
+        // window.location.reload();
         return;
     }
 

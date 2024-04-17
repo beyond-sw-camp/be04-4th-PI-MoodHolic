@@ -4,9 +4,10 @@ import LogIn from "@/components/logIn/LogIn.vue";
 import SignUp from "@/components/signup/SignUp.vue";
 import Mypage from "@/components/mypage/Mypage.vue";
 import Info from "@/components/mypage/Info.vue";
+import Card from "@/components/mypage/AIrecommended/Card/Card.vue";
+import List from "@/components/mypage/Diary/List/List.vue";
 import Statistics from "@/components/header/statistics/Statistics.vue";
 import Welcome from "@/components/signup/Welcome.vue";
-import Preview from "@/components/mypage/Diary/Preview/Preview.vue";
 import MemberMain from "@/components/common/MemberMain.vue";
 import NonMemberMain from "@/components/common/NonMemberMain.vue";
 
@@ -26,8 +27,16 @@ const router = createRouter({
             component: Mypage
         },
         {
-          path: '/mypage/info',
-          component: Info
+            path: "/mypage/info",
+            component: Info
+        },
+        {
+            path: "/mypage/aigood",
+            component: List
+        },
+        {
+            path: "/mypage/diary",
+            component: Card
         },
         {
             path: '/statistics',
@@ -36,10 +45,6 @@ const router = createRouter({
         {
             path: '/welcome',
             component: Welcome
-        },
-        {
-            path: '/mypage/diary',
-            component: Preview
         },
         {
             path: '/',

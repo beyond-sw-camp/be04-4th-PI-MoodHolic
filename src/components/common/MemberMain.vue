@@ -596,5 +596,8 @@ const getDiary = async(index)=> {
       background-color: #FEDB56;
       border-color: #FEDB56;
     }
+    .popup-content::-webkit-scrollbar {
+      display: none;
+    }
 </style>
 

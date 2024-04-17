@@ -406,7 +406,7 @@ const getDiary = async(index)=> {
             console.error('Error:', error);
         });
     };
-
+    getMemberDate();
 </script>
 
 

@@ -233,7 +233,7 @@ function destroyChart() {
   }
 
 }
-
+getYear();
 </script>
 
 <style scoped>

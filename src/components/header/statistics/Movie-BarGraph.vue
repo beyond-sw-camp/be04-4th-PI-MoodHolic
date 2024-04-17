@@ -21,6 +21,7 @@ const getMemberId = async()=>{
   console.log(`global: ${memberId}`);
   if(memberId!=null) {
     console.log(`이미 회원 정보 있음 memberId: ${memberId}`);
+    
     return;
   }
 
@@ -63,6 +64,7 @@ const getMemberId = async()=>{
   });
 }
 getMemberId();
+
 const updateMemberId = (newValue) => {
   store.commit('setGlobalVariable', newValue);
 };
@@ -135,6 +137,7 @@ async function fetchDataAndSetData(url, dataRef) {
 
 async function getYearData() {
   if (!yearData) {
+    console.log('${memberId}의 년도 로그 불러오기')
     yearData = await fetchData(`http://localhost:8888/category/movie/genres/${memberId}`);
   }
   return yearData;
@@ -228,6 +231,8 @@ function toggleActive(period) {
       break;
   }
 }
+
+getYear();
 </script>
 
 <style scoped>

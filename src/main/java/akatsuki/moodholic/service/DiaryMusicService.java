@@ -13,6 +13,7 @@ public interface DiaryMusicService {
     void delete(int diaryId);
 
     List<DiaryMusic> getMemberLikeMusic(List<Diary> diaries);
+    List<DiaryMusic> getMemberLikeMusic2(List<Diary> diaries);
 
     List<DiaryMusic> findLikedDiaryMusics();
 

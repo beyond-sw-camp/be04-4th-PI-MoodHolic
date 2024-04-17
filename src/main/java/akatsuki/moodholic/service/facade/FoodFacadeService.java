@@ -81,4 +81,26 @@ public class FoodFacadeService {
         return new MemberFoodGenreRanking(lists,maximum,name);
 
     }
+
+    public MemberFoodGenreRanking getMemberFoodGenreRanking2(long memberId) {
+        init();
+        List<Diary> diaries = diaryService.getMemberDiaries(memberId);
+        List<DiaryFood> diaryFoods= diaryFoodService.getMemberLikeFood2(diaries);
+        HashMap<String, Integer> lists = new HashMap<>();
+
+        diaryFoods.forEach(diaryFood -> {
+            if(lists.get(diaryFood.getFoodId().getFoodCategory().name())==null) {
+                lists.put(diaryFood.getFoodId().getFoodCategory().name(), 1);
+            }else{
+                int data = lists.get(diaryFood.getFoodId().getFoodCategory().name());
+                if (maximum<data+1){
+                    maximum=data+1;
+                    name=diaryFood.getFoodId().getFoodCategory().name();
+                }
+                lists.replace(diaryFood.getFoodId().getFoodCategory().name(), data + 1);
+            }
+        });
+
+        return new MemberFoodGenreRanking(lists,maximum,name);
+    }
 }

@@ -66,7 +66,8 @@ public class FoodController {
 
     @GetMapping("/genres/{memberId}")
     public ResponseEntity<MemberFoodGenreRanking> getMemberFoodGenreRanking(@PathVariable long memberId){
-        return ResponseEntity.ok().body(foodFacadeService.getMemberFoodGenreRanking(memberId));
+//        return ResponseEntity.ok().body(foodFacadeService.getMemberFoodGenreRanking(memberId));
+        return ResponseEntity.ok().body(foodFacadeService.getMemberFoodGenreRanking2(memberId));
     }
 
 

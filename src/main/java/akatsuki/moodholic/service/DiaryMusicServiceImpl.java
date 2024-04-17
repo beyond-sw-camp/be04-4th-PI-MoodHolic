@@ -45,7 +45,17 @@ public class DiaryMusicServiceImpl implements DiaryMusicService{
         });
         return returnValue;
     }
-
+    @Override
+    public List<DiaryMusic> getMemberLikeMusic2(List<Diary> diaries){
+        List<DiaryMusic> returnValue =new ArrayList<>();
+        diaries.forEach(diary -> {
+            DiaryMusic diaryMusic = diaryMusicDAO.findByDiaryId(diary.getDiaryId());
+            if(diaryMusic!=null){
+                returnValue.add(diaryMusic);
+            }
+        });
+        return returnValue;
+    }
 
     @Override
     public List<DiaryMusic> findLikedDiaryMusics() {

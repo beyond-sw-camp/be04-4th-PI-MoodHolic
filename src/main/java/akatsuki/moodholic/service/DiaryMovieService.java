@@ -16,7 +16,8 @@ public interface DiaryMovieService {
     List<DiaryMovie> findLikedDiaryMovies();
     List<String> findLikedMovieNames();
 
-    public List<DiaryMovie> getMemberLikedMovie(List<Diary> diaries );
+    List<DiaryMovie> getMemberLikedMovie(List<Diary> diaries );
+    List<DiaryMovie> getMemberLikedMovie2(List<Diary> diaries );
 
     void likeMovie(int diaryId, boolean movie);
 }

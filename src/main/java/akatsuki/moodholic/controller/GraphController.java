@@ -17,7 +17,6 @@ import java.util.SortedMap;
 @Tag(name = "그래프 관련 컨트롤러", description = "주, 월, 년 단위의 기분 점수를 수치화하기 위한 컨트롤러 입니다.")
 public class GraphController {
 
-
     GraphFacadeService graphFacadeService;
 
     @Autowired

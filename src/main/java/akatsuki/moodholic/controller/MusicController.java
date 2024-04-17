@@ -55,8 +55,9 @@ public class MusicController {
         return ResponseEntity.ok().body(musicFacadeService.getMemberLikeMusic(memberId));
     }
     @GetMapping("/genres/{memberId}")
-    public ResponseEntity<MemberMusicGenreRanking> enreRanking(@PathVariable long memberId){
-        MemberMusicGenreRanking returnValue = musicFacadeService.getMemberMusicGenreRanking(memberId);
+    public ResponseEntity<MemberMusicGenreRanking> genreRanking(@PathVariable long memberId){
+//        MemberMusicGenreRanking returnValue = musicFacadeService.getMemberMusicGenreRanking(memberId);
+        MemberMusicGenreRanking returnValue = musicFacadeService.getMemberMusicGenreRanking2(memberId);
         return ResponseEntity.ok().body(returnValue);
     }
 

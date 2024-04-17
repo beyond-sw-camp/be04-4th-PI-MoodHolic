@@ -69,9 +69,28 @@ public class MovieFacadeService {
                 lists.replace(diaryMovie.getMovieId().getMovieGenre(), data + 1);
             }
         });
-
         return new MemberMovieGenreRanking(lists,maximum,name);
-
     }
 
+    public MemberMovieGenreRanking getMemberMovieGenreRanking2(long memberId) {
+        init();
+        List<Diary> diaries = diaryService.getMemberDiaries(memberId);
+        List<DiaryMovie> diaryMovies= diaryMovieService.getMemberLikedMovie2(diaries);
+        HashMap<String, Integer> lists = new HashMap<>();
+
+        diaryMovies.forEach(diaryMovie -> {
+
+            if(diaryMovie!=null&& diaryMovie.getMovieId()!=null && lists.get(diaryMovie.getMovieId().getMovieGenre())==null) {
+                lists.put(diaryMovie.getMovieId().getMovieGenre(), 1);
+            }else if(diaryMovie!=null&& diaryMovie.getMovieId()!=null){
+                int data = lists.get(diaryMovie.getMovieId().getMovieGenre());
+                if (maximum<data+1){
+                    maximum=data+1;
+                    name=diaryMovie.getMovieId().getMovieGenre();
+                }
+                lists.replace(diaryMovie.getMovieId().getMovieGenre(), data + 1);
+            }
+        });
+        return new MemberMovieGenreRanking(lists,maximum,name);
+    }
 }

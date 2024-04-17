@@ -56,6 +56,17 @@ public class DiaryFoodServiceImpl implements DiaryFoodService{
         });
         return returnValue;
     }
+    @Override
+    public List<DiaryFood> getMemberLikeFood2(List<Diary> diaries){
+        List<DiaryFood> returnValue = new ArrayList<>();
+        diaries.forEach(diary -> {
+            DiaryFood diaryFood = diaryFoodDAO.findByDiaryId(diary.getDiaryId());
+            if(diaryFood!=null&& diaryFood.getFoodLike()!=null){
+                returnValue.add(diaryFood);
+            }
+        });
+        return returnValue;
+    }
 
     @Override
     public HashMap<String, Integer> countMembersFoodLike(List<Diary> diaries){

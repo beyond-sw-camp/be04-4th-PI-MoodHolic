@@ -72,4 +72,24 @@ public class MusicFacadeService {
         });
         return new MemberMusicGenreRanking(lists,maximum,name);
     }
+
+    public MemberMusicGenreRanking getMemberMusicGenreRanking2(long memberId) {
+        init();
+        List<Diary> diaries = diaryService.getMemberDiaries(memberId);
+        List<DiaryMusic> diaryMusics = diaryMusicService.getMemberLikeMusic2(diaries);
+        HashMap<String, Integer> lists = new HashMap<>();
+        diaryMusics.forEach(diaryMusic -> {
+            if(lists.get(diaryMusic.getMusicId().getMusicGenre())==null){
+                lists.put(diaryMusic.getMusicId().getMusicGenre(),1);
+            }else{
+                int data = lists.get(diaryMusic.getMusicId().getMusicGenre());
+                if(maximum<data+1){
+                    maximum=data+1;
+                    name=diaryMusic.getMusicId().getMusicGenre();
+                }
+                lists.replace(diaryMusic.getMusicId().getMusicGenre(),data+1);
+            }
+        });
+        return new MemberMusicGenreRanking(lists,maximum,name);
+    }
 }

@@ -54,6 +54,17 @@ public class DiaryMovieServiceImpl implements DiaryMovieService{
         });
         return returnValue;
     }
+    @Override
+    public List<DiaryMovie> getMemberLikedMovie2(List<Diary> diaries ){
+        List<DiaryMovie> returnValue= new ArrayList<>();
+        diaries.forEach(diary -> {
+            DiaryMovie diaryMovie = diaryMovieDAO.findByDiaryId(diary.getDiaryId());
+            System.out.println("diaryMovie = " + diaryMovie);
+            if(diaryMovie!=null)
+                returnValue.add(diaryMovie);
+        });
+        return returnValue;
+    }
 
     @Override
     @Transactional

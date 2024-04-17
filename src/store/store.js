@@ -4,13 +4,17 @@ export default createStore({
     state() {
         return {
             isAuthenticated: false,
-            token: null
+            token: null,
+            memberId: null
         };
     },
     mutations: {
         setAuth(state, { isAuthenticated, token }) {
             state.isAuthenticated = isAuthenticated;
             state.token = token;
+        },
+        setGlobalVariable(state, newValue) {
+            state.memberId = newValue;
         }
     },
     actions: {
@@ -35,7 +39,12 @@ export default createStore({
         },
         initializeAuth({ dispatch }) {
             dispatch('checkAuth');
+        },
+
+        updateMemberId({ commit }, newValue) {
+            commit('setGlobalVariable', newValue); // 여기 수정
         }
+        
     },
     getters: {
         isAuthenticated(state) {

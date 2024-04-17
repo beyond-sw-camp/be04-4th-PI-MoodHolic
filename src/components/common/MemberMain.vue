@@ -120,10 +120,12 @@
 <script setup>
 import {ref} from 'vue';
 import happyImg from '@/assets/icon/MainPage/AfterLogInMain/-20240405--402@2x.png';
-import sadImg from '@/assets/icon/MainPage/AfterLogInMain/-20240405--405-1@2x.png'
-import sosoImg from '@/assets/icon/MainPage/AfterLogInMain/-20240405--4053@2x.png'
+import sadImg from '@/assets/icon/MainPage/AfterLogInMain/-20240405--405-1@2x.png';
+import sosoImg from '@/assets/icon/MainPage/AfterLogInMain/-20240405--4053@2x.png';
+import { useStore } from 'vuex';
 
-let memberId = ref(null);
+const store = useStore();
+let memberId = store.state.memberId;
 const writeActive = ref(false);
 
 const openWritePopup = ()=>{
@@ -133,7 +135,11 @@ const closeWritePopup = ()=>{
   writeActive.value=false;
 }
 const getMemberId = async()=>{
-  
+  console.log(`global: ${memberId}`);
+  if(memberId!=null) {
+    console.log(`이미 회원 정보 있음 memberId: ${memberId}`);
+    return;
+  }
   const authToken = 'Bearer '+localStorage.getItem('authToken');
   console.log(authToken);
 
@@ -161,6 +167,7 @@ const getMemberId = async()=>{
     if (memberIdMatch) {
        memberId = memberIdMatch[1];
        console.log("Member ID:", memberId); // "Member ID: 4"
+       updateMemberId(memberId);
        getMemberDate();
     } else {
       console.error("멤버 ID를 찾을 수 없음");
@@ -173,6 +180,11 @@ const getMemberId = async()=>{
   });
 }
 getMemberId();
+
+const updateMemberId = (newValue) => {
+  store.commit('setGlobalVariable', newValue);
+};
+
 
 const calendar = ref(null);
 const date = ref([]);

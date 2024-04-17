@@ -14,10 +14,16 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { Chart, registerables } from 'chart.js';
-let memberId = ref(null);
+import { useStore } from 'vuex';
+
+const store = useStore();
+let memberId = store.state.memberId;
 
 const getMemberId = async()=>{
-
+  if(memberId!=null) {
+    console.log(`이미 회원 정보 있음 memberId: ${memberId}`);
+    return;
+  }
   const authToken = 'Bearer '+localStorage.getItem('authToken');
   console.log(authToken);
 
@@ -45,6 +51,8 @@ const getMemberId = async()=>{
     if (memberIdMatch) {
        memberId = memberIdMatch[1];
        console.log("Member ID:", memberId); // "Member ID: 4"
+       updateMemberId(memberId);
+
        getYear();
     } else {
       console.error("멤버 ID를 찾을 수 없음");
@@ -57,7 +65,9 @@ const getMemberId = async()=>{
   });
 }
 getMemberId();
-
+const updateMemberId = (newValue) => {
+  store.commit('setGlobalVariable', newValue);
+};
 Chart.register(...registerables);
 
 const type = 'line';
@@ -85,10 +95,15 @@ const options = {
       grid: {
         beginAtZero: false,
         display: false
-      }
+      },
+      padding: 10 // 데이터와 축 사이의 간격을 설정합니다.
+      
     }
   }
 };
+
+
+
 
 const myChartCanvasa = ref(null);
 let myChart = null;

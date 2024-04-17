@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin-top: 5%; ">
     <div class="button-container">
       <button class="but" :class="{ 'active': showEmotion }" @click="showEmotionGraph">기분 그래프</button>
       <button class="but" :class="{ 'active': showMovie }" @click="showMovieGraph">추천 랭킹 분석</button>

@@ -11,10 +11,18 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { Chart, registerables } from 'chart.js';
+import { useStore } from 'vuex';
 
-let memberId = ref(null);
+const store = useStore();
+let memberId = store.state.memberId;
+
 
 const getMemberId = async()=>{
+  console.log(`global: ${memberId}`);
+  if(memberId!=null) {
+    console.log(`이미 회원 정보 있음 memberId: ${memberId}`);
+    return;
+  }
 
   const authToken = 'Bearer '+localStorage.getItem('authToken');
   console.log(authToken);
@@ -55,6 +63,9 @@ const getMemberId = async()=>{
   });
 }
 getMemberId();
+const updateMemberId = (newValue) => {
+  store.commit('setGlobalVariable', newValue);
+};
 
 Chart.register(...registerables);
 
@@ -82,7 +93,8 @@ const options = {
       grid: {
         beginAtZero: false,
         display: false
-      }
+      },
+      padding: 10 // 데이터와 축 사이의 간격을 설정합니다.
     }
   }
 };

@@ -1729,6 +1729,7 @@
 </script>
 
 <style scoped>
+@import url('https://font.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 body {
   margin: 0;
   line-height: normal;
@@ -7996,5 +7997,5 @@ body {
     gap: var(--gap-mid);
   }
 }
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 </style>

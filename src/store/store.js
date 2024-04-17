@@ -7,6 +7,7 @@ export default createStore({
             token: null,
             memberId: null,
             nickname: null,
+            email: null
         };
     },
     mutations: {
@@ -19,6 +20,9 @@ export default createStore({
         },
         setNickname(state, newValue) {
             state.nickname = newValue;
+        },
+        setEmail(state, newValue) {
+            state.email = newValue;
         }
     },
     actions: {
@@ -50,6 +54,9 @@ export default createStore({
         },
         updateNickname({ commit }, newValue) {
             commit('setNickname', newValue); // 여기 수정
+        },
+        updateEmail({ commit }, newValue) {
+            commit('setEmail', newValue); // 여기 수정
         }
     },
     getters: {

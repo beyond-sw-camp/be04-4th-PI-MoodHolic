@@ -96,7 +96,7 @@
             <!-- <textarea style="height: 450px;" id="editContent" v-model="editedFeed.boardContent"></textarea> -->
             <textarea placeholder="하루 동안 이야기를 들려주세요!" style="height: 450px;"  v-model="editedFeed.content"/>
           </div>
-          
+
           <div class="imgForm">
             <form @submit.prevent="uploadImage">
                     <input id="imgUpload" type="file" @change="previewImage" hidden/> <!-- @change 이벤트를 사용하여 파일 선택 시 previewImage 메서드 호출 -->
@@ -110,7 +110,7 @@
           </div>
           <br><br>
           <div class="but-group">
-            <button class="but" type="submit" @click="uploadImage(1)" >저장</button> 
+            <button class="but" type="submit" @click="uploadImage(1)" >저장</button>
             <button class="but" type="submit" @click="uploadImage(0)" >임시저장</button>
           </div>
         </div>
@@ -175,7 +175,7 @@ const getMemberId = async()=>{
        nickname = memberNickMatch[1];
        console.log("Member ID:", memberId); // "Member ID: 4"
        console.log("Member:", nickname); // "Member ID: 4"
-       
+
        updateMemberId(memberId);
        updateNickname(nickname);
        getMemberDate();
@@ -361,7 +361,7 @@ const getDiary = async(index)=> {
             }).then(data=>{
                 console.log(data);
             });
-        
+
         } catch (error) {
             console.error('There was a problem with the fetch operation:', error);
         }
@@ -378,7 +378,7 @@ const getDiary = async(index)=> {
             };
             reader.readAsDataURL(file);
             imgOn.value = true;
-        }   
+        }
     };
 
     const uploadImage = async(status) => {

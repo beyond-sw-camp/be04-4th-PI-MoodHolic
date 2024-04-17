@@ -29,7 +29,7 @@ public class MovieController {
     }
 
     @GetMapping("/all")
-    @Operation(summary = "영화 전체 조회", description = "단순 영화 조회 기능")
+    @Operation(summary = "영화 전체 조회", description = "단순영화 조회 기능")
     public ResponseEntity<List<Movie>> getAllFoods() {
         return ResponseEntity.ok().body(movieFacadeService.getAllMovies());
     }

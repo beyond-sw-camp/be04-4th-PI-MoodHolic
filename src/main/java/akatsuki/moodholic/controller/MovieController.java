@@ -18,7 +18,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/category/movie")
-@Tag(name = "영화 조회 컨트롤러", description = "추천 받은 영화를 조회하는 기능")
+@Tag(name = "영화 조회 컨트롤러", description = "추천받은 영화를 조회하는 기능")
 public class MovieController {
 
     MovieFacadeService movieFacadeService;

@@ -31,7 +31,7 @@ const getMemberId = async()=>{
     'Authorization': authToken
   };
 
-  await fetch('http://localhost:8888/userinfo', {
+  await fetch('http://localhost:30004/userinfo', {
     method: 'GET',
     headers: headers,
     credentials: 'include'  // 쿠키 포함시킴
@@ -141,28 +141,28 @@ async function fetchDataAndSetData(url, dataRef) {
 
 async function getYearData() {
   if (!yearData) {
-    yearData = await fetchData(`http://localhost:8888/graph/year/${memberId}`);
+    yearData = await fetchData(`http://localhost:30004/graph/year/${memberId}`);
   }
   return yearData;
 }
 
 async function getMonthData() {
   if (!monthData) {
-    monthData = await fetchData(`http://localhost:8888/graph/month/${memberId}`);
+    monthData = await fetchData(`http://localhost:30004/graph/month/${memberId}`);
   }
   return monthData;
 }
 
 async function getWeekData() {
   if (!weekData) {
-    weekData = await fetchData(`http://localhost:8888/graph/week/${memberId}`);
+    weekData = await fetchData(`http://localhost:30004/graph/week/${memberId}`);
   }
   return weekData;
 }
 
 async function getDayData() {
   if (!dayData) {
-    dayData = await fetchData(`http://localhost:8888/graph/day/${memberId}`);
+    dayData = await fetchData(`http://localhost:30004/graph/day/${memberId}`);
   }
   return dayData;
 }

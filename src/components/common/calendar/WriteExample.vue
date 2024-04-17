@@ -38,7 +38,7 @@ const getMemberId = async()=>{
     'Authorization': authToken
   };
 
-  await fetch('http://localhost:8888/userinfo', {
+  await fetch('http://localhost:30004/userinfo', {
     method: 'GET',
     headers: headers,
     credentials: 'include'  // 쿠키 포함시킴
@@ -105,7 +105,7 @@ const saveEditedFeed = async (imgUrl,getStatus) => {
   console.log(editedFeed);
 
   try {
-    const response = await fetch(`http://localhost:8888/diary`, {
+    const response = await fetch(`http://localhost:30004/diary`, {
       method: 'POST',
       headers: headers,
       credentials: 'include',
@@ -147,7 +147,7 @@ const uploadImage = async(status) => {
   formData.append('file', file);
 
   // fetch(`http://localhost:8000/member-service/image/profile/${memberId.value}`, {
-  await fetch(`http://localhost:8888/image`, {
+  await fetch(`http://localhost:30004/image`, {
     method: 'POST',
     headers: headers,
     credentials: 'include',

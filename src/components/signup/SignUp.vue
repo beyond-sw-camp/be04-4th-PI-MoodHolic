@@ -32,7 +32,7 @@ import router from "@/router/router.js";
 
 async function onGoogleLogin() {
   try {
-    const response = await fetch('http://localhost:8888/oauth2/authorization/google', {
+    const response = await fetch('http://localhost:30004/oauth2/authorization/google', {
       method: 'GET',
       credentials: 'include'
     });

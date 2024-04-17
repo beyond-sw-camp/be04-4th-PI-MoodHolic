@@ -72,7 +72,7 @@ const changeRouter = (route) => {
 const logout = async () => {
   if (confirm('로그아웃 하시겠습니까?')) { // 사용자에게 로그아웃을 확인받음
     try {
-      const response = await fetch('http://localhost:8888/logout', {
+      const response = await fetch('http://localhost:30004/logout', {
         method: 'POST',
         credentials: 'include'  // 쿠키 포함시킴
       });

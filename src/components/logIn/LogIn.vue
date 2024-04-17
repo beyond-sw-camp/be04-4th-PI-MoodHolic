@@ -39,11 +39,11 @@ const SignUp = (route) => {
 };
 
 const onGoogleLogin = async () => {
-  window.location.href = 'http://localhost:8888/oauth2/authorization/google';
+  window.location.href = 'http://localhost:30004/oauth2/authorization/google';
 };
 
 const onKakaoLogin = async () => {
-  window.location.href = 'http://localhost:8888/oauth2/authorization/kakao';
+  window.location.href = 'http://localhost:30004/oauth2/authorization/kakao';
 };
 
 </script>

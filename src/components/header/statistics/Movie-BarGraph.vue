@@ -32,7 +32,7 @@ const getMemberId = async()=>{
     'Authorization': authToken
   };
 
-  await fetch('http://localhost:8888/userinfo', {
+  await fetch('http://localhost:30004/userinfo', {
     method: 'GET',
     headers: headers,
     credentials: 'include'  // 쿠키 포함시킴
@@ -138,21 +138,21 @@ async function fetchDataAndSetData(url, dataRef) {
 async function getYearData() {
   if (!yearData) {
     console.log('${memberId}의 년도 로그 불러오기')
-    yearData = await fetchData(`http://localhost:8888/category/movie/genres/${memberId}`);
+    yearData = await fetchData(`http://localhost:30004/category/movie/genres/${memberId}`);
   }
   return yearData;
 }
 
 async function getMonthData() {
   if (!monthData) {
-    monthData = await fetchData(`http://localhost:8888/category/music/genres/${memberId}`);
+    monthData = await fetchData(`http://localhost:30004/category/music/genres/${memberId}`);
   }
   return monthData;
 }
 
 async function getWeekData() {
   if (!weekData) {
-    weekData = await fetchData(`http://localhost:8888/category/food/genres/${memberId}`);
+    weekData = await fetchData(`http://localhost:30004/category/food/genres/${memberId}`);
   }
   return weekData;
 }

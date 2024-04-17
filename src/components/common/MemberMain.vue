@@ -41,6 +41,9 @@
           <h3 style="font-size: 25px;">✨ 오늘의 기분<hr></h3> {{diary.diary.summary}}<br><br><br>
           <h3 style="font-size: 25px;">🌠 하루 이야기<hr></h3> {{diary.diary.content}}<br><br>
         </div>
+          <div class="imgForm" align = "center" style="background-color: white;">
+            <img class="img" :src="diary.diary.imgPath"  />
+          </div>
         <br>
         <div align="center" style="font-size:30px; background-color: pink; border-radius: 20px; font-weight: 1000;">AI's PICK</div>
         <br>
@@ -311,6 +314,7 @@ const getDiary = async(index)=> {
     console.log(data);
     diary.value = data;
     console.log(diary.value);
+    
     clickedEmotionImg = getEmotion(diary.value.emotion);
     console.log(clickedEmotionImg);
   })
@@ -571,7 +575,8 @@ const getDiary = async(index)=> {
         background-color: #45a049;
     }
     .img{
-      height: 250px;
+      height: 90%;
+      width: 90%;
     }
     .imgForm{
       background-color: #b7b7b7;
@@ -579,6 +584,10 @@ const getDiary = async(index)=> {
       display: flex;
       justify-content: center; /* 수평 가운데 정렬 */
       align-items: center; /* 수직 가운데 정렬 */
+      border-radius:30px;
+      /* style="border-radius: 30px; background-color: white;
+      " */
+      padding: 1px 15px 15px; margin: 10px;
     }
 
     .but-group{

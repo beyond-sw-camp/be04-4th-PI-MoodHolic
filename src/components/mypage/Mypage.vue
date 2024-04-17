@@ -1094,9 +1094,71 @@ body {
 
 <script setup>
   import { ref, onMounted } from 'vue';
-import { useStore } from 'vuex';
+  import { useStore } from 'vuex';
 
-const store = useStore();
-let memberId = store.state.memberId;
-const nickname = memberId;
+  const store = useStore();
+  let memberId = store.state.memberId;
+  let nickname = store.state.nickname;
+  const getMemberId = async()=>{
+  console.log(`global: ${memberId}`);
+  if(memberId!=null) {
+    console.log(`이미 회원 정보 있음 memberId: ${memberId}`);
+    return;
+  }
+  const authToken = 'Bearer '+localStorage.getItem('authToken');
+  console.log(authToken);
+
+  const headers = {
+    'Authorization': authToken
+  };
+
+  await fetch('http://localhost:8888/userinfo', {
+    method: 'GET',
+    headers: headers,
+    credentials: 'include'  // 쿠키 포함시킴
+  })
+  .then(response => {
+    // 서버 응답을 처리
+    if (!response.ok) {
+      throw new Error('네트워크 오류 발생');
+    }
+    return response.text();
+  })
+  .then(data => {
+    // 응답 데이터 처리
+    console.log(data);
+
+    const memberIdPattern = /memberId=(\d+)/;
+    const memberNickPattern = /nickname=([\uAC00-\uD7A3\w]+)/;
+
+    const memberIdMatch = data.match(memberIdPattern);
+    const memberNickMatch = data.match(memberNickPattern);
+
+    if (memberIdMatch) {
+       memberId = memberIdMatch[1];
+       nickname = memberNickMatch[1];
+       console.log("Member ID:", memberId); // "Member ID: 4"
+       console.log("Member:", nickname); // "Member ID: 4"
+       
+       updateMemberId(memberId);
+       updateNickname(nickname);
+    } else {
+      console.error("멤버 ID를 찾을 수 없음");
+    }
+
+  })
+  .catch(error => {
+    // 오류 처리
+    console.error('오류 발생:', error);
+  });
+}
+getMemberId();
+
+const updateMemberId = (newValue) => {
+  store.commit('setGlobalVariable', newValue);
+};
+const updateNickname = (newValue) => {
+  store.commit('setNickname', newValue);
+}
+
 </script>

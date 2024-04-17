@@ -241,10 +241,11 @@ getYear();
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
+    width: 10%;
     border: 1px solid #D9D9D9;
     background-color: #D9D9D9;
     color: #000000;
-    font-size: 15px;
+    font-size: 0.5lh;
     font-weight: 600;
     font-family: 'Inter', sans-serif;
   }

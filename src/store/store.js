@@ -5,7 +5,8 @@ export default createStore({
         return {
             isAuthenticated: false,
             token: null,
-            memberId: null
+            memberId: null,
+            nickname: null,
         };
     },
     mutations: {
@@ -15,6 +16,9 @@ export default createStore({
         },
         setGlobalVariable(state, newValue) {
             state.memberId = newValue;
+        },
+        setNickname(state, newValue) {
+            state.nickname = newValue;
         }
     },
     actions: {
@@ -43,8 +47,10 @@ export default createStore({
 
         updateMemberId({ commit }, newValue) {
             commit('setGlobalVariable', newValue); // 여기 수정
+        },
+        updateNickname({ commit }, newValue) {
+            commit('setNickname', newValue); // 여기 수정
         }
-        
     },
     getters: {
         isAuthenticated(state) {

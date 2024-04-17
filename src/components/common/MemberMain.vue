@@ -126,6 +126,7 @@ import { useStore } from 'vuex';
 
 const store = useStore();
 let memberId = store.state.memberId;
+let nickname = store.state.nickname;
 const writeActive = ref(false);
 
 const openWritePopup = ()=>{
@@ -162,12 +163,21 @@ const getMemberId = async()=>{
   .then(data => {
     // 응답 데이터 처리
     console.log(data);
+
     const memberIdPattern = /memberId=(\d+)/;
+    const memberNickPattern = /nickname=([\uAC00-\uD7A3\w]+)/;
+
     const memberIdMatch = data.match(memberIdPattern);
+    const memberNickMatch = data.match(memberNickPattern);
+
     if (memberIdMatch) {
        memberId = memberIdMatch[1];
+       nickname = memberNickMatch[1];
        console.log("Member ID:", memberId); // "Member ID: 4"
+       console.log("Member:", nickname); // "Member ID: 4"
+       
        updateMemberId(memberId);
+       updateNickname(nickname);
        getMemberDate();
     } else {
       console.error("멤버 ID를 찾을 수 없음");
@@ -184,7 +194,9 @@ getMemberId();
 const updateMemberId = (newValue) => {
   store.commit('setGlobalVariable', newValue);
 };
-
+const updateNickname = (newValue) => {
+  store.commit('setNickname', newValue);
+}
 
 const calendar = ref(null);
 const date = ref([]);
@@ -575,7 +587,6 @@ const getDiary = async(index)=> {
       align-items: center; /* 수직 가운데 정렬 */
     }
     .but {
-      
       margin: 20px;
       padding: 10px;
       border-radius: 10px;

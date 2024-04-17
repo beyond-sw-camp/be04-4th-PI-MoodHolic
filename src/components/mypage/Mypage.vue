@@ -5,7 +5,7 @@
         <div class="frame-wrapper">
           <div class="frame-group">
             <div class="konan-wrapper">
-              <h1 class="konan">Konan님</h1>
+              <h1 class="konan"> {{nickname}}</h1>
             </div>
             <h2 class="h2">오늘 하루 기분은 어떠신가요?</h2>
           </div>
@@ -1087,5 +1087,16 @@ body {
 }
 
 
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); */
 </style>
+
+
+
+<script setup>
+  import { ref, onMounted } from 'vue';
+import { useStore } from 'vuex';
+
+const store = useStore();
+let memberId = store.state.memberId;
+const nickname = memberId;
+</script>

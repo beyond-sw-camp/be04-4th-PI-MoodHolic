@@ -4,13 +4,25 @@ export default createStore({
     state() {
         return {
             isAuthenticated: false,
-            token: null
+            token: null,
+            memberId: null,
+            nickname: null,
+            email: null
         };
     },
     mutations: {
         setAuth(state, { isAuthenticated, token }) {
             state.isAuthenticated = isAuthenticated;
             state.token = token;
+        },
+        setGlobalVariable(state, newValue) {
+            state.memberId = newValue;
+        },
+        setNickname(state, newValue) {
+            state.nickname = newValue;
+        },
+        setEmail(state, newValue) {
+            state.email = newValue;
         }
     },
     actions: {
@@ -35,6 +47,16 @@ export default createStore({
         },
         initializeAuth({ dispatch }) {
             dispatch('checkAuth');
+        },
+
+        updateMemberId({ commit }, newValue) {
+            commit('setGlobalVariable', newValue); // 여기 수정
+        },
+        updateNickname({ commit }, newValue) {
+            commit('setNickname', newValue); // 여기 수정
+        },
+        updateEmail({ commit }, newValue) {
+            commit('setEmail', newValue); // 여기 수정
         }
     },
     getters: {

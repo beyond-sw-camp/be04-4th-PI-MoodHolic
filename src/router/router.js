@@ -1,9 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import store from '@/store/store.js';
-import LogIn from "@/components/main/LogIn/LogIn.vue";
-import Main from "@/components/main/Main.vue";
-import Calendar from "@/components/calendar/Calendar.vue";
-import SignUp from "@/components/main/SighUp/SignUp.vue";
+import store from "@/store/store.js";
+import LogIn from "@/components/logIn/LogIn.vue";
+import SignUp from "@/components/signup/SignUp.vue";
+import Mypage from "@/components/mypage/Mypage.vue";
+import Info from "@/components/mypage/Info.vue";
+import Card from "@/components/mypage/AIrecommended/Card/Card.vue";
+import List from "@/components/mypage/Diary/List/List.vue";
+import Statistics from "@/components/header/statistics/Statistics.vue";
+import Welcome from "@/components/signup/Welcome.vue";
+import MemberMain from "@/components/common/MemberMain.vue";
+import NonMemberMain from "@/components/common/NonMemberMain.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -17,16 +23,39 @@ const router = createRouter({
             component: SignUp
         },
         {
+            path: '/mypage',
+            component: Mypage
+        },
+        {
+            path: "/mypage/info",
+            component: Info
+        },
+        {
+            path: "/mypage/aigood",
+            component: List
+        },
+        {
+            path: "/mypage/diary",
+            component: Card
+        },
+        {
+            path: '/statistics',
+            component: Statistics
+        },
+        {
+            path: '/welcome',
+            component: Welcome
+        },
+        {
             path: '/',
-            name: 'Home',
             component: () => {
                 if (store.getters.isAuthenticated) {
-                    return Calendar;
+                    return MemberMain;
                 } else {
-                    return Main;
+                    return NonMemberMain;
                 }
             }
-        }
+        },
     ]
 });
 
@@ -35,19 +64,17 @@ router.beforeEach((to, from, next) => {
 
     // 로그인 상태에서 로그인 또는 회원가입 페이지 접근 시 홈으로 리다이렉트
     if (isLoggedIn && (to.path === '/login' || to.path === '/signup')) {
-        next('/');
+        if (from.path !== '/') {
+            next('/');
+        } else {
+            next(false); // 이 경우 현재 위치 유지
+        }
         return;
     }
 
     // 로그인하지 않은 상태에서 보호된 라우트 접근 시 로그인 페이지로 리다이렉트
-    if (!isLoggedIn && to.path !== '/login' && to.path !== '/signup' && to.path !== '/') {
+    if (!isLoggedIn && !['/login', '/signup', '/'].includes(to.path)) {
         next('/login');
-        return;
-    }
-
-    // 같은 경로(`/`)로 이동 시 로그인/로그아웃 후 페이지 새로 고침
-    if (to.path === from.path && to.path === '/' && to.meta.forceUpdate) {
-        window.location.reload();
         return;
     }
 

@@ -54,7 +54,8 @@
 
 <img src="https://img.shields.io/badge/OpenAI-412991?style=for-thebadge&logo=OpenAI&logoColor=white" />
 
-</br>
+
+</br></br>
 
 ### ⚙️ CI/CD
 
@@ -67,16 +68,15 @@
   ![스크린샷_2024-04-03_오후_ ovebg-preview (1)_animation](https://github.com/ThisDotE/InnerJoinUs/assets/149561287/839d399a-f74a-4d12-80c8-040cbfcc049d)
 
 </div>
+<p align="center">
 
-<div align="center">
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=22&pause=1000&color=F7C621&vCenter=true&multiline=true&random=false&width=438&height=52&lines=Welcome+We+are+Team+PI)](https://git.io/typing-svg)
+</p>
 
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=22&pause=1000&color=F7C621&vCenter=true&multiline=true&random=false&width=438&height=52&lines=Welcome+We+are+Team+PI)](https://git.io/typing-svg)
-</div>
-
-<div align="center">
+<p align="center">
   
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=40&pause=1000&color=085EF7&vCenter=true&random=false&width=438&height=70&lines=Mood+Holic!!)](https://git.io/typing-svg)
-</div>
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=40&pause=1000&color=085EF7&vCenter=true&random=false&width=438&height=70&lines=Mood+Holic!!)](https://git.io/typing-svg)
+</p>
 
 </br></br></br>
 
@@ -105,7 +105,7 @@
 
 5. 통계 분석을 통한 인사이트 도출: 저장된 데이터를 기반으로 한 통계 분석은 사용자들의 감정 변화, 취향 변화, 성장 과정 등을 이해하는 데 도움을 줄 수 있습니다. 이를 통해 트렌드 파악이나 사용자들에게 더 나은 서비스를 제공할 수 있는 인사이트를 도출할 수 있습니다.
 
-**=> 총체적으로, 이러한 시스템은 사용자들의 정서적 건강과 성장을 지원하고, 개인화된 서비스를 제공하여 보다 만족스러운 경험을 제공할 수 있습니다.**
+&nbsp;&nbsp;&nbsp;**=> 총체적으로, 이러한 시스템은 사용자들의 정서적 건강과 성장을 지원하고, 개인화된 서비스를 제공하여 보다 만족스러운 경험을 제공할 수 있습니다.**
 
 </br>
 
@@ -146,6 +146,18 @@
 ### ⏰ Sprint Kanban 2주차
 ![image](https://github.com/Bodrami/Practice_Template/assets/149561287/ae2f3747-8762-4fbc-a350-996fc0f4df45)
 
+</br>
+
+# 🌅 Mood Holic Story Board 
+
+<details>
+<summary><h2>Story Board</h2></summary>
+<div markdown="1">
+	
+![InnerJoinUs_스토리-보드_wire-frame__기능구현된-것만_복사본](https://github.com/beyond-sw-camp/be04-4th-PI-MoodHolic/assets/149561287/dcfd0ba0-5c5d-4ca6-9b35-903cc45636d7)
+
+</div>
+</details>
 </br>
 
 # 🌅 디렉토리 구조 

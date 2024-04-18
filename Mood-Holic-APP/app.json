@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "MoodHolicAPP",
+    "slug": "MoodHolicAPP",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+# OSX
+.DS_Store
+
+build/classes/
+build/generated/
+build/reports/
+build/resources/
+build/test-results/
+build/tmp/
+build/resolvedMainClassName
+# Xcode
+
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+ios/.xcode.env.local
+
+# Android/IntelliJ
+.idea
+.gradle
+local.properties
+*.iml
+*.hprof
+.cxx/
+*.keystore
+!debug.keystore
+
+# node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# fastlane
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
+
+# Bundle artifact
+*.jsbundle
+
+# Ruby / CocoaPods
+/ios/Pods/
+/vendor/bundle/
+
+# Temporary files created by Metro
+.metro-health-check*
+
+# testing
+/coverage
+
+# Spring Tool Suite & IntelliJ IDEA
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+out/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# Visual Studio Code
+.vscode/
+
+# Spring-boot
+application-private.yml
+
+# Google Cloud service account keys
+mood-holic-8e28efc835fe.json
+MoodHolicBE/src/main/resources/mood-holic-be651ae4c7d4.json
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# HELP file
+HELP.md
+
+# Gradle
+!gradle/wrapper/gradle-wrapper.jar
+
+# Vue specific
+src/main/resources/mood-holic-be651ae4c7d4.json

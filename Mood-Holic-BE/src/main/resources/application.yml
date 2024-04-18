@@ -1,0 +1,25 @@
+server:
+#  port: 443
+  port: 8888
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: changeit
+#    key-store-type: PKCS12
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  application:
+    name: MoodHolic
+  main:
+    allow-bean-definition-overriding: true
+  jpa:
+    show-sql: false
+    database: mysql
+    properties:
+      hibernate:
+        format_sql: false
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    generate-ddl: false
+
+  profiles:
+    active: private

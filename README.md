@@ -80,7 +80,7 @@
 
 </br></br></br>
 
-# 1. Mood Holic 소개
+# 🌅 Mood Holic 소개
 
 ### 👀 기획 배경
 > 현대 사회에서는 스트레스, 불안, 우울 등의 정신 건강 문제가 증가하고 있습니다. 이러한 문제에 대처하고 감정을 관리하는 것은 매우 중요합니다. 따라서 개인이 감정을 정리하고 관리하는데 도움을 주는 툴이 필요하다는 필요성이 있다고 생각했습니다. 또한 사용자들은 개인화된 서비스를 선호하고 자신의 감정 상태와 선호도에 맞춘 추천을 받는 것은 사용자 경험을 향상시키는데 도움이 되었던 경험을 가지고 이번 프로젝트를 기획하게 되었습니다.
@@ -115,7 +115,7 @@
 - **통계 분석**: 저장된 데이터들을 기반으로 한 회원에 대한 기분, 음식, 음악, 영화 취향 분석 등을 통계로 시각화 할 수 있습니다. (ex. 그래프)
 </br>
 
-# 2. 추진 계획
+# 🌅 추진 계획
 
 ### 🗓️ Table: 추진체계
 
@@ -128,10 +128,15 @@
 
 - 작업 수행공간: 서울 동작구 보라매로 87 SFC빌딩 3F 1강의실, 원격 소통(Discord 및 slack)
 
-
 <br/>
 
-# 3. 일정관리 (Sprint Kanban)
+# 🌅 Mood Holic's System Architecture
+
+![스크린샷 2024-04-17 오후 6 01 04](https://github.com/beyond-sw-camp/be04-4th-PI-MoodHolic/assets/149561287/5c9ddd94-0447-472b-84c1-27d4a50ec3c5)
+
+</br>
+
+# 🌅 일정관리 (Sprint Kanban)
 
 ### ⏰ Sprint Kanban 1주차
 ![image](https://github.com/Bodrami/Practice_Template/assets/149561287/11c62c6d-9e3d-4671-91a7-f3dc4040cf54)
@@ -143,7 +148,7 @@
 
 </br>
 
-# 4. 디렉토리 구조 
+# 🌅 디렉토리 구조 
 
 <details>
 <summary><h2>Mood.Holic.APP</h2></summary>
@@ -224,7 +229,7 @@
 </details>
 </br>
 
-# 5. DB Modeling (ERD, DDD, DDL, DML)
+# 🌅 DB Modeling (ERD, DDD, DDL, DML)
 
 <h2>🗂️ ERD</h2>
 	
@@ -530,7 +535,7 @@ VALUES
 </details>
 </br>
 
-# 6. 개념 & 논리 Modeling
+# 🌅 개념 & 논리 Modeling
 
 <h2>🗄️ 개념 Modeling</h2>
 
@@ -544,20 +549,20 @@ VALUES
 
 </br>
 
-# 7. Wire Frame
+# 🌅 Mood Holic Menu 구조도
+![image](https://github.com/beyond-sw-camp/be04-4th-PI-MoodHolic/assets/149561287/be7b1c1d-8c00-48de-b97a-8efded48fa66)
+
+
+</br>
+
+# 🌅 Wire Frame
 ### Mood Holic's Wire Frame
 
 ![wireframe](https://github.com/Bodrami/Practice_Template/assets/149561287/663043e3-76de-451b-9e0a-443f577d39c4)
 
 </br>
 
-# 8. Mood Holic's System Architecture
-
-![스크린샷 2024-04-17 오후 6 01 04](https://github.com/beyond-sw-camp/be04-4th-PI-MoodHolic/assets/149561287/5c9ddd94-0447-472b-84c1-27d4a50ec3c5)
-
-</br>
-
-# 9. API 명세서
+# 🌅 API 명세서
 
 ![image](https://github.com/Bodrami/Practice_Template/assets/149561287/55505a91-a533-427d-bd90-8ec3700420ed)
 ![image](https://github.com/Bodrami/Practice_Template/assets/149561287/de8d83ff-5a5f-4db5-8286-9c26fa03362e)
@@ -571,7 +576,7 @@ VALUES
 
 </br>
 
-# 10. Mood Holic 배포문서
+# 🌅 Mood Holic 배포문서
 
 <details>
 <summary>MoodHolic's Build 및 배포 문서</summary>
@@ -616,11 +621,11 @@ VALUES
 
 </details></br>
 
-# 11. CI/CD 기능 명세서
+# 🌅 CI/CD 기능 명세서
 ![image](https://github.com/beyond-sw-camp/be04-4th-PI-MoodHolic/assets/149561287/dbef64b3-d9c2-464a-b180-8f00dc3c497e)
 
 
-# 12. 추후 고도화 기능
+# 🌅 추후 고도화 기능
 
 * 프론트 재정리: 웹사이트의 프론트엔드를 체계적으로 재정비하여 사용자 경험을 향상시키고 디자인을 현대적으로 업데이트
 * 웹과 네이티브 앱 분리: 현재 웹사이트를 네이티브 앱과 별도로 개발하여 각 플랫폼에 최적화된 성능과 사용자 경험을 제공
@@ -632,7 +637,7 @@ VALUES
 
 </br>
 
-# 13. Acatsuki's 회고
+# 🌅 Acatsuki's 회고
 
 | **이름**   | **회고** |
 |:--------:|:------:|

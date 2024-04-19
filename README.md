@@ -65,7 +65,7 @@
 
 <div align="center">
   
-  ![스크린샷_2024-04-03_오후_ ovebg-preview (1)_animation](https://github.com/ThisDotE/InnerJoinUs/assets/149561287/839d399a-f74a-4d12-80c8-040cbfcc049d)
+![스크린샷_2024-04-03_오후_ ovebg-preview (1)_animation](https://github.com/ThisDotE/InnerJoinUs/assets/149561287/839d399a-f74a-4d12-80c8-040cbfcc049d)
 
 </div>
 <div align="center">
@@ -132,7 +132,7 @@
 
 # 🌅 Mood Holic's System Architecture
 
-![스크린샷 2024-04-17 오후 6 01 04](https://github.com/beyond-sw-camp/be04-4th-PI-MoodHolic/assets/149561287/5c9ddd94-0447-472b-84c1-27d4a50ec3c5)
+![스크린샷 2024-04-19 오후 3 38 52](https://github.com/beyond-sw-camp/be04-4th-PI-MoodHolic/assets/149561287/3f6df52b-e5b1-49ff-9fee-25bc0d7b9ddc)
 
 </br>
 

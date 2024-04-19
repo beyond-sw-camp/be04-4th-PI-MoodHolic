@@ -68,15 +68,15 @@
   ![스크린샷_2024-04-03_오후_ ovebg-preview (1)_animation](https://github.com/ThisDotE/InnerJoinUs/assets/149561287/839d399a-f74a-4d12-80c8-040cbfcc049d)
 
 </div>
-<p align="center">
+<div align="center">
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=22&pause=1000&color=F7C621&vCenter=true&multiline=true&random=false&width=438&height=52&lines=Welcome+We+are+Team+PI)](https://git.io/typing-svg)
-</p>
+</div>
 
-<p align="center">
+<div align="center">
   
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=40&pause=1000&color=085EF7&vCenter=true&random=false&width=438&height=70&lines=Mood+Holic!!)](https://git.io/typing-svg)
-</p>
+</div>
 
 </br></br></br>
 
@@ -135,6 +135,12 @@
 ![스크린샷 2024-04-17 오후 6 01 04](https://github.com/beyond-sw-camp/be04-4th-PI-MoodHolic/assets/149561287/5c9ddd94-0447-472b-84c1-27d4a50ec3c5)
 
 </br>
+
+# 🌅 안배운 기술 목록
+* Google Cloud - 클라우드에 이미지를 업로드하여 이미지 url만 관리할 수 있도록 함
+* V-Calendar - 달력 API로 메인 화면 (다이어리 달력)기능 구현
+* vue-chart - 통계, 수치를 표로 출력하기 위한 API
+* react native - 페이스북에서 만든 오픈소스 모바일 애플리케이션 프레임워크로 구현한 웹을 앱으로 구현
 
 # 🌅 일정관리 (Sprint Kanban)
 

@@ -12,13 +12,15 @@ public interface DiaryMovieDAO extends JpaRepository<DiaryMovie, Integer> {
 
 
 
-    DiaryMovie findByDiaryId(int diaryId);
+    DiaryMovie findByDiaryIdDiaryId(int diaryId);
 
-    List<DiaryMovie> findByMovieLikeTrue();
+    List<DiaryMovie> findByMovieLoveTrue();
 
     @Query(value = "SELECT m.movie_name FROM movie m INNER JOIN diary_movie dm ON m.movie_id = dm.movie_id WHERE dm.movie_like = true", nativeQuery = true)
     List<String> findLikedMovieNames();
 
 
-    void deleteByDiaryId(int diaryId);
+    void deleteByDiaryIdDiaryId(int diaryId);
+
+    List<DiaryMovie> findAllByDiaryIdMemberMemberIdAndMovieLoveTrue(long memberId);
 }

@@ -22,7 +22,7 @@ public class DiaryMovieServiceImpl implements DiaryMovieService{
 
     @Override
     public DiaryMovie findMovieByDiaryId(int diaryId){
-        return diaryMovieDAO.findByDiaryId(diaryId);
+        return diaryMovieDAO.findByDiaryIdDiaryId(diaryId);
     }
 
     @Override
@@ -32,12 +32,12 @@ public class DiaryMovieServiceImpl implements DiaryMovieService{
 
     @Override
     public void delete(int diaryId){
-        diaryMovieDAO.deleteByDiaryId(diaryId);
+        diaryMovieDAO.deleteByDiaryIdDiaryId(diaryId);
     }
 
     @Override
     public List<DiaryMovie> findLikedDiaryMovies() {
-        return diaryMovieDAO.findByMovieLikeTrue();
+        return diaryMovieDAO.findByMovieLoveTrue();
     }
     @Override
     public List<String> findLikedMovieNames() {
@@ -45,20 +45,16 @@ public class DiaryMovieServiceImpl implements DiaryMovieService{
     }
 
     @Override
-    public List<DiaryMovie> getMemberLikedMovie(List<Diary> diaries ){
-        List<DiaryMovie> returnValue= new ArrayList<>();
-        diaries.forEach(diary -> {
-            DiaryMovie diaryMovie = diaryMovieDAO.findByDiaryId(diary.getDiaryId());
-            if(diaryMovie!=null&&diaryMovie.isMovieLike()==true)
-                returnValue.add(diaryMovie);
-        });
-        return returnValue;
+    public List<DiaryMovie> getMemberLikedMovie(long memberId){
+        return  diaryMovieDAO.findAllByDiaryIdMemberMemberIdAndMovieLoveTrue(memberId);
     }
+
+    // 개선 전
     @Override
     public List<DiaryMovie> getMemberLikedMovie2(List<Diary> diaries ){
         List<DiaryMovie> returnValue= new ArrayList<>();
         diaries.forEach(diary -> {
-            DiaryMovie diaryMovie = diaryMovieDAO.findByDiaryId(diary.getDiaryId());
+            DiaryMovie diaryMovie = diaryMovieDAO.findByDiaryIdDiaryId(diary.getDiaryId());
             System.out.println("diaryMovie = " + diaryMovie);
             if(diaryMovie!=null)
                 returnValue.add(diaryMovie);
@@ -69,8 +65,8 @@ public class DiaryMovieServiceImpl implements DiaryMovieService{
     @Override
     @Transactional
     public void likeMovie(int diaryId, boolean movie){
-        DiaryMovie diaryMovie = diaryMovieDAO.findByDiaryId(diaryId);
-        diaryMovie.setMovieLike(movie);
+        DiaryMovie diaryMovie = diaryMovieDAO.findByDiaryIdDiaryId(diaryId);
+        diaryMovie.setMovieLove(movie);
 
     }
 }

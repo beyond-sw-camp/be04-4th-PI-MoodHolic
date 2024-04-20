@@ -47,6 +47,8 @@
         <br>
         <div align="center" style="font-size:30px; background-color: pink; border-radius: 20px; font-weight: 1000;">AI's PICK</div>
         <br>
+        <div align="center" style="font-size:30px; background-color: white; border-radius: 10px; font-weight: 1000; padding: 10px"> - 조언 - <br><br>"{{ diary.comment.commentContent }}" </div>
+        <br>
 
         <div style="display: flex; width:100%; font-weight: 700;" align="center" >
           <div style="border-radius: 30px; background-color: white;  padding-bottom: 7%;   margin: 0 auto; text-align: left; width:30%; ">
@@ -151,7 +153,7 @@ const getMemberId = async()=>{
     'Authorization': authToken
   };
 
-  await fetch('http://localhost:30004/userinfo', {
+  await fetch('http://localhost:8888/userinfo', {
     method: 'GET',
     headers: headers,
     credentials: 'include'  // 쿠키 포함시킴
@@ -230,7 +232,7 @@ const closePopup = () => {
 
 const getMemberDate = async()=> {
   console.log(memberId);
-  await fetch(`http://localhost:30004/calendar/${memberId}`)
+  await fetch(`http://localhost:8888/calendar/${memberId}`)
   .then(response => {
             if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -303,7 +305,7 @@ function clickContent(diaryId) {
 
 
 const getDiary = async(index)=> {
-  await fetch(`http://localhost:30004/diary/${index}`)
+  await fetch(`http://localhost:8888/diary/${index}`)
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -357,7 +359,7 @@ const getDiary = async(index)=> {
         console.log(editedFeed);
 
         try {
-            const response = await fetch(`http://localhost:30004/diary`, {
+            const response = await fetch(`http://localhost:8888/diary`, {
                 method: 'POST',
                 headers: headers,
                 credentials: 'include',
@@ -400,7 +402,7 @@ const getDiary = async(index)=> {
         formData.append('file', file);
 
         // fetch(`http://localhost:8000/member-service/image/profile/${memberId.value}`, {
-        await fetch(`http://localhost:30004/image`, {
+        await fetch(`http://localhost:8888/image`, {
             method: 'POST',
             headers: headers,
             credentials: 'include',

@@ -1,8 +1,10 @@
 package akatsuki.moodholic.service.facade;
 
 import akatsuki.moodholic.domain.Diary;
+import akatsuki.moodholic.domain.DiaryEmotion;
 import akatsuki.moodholic.dto.Calendar;
 import akatsuki.moodholic.repository.DiaryDAO;
+import akatsuki.moodholic.repository.DiaryEmotionDAO;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,8 @@ class CalendarFacadeServiceTest {
     CalendarFacadeService calendarFacadeService;
     @Autowired
     DiaryDAO diaryDAO;
+    @Autowired
+    DiaryEmotionDAO diaryEmotionDAO;
 
     long memberId;
 
@@ -50,6 +54,14 @@ class CalendarFacadeServiceTest {
             assertEquals(year,Integer.parseInt(calendar.getYear()));
 
         });
+    }
+
+    @Test
+    @DisplayName("멤버 달력 리펙토링중")
+    void getCal(){
+        long memberId =1;
+        List<DiaryEmotion> diaryEmotionList = diaryEmotionDAO.findByDiaryMemberMemberId(memberId);
+        System.out.println("diaryEmotionList = " + diaryEmotionList);
     }
 
 }

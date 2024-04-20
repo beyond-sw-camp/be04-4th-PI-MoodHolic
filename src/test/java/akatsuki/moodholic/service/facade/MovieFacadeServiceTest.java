@@ -59,13 +59,4 @@ class MovieFacadeServiceTest {
         });
         assertEquals(0,memberMovieGenreRanking.getTopCnt());
     }
-
-    @Test
-    @DisplayName("멤버가 좋아요 한 영화 리스트 refactor")
-    void getMemberLikedMovie2(){
-        long memberId=1;
-        List<DiaryMovie> diaryMovieList = diaryMovieDAO.findAllByDiaryIdMemberMemberIdAndMovieLove(memberId,true);
-        System.out.println("diaryMovieList = " + diaryMovieList);
-
-    }
 }

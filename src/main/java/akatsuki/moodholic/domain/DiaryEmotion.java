@@ -3,9 +3,6 @@ package akatsuki.moodholic.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.HashMap;
-import java.util.List;
-
 @Entity
 @Table(name = "diary_emotion")
 @NoArgsConstructor
@@ -21,15 +18,19 @@ public class DiaryEmotion {
 
     @JoinColumn(name = "diary_id")
     @OneToOne
-    private Diary diaryId;
+    private Diary diary;
 
     @Column(name = "emotion_id")
     private int EmotionId;
 
 
     public DiaryEmotion(Diary diary, int emotionScore) {
-        this.diaryId=diary;
+        this.diary =diary;
         this.EmotionId = emotionScore;
+    }
+
+    public int getDiaryId(){
+        return this.diary.getDiaryId();
     }
 
 

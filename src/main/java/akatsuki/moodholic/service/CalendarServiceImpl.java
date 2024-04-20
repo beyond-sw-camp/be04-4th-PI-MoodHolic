@@ -7,65 +7,48 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.SortedMap;
+import java.util.Map;
 
 @Service
 public class CalendarServiceImpl implements CalendarService{
 
     @Override
-    public List<Calendar> getCalendar(List<Diary> diaryList, SortedMap<Integer, Integer> emotions) {
+    public List<Calendar> getCalendar(Map<Diary, Integer> emotions) {
         List<Calendar> calendar = new ArrayList<>();
-
-        diaryList.forEach(diary ->{
-            String[] DATE = diary.getDate().split("-");
-            String summary = diary.getSummary();
-            String comment = diary.getContent();
-            String emotion_name;
-
-            if(emotions.get(diary.getDiaryId()) != null) {
-                int emotion_score = emotions.get(diary.getDiaryId());
-                if (emotion_score < 4) emotion_name = "나쁨";
-                else if (emotion_score < 7) emotion_name = "보통";
-                else emotion_name = "좋음";
-
-                if (summary.length() > 5) {
-                    summary = summary.substring(0, 5) + "...";
-                }
-                if (comment.length() > 12) {
-                    comment = comment.substring(0, 12) + "...";
-                }
-                calendar.add(new Calendar(diary.getDiaryId(), diary.getStatus(), emotion_name, DATE[0], DATE[1], DATE[2], summary, comment));
-            }
+        emotions.forEach((diary,emotionScore)->{
+            addEmotionToCalendar(diary, calendar);
         });
         return calendar;
     }
 
-    public List<Calendar> getCalendarOfYear(List<Diary> diaryList, int year, SortedMap<Integer, Integer> emotions){
+    private static void addEmotionToCalendar(Diary diary, List<Calendar> calendar) {
+        String[] DATE = diary.getDate().split("-");
+        String summary = diary.getSummary();
+        String comment = diary.getContent();
+        String emotion_name;
+        int emotion_score = diary.getDiaryId();
+
+        if (emotion_score < 4) emotion_name = "나쁨";
+        else if (emotion_score < 7) emotion_name = "보통";
+        else emotion_name = "좋음";
+
+        if (summary.length() > 5) {
+            summary = summary.substring(0, 5) + "...";
+        }
+        if (comment.length() > 12) {
+            comment = comment.substring(0, 12) + "...";
+        }
+        calendar.add(new Calendar(diary.getDiaryId(), diary.getStatus(), emotion_name, DATE[0], DATE[1], DATE[2], summary, comment));
+    }
+
+    public List<Calendar> getCalendarOfYear(int year, Map<Diary, Integer> emotions){
         List<Calendar> calendar = new ArrayList<>();
         String YEAR = year+"";
-        diaryList.forEach(diary ->{
+        emotions.forEach((diary,emotionScore)->{
             String[] cmpYear= diary.getDate().split("-");
-            if(YEAR.equals(cmpYear[0])) {
-                String[] DATE = diary.getDate().split("-");
-                String summary = diary.getSummary();
-                String comment = diary.getContent();
-                String emotion_name;
-                if (emotions.get(diary.getDiaryId()) != null) {
-                    int emotion_score = emotions.get(diary.getDiaryId());
-                    if (emotion_score < 4) emotion_name = "나쁨";
-                    else if (emotion_score < 7) emotion_name = "보통";
-                    else emotion_name = "좋음";
-                    if (summary.length() > 5) {
-                        summary = summary.substring(0, 5) + "...";
-                    }
-                    if (comment.length() > 12) {
-                        comment = comment.substring(0, 12) + "...";
-                    }
-                    calendar.add(new Calendar(diary.getDiaryId(), diary.getStatus(), emotion_name, DATE[0], DATE[1], DATE[2], summary, comment));
-                }
-            }
+            if(YEAR.equals(cmpYear[0]))
+                addEmotionToCalendar(diary,calendar);
         });
-
         return calendar;
     }
 

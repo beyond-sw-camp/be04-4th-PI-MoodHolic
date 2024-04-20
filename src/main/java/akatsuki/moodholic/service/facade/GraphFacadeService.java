@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.SortedMap;
+import java.util.Map;
 
 @Service
 public class GraphFacadeService {
@@ -25,27 +25,27 @@ public class GraphFacadeService {
     }
 
 
-    public SortedMap<String, Double> GetEmotionMonth(long memberId) {
+    public Map<String, Double> GetEmotionMonth(long memberId) {
         List<Diary> diaryList = diaryService.findAllByMemberOrderByDateAsc(memberId);
-        SortedMap<Integer,Integer> memberEmotion = diaryEmotionService.getEmotionMap(diaryList);
+        Map<Diary,Integer> memberEmotion = diaryEmotionService.getEmotionMap(memberId);
         return graphService.GetEmotionMonth(memberId,diaryList,memberEmotion);
     }
 
-    public SortedMap<String, Double> GetEmotionYear(long memberId) {
+    public Map<String, Double> GetEmotionYear(long memberId) {
         List<Diary> diaryList = diaryService.findAllByMemberOrderByDateAsc(memberId);
-        SortedMap<Integer,Integer> memberEmotion = diaryEmotionService.getEmotionMap(diaryList);
+        Map<Diary,Integer> memberEmotion = diaryEmotionService.getEmotionMap(memberId);
         return graphService.GetEmotionYear(memberId,diaryList,memberEmotion);
     }
 
-    public SortedMap<String, Double> GetEmotionWeek(long memberId) {
+    public Map<String, Double> GetEmotionWeek(long memberId) {
         List<Diary> diaryList = diaryService.findAllByMemberOrderByDateAsc(memberId);
-        SortedMap<Integer,Integer> memberEmotion = diaryEmotionService.getEmotionMap(diaryList);
+        Map<Diary,Integer> memberEmotion = diaryEmotionService.getEmotionMap(memberId);
         return graphService.GetEmotionWeek(memberId,diaryList,memberEmotion);
     }
 
-    public SortedMap<String, Double> GetEmotionDay(long memberId) {
+    public Map<String, Double> GetEmotionDay(long memberId) {
         List<Diary> diaryList = diaryService.findAllByMemberOrderByDateAsc(memberId);
-        SortedMap<String,Double> memberEmotion = diaryEmotionService.getEmotionDayMap(diaryList);
+        Map<String,Double> memberEmotion = diaryEmotionService.getEmotionDayMap(diaryList);
 
         return memberEmotion;
     }

@@ -5,6 +5,7 @@ import akatsuki.moodholic.domain.DiaryEmotion;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.SortedMap;
 
 public interface DiaryEmotionService {
@@ -14,7 +15,7 @@ public interface DiaryEmotionService {
 
     void delete(int diaryId);
 
-    SortedMap<Integer, Integer> getEmotionMap(List<Diary> diaryList);
+    Map<Diary, Integer> getEmotionMap(long memberId);
 
     SortedMap<String, Double> getEmotionDayMap(List<Diary> diaryList);
 }

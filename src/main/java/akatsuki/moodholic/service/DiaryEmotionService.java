@@ -17,5 +17,5 @@ public interface DiaryEmotionService {
 
     Map<Diary, Integer> getEmotionMap(long memberId);
 
-    SortedMap<String, Double> getEmotionDayMap(List<Diary> diaryList);
+//    SortedMap<Diary, Double> getEmotionDayMap(long memberId);
 }

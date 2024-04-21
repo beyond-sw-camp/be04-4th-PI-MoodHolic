@@ -41,25 +41,7 @@ public class DiaryEmotionServiceImpl implements DiaryEmotionService{
 
         List<DiaryEmotion> diaryEmotionList =  diaryEmotionDAO.findByDiaryMemberMemberId(memberId);
         Map<Diary,Integer> returnValue = new TreeMap<>(diaryEmotionList.stream().collect(Collectors.toMap(DiaryEmotion::getDiary, DiaryEmotion::getEmotionId )));
-//        diaryList.forEach(diary -> {
-//            DiaryEmotion diaryEmotion = diaryEmotionDAO.findByDiaryDiaryIdOrderByDiaryDateAsc(diary.getDiaryId());
-//            if(diaryEmotion!=null&&diaryEmotion.getDiary()!=null){
-//                returnValue.put(diaryEmotion.getDiary().getDiaryId(),diaryEmotion.getEmotionId());
-//            }
-//        });
-
         return returnValue;
     }
 
-    @Override
-    public SortedMap<String, Double> getEmotionDayMap(List<Diary> diaryList) {
-        SortedMap<String,Double> returnValue= new TreeMap<>();
-        diaryList.forEach(diary -> {
-            DiaryEmotion diaryEmotion = diaryEmotionDAO.findByDiaryDiaryIdOrderByDiaryDateAsc(diary.getDiaryId());
-            if(diaryEmotion!=null&&diaryEmotion.getDiary()!=null){
-                returnValue.put(diaryEmotion.getDiary().getDate(), diaryEmotion.getEmotionId()*1.0);
-            }
-        });
-        return returnValue;
-    }
 }

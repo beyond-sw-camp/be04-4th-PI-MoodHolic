@@ -24,29 +24,24 @@ public class GraphFacadeService {
         this.diaryEmotionService = diaryEmotionService;
     }
 
-
     public Map<String, Double> GetEmotionMonth(long memberId) {
-        List<Diary> diaryList = diaryService.findAllByMemberOrderByDateAsc(memberId);
         Map<Diary,Integer> memberEmotion = diaryEmotionService.getEmotionMap(memberId);
-        return graphService.GetEmotionMonth(memberId,diaryList,memberEmotion);
+        return graphService.GetEmotionMonth(memberEmotion);
     }
 
     public Map<String, Double> GetEmotionYear(long memberId) {
-        List<Diary> diaryList = diaryService.findAllByMemberOrderByDateAsc(memberId);
         Map<Diary,Integer> memberEmotion = diaryEmotionService.getEmotionMap(memberId);
-        return graphService.GetEmotionYear(memberId,diaryList,memberEmotion);
+        return graphService.GetEmotionYear(memberEmotion);
     }
 
     public Map<String, Double> GetEmotionWeek(long memberId) {
-        List<Diary> diaryList = diaryService.findAllByMemberOrderByDateAsc(memberId);
         Map<Diary,Integer> memberEmotion = diaryEmotionService.getEmotionMap(memberId);
-        return graphService.GetEmotionWeek(memberId,diaryList,memberEmotion);
+        return graphService.GetEmotionWeek(memberEmotion);
     }
 
     public Map<String, Double> GetEmotionDay(long memberId) {
-        List<Diary> diaryList = diaryService.findAllByMemberOrderByDateAsc(memberId);
-        Map<String,Double> memberEmotion = diaryEmotionService.getEmotionDayMap(diaryList);
-
-        return memberEmotion;
+//        List<Diary> diaryList = diaryService.findAllByMemberOrderByDateAsc(memberId);
+        Map<Diary,Integer> memberEmotion = diaryEmotionService.getEmotionMap(memberId);
+        return graphService.GetEmotionDay(memberEmotion);
     }
 }

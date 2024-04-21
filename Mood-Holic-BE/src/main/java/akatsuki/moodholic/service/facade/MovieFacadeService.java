@@ -47,15 +47,14 @@ public class MovieFacadeService {
     }
 
     public List<DiaryMovie> getMemberLikedMovie(long memberId) {
-        List<Diary> diaries = diaryService.getMemberDiaries(memberId);
-        return diaryMovieService.getMemberLikedMovie(diaries);
+        return diaryMovieService.getMemberLikedMovie(memberId);
     }
 
     public MemberMovieGenreRanking getMemberMovieGenreRanking(long memberId) {
         init();
-        List<Diary> diaries = diaryService.getMemberDiaries(memberId);
-        List<DiaryMovie> diaryMovies= diaryMovieService.getMemberLikedMovie(diaries);
+        List<DiaryMovie> diaryMovies= diaryMovieService.getMemberLikedMovie(memberId);
         HashMap<String, Integer> lists = new HashMap<>();
+        System.out.println("diaryMovies = " + diaryMovies);
 
         diaryMovies.forEach(diaryMovie -> {
             if(lists.get(diaryMovie.getMovieId().getMovieGenre())==null) {

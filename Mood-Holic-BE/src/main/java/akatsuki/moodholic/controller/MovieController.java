@@ -57,7 +57,7 @@ public class MovieController {
 
     @GetMapping("/genres/{memberId}")
     public ResponseEntity<MemberMovieGenreRanking> getMemberMovieGenreRanking(@PathVariable long memberId){
-        MemberMovieGenreRanking returnValue= movieFacadeService.getMemberMovieGenreRanking2(memberId);
+        MemberMovieGenreRanking returnValue= movieFacadeService.getMemberMovieGenreRanking(memberId);
         return ResponseEntity.ok().body(returnValue);
     }
 }

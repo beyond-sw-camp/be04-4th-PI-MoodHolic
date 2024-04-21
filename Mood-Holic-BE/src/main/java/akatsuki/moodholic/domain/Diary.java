@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Diary {
+public class Diary implements Comparable<Diary>{
 
     @Id
     @Column(name = "diary_id")
@@ -42,5 +42,11 @@ public class Diary {
         this.imgPath = imgPath;
         this.summary = summary;
         this.member = member;
+    }
+
+
+    @Override
+    public int compareTo(Diary o) {
+        return this.diaryId - o.diaryId;
     }
 }

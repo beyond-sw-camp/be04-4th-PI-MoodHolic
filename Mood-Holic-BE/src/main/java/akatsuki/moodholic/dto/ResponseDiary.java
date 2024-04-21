@@ -15,7 +15,6 @@ public class ResponseDiary {
     private Music music;
     private Comment comment;
 
-
     public ResponseDiary(Diary diary, String emotion, Food food, Movie movie, Music music,Comment comment) {
         this.diary = diary;
         this.emotion = emotion;

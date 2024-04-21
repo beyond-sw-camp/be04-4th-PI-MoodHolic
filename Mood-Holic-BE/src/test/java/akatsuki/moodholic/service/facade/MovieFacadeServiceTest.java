@@ -42,7 +42,7 @@ class MovieFacadeServiceTest {
         long memberId = 1;
         List<DiaryMovie> diaryMovieList = movieFacadeService.getMemberLikedMovie(memberId);
         diaryMovieList.forEach(diaryMovie -> {
-            assertEquals(true,diaryMovie.isMovieLike());
+            assertEquals(true,diaryMovie.isMovieLove());
         });
     }
 
@@ -51,8 +51,7 @@ class MovieFacadeServiceTest {
     void getMemberMovieGenreRanking() {
         long memberId = 1;
         MemberMovieGenreRanking memberMovieGenreRanking = movieFacadeService.getMemberMovieGenreRanking(memberId);
-        List<Diary> diaryList = diaryFacadeService.getMemberDiaries(memberId);
-        List<DiaryMovie> diaryMovieList = diaryMovieService.getMemberLikedMovie(diaryList);
+        List<DiaryMovie> diaryMovieList = diaryMovieService.getMemberLikedMovie(memberId);
         diaryMovieList.forEach(diaryMovie -> {
             if(diaryMovie.getMovieId().getMovieGenre().equals(memberMovieGenreRanking.getTopName())){
                 memberMovieGenreRanking.setTopCnt(memberMovieGenreRanking.getTopCnt()-1);

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.SortedMap;
+import java.util.Map;
 
 @Service
 public class GraphFacadeService {
@@ -24,29 +24,24 @@ public class GraphFacadeService {
         this.diaryEmotionService = diaryEmotionService;
     }
 
-
-    public SortedMap<String, Double> GetEmotionMonth(long memberId) {
-        List<Diary> diaryList = diaryService.findAllByMemberOrderByDateAsc(memberId);
-        SortedMap<Integer,Integer> memberEmotion = diaryEmotionService.getEmotionMap(diaryList);
-        return graphService.GetEmotionMonth(memberId,diaryList,memberEmotion);
+    public Map<String, Double> GetEmotionMonth(long memberId) {
+        Map<Diary,Integer> memberEmotion = diaryEmotionService.getEmotionMap(memberId);
+        return graphService.GetEmotionMonth(memberEmotion);
     }
 
-    public SortedMap<String, Double> GetEmotionYear(long memberId) {
-        List<Diary> diaryList = diaryService.findAllByMemberOrderByDateAsc(memberId);
-        SortedMap<Integer,Integer> memberEmotion = diaryEmotionService.getEmotionMap(diaryList);
-        return graphService.GetEmotionYear(memberId,diaryList,memberEmotion);
+    public Map<String, Double> GetEmotionYear(long memberId) {
+        Map<Diary,Integer> memberEmotion = diaryEmotionService.getEmotionMap(memberId);
+        return graphService.GetEmotionYear(memberEmotion);
     }
 
-    public SortedMap<String, Double> GetEmotionWeek(long memberId) {
-        List<Diary> diaryList = diaryService.findAllByMemberOrderByDateAsc(memberId);
-        SortedMap<Integer,Integer> memberEmotion = diaryEmotionService.getEmotionMap(diaryList);
-        return graphService.GetEmotionWeek(memberId,diaryList,memberEmotion);
+    public Map<String, Double> GetEmotionWeek(long memberId) {
+        Map<Diary,Integer> memberEmotion = diaryEmotionService.getEmotionMap(memberId);
+        return graphService.GetEmotionWeek(memberEmotion);
     }
 
-    public SortedMap<String, Double> GetEmotionDay(long memberId) {
-        List<Diary> diaryList = diaryService.findAllByMemberOrderByDateAsc(memberId);
-        SortedMap<String,Double> memberEmotion = diaryEmotionService.getEmotionDayMap(diaryList);
-
-        return memberEmotion;
+    public Map<String, Double> GetEmotionDay(long memberId) {
+//        List<Diary> diaryList = diaryService.findAllByMemberOrderByDateAsc(memberId);
+        Map<Diary,Integer> memberEmotion = diaryEmotionService.getEmotionMap(memberId);
+        return graphService.GetEmotionDay(memberEmotion);
     }
 }

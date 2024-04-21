@@ -54,6 +54,7 @@ public class MovieFacadeService {
         init();
         List<DiaryMovie> diaryMovies= diaryMovieService.getMemberLikedMovie(memberId);
         HashMap<String, Integer> lists = new HashMap<>();
+        System.out.println("diaryMovies = " + diaryMovies);
 
         diaryMovies.forEach(diaryMovie -> {
             if(lists.get(diaryMovie.getMovieId().getMovieGenre())==null) {

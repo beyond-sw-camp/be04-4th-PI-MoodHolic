@@ -67,8 +67,22 @@ public class DiaryController {
             , @RequestParam(name = "music") boolean music
             , @RequestParam(name = "movie") boolean movie) {
         String returnValue = facadeService.putMemberLike(diaryId,food,music,movie);
-
         return ResponseEntity.ok().body(returnValue);
     }
+    @PutMapping("/{diaryId}/movie-like")
+    public ResponseEntity putMemberMovieLike(@PathVariable int diaryId){
+        facadeService.putMemberMovieLike(diaryId);
+        return ResponseEntity.ok().build();
+    }
 
+    @PutMapping("/{diaryId}/food-like")
+    public ResponseEntity putMemberFoodLike(@PathVariable int diaryId){
+        facadeService.putMemberFoodLike(diaryId);
+        return ResponseEntity.ok().build();
+    }
+    @PutMapping("/{diaryId}/music-like")
+    public ResponseEntity putMemberMusicLike(@PathVariable int diaryId){
+        facadeService.putMemberMusicLike(diaryId);
+        return ResponseEntity.ok().build();
+    }
 }

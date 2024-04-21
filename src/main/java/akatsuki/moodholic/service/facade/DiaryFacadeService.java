@@ -135,4 +135,15 @@ public class DiaryFacadeService {
 
         return "좋아요 입력 완료";
     }
+
+    public void putMemberMovieLike(int diaryId) {
+        diaryMovieService.likeMovie(diaryId, true);
+    }
+    public void putMemberFoodLike(int diaryId){
+        diaryFoodService.likeFood(diaryId,true);
+    }
+    public void putMemberMusicLike(int diaryId){
+        diaryMusicService.likeMusic(diaryId,true);
+    }
+
 }

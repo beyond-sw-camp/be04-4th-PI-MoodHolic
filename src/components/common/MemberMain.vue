@@ -22,7 +22,7 @@
   </template>
   </VCalendar>
 
-  <div class="popup-overlay" v-if="showPopup">
+  <div class="popup-overlay" v-if="showPopup" @click="closePopup">
     <div class="popup-content">
       <span class="close" @click="closePopup">&times;</span>
 
@@ -75,7 +75,7 @@
   <button class="but" @click="openWritePopup()" style="margin-left: 35%; margin-right: 30%;"> 글쓰기</button>
 
 
-  <div class="popup-overlay" v-if="writeActive">
+  <div class="popup-overlay" v-if="writeActive"  @click="closeWritePopup">
     <div class="popup-content">
           <span class="close" @click="closeWritePopup">&times;</span>
           <h2 align = "center"> 다이어리 작성</h2>
@@ -388,6 +388,7 @@ const getDiary = async(index)=> {
     };
 
     const uploadImage = async(status) => {
+        closeWritePopup();
         const authToken = 'Bearer ' + localStorage.getItem('authToken');
         const headers = {
             'Authorization': authToken,
@@ -425,6 +426,7 @@ const getDiary = async(index)=> {
         });
     };
     getMemberDate();
+    
 </script>
 
 

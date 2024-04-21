@@ -22,7 +22,7 @@
   </template>
   </VCalendar>
 
-  <div class="popup-overlay" v-if="showPopup" @click="closePopup">
+  <div class="popup-overlay" v-if="showPopup" @click="handleOverlayClick">
     <div class="popup-content">
       <span class="close" @click="closePopup">&times;</span>
 
@@ -52,18 +52,19 @@
 
         <div style="display: flex; width:100%; font-weight: 700;" align="center" >
           <div style="border-radius: 30px; background-color: white;  padding-bottom: 7%;   margin: 0 auto; text-align: left; width:30%; ">
-            <h3 align="center" > 음식</h3>
+            <h3 align="center" > 음식<img style="vertical-align:middle; height:30px;" src="@/assets/icon/Profile/Info/heartLine.png" @click="addFoodLike(diary.diary.diaryId)" ></h3>
+            
             <div style="padding-left: 30%;">🎬 {{diary.food.foodName}}<br></div>
             <div style="padding-left: 30%;">❖ {{diary.food.foodCategory}}<br></div>
             <div style="padding-left: 30%;">🌶️ {{diary.food.foodSpicy}}<br></div>
           </div>
           <div style="border-radius: 30px; background-color: white;  padding-bottom: 7%;   margin: 0 auto; text-align: left; width:30%">
-            <h3 align="center"> 영화</h3>
+            <h3 align="center"> 영화<img style="vertical-align:middle; height:30px;" src="@/assets/icon/Profile/Info/heartLine.png" @click="addMovieLike(diary.diary.diaryId)" ></h3>
             <div style="padding-left: 30%;">🎬 {{diary.movie.movieName}}<br></div>
             <div style="padding-left: 30%;">❖ {{diary.movie.movieGenre}}<br></div>
           </div>
           <div style="border-radius: 30px; background-color: white;  padding-bottom: 7%;   margin: 0 auto; text-align: left; width:30%">
-            <h3 align="center"> 음악</h3>
+            <h3 align="center"> 음악<img style="vertical-align:middle; height:30px;" src="@/assets/icon/Profile/Info/heartLine.png" @click="addMusicLike(diary.diary.diaryId)" ></h3>
             <div style="padding-left: 30%;">🎵 {{diary.music.musicName}}<br></div>
             <div style="padding-left: 30%;">🎤 {{diary.music.singer}}<br></div>
             <div style="padding-left: 30%;">❖ {{diary.music.musicGenre}}<br></div>
@@ -75,7 +76,7 @@
   <button class="but" @click="openWritePopup()" style="margin-left: 35%; margin-right: 30%;"> 글쓰기</button>
 
 
-  <div class="popup-overlay" v-if="writeActive"  @click="closeWritePopup">
+  <div class="popup-overlay" v-if="writeActive"  @click="handleOverlayClick">
     <div class="popup-content">
           <span class="close" @click="closeWritePopup">&times;</span>
           <h2 align = "center"> 다이어리 작성</h2>
@@ -426,7 +427,48 @@ const getDiary = async(index)=> {
         });
     };
     getMemberDate();
-    
+    const handleOverlayClick = (event) => {
+      // 클릭된 요소가 팝업 오버레이 자체인지 확인
+      if (event.target.classList.contains('popup-overlay')) {
+        // 팝업 오버레이를 클릭한 경우에만 팝업을 닫음
+        closePopup();
+        closeWritePopup();
+      }
+    };
+
+    const addFoodLike = (diaryId) => {
+      const authToken = 'Bearer ' + localStorage.getItem('authToken');
+        const headers = {
+            'Authorization': authToken,
+        };
+      fetch(`http://localhost:8888/diary/${diaryId}/food-like`, {
+          method: 'PUT',
+          headers: headers,
+          credentials: 'include'
+      })
+    }
+    const addMovieLike = (diaryId) => {
+      const authToken = 'Bearer ' + localStorage.getItem('authToken');
+        const headers = {
+            'Authorization': authToken,
+        };
+      fetch(`http://localhost:8888/diary/${diaryId}/movie-like`, {
+          method: 'PUT',
+          headers: headers,
+          credentials: 'include'
+      })
+    }
+    const addMusicLike = (diaryId) => {
+      const authToken = 'Bearer ' + localStorage.getItem('authToken');
+        const headers = {
+            'Authorization': authToken,
+        };
+      fetch(`http://localhost:8888/diary/${diaryId}/music-like`, {
+          method: 'PUT',
+          headers: headers,
+          credentials: 'include'
+      })
+    }
 </script>
 
 

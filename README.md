@@ -563,7 +563,7 @@ VALUES
 
 <h2>🗄️ 물리 Modeling</h2>
 
-![image](https://github.com/beyond-sw-camp/be04-4th-PI-MoodHolic/assets/149561287/549f6fe4-90f6-49f9-9133-5403a3edcb7e)
+![image](https://github.com/beyond-sw-camp/be04-4th-PI-MoodHolic/assets/101622086/0a510766-4a52-47ef-9803-e5bd51868935)
 
 </br>
 
@@ -640,7 +640,7 @@ VALUES
 </details></br>
 
 # 🌅 CI/CD 기능 명세서
-![image](https://github.com/beyond-sw-camp/be04-4th-PI-MoodHolic/assets/149561287/dbef64b3-d9c2-464a-b180-8f00dc3c497e)
+![image](https://github.com/beyond-sw-camp/be04-4th-PI-MoodHolic/assets/101622086/027b8e68-81f2-4f75-aa1b-255891a4cfbd)
 
 
 # 🌅 추후 고도화 기능
